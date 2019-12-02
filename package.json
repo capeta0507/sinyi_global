@@ -1,0 +1,24 @@
+{
+  "name": "XinyiRecruit",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "@zeit/next-sass": "^1.0.1",
+    "bootstrap": "^4.3.1",
+    "file-loader": "^4.2.0",
+    "next": "9.0.5",
+    "react": "16.9.0",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "16.9.0",
+    "react-select": "^3.0.8",
+    "react-slick": "^0.25.2",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {}
+}
