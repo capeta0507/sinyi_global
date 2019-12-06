@@ -2,17 +2,27 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import NewsCard from '../Card/newsCard'
+import MbNewsCard from '../Card/mbnewsCard'
 
 const NewsContainer = styled.div`
   width: 80%;
   margin: 0 auto;
+  background: #FAFAFA;
   margin-bottom: 80px;
+  @media (max-width: 768px){
+    width: 100%;
+    margin-bottom: 10px;
+  }
 `
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 30px;
   flex-wrap: wrap;
+  @media (max-width: 768px){
+    padding-top: 0px;
+    height: 820px;
+  }
 `
 
 const NewsContent = styled.div`
@@ -34,28 +44,32 @@ const BigTitle = styled.div`
   }
 `
 const MainNews = styled.div`
-  width: 90%;
+  width: 80%;
   display: flex;
   margin: 30px auto;
   justify-content: space-between;
   flex-wrap: wrap;
   @media (max-width: 768px){
-    margin: 10px 10px;
+    display: none;
   }
 `
 const TitleImg = styled.img`
-  width:25%;
+  width:112px;
   @media (max-width: 768px){
-    width:60%;
+    width:112px;
   }
 `
 const Img = styled.div`
   position: relative;
-  width: 45%;
+  width: 54%;
+  & > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 `
 const Introduction = styled.div`
   padding:10px 20px;
-  background:#fff;
   width: 45%;
 `
 const Date = styled.div`
@@ -99,14 +113,22 @@ const BtnContent = styled.div`
   padding: 20px 0 60px 0;
 `
 const Show = styled.div`
-  width: 100%;
+  width: 82px;
   text-align: center;
   margin-bottom: 80px;
+  margin: 0 auto;
+  cursor: pointer;
+  & > img{
+    width: 100%;
+  }
+  @media (max-width: 768px){
+    display: none;
+  }
 `
 const Hr = styled.hr`
   width: 100%;
   margin: 0 auto;
-  border: 1px solid #969696;
+  border: 1px solid #FAFAFA;
 `
 
 
@@ -119,7 +141,7 @@ const NewsList = (props) => {
         <Content>
           <MainNews>
             <Img>
-              <img src='/static/img/career1.jpg' />
+              <img src='/static/img/fetch.jpg' />
             </Img>
             <Introduction>
               <Date>2019/03/02</Date>
@@ -135,17 +157,23 @@ const NewsList = (props) => {
           <NewsContent>
             <Other>
              <NewsCard />
+             <MbNewsCard />
             </Other>
             <Other>
              <NewsCard />
+             <MbNewsCard />
             </Other>
             <Other>
              <NewsCard />
+             <MbNewsCard />
+            </Other>
+            <Other>
+             <MbNewsCard />
             </Other>
           </NewsContent>
           <BtnContent>
             <Show>
-              show all
+              <img src='/static/img/show_all.png' />
             </Show>
           </BtnContent>
         </Content>

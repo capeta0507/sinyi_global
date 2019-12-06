@@ -2,11 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import StudyCard from '../components/Card/studyCard'
+import MbStudyCard from '../components/Card/mbstudyCard'
 
 const StudyContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   margin-bottom: 80px;
+  @media (max-width: 768px){
+    width: 100%;
+    margin-bottom: 10px;
+  }
 `
 const Content = styled.div`
   display: flex;
@@ -34,9 +39,9 @@ const BigTitle = styled.div`
   }
 `
 const TitleImg = styled.img`
-  width:25%;
+  width:112px;
   @media (max-width: 768px){
-    width:60%;
+    width:112px;
   }
 `
 const Item = styled.div`
@@ -50,11 +55,19 @@ const BtnContent = styled.div`
   width:100%;
   text-align: center;
   padding: 20px 0 60px 0;
+  @media (max-width: 768px){
+    padding: 20px 0 20px 0;
+  }
 `
 const Show = styled.div`
-  width: 100%;
+  width: 82px;
   text-align: center;
   margin-bottom: 80px;
+  margin: 0 auto;
+  cursor: pointer;
+  & > img{
+    width: 100%;
+  }
 `
 const Hr = styled.hr`
   width: 100%;
@@ -67,20 +80,22 @@ const StudyList = (props) => {
     return(
       <StudyContainer>
         <BigTitle>
-          <TitleImg src='/static/img/t2_job.png' />
+          <TitleImg src='/static/img/t3_video.png' />
         </BigTitle>
         <Content>
           <StudyContent>
             <Item>
              <StudyCard />
+             <MbStudyCard />
             </Item>
             <Item>
              <StudyCard />
+             <MbStudyCard />
             </Item>
           </StudyContent>
           <BtnContent>
             <Show>
-              show all
+              <img src='/static/img/show_all.png' />
             </Show>
           </BtnContent>
         </Content>

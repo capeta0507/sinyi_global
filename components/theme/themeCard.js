@@ -7,9 +7,9 @@ const ThemeCard = styled.div`
   padding-left: 10px;
   padding-right: 10px;
   @media (max-width: 768px){
-    width: 45%;
+    width: 50%;
     padding-left: 5px;
-  padding-right: 5px;
+    padding-right: 5px;
   }
 `
 
@@ -18,7 +18,7 @@ const BigTitle = (props) => {
 		<ThemeCard className='text-center'>
       <div className='recruitCard'>
         <div className="recruitImg">
-          <img className="newsPhoto" src='/static/img/01.jpg' />
+          <img className="newsPhoto" src='/static/img/bench-accounting-8D2k7a3wMKQ-unsplash.jpg' />
         </div>
       </div>
       <div className="recruitTitle">

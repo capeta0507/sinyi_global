@@ -29,8 +29,7 @@ const Item = styled.span`
 `
 const NavLink = styled(Nav.Link)`
   text-align: center;
-  padding: 20px 0 10px 0;
-  border-bottom: 1px solid #5EC859;
+  padding: 10px 0 10px 0;
 `
 const Icon = styled.img`
   width:30px;
@@ -38,6 +37,9 @@ const Icon = styled.img`
 const IconLink = styled(Nav.Link)`
   text-align: center;
   padding: 50px;
+`
+const ItemBod = styled.img`
+  width: 120px;
 `
 
 const NavHomeMobile = () => {
@@ -67,49 +69,68 @@ const NavHomeMobile = () => {
                       <Item>首頁</Item>
                     </Link>
                   </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
+                </li>
+                <li>
+                  <NavLink>
+                    <Link href="">
+                      <Item>主題特輯</Item>
+                    </Link>
+                  </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
                 </li>
                 <li>
                   <NavLink>
                     <Link href="#features">
-                      <Item>業務菁英專區</Item>
+                      <Item>買賣</Item>
                     </Link>
                   </NavLink>
-                </li>
-                {/* <li>
-                  <NavLink>
-                    <Link href="#pricing">
-                      <Item>校園種子計畫</Item>
-                    </Link>
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink>
-                    <Link href="#features">
-                      <Item>幸福信義人</Item>
-                    </Link>
-                  </NavLink>
-                </li> */}
-                <li>
-                  <NavLink>
-                    <Link href="#features">
-                      <Item>認識信義</Item>
-                    </Link>
-                  </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
                 </li> 
                 <li>
                   <NavLink>
                     <Link href="/vacancies">
-                      <Item>集團職缺</Item>
+                      <Item>租賃</Item>
                     </Link>
                   </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
+                </li>
+                <li>
+                  <NavLink>
+                    <Link href="/vacancies">
+                      <Item>標售</Item>
+                    </Link>
+                  </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
+                </li>
+                <li>
+                  <NavLink>
+                    <Link href="/vacancies">
+                      <Item>新聞與研究</Item>
+                    </Link>
+                  </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
+                </li>
+                <li>
+                  <NavLink>
+                    <Link href="/vacancies">
+                      <Item>團隊介紹</Item>
+                    </Link>
+                  </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
+                </li>
+                <li>
+                  <NavLink>
+                    <Link href="/vacancies">
+                      <Item>關於全球</Item>
+                    </Link>
+                  </NavLink>
+                  <ItemBod src='/static/img/navborder.png' />
                 </li>
                 <li>
                 <IconLink>
-                  <Link href="https://www.facebook.com/SinyiRealtyInc.HR/">
+                  <Link href="https://www.facebook.com/sinyiglobal">
                     <Item><Icon src="static/img/icon_fb_w.png" alt="" /></Item>
-                  </Link>
-                  <Link href="https://www.instagram.com/sinyi.hr/">
-                    <Item><Icon src="static/img/icon_ig_w.png" alt="" /></Item>
                   </Link>
                 </IconLink>
                 </li>          

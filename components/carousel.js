@@ -40,8 +40,8 @@ const MyCarousel = () => {
       <Carousel nextIcon={nextIcon} prevIcon={prevIcon} interval={10000} activeIndex={index} direction={direction} onSelect={handleSelect} touch={true} indicators={false}>
         <Photo>
           <img
-            className="d-block w-100"
-            src="/static/img/career1.jpg"
+            className="d-block cauHeight"
+            src="/static/img/sean-pollock-PhYq704ffdA-unsplash.jpg"
             alt="First slide"
           />
           <Carousel.Caption className='carousel_text myShadow'>
@@ -52,8 +52,8 @@ const MyCarousel = () => {
         </Photo>
         <Photo>
           <img
-            className="d-block w-100"
-            src="https://i.ytimg.com/vi/S4JP8KttCpQ/maxresdefault.jpg"
+            className="d-block cauHeight"
+            src="/static/img/2019022001.jpg"
             alt="Second slide"
           />
 
@@ -64,8 +64,8 @@ const MyCarousel = () => {
         </Photo>
         <Photo>
           <img
-            className="d-block w-100"
-            src="http://images.1111.com.tw/news/news75896.jpg"
+            className="d-block cauHeight"
+            src="/static/img/11-02607-005.jpg"
             alt="Third slide"
           />
 

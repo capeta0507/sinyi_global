@@ -5,14 +5,19 @@ import ThemeCard from './themeCard'
 
 const MyJob = styled.div`
   background: #fff;
+  padding-bottom: 60px;
   @media (max-width: 768px){
     margin-top: 30px;
+    padding-bottom: 0px;
   }
 `
 const ThemeContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   margin-bottom: 80px;
+  @media (max-width: 768px){
+    width: 95%;
+  }
 `
 const Content = styled.div`
   display: flex;
@@ -31,22 +36,27 @@ const BigTitle = styled.div`
   }
 `
 const Img = styled.img`
-  width:25%;
+  width:112px;
   @media (max-width: 768px){
-    width:60%;
+    width:112px;
   }
 `
 const Show = styled.div`
-  width: 100%;
+  width: 82px;
   text-align: center;
   margin-bottom: 80px;
+  margin: 0 auto;
+  cursor: pointer;
+  & > img{
+    width: 100%;
+  }
 `
 
 const BigJob = (props) => {
   return(
 		<MyJob>
 			<BigTitle>
-        <Img src='/static/img/t2_job.png' />
+        <Img src='/static/img/t1_news.png' />
       </BigTitle>
       <ThemeContainer>
         <Content>
@@ -57,7 +67,7 @@ const BigJob = (props) => {
         </Content>
       </ThemeContainer>
       <Show>
-        show all
+        <img src='/static/img/show_all.png' />
       </Show>
 		</MyJob>
   )

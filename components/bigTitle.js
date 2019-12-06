@@ -11,9 +11,9 @@ const Title = styled.div`
   }
 `
 const Img = styled.img`
-  width:25%;
+  width:112px;
   @media (max-width: 768px){
-    width:60%;
+    width:112px;
   }
 `
 

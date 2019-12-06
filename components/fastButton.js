@@ -23,10 +23,9 @@ class FastButton extends Component {
   render(){
     return(
       <div className='fastButton'>
-        <div className='circle' onClick={this.scrollToTop}>
-          <div className='circlegray getTop'>
-            <img className='top' src='/static/img/arrow_top.png' alt='' />
-            <h4 className='none'>Top</h4>
+        <div className='' onClick={this.scrollToTop}>
+          <div className='getTop'>
+            <img className='top' src='/static/img/top.png' alt='' />
           </div>
         </div>
       </div>

@@ -34,7 +34,7 @@ const myIcon = () => {
 		<>
 			<BgIcon>
         <IconList>
-          <a href='https://www.facebook.com/SinyiRealtyInc.HR/' target="_blank">
+          <a href='https://www.facebook.com/sinyiglobal' target="_blank">
             <Img src="static/img/icon_fb_w.png" alt="" />
           </a>
           <a href='https://www.instagram.com/sinyi.hr/' target="_blank">

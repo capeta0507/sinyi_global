@@ -151,7 +151,7 @@ class MyFooter extends Component {
               <h6>
                 <span className='flex' onClick={this.showDropdownMenu1}>
                   投資人專區
-                  <div className={`${coll01}`}></div>
+                  <div className={`drowLeft1 ${coll01}`}></div>
                 </span>
                 {
                   this.state.displayMenu1 ? (
@@ -167,7 +167,7 @@ class MyFooter extends Component {
               </h6>
               <h6>
                 <span className='flex' onClick={this.showDropdownMenu2}>
-                    企業社會責任<div className={`${coll02}`}></div>
+                    企業社會責任<div className={`drowLeft2 ${coll02}`}></div>
                 </span>
                 {
                   this.state.displayMenu2 ? (
@@ -185,7 +185,7 @@ class MyFooter extends Component {
               </h6>
               <h6>
                 <span className='flex' onClick={this.showDropdownMenu3}>
-                    集團企業<div className={`${coll03}`}></div>
+                    集團企業<div className={`drowLeft3 ${coll03}`}></div>
                 </span>
                 {
                   this.state.displayMenu3 ? (

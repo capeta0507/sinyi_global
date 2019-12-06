@@ -15,7 +15,10 @@ const Card = styled.div`
   background: #fff;
   border-bottom: 1px solid grey;
   &:hover ${Introduction}{
-    background: lightblue;
+    background: #E5F7FF;
+  }
+  @media (max-width: 768px){
+    display: none;
   }
 `
 const Img = styled.div`
@@ -24,8 +27,8 @@ const Img = styled.div`
 `
 const MainTitle = styled.div`
   justify-content: space-between;
-  border-bottom: 2px solid lightblue;
-  border-color: blue;
+  border-bottom: 2px solid #00B1FF;
+  border-color: #00B1FF;
   margin: 20px 0;
   padding: 0 10px;
   display: flex;
@@ -33,7 +36,7 @@ const MainTitle = styled.div`
 const Monthly = styled.div`
   font-size: 32px;
   font-weight: 600;
-  color: blue;
+  color: #00B1FF;
 `
 const Date = styled.div`
   /* width: 100%; */
@@ -70,18 +73,18 @@ const StudyCard = () => {
   return(
     <Card>
       <Img>
-        <img src='/static/img/career1.jpg' />
+        <img src='/static/img/25358613_1553657854750443_452107410832652332_o.jpg' />
       </Img>
       <Introduction>
         <MainTitle>
           <Monthly>2019-Q3 季報</Monthly>
-          <Date>2019/03/02</Date>
+          <Date>2019/10/21</Date>
         </MainTitle>
         <Title>
-          「我的我們次方」算出最大價值的幸福方程式 信義房屋攜手熱忱的你共創最大價值
+          自用、投資方需求穩定 商辦市場迎來美好時刻
         </Title>
         <Content>
-          新世代職場趨勢中，雇主品牌的探究與要求往往是決定求職、就業與留任的關鍵參數。長期與年輕世代溝通雇主品牌價值，信義房屋
+          本季北市商辦價格持續走穩，平均售價維持在84.7萬元，毛租金資本化率維持在2.51%。其中租賃市場優於買賣市場，受惠於信義計畫區租金行情持續創新高，頂級辦公持續拉高平均租金，Ｑ3平均租金上漲至2,280元，空置...
         </Content>
       </Introduction>
     </Card>

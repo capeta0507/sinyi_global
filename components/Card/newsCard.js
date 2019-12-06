@@ -8,14 +8,24 @@ const Card = styled.div`
   padding:0;
   cursor: pointer;
   transition: all .5s;
+  display: block;
   &:hover {
     box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+  }
+  @media (max-width: 768px){
+    display: none;
   }
 `
 
 const Img = styled.div`
   position: relative;
   width: 100%;
+  height: 200px;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `
 const Introduction = styled.div`
   padding:10px 20px;
@@ -24,7 +34,7 @@ const Introduction = styled.div`
 const Date = styled.div`
   width: 100%;
   color: #B4B4B4;
-  font-size: 20px;
+  font-size: 16px;
   margin:10px 0;
 `
 const Title = styled.div`
@@ -34,7 +44,8 @@ const Title = styled.div`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   white-space: normal;
-  font-size: 24px;
+  font-size: 20px;
+  height: 70px;
   font-weight: bold;
 `
 const Content = styled.div`
@@ -44,7 +55,7 @@ const Content = styled.div`
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   white-space: normal;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 300;
   color: #5A5A5A;
   margin:10px 0 20px 0;
@@ -55,15 +66,15 @@ const NewsCard = () => {
     <Link>
       <Card>
         <Img>
-          <img src='/static/img/career1.jpg' />
+          <img src='/static/img/11-02607-005.jpg' />
         </Img>
         <Introduction>
           <Date>2019/03/02</Date>
           <Title>
-            「我的我們次方」算出最大價值的幸福方程式 信義房屋攜手熱忱的你共創最大價值
+            台北科技走廊最後一塊版圖 北士科土地交易發燙
           </Title>
           <Content>
-            新世代職場趨勢中，雇主品牌的探究與要求往往是決定求職、就業與留任的關鍵參數。長期與年輕世代溝通雇主品牌價值，信義房屋
+            今年土地交易受惠於標售熱潮，各地重劃區土地單價創下歷年新高，信義全球資產統計上市櫃土地交易截至今年8月止，交易金額已遠遠超過2018年全年度，來到937億...
           </Content>
         </Introduction>
       </Card>

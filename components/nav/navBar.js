@@ -18,6 +18,9 @@ const Nav = styled.div`
 const NavContainer = styled.div`
   width: 85%;
   margin: 0 auto;
+  @media (max-width: 1366px){
+    width: 90%;
+  }
 `
 const Content = styled.div`
   display: flex;
@@ -28,8 +31,20 @@ const Content = styled.div`
 const ItemList = styled.ul`
   background: #fff;
   width: 150px;
-  color: grey;
+  color: #000;
+  font-size: 15px;
   border-radius: 10px;
+  margin-top: 10px;
+`
+const ListLi = styled.div`
+  padding: 0 0 0 10px ;
+  border-bottom: ${props => props.bottom ? '' : '1px solid #F0F0F0'};
+  height: 50px;
+  z-index: 5;
+  &:hover{
+    background: #D2D2D2;
+    color: #00B1FF;
+  }
 `
 const Logo = styled.div`
   display:inline-block;
@@ -59,11 +74,16 @@ const List = styled.ul`
 `
 const ItemLi = styled.li`
   font-weight: 500;
-    margin: 0 30px;
-    cursor: pointer;
-    font-weight:500;
-    color: #fff;
-    width: ${props => props.two ? '50px' : '100px'};
+  margin: 0 20px;
+  cursor: pointer;
+  font-weight:500;
+  color: #fff;
+  font-size: 18px;
+  width: ${props => props.two ? '50px' : '100px'};
+  @media (max-width: 1366px){
+    margin: 0 22px;
+    width: ${props => props.two ? '50px' : '80px'};
+  }
 `
 const Item = styled.span`
   margin: 0 10px;
@@ -90,16 +110,16 @@ const NavBar = () => {
               <ItemLi two>買賣</ItemLi>
               <ItemLi two>租賃</ItemLi>
               <ItemLi two>標售
-              <ItemList>
-                <li>標案 1</li>
-                <li>標案 2</li>
-                <li>標案 3</li>
-              </ItemList>
+              {/* <ItemList>
+                <ListLi>標案 1</ListLi>
+                <ListLi>標案 2</ListLi>
+                <ListLi bottom>標案 3</ListLi>
+              </ItemList> */}
               </ItemLi>
               <ItemLi>新聞與研究</ItemLi>
               <ItemLi>團隊介紹</ItemLi>
               <ItemLi><a href='' className='linkText' >關於全球</a></ItemLi>
-              <ItemLi><a href='https://www.facebook.com/SinyiRealtyInc.HR/' target="_blank"><Icon src="static/img/icon_fb_w.png" alt="" /></a></ItemLi>
+              <ItemLi><a href='https://www.facebook.com/sinyiglobal' target="_blank"><Icon src="static/img/icon_fb_w.png" alt="" /></a></ItemLi>
             </List>
           </NavList>
         </Content>
