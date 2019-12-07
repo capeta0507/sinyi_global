@@ -4,7 +4,7 @@ import Head from '../components/head'
 import Layout from '../components/layout'
 import MyCarousel from '../components/carousel'
 import MobileCarousel from '../components/carouselMobilejs'
-import Navbar from '../components/nav/navBar'
+import Navbar from '../components/nav/navBarHome'
 import Theme from '../components/theme'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import FastButton from '../components/fastButton'
@@ -13,8 +13,6 @@ import Study from '../components/studyList'
 import styled from 'styled-components'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 const HomeNav = styled.div`
   width: 100%;

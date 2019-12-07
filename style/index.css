@@ -406,6 +406,10 @@ input[type="checkbox"] {
 .pdLeftZero{
     padding-left: 0;
 }
+.join{
+    font-size: 18px;
+    color: #00B1FF;
+}
 /* .pdLeft{
     padding-left: 0px !important;
 } */
@@ -1277,11 +1281,13 @@ img {
         display: block;
     }
 }
-/* @media screen and (max-width: 768px) {
-    .top {
-        background: #5EC859;
-    }
-} */
+.itemBuy{
+    width: 40%;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #B4B4B4;
+    /* margin-bottom: 20px; */
+}
 .top{
     width:100%;
 }
@@ -1547,20 +1553,21 @@ img {
     padding-left: 0 !important;
 }
 .pagination{
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    font-size: 22px;
-    color:#B4B4B4;
-    padding-top: 5px;
-    padding-left: 10px;
+    width: 26px;
+    height: 26px;
+    border-radius: 2px;
+    font-size: 14px;
+    color:#ABABAB;
+    border: 1px solid #ABABAB;
+    padding-top: 2px;
+    padding-left: 8px;
     cursor: pointer;
 }
 .paginationActive{
-    border: 2px solid #008F53;
-    color: #008F53;
-    padding-top: 5px;
-    padding-left: 17px;
+    border: 1px solid #00B9FF;
+    color: #00B9FF;
+    padding-top: 2px;
+    padding-left: 8px;
 }
 
 .modal-footer {
@@ -1581,9 +1588,8 @@ img {
         bottom: -60px;
     }
     .pagination{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+        width: 26px;
+        height: 26px;
         font-size: 16px;
         color:#B4B4B4;
         padding-top: 5px;
@@ -1591,8 +1597,8 @@ img {
         cursor: pointer;
     }
     .paginationActive{
-        border: 2px solid #008F53;
-        color: #008F53;
+        border: 2px solid #B4B4B4;
+        color: #B4B4B4;
         padding-top: 5px;
         padding-left: 13px;
     }

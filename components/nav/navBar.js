@@ -8,7 +8,7 @@ const Nav = styled.div`
   width: 100%;
   height: 100px;
   line-height:60px;
-  background: rgba(0,0,0,.2);
+  background: #3B4B55;
   color: #fff;
   font-weight: bold;
   @media (max-width: 985px){
