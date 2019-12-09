@@ -18,8 +18,8 @@ const Card = styled.div`
     box-shadow: 2px 10px 11px rgba(0,0,0,0.2);
   }
   @media (max-width: 768px){
-    width: 100%;
-    margin: 10px 10px;
+    width: 47%;
+    margin: 5px 5px;
   }
 `
 const Img = styled.div`
@@ -53,6 +53,9 @@ const Monthly = styled.div`
   color: #00B1FF;
   padding: 0 10px;
   margin: 10px 0;
+  @media (max-width: 768px){
+    font-size: 15px;
+  }
 `
 const DownPrice = styled.div`
   position: absolute;
@@ -65,6 +68,9 @@ const DownPrice = styled.div`
   font-weight: 300;
   font-size: 12px;
   color: #fff;
+  @media (max-width: 768px){
+    display: none;
+  }
 `
 
 const Title = styled.div`
@@ -77,6 +83,10 @@ const Title = styled.div`
   font-size: 22px;
   font-weight: bold;
   padding: 0 10px;
+  @media (max-width: 768px){
+    font-size: 18px;
+    padding: 0 0px;
+  }
 `
 const Content = styled.div`
   overflow:hidden;
@@ -90,6 +100,10 @@ const Content = styled.div`
   color: #5A5A5A;
   /* margin:10px 0 20px 0; */
   padding: 0 10px;
+  @media (max-width: 768px){
+    font-size: 12px;
+    padding: 0 0px;
+  }
 `
 const ItemCard = () => {
   return (
@@ -109,24 +123,30 @@ const ItemCard = () => {
           <DownPrice>↓16.81%</DownPrice>
         </Monthly>
         <JustContent>
-          <div>土地 114.6 坪</div>
-          <div>建物 62.3 坪</div>
+          <div><img className='list2' src='/static/img/list/list01.png' />&nbsp;&nbsp;土地 114.6 坪</div>
+          <div><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;建物 62.3 坪</div>
         </JustContent>
         <JustContent>
-          <div>樓層 1~2F/9F</div>
-          <div>屋齡 10.5 年</div>
+          <div><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;樓層 1~2F/9F</div>
+          <div><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;屋齡 10.5 年</div>
         </JustContent>
         <JustContent>
-          <div className='join'>加入比較</div>
+          <div className='join flex'><img className='listJoin' src='/static/img/list/join.PNG' />加入比較</div>
         </JustContent>
         <JustContentMb>
-          <div>土地 114.6 坪</div>
-          <div>建物 62.3 坪</div>
-          <div>樓層 1~2F/9F</div>
+          <div><img className='list2' src='/static/img/list/list01.png' />&nbsp;&nbsp;土地 114.6 坪</div>
         </JustContentMb>
         <JustContentMb>
-          <div>屋齡 10.5 年</div>
-          <div className='join'>加入比較</div>
+          <div><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;建物 62.3 坪</div>
+        </JustContentMb>
+        <JustContentMb>
+          <div><img className='list' src='/static/img/list/list03.png' />&nbsp;&nbsp;建物 62.3 坪</div>
+        </JustContentMb>
+        <JustContentMb>
+          <div><img className='list' src='/static/img/list/list04.png' />&nbsp;&nbsp;屋齡 10.5 年</div>
+        </JustContentMb>
+        <JustContentMb>
+        <div className='join flex'><img className='listJoin' src='/static/img/list/join.PNG' />加入比較</div>
         </JustContentMb>
       </Introduction>
     </Card>

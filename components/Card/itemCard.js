@@ -109,24 +109,24 @@ const ItemCard = () => {
           <DownPrice>↓16.81%</DownPrice>
         </Monthly>
         <JustContent>
-          <div>土地 114.6 坪</div>
-          <div>建物 62.3 坪</div>
+          <div><img className='list2' src='/static/img/list/list01.png' />&nbsp;&nbsp;土地 114.6 坪</div>
+          <div><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;建物 62.3 坪</div>
         </JustContent>
         <JustContent>
-          <div>樓層 1~2F/9F</div>
-          <div>屋齡 10.5 年</div>
+          <div><img className='list' src='/static/img/list/list03.png' />&nbsp;&nbsp;樓層 1~2F/9F</div>
+          <div><img className='list' src='/static/img/list/list04.png' />&nbsp;&nbsp;屋齡 10.5 年</div>
         </JustContent>
         <JustContent>
-          <div className='join'>加入比較</div>
+          <div className='join flex'><img className='listJoin' src='/static/img/list/join.PNG' />加入比較</div>
         </JustContent>
         <JustContentMb>
-          <div>土地 114.6 坪</div>
-          <div>建物 62.3 坪</div>
-          <div>樓層 1~2F/9F</div>
+          <div><img className='list2' src='/static/img/list/list01.png' />&nbsp;&nbsp;土地 114.6 坪</div>
+          <div><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;建物 62.3 坪</div>
+          <div><img className='list' src='/static/img/list/list03.png' />&nbsp;&nbsp;樓層 1~2F/9F</div>
         </JustContentMb>
         <JustContentMb>
-          <div>屋齡 10.5 年</div>
-          <div className='join'>加入比較</div>
+          <div><img className='list' src='/static/img/list/list04.png' />&nbsp;&nbsp;屋齡 10.5 年</div>
+          <div className='join flex'><img className='listJoin' src='/static/img/list/join.PNG' />加入比較</div>
         </JustContentMb>
       </Introduction>
     </Card>

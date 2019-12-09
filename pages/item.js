@@ -6,18 +6,20 @@ import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import { Carousel } from 'react-bootstrap'
 import NewItem from '../components/Card/newItemCard'
-// import Gallery from '../components/Card/gallery'
+import FastButton from '../components/fastButton'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Container = styled.div`
-	width: 80%;
+	width: 90%;
   margin: 0 auto;
 	padding: 150px 0 50px 0;
 `
 const Main = styled.div`
   width: 60%;
-
+  @media (max-width: 768px){
+    width: 100%;
+  }
 `
 const Title = styled.div`
   width: 100%;
@@ -39,6 +41,21 @@ const Title = styled.div`
     color: #00AAF5;
     font-size: 28px;
   }
+  @media (max-width: 768px){
+    & > h1{
+      color: #000;
+      font-size: 22px;
+    }
+  }
+`
+const MbTitle = styled.h1`
+  color: #00AAF5;
+  font-size: 22px;
+  display: none;
+  margin-top: 10px;
+  @media (max-width: 768px){
+    display: block;
+  }
 `
 const SubTitle = styled.div`
   width: 100%;
@@ -49,9 +66,26 @@ const Specification = styled.div`
   display: flex;
   margin-top: 22px;
   margin-bottom: 10px;
+  @media (max-width: 768px){
+    width: 100%;
+    display: none;
+  }
+`
+const SpecificationMb = styled.div`
+  width: 100%;
+  display: none;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  @media (max-width: 768px){
+    display: block;
+  }
 `
 const Cau = styled.div`
   width: 95%;
+  @media (max-width: 768px){
+    width: 100%;
+  }
 `
 const BigTitle = styled.div`
   text-align: center;
@@ -70,6 +104,9 @@ const TitleImg = styled.img`
 `
 const ItemContent = styled.div`
   width: 60%;
+  @media (max-width: 768px){
+    width: 100%;
+  }
 `
 const Introduction = styled.div`
   width: 100%;
@@ -83,17 +120,24 @@ const IndList = styled.div`
   border-top: 1px solid #F0F0F0;
   border-bottom: 1px solid #F0F0F0;
   display: flex;
-  justify-content: space-between;
   padding: 5px 0;
 `
 const IndTag = styled.div`
-  width: 7%;
+  width: 20%
   color: #969696;
   font-size: 14px;
+  @media (max-width: 768px){
+    width: 20%;
+    font-size: 12px;
+  }
 `
 const IndName = styled.div`
-  width: 18%;
+  width: 30%;
   font-size: 14px;
+  @media (max-width: 768px){
+    width: 40%;
+    font-size: 12px;
+  }
 `
 const Business = styled.div`
   width: 310px;
@@ -104,12 +148,34 @@ const Business = styled.div`
     color: #00B1FF;
     padding-left: 10px;
   }
+  @media (max-width: 768px){
+    width: 100%;
+    display: none;
+  }
+`
+const BusinessMb = styled.div`
+  width: 100%;
+  padding: 20px;
+  display: none;
+  & > h3{
+    font-size: 20px;
+    color: #00B1FF;
+    padding-left: 10px;
+  }
+  @media (max-width: 768px){
+    display: block;
+    padding: 20px 0;
+  }
 `
 const BusPeople = styled.div`
   width: 100%;
   display: flex;
   padding: 10px 0;
   border-bottom: 1px solid #E8E8E8;
+  @media (max-width: 768px){
+    margin: 0 auto;
+    width: 80%;
+  }
 `
 const Busconnection = styled.div`
   width: 100%;
@@ -129,6 +195,8 @@ const IptName = styled.div`
   margin: 5px 0;
   @media (max-width: 768px){
     width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 `
 const Button = styled.div`
@@ -148,11 +216,18 @@ const BusCheck = styled.div`
   & > a {
     color: #00B1FF;
   }
+  @media (max-width: 768px){
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 `
 const Join = styled.div`
   color: #00B1FF;
   font-size: 23px;
   cursor: pointer;
+  @media (max-width: 768px){
+    display: none;
+  }
 `
 
 const Item = () => {
@@ -173,36 +248,59 @@ const Item = () => {
 			/>
 			<Navbar />
       <Container>
-        <div className='row juseBet'>
+        <div className='row juseBet gendermg'>
           <Main>
             <Title>
               <h1>勤樸辦公廠房Ａ</h1>
               <div>
                 案件編號：32092Y
               </div>
-              <h2>6,000元/月</h2>
+              <h2 className='mbnone'>6,000元/月</h2>
             </Title>
             <SubTitle>
               <span className='itemPlace'>地址</span><span className='itemPlace2'> 新北市蘆洲區長興路</span>
             </SubTitle>
+            <MbTitle>6,000元/月</MbTitle>
             <Specification>
-              <div className=''>
-                <span className='spcTitle'>權狀</span>
-                <span className='spcTitle2'>114.6 坪</span>
+              <div className='flex'>
+                <div className='spcTitle flex'><img className='listSp' src='/static/img/list/list01.png' />&nbsp;&nbsp;權狀</div>
+                <div className='spcTitle2'>114.6 坪</div>
               </div>
-              <div className=''>
-                <span className='spcTitle'>出租</span>
+              <div className='flex'>
+                <span className='spcTitle'><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;出租</span>
                 <span className='spcTitle2'>62.3 坪</span>
               </div>
-              <div className=''>
-                <span className='spcTitle'>樓層</span>
+              <div className='flex'>
+                <span className='spcTitle'><img className='list' src='/static/img/list/list03.png' />&nbsp;&nbsp;樓層</span>
                 <span className='spcTitle2'>1樓</span>
               </div>
-              <div className=''>
-                <span className='spcTitle'>屋齡</span>
+              <div className='flex'>
+                <span className='spcTitle'><img className='list' src='/static/img/list/list04.png' />&nbsp;&nbsp;屋齡</span>
                 <span className='spcTitle2'>10.5 年</span>
               </div>
             </Specification>
+            <SpecificationMb>
+              <div className='mbSpec'>
+                <div className='speTag'>
+                  <span className='spcTitle'>權狀</span>
+                  <span className='spcTitle2'> 114.6 坪</span>
+                </div>
+                <div className='speTag'>
+                  <span className='spcTitle'>出租</span>
+                  <span className='spcTitle2'> 62.3 坪</span>
+                </div>
+              </div>
+              <div className='mbSpec'>
+                <div className='speTag'>
+                  <span className='spcTitle'>樓層</span>
+                  <span className='spcTitle2'> 1樓</span>
+                </div>
+                <div className='speTag'>
+                  <span className='spcTitle'>屋齡</span>
+                  <span className='spcTitle2'> 10.5 年</span>
+                </div>
+              </div>
+            </SpecificationMb>
             <Cau>
               <Carousel nextIcon={nextIcon} prevIcon={prevIcon} interval={10000} activeIndex={index} direction={direction} onSelect={handleSelect} touch={true} indicators={false}>
                 <div className='cauimg'>
@@ -281,12 +379,6 @@ const Item = () => {
               <IndList>
                 <IndTag>型態</IndTag>
                 <IndName>大樓(11層含以上有電梯)</IndName>
-                <IndTag>產權登記</IndTag>
-                <IndName>有</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>地址</IndTag>
-                <IndName>新北市蘆洲區長興路</IndName>
                 <IndTag>屋齡</IndTag>
                 <IndName>10年</IndName>
               </IndList>
@@ -319,16 +411,14 @@ const Item = () => {
             <Introduction>
               <IntroTitle>物件特色</IntroTitle>
               <IndList>
+                <IndName className='flex'><div className='ptdolt'></div>一二三四五六七八九十一 </IndName>
                 <IndTag></IndTag>
-                <IndName>一二三四五六七八九十一 </IndName>
-                <IndTag></IndTag>
-                <IndName>穩定收租投資自用皆宜</IndName>
+                <IndName className='flex'><div className='ptdolt'></div>穩定收租投資自用皆宜</IndName>
               </IndList>
               <IndList>
+                <IndName className='flex'><div className='ptdolt'></div>近大汐止經貿園區</IndName>
                 <IndTag></IndTag>
-                <IndName>近大汐止經貿園區</IndName>
-                <IndTag></IndTag>
-                <IndName>氣派門面完善管理</IndName>
+                <IndName className='flex'><div className='ptdolt'></div>氣派門面完善管理</IndName>
               </IndList>
             </Introduction>
             {/* 周邊環境 */}
@@ -357,16 +447,58 @@ const Item = () => {
             </Introduction>
           </ItemContent>
         </div>
+        <BusinessMb>
+          <h3>本案經紀人員</h3>
+          <BusPeople>
+            <div className='busCard'>
+              <div className="busImg">
+                <img className="newsPhoto" src='/static/img/bench-accounting-8D2k7a3wMKQ-unsplash.jpg' />
+              </div>
+            </div>
+            <div className='busName'>
+              <Name name>蔡佳宏</Name>
+              <Name>長春吉林店</Name>
+              <Name>0911259808</Name>
+              <Name>C02897523</Name>
+            </div>
+          </BusPeople>
+            <h3 className='connection'>與我聯繫</h3>
+          <Busconnection>
+            <IptName>
+              <input className='form-control' type='text' placeholder='姓名(必填)' />
+            </IptName>
+            <IptName>
+              <input className='form-control' type='phone' placeholder='聯絡電話(必填)' />
+            </IptName>
+            <IptName>
+              <input className='form-control' type='text' placeholder='電子郵件(必填)' />
+            </IptName>
+            <BusCheck>
+              <input type="checkbox" /> 送出資料前，請點選同意本站 <a href=''>隱私權政策</a> 及 <a href=''>服務條款</a>
+            </BusCheck>
+            <Button>送出</Button>
+          </Busconnection>
+          <Join>
+            加入比較
+          </Join>
+        </BusinessMb>
         <BigTitle>
           <TitleImg src='/static/img/t5_newItem.png' />
         </BigTitle>
-        <div className='row'>
+        <div className='row gendermg mbnone'>
+          <NewItem />
+          <NewItem />
+          <NewItem />
+          <NewItem />
+        </div>
+        <div className='row gendermg mbFlex'>
           <NewItem />
           <NewItem />
           <NewItem />
           <NewItem />
         </div>
       </Container>
+      <FastButton />
     	<NavHomeMobile />
 		</Layout>
 	)

@@ -116,8 +116,8 @@ const PageCircle = styled.div`
   width: 26px;
   height: 26px;
   cursor: pointer;
-	background: #008F53;
-	border: 1px solid #ABABAB;
+	background: #00B9FF;
+  border: 1px solid #00B9FF;
 `
 const PageImg = styled.img`
   width: 12px;
@@ -125,8 +125,8 @@ const PageImg = styled.img`
   margin-left: ${props => props.next ? '6px' : '9px'};
   @media (max-width: 768px){
     width: 12px;
-    margin-top: 13px;
-    margin-left: ${props => props.next ? '12px' : '15px'};
+    margin-top: 0px;
+    margin-left: ${props => props.next ? '5px' : '8px'};
   }
 `
 

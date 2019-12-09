@@ -108,7 +108,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/Card/mbnewsCard.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\Card\\mbnewsCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -239,7 +239,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/Card/mbstudyCard.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\Card\\mbstudyCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
  // import Link from 'next/link'
@@ -394,7 +394,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/Card/newsCard.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\Card\\newsCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -527,7 +527,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/Card/studyCard.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\Card\\studyCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
  // import Link from 'next/link'
@@ -677,7 +677,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/carousel.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\carousel.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -849,7 +849,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/carouselMobilejs.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\carouselMobilejs.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -1020,7 +1020,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/fastButton.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\fastButton.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
@@ -1104,7 +1104,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/footer/footer.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\footer\\footer.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
  // import Link from 'next/link'
@@ -1846,7 +1846,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/footer/mobileFooter.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\footer\\mobileFooter.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2143,7 +2143,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/head.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\head.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2346,7 +2346,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/icon.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\icon.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2464,7 +2464,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../style/index.css */ "./style/index.css");
 /* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_5__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/layout.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\layout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2508,7 +2508,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/nav/navBarHome.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\nav\\navBarHome.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -2546,6 +2546,7 @@ const ItemList = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.ul`
   font-size: 15px;
   border-radius: 10px;
   margin-top: 10px;
+  display: none;
 `;
 const ListLi = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
   padding: 0 0 0 10px ;
@@ -2594,6 +2595,10 @@ const ItemLi = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.li`
   @media (max-width: 1366px){
     margin: 0 22px;
     width: ${props => props.two ? '50px' : '80px'};
+    font-size: 16px;
+  }
+  &:hover ${ItemList}{
+    display: block;
   }
 `;
 const Item = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.span`
@@ -2609,32 +2614,32 @@ const NavBar = () => {
   return __jsx(Nav, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 104
     },
     __self: undefined
   }, __jsx(NavContainer, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 105
     },
     __self: undefined
   }, __jsx(Content, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 106
     },
     __self: undefined
   }, __jsx(Logo, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx("a", {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 103
+      lineNumber: 108
     },
     __self: undefined
   }, __jsx(Img, {
@@ -2642,64 +2647,176 @@ const NavBar = () => {
     alt: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 109
     },
     __self: undefined
   }))), __jsx(NavList, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107
+      lineNumber: 112
     },
     __self: undefined
   }, __jsx(List, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 113
     },
     __self: undefined
   }, __jsx(ItemLi, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 114
     },
     __self: undefined
-  }, "\u4E3B\u984C\u7279\u8F2F"), __jsx(ItemLi, {
+  }, "\u4E3B\u984C\u7279\u8F2F", __jsx(ItemList, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116
+    },
+    __self: undefined
+  }, __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117
+    },
+    __self: undefined
+  }, "\u4E3B\u984C 1"), __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118
+    },
+    __self: undefined
+  }, "\u4E3B\u984C 2"), __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119
+    },
+    __self: undefined
+  }, "\u4E3B\u984C 3"), __jsx(ListLi, {
+    bottom: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120
+    },
+    __self: undefined
+  }, "\u4E3B\u984C 4"))), __jsx(ItemLi, {
     two: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110
+      lineNumber: 123
     },
     __self: undefined
   }, "\u8CB7\u8CE3"), __jsx(ItemLi, {
     two: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111
+      lineNumber: 124
     },
     __self: undefined
   }, "\u79DF\u8CC3"), __jsx(ItemLi, {
     two: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112
+      lineNumber: 125
     },
     __self: undefined
-  }, "\u6A19\u552E"), __jsx(ItemLi, {
+  }, "\u6A19\u552E", __jsx(ItemList, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119
+      lineNumber: 126
     },
     __self: undefined
-  }, "\u65B0\u805E\u8207\u7814\u7A76"), __jsx(ItemLi, {
+  }, __jsx(ListLi, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120
+      lineNumber: 127
     },
     __self: undefined
-  }, "\u5718\u968A\u4ECB\u7D39"), __jsx(ItemLi, {
+  }, "\u6A19\u6848 1"), __jsx(ListLi, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 128
+    },
+    __self: undefined
+  }, "\u6A19\u6848 2"), __jsx(ListLi, {
+    bottom: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129
+    },
+    __self: undefined
+  }, "\u6A19\u6848 3"))), __jsx(ItemLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132
+    },
+    __self: undefined
+  }, "\u65B0\u805E\u8207\u7814\u7A76", __jsx(ItemList, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 133
+    },
+    __self: undefined
+  }, __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 134
+    },
+    __self: undefined
+  }, "\u7126\u9EDE\u65B0\u805E"), __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 135
+    },
+    __self: undefined
+  }, "\u6708\u5831"), __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 136
+    },
+    __self: undefined
+  }, "\u5B63\u5831"), __jsx(ListLi, {
+    bottom: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 137
+    },
+    __self: undefined
+  }, "\u96FB\u5B50\u5831"))), __jsx(ItemLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 140
+    },
+    __self: undefined
+  }, "\u5718\u968A\u4ECB\u7D39", __jsx(ItemList, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 141
+    },
+    __self: undefined
+  }, __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 142
+    },
+    __self: undefined
+  }, "\u516C\u53F8\u7C21\u4ECB"), __jsx(ListLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 143
+    },
+    __self: undefined
+  }, "\u52A0\u5165\u6211\u5011"), __jsx(ListLi, {
+    bottom: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 144
+    },
+    __self: undefined
+  }, "\u670D\u52D9\u64DA\u9EDE"))), __jsx(ItemLi, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 147
     },
     __self: undefined
   }, __jsx("a", {
@@ -2707,13 +2824,13 @@ const NavBar = () => {
     className: "linkText",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121
+      lineNumber: 147
     },
     __self: undefined
   }, "\u95DC\u65BC\u5168\u7403")), __jsx(ItemLi, {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 148
     },
     __self: undefined
   }, __jsx("a", {
@@ -2721,7 +2838,7 @@ const NavBar = () => {
     target: "_blank",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 148
     },
     __self: undefined
   }, __jsx(Icon, {
@@ -2729,7 +2846,7 @@ const NavBar = () => {
     alt: "",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122
+      lineNumber: 148
     },
     __self: undefined
   }))))))));
@@ -2758,7 +2875,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/nav/navHomeMobile.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\nav\\navHomeMobile.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -3199,7 +3316,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _Card_newsCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Card/newsCard */ "./components/Card/newsCard.js");
 /* harmony import */ var _Card_mbnewsCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../Card/mbnewsCard */ "./components/Card/mbnewsCard.js");
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/news/newsList.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\news\\newsList.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -3522,7 +3639,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _components_Card_studyCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Card/studyCard */ "./components/Card/studyCard.js");
 /* harmony import */ var _components_Card_mbstudyCard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Card/mbstudyCard */ "./components/Card/mbstudyCard.js");
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/studyList.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\studyList.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -3707,7 +3824,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _themeCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./themeCard */ "./components/theme/themeCard.js");
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/theme/index.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\theme\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
  // import BigTitle from '../bigTitle'
@@ -3864,7 +3981,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/components/theme/themeCard.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\theme\\themeCard.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
@@ -4688,7 +4805,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
 /* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__);
-var _jsxFileName = "/Users/johnny/\u5341\u516B\u8A2D\u8A08/\u4FE1\u7FA9\u5168\u7403/pages/index.js";
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import Link from 'next/link'
 
@@ -4968,7 +5085,7 @@ const Home = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["defaul
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/johnny/十八設計/信義全球/pages/index.js */"./pages/index.js");
+module.exports = __webpack_require__(/*! C:\Users\xj654\Desktop\專案\sinyi_global\pages\index.js */"./pages/index.js");
 
 
 /***/ }),
