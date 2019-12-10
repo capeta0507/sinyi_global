@@ -119,6 +119,9 @@ const IptName = styled.div`
   font-size: 18px;
   color: #5A5A5A;
   margin: 12px 0;
+  @media (max-width: 1440px){
+    width: ${props => props.long ? '12.5%' : '25%'};
+  }
   @media (max-width: 768px){
     width: ${props => props.long ? '23%' : '23%'};
     font-size: 14px;
