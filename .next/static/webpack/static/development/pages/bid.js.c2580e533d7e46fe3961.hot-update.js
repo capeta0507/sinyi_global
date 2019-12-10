@@ -1,0 +1,392 @@
+webpackHotUpdate("static\\development\\pages\\bid.js",{
+
+/***/ "./pages/bid.js":
+/*!**********************!*\
+  !*** ./pages/bid.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime-corejs2/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _components_head__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/head */ "./components/head.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout */ "./components/layout.js");
+/* harmony import */ var _components_nav_navBar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/nav/navBar */ "./components/nav/navBar.js");
+/* harmony import */ var _components_nav_navHomeMobile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/nav/navHomeMobile */ "./components/nav/navHomeMobile.js");
+/* harmony import */ var _components_fastButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/fastButton */ "./components/fastButton.js");
+/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../style/index.css */ "./style/index.css");
+/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_9__);
+
+var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\pages\\bid.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
+function _templateObject7() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  color: #5A5A5A;\n  font-size: 18px;\n  padding: 10px 15px;\n  margin-top: 11px;\n  & > p {\n    margin-bottom: 0;\n  }\n"]);
+
+  _templateObject7 = function _templateObject7() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject6() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  border-left: 4px solid #00B1FF;\n  padding-left: 8px;\n  font-size: 24px;\n  color: #00B1FF;\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  margin-top: 45px;\n  border-bottom: 1px solid #E8E8E8;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  text-align: center;\n\n  & > h1{\n    font-weight: bold;\n    font-size: 28px;\n  }\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 80%;\n  margin: 0 auto;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = Object(_babel_runtime_corejs2_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100%;\n  padding: 150px 0 50px 0;\n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+
+
+
+
+
+
+
+
+
+var MainContain = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject());
+var Container = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject2());
+var Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject3());
+var TitleImg = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].img(_templateObject4());
+var Content = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject5());
+var ConTitle = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject6());
+var ConText = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div(_templateObject7());
+
+var Bid = function Bid() {
+  return __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 53
+    },
+    __self: this
+  }, __jsx(_components_head__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    title: "\u4FE1\u7FA9\u5168\u7403\u8CC7\u7522",
+    description: "\u4FE1\u7FA9\u623F\u5C4B\u96C6\u5718\u4EBA\u624D\u62DB\u52DF\u57F9\u8A13\u4E2D\uFF0C\u63D0\u4F9B\u5404\u7A2E\u96C6\u5718\u71B1\u9580\u8077\u7F3A\u3001\u5FB5\u624D\u6D88\u606F\u3001\u85AA\u8CC7\u798F\u5229\u3002\u5B8C\u6574\u65B0\u4EBA\u57F9\u8A13\u8AB2\u7A0B\u4E0D\u7528\u6015\u6C92\u4EBA\u53EF\u4EE5\u554F\uFF0C\u6B61\u8FCE\u71B1\u5FF1\u7684\u4F60\u52A0\u5165\u6211\u5011\uFF0C\u8207\u6211\u5011\u4E00\u8D77\u5171\u5275\u6700\u5927\u50F9\u503C\u3002",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 54
+    },
+    __self: this
+  }), __jsx(_components_nav_navBar__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 58
+    },
+    __self: this
+  }), __jsx(_components_nav_navHomeMobile__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 59
+    },
+    __self: this
+  }), __jsx(MainContain, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 60
+    },
+    __self: this
+  }, __jsx(Container, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 61
+    },
+    __self: this
+  }, __jsx(Title, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 62
+    },
+    __self: this
+  }, __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 63
+    },
+    __self: this
+  }, "\u4FE1\u7FA9\u5168\u7403\u8CC7\u7522\u7BA1\u7406(\u80A1)\u516C\u53F8"), __jsx("h1", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 64
+    },
+    __self: this
+  }, "\u81FA\u5317\u5E02\u7CBE\u83EF\u5730\u6BB5\u8FA6\u516C\u6A19\u552E\u6848"), __jsx(TitleImg, {
+    src: "/static/img/pic10.png",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 65
+    },
+    __self: this
+  })), __jsx(Content, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 67
+    },
+    __self: this
+  }, __jsx(ConTitle, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 68
+    },
+    __self: this
+  }, "\u7532\u6A19\u6A19\u552E\u8ABF\u6574\u516C\u544A \uFF08\u6C11\u570B107\u5E7411\u67081\u65E5\uFF09"), __jsx(ConText, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 69
+    },
+    __self: this
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }, "\u9F8D\u5DD6\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u59D4\u8A17\u4FE1\u7FA9\u5168\u7403\u8CC7\u7522\u8FA6\u7406\u300C\u592A\u5E73\u6D0B\u5546\u696D\u5927\u6A13\u300D\uFF08\u7532\u6A19\uFF09\u516C\u958B\u6A19\u552E\u8ABF\u6574\u8B70\u50F9\u6848\uFF0C\u8A73\u5982\u8AAA\u660E\u3002"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 70
+    },
+    __self: this
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }, "\u5C0D\u65BC\u672C\u6B21\u4FEE\u6B63\uFF0C\u5982\u6709\u4EFB\u4F55\u7591\u554F\uFF0C\u8ACB\u4F86\u96FB\u6D3D\u8A62\u3002"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 71
+    },
+    __self: this
+  }), "\u806F\u7D61\u4EBA\uFF1A", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 72
+    },
+    __self: this
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 73
+    },
+    __self: this
+  }, "\u6B50\u4EBA\u5F70 \u8CC7\u6DF1\u5354\u7406 \u96FB\u8A71(02)2729-8800 \u5206\u6A5F310"))), __jsx(Content, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76
+    },
+    __self: this
+  }, __jsx(ConTitle, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 77
+    },
+    __self: this
+  }, "\u6A19\u552E\u6295\u6A19\u6587\u4EF6\u7B2C\u4E8C\u6B21\u4FEE\u6B63\uFF08\u6C11\u570B107\u5E7410\u670825\u65E5\uFF09"), __jsx(ConText, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 78
+    },
+    __self: this
+  }, __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: this
+  }, "\u95DC\u65BC\u9F8D\u5DD6\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u59D4\u8A17\u4FE1\u7FA9\u5168\u7403\u8CC7\u7522\u8FA6\u7406\u300C\u592A\u5E73\u6D0B\u5546\u696D\u5927\u6A13\u300D\uFF08\u7532\u6A19\uFF09\u3001\u300C\u53F0\u5317\u91D1\u878D\u4E2D\u5FC3\u5927\u6A13\u300D\uFF08\u4E59\u6A19\uFF09\u516C\u958B\u6A19\u552E\u6295\u6A19\u6587\u4EF6\u7B2C\u4E8C\u6B21\u4FEE\u6B63\u3002"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79
+    },
+    __self: this
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: this
+  }, "\u6295\u6A19\u6587\u4EF6\u6089\u4EE5\u672C\u4FEE\u8A02\u7248\u70BA\u6E96\uFF0C\u5F97\u6A19\u4EBA\u5C07\u4EE5\u4FEE\u6B63\u5F8C\u689D\u6587\u7C3D\u8A02\u4E0D\u52D5\u7522\u8CB7\u8CE3\u5951\u7D04\u3002"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 80
+    },
+    __self: this
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: this
+  }, "\u5C0D\u65BC\u672C\u6B21\u4FEE\u6B63\uFF0C\u5982\u6709\u4EFB\u4F55\u7591\u554F\uFF0C\u8ACB\u4F86\u96FB\u6D3D\u8A62\u3002"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81
+    },
+    __self: this
+  }), "\u806F\u7D61\u4EBA\uFF1A", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 82
+    },
+    __self: this
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: this
+  }, "\u5433\u6631\u8CE2 \u526F\u7406 \u624B\u6A5F\uFF1A0922-062-588 s286611@sinyi.com.tw"), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83
+    },
+    __self: this
+  }), __jsx("p", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84
+    },
+    __self: this
+  }, "\u9673\u9E97\u8C9E \u7D93\u7406 \u624B\u6A5F\uFF1A0920-734-198 s285906@sinyi.com.tw"))), __jsx(Content, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87
+    },
+    __self: this
+  }, __jsx(ConTitle, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 88
+    },
+    __self: this
+  }, "\u6A19\u552E\u6295\u6A19\u6587\u4EF6\u7B2C\u4E8C\u6B21\u4FEE\u6B63\uFF08\u6C11\u570B107\u5E7410\u670825\u65E5\uFF09"), __jsx(ConText, {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89
+    },
+    __self: this
+  }, "\u95DC\u65BC\u9F8D\u5DD6\u80A1\u4EFD\u6709\u9650\u516C\u53F8\u59D4\u8A17\u4FE1\u7FA9\u5168\u7403\u8CC7\u7522\u8FA6\u7406\u300C\u592A\u5E73\u6D0B\u5546\u696D\u5927\u6A13\u300D\uFF08\u7532\u6A19\uFF09\u3001\u300C\u53F0\u5317\u91D1\u878D\u4E2D\u5FC3\u5927\u6A13\u300D\uFF08\u4E59\u6A19\uFF09\u516C\u958B\u6A19\u552E\u6295\u6A19\u6587\u4EF6\u7B2C\u4E8C\u6B21\u4FEE\u6B63\u3002", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90
+    },
+    __self: this
+  }), "\u6295\u6A19\u6587\u4EF6\u6089\u4EE5\u672C\u4FEE\u8A02\u7248\u70BA\u6E96\uFF0C\u5F97\u6A19\u4EBA\u5C07\u4EE5\u4FEE\u6B63\u5F8C\u689D\u6587\u7C3D\u8A02\u4E0D\u52D5\u7522\u8CB7\u8CE3\u5951\u7D04\u3002", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91
+    },
+    __self: this
+  }), "\u5C0D\u65BC\u672C\u6B21\u4FEE\u6B63\uFF0C\u5982\u6709\u4EFB\u4F55\u7591\u554F\uFF0C\u8ACB\u4F86\u96FB\u6D3D\u8A62\u3002", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92
+    },
+    __self: this
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92
+    },
+    __self: this
+  }), "\u806F\u7D61\u4EBA\uFF1A", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93
+    },
+    __self: this
+  }), "\u5433\u6631\u8CE2 \u526F\u7406 \u624B\u6A5F\uFF1A0922-062-588 s286611@sinyi.com.tw", __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 94
+    },
+    __self: this
+  }), "\u9673\u9E97\u8C9E \u7D93\u7406 \u624B\u6A5F\uFF1A0920-734-198 s285906@sinyi.com.tw")))), __jsx(_components_fastButton__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100
+    },
+    __self: this
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Bid);
+
+/***/ })
+
+})
+//# sourceMappingURL=bid.js.c2580e533d7e46fe3961.hot-update.js.map

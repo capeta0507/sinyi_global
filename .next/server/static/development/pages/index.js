@@ -3810,268 +3810,6 @@ const StudyList = props => {
 
 /***/ }),
 
-/***/ "./components/theme/index.js":
-/*!***********************************!*\
-  !*** ./components/theme/index.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _themeCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./themeCard */ "./components/theme/themeCard.js");
-var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\theme\\index.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
- // import BigTitle from '../bigTitle'
-
-
-const MyJob = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  background: #fff;
-  padding-bottom: 60px;
-  @media (max-width: 768px){
-    margin-top: 30px;
-    padding-bottom: 0px;
-  }
-`;
-const ThemeContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  width: 80%;
-  margin: 0 auto;
-  margin-bottom: 80px;
-  @media (max-width: 768px){
-    width: 95%;
-  }
-`;
-const Content = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  display: flex;
-  justify-content: space-between;
-  padding-top: 30px;
-  flex-wrap: wrap;
-`;
-const BigTitle = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  text-align: center;
-  // padding: 60px 0;
-  padding: 60px 0 40px 0;
-  @media (max-width: 768px){
-    padding: 20px 0 40px 0;
-    padding-bottom: 20px;
-  }
-`;
-const Img = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.img`
-  width:112px;
-  @media (max-width: 768px){
-    width:112px;
-  }
-`;
-const Show = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
-  width: 82px;
-  text-align: center;
-  margin-bottom: 80px;
-  margin: 0 auto;
-  cursor: pointer;
-  & > img{
-    width: 100%;
-  }
-`;
-
-const BigJob = props => {
-  return __jsx(MyJob, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
-  }, __jsx(BigTitle, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  }, __jsx(Img, {
-    src: "/static/img/t1_news.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
-  })), __jsx(ThemeContainer, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
-  }, __jsx(Content, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 62
-    },
-    __self: undefined
-  }, __jsx(_themeCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "\u5C0F\u8CC7\u7368\u7ACB\u5E78\u798F\u9996\u9078",
-    list1: "\u5C0F\u8CC7\u7368\u7ACB\u5E78\u798F\u9996\u9078\u5C0F\u8CC7\u7368\u7ACB\u5E78\u798F\u9996\u9078",
-    list2: "\u5C0F\u8CC7\u7368\u7ACB\u5E78\u798F\u9996\u9078\u5C0F\u8CC7\u7368\u7ACB\u5E78\u798F",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 63
-    },
-    __self: undefined
-  }), __jsx(_themeCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "\u65B0\u624B\u7238\u5ABD\u6EFF\u6EFF\u611B",
-    list1: "\u65B0\u624B\u7238\u5ABD\u6EFF\u6EFF\u611B\u65B0\u624B\u7238\u5ABD\u6EFF\u6EFF\u611B",
-    list2: "\u65B0\u624B\u7238\u5ABD\u6EFF\u6EFF\u611B",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 64
-    },
-    __self: undefined
-  }), __jsx(_themeCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "\u9280\u9AEE\u6A02\u6D3B\u65E5\u5F0F\u60A0\u9592\u5B85",
-    list1: "\u9280\u9AEE\u6A02\u6D3B\u65E5\u5F0F\u60A0\u9592\u5B85",
-    list2: "\u9280\u9AEE\u6A02\u6D3B\u65E5\u5F0F\u60A0\u9592\u5B85",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 65
-    },
-    __self: undefined
-  }), __jsx(_themeCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    title: "\u9280\u9AEE\u6A02\u6D3B\u65E5\u5F0F",
-    list1: "\u65B0\u624B\u7238\u5ABD\u6EFF\u6EFF\u611B\u65B0\u624B\u7238\u5ABD\u6EFF\u6EFF\u611B",
-    list2: "\u9280\u9AEE\u6A02\u6D3B\u65E5\u5F0F\u60A0\u9592\u5B85",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 66
-    },
-    __self: undefined
-  }))), __jsx(Show, {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 69
-    },
-    __self: undefined
-  }, __jsx("img", {
-    src: "/static/img/show_all.png",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 70
-    },
-    __self: undefined
-  })));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (BigJob);
-
-/***/ }),
-
-/***/ "./components/theme/themeCard.js":
-/*!***************************************!*\
-  !*** ./components/theme/themeCard.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\components\\theme\\themeCard.js";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-const ThemeCard = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div`
-  width: 24%;
-  padding-left: 10px;
-  padding-right: 10px;
-  @media (max-width: 768px){
-    width: 50%;
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-`;
-
-const BigTitle = props => {
-  return __jsx(ThemeCard, {
-    className: "text-center",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "recruitCard",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 19
-    },
-    __self: undefined
-  }, __jsx("div", {
-    className: "recruitImg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 20
-    },
-    __self: undefined
-  }, __jsx("img", {
-    className: "newsPhoto",
-    src: "/static/img/bench-accounting-8D2k7a3wMKQ-unsplash.jpg",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 21
-    },
-    __self: undefined
-  }))), __jsx("div", {
-    className: "recruitTitle",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 24
-    },
-    __self: undefined
-  }, __jsx("h2", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 25
-    },
-    __self: undefined
-  }, props.title)), __jsx("div", {
-    className: "recList",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 27
-    },
-    __self: undefined
-  }, __jsx("h5", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 28
-    },
-    __self: undefined
-  }, props.list1), __jsx("h5", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 29
-    },
-    __self: undefined
-  }, props.list2), __jsx("h5", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 30
-    },
-    __self: undefined
-  }, props.list3)));
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (BigTitle);
-
-/***/ }),
-
 /***/ "./node_modules/@babel/runtime-corejs2/core-js/map.js":
 /*!************************************************************!*\
   !*** ./node_modules/@babel/runtime-corejs2/core-js/map.js ***!
@@ -4794,17 +4532,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_carousel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/carousel */ "./components/carousel.js");
 /* harmony import */ var _components_carouselMobilejs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/carouselMobilejs */ "./components/carouselMobilejs.js");
 /* harmony import */ var _components_nav_navBarHome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/nav/navBarHome */ "./components/nav/navBarHome.js");
-/* harmony import */ var _components_theme__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/theme */ "./components/theme/index.js");
-/* harmony import */ var _components_nav_navHomeMobile__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/nav/navHomeMobile */ "./components/nav/navHomeMobile.js");
-/* harmony import */ var _components_fastButton__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/fastButton */ "./components/fastButton.js");
-/* harmony import */ var _components_news_newsList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/news/newsList */ "./components/news/newsList.js");
-/* harmony import */ var _components_studyList__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/studyList */ "./components/studyList.js");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../style/index.css */ "./style/index.css");
-/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_12__);
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
-/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _components_nav_navHomeMobile__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/nav/navHomeMobile */ "./components/nav/navHomeMobile.js");
+/* harmony import */ var _components_fastButton__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/fastButton */ "./components/fastButton.js");
+/* harmony import */ var _components_news_newsList__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/news/newsList */ "./components/news/newsList.js");
+/* harmony import */ var _components_studyList__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/studyList */ "./components/studyList.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../style/index.css */ "./style/index.css");
+/* harmony import */ var _style_index_css__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_style_index_css__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ "./node_modules/bootstrap/dist/css/bootstrap.min.css");
+/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_12__);
 var _jsxFileName = "C:\\Users\\xj654\\Desktop\\\u5C08\u6848\\sinyi_global\\pages\\index.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
  // import Link from 'next/link'
@@ -4813,6 +4550,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+ // import Theme from '../components/theme'
 
 
 
@@ -4821,13 +4559,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-
-const HomeNav = styled_components__WEBPACK_IMPORTED_MODULE_11___default.a.div`
+const HomeNav = styled_components__WEBPACK_IMPORTED_MODULE_10___default.a.div`
   width: 100%;
   padding: 30px 0 0 0;
   background:	#263843;
 `;
-const Nav = styled_components__WEBPACK_IMPORTED_MODULE_11___default.a.div`
+const Nav = styled_components__WEBPACK_IMPORTED_MODULE_10___default.a.div`
   width: 85%;
   margin: 0 auto;
   justify-content: space-between;
@@ -4836,7 +4573,7 @@ const Nav = styled_components__WEBPACK_IMPORTED_MODULE_11___default.a.div`
     display: none;
   }
 `;
-const NavMb = styled_components__WEBPACK_IMPORTED_MODULE_11___default.a.div`
+const NavMb = styled_components__WEBPACK_IMPORTED_MODULE_10___default.a.div`
   width: 90%;
   margin: 0 auto;
   justify-content: space-between;
@@ -4845,7 +4582,7 @@ const NavMb = styled_components__WEBPACK_IMPORTED_MODULE_11___default.a.div`
     display: block;
   }
 `;
-const MbNavList = styled_components__WEBPACK_IMPORTED_MODULE_11___default.a.div`
+const MbNavList = styled_components__WEBPACK_IMPORTED_MODULE_10___default.a.div`
   width: 100%;
   justify-content: space-between;
   display: flex;
@@ -4871,7 +4608,7 @@ const Home = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["defaul
     lineNumber: 52
   },
   __self: undefined
-}), __jsx(_components_nav_navHomeMobile__WEBPACK_IMPORTED_MODULE_7__["default"], {
+}), __jsx(_components_nav_navHomeMobile__WEBPACK_IMPORTED_MODULE_6__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 53
@@ -5030,32 +4767,26 @@ const Home = () => __jsx(_components_layout__WEBPACK_IMPORTED_MODULE_2__["defaul
     lineNumber: 83
   },
   __self: undefined
-}))))), __jsx(_components_theme__WEBPACK_IMPORTED_MODULE_6__["default"], {
-  __source: {
-    fileName: _jsxFileName,
-    lineNumber: 88
-  },
-  __self: undefined
-}), __jsx("div", {
+}))))), __jsx("div", {
   className: "newsBg",
   __source: {
     fileName: _jsxFileName,
     lineNumber: 89
   },
   __self: undefined
-}, __jsx(_components_news_newsList__WEBPACK_IMPORTED_MODULE_9__["default"], {
+}, __jsx(_components_news_newsList__WEBPACK_IMPORTED_MODULE_8__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 90
   },
   __self: undefined
-})), __jsx(_components_studyList__WEBPACK_IMPORTED_MODULE_10__["default"], {
+})), __jsx(_components_studyList__WEBPACK_IMPORTED_MODULE_9__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 92
   },
   __self: undefined
-}), __jsx(_components_fastButton__WEBPACK_IMPORTED_MODULE_8__["default"], {
+}), __jsx(_components_fastButton__WEBPACK_IMPORTED_MODULE_7__["default"], {
   __source: {
     fileName: _jsxFileName,
     lineNumber: 93

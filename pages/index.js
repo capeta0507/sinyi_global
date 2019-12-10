@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import MyCarousel from '../components/carousel'
 import MobileCarousel from '../components/carouselMobilejs'
 import Navbar from '../components/nav/navBarHome'
-import Theme from '../components/theme'
+// import Theme from '../components/theme'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import FastButton from '../components/fastButton'
 import News from '../components/news/newsList'
@@ -85,7 +85,7 @@ const Home = () => (
         </MbNavList>
       </NavMb>
     </HomeNav>
-    <Theme />
+    {/* <Theme /> */}
     <div className='newsBg'>
       <News />
     </div>
