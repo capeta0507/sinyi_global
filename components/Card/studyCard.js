@@ -13,7 +13,7 @@ const Card = styled.div`
   cursor: pointer;
   transition: all .5s;
   background: #fff;
-  border-bottom: 1px solid grey;
+  // border-bottom: 1px solid grey;
   &:hover ${Introduction}{
     background: #E5F7FF;
   }

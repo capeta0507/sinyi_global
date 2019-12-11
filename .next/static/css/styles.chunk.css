@@ -1329,6 +1329,20 @@ img {
     color: #B4B4B4;
     /* margin-bottom: 20px; */
 }
+.reportBuy{
+    width: 25%;
+    margin: 0 auto;
+    font-size: 28px;
+    font-weight: bold;
+    color: #B4B4B4;
+    /* margin-bottom: 20px; */
+}
+.tagActive{
+    color: #000 !important;
+}
+.makeBorder{
+    margin-top: -40px;
+}
 .top{
     width:100%;
 }

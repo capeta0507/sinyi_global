@@ -20,10 +20,11 @@ const SearchDiv = styled.div`
 const HeadTag = styled.div`
 	display: flex;
 	margin: 0 auto;
-	width: 10%;
+  width: 10%;
+  font-weiht: bold;
 	text-align: center;
 	@media (max-width: 768px){
-    width: 50%;
+    width: 90%;
   }
 `
 const HeadList = styled.div`
@@ -141,13 +142,13 @@ const ItemList = () => {
 			<NavHomeMobile />
 			<SearchDiv>
 				<HeadTag>
-					<div className='itemBuy'>
+					<div className='itemBuy tagActive'>
 						買賣
-						<img src='/static/img/navborder.png' />
+						<img className='makeBorder' src='/static/img/navborder.png' />
 					</div>
 					<div className='itemBuy'>
 						租賃
-						<img src='/static/img/navborder.png' />
+						<img className='makeBorder' src='/static/img/navborder_grey.png' />
 					</div>
 				</HeadTag>
 				<HeadList search>
