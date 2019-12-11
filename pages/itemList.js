@@ -20,8 +20,8 @@ const SearchDiv = styled.div`
 const HeadTag = styled.div`
 	display: flex;
 	margin: 0 auto;
-  width: 10%;
-  font-weiht: bold;
+	width: 10%;
+	font-weight: bold;
 	text-align: center;
 	@media (max-width: 768px){
     width: 90%;
