@@ -114,6 +114,24 @@ input:focus::-webkit-input-placeholder {color: transparent;}
     padding-right: 0px !important;
     padding-left: 0px !important;
 }
+.absolute{
+    position: absolute;
+}
+.point1{
+    top: 14px;
+}
+.point2{
+    top: 463px;
+}
+.point3{
+    top: 856px;
+}
+.point4{
+    top: 1214px;
+}
+.point5{
+    top: 1572px;
+}
 .carousel_text{
     position: absolute;
     right: 15%;
@@ -1293,12 +1311,71 @@ img {
 .footerList >li > a:hover{
     color: #fff;
 }
+.footerDown{
+    display: none;
+}
+.footerActive{
+    display: block;
+}
+.footerDownList{
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    bottom: 48px;
+}
 .fastButton {
     position: fixed;
     right: 1.5%;
-    top: 50%;
+    top: 25%;
     z-index: 1;
     transition: all .5s;
+}
+.connection{
+    width: 48px;
+    height: 86px;
+    background: #263843;
+    flex-wrap: wrap;
+    color: #fff;
+    padding: 0 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.connectionText{
+    font-size: 16px;
+    width: 46px;
+}
+.connectionIcon{
+    width: 24px;
+    margin-left: 5px;
+}
+.getBlock{
+    display: block;
+}
+.getNone{
+    display: none;
+}
+.fastForm{
+    display: block;
+    width: 300px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    background: #fff;
+    position: fixed;
+    top: 25%;
+    right: 90px;
+}
+.footerOff{
+    background: linear-gradient(#00B1FF, #2B6ED2);
+    color: #fff;
+}
+.footerOn{
+    background: #fff;
+    color: #00B1FF;
+}
+.bdRight{
+    margin-left: 8px !important;
 }
 @media screen and (max-width: 1366px) and (max-height: 700px){
 }
@@ -1314,13 +1391,22 @@ img {
         transition: all .5s;
         display: block;
     }
+    .connection{
+        display: none;
+    }
 }
 .itemBuy{
     width: 40%;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 20px;
     color: #B4B4B4;
     /* margin-bottom: 20px; */
+}
+.itemBorder{
+    margin-top: -20px;
+}
+.itemBuyActive{
+    color: #fff !important;
 }
 .reportBuy{
     width: 25%;

@@ -158,7 +158,6 @@ class MyFooter extends Component {
                     <ul className="footerList showblock">
                       <li><a href='https://www.sinyi.com.tw/investors/investors-ch_mainpage' target="_blank">投資人專區</a></li>
                       <li><a href='https://www.sinyi.com.tw/investors/investors-en_mainpage-en' target="_blank">investor relations</a></li>
-                      <li><a href='https://www.sinyi.com.tw/aboutsinyi/aboutsinyi_stakeholder' target="_blank">利害關係人專區</a></li>
                     </ul>
                   ) : (
                     null
@@ -190,10 +189,16 @@ class MyFooter extends Component {
                 {
                   this.state.displayMenu3 ? (
                     <ul className="footerList showblock">
-                      <li><a href='https://csr.sinyi.com.tw/' target="_blank">企業社會責任</a></li>
-                      <li><a href='https://www.sinyicharity.org.tw/' target="_blank">信義公益基金會</a></li>
-                      <li><a href='https://www.sinyischool.org.tw/' target="_blank">信義學堂</a></li>
-                      <li><a href='https://www.taiwan4718.tw/' target="_blank">社區一家</a></li>
+                      <li><a href='https://csr.sinyi.com.tw/' target="_blank">信義房屋</a></li>
+                      <li><a href='https://living.sinyi.com.tw/' target="_blank">信義居家</a></li>
+                      <li><a href='https://www.sinyi-rema.com.tw/' target="_blank">信義代銷</a></li>
+                      <li><a href='https://www.xinyikf.com.tw/' target="_blank">信義開發</a></li>
+                      <li><a href='https://app.sinyi.com.tw/' target="_blank">信義鑑定</a></li>
+                      <li><a href='https://www.an-sin.com.tw/' target="_blank">安信建經</a></li>
+                      <li><a href='https://www.sinyijapan.com/tw/' target="_blank">東京信義</a></li>
+                      <li><a href='https://malaysia.sinyi.com.tw/' target="_blank">信義大馬</a></li>
+                      <li><a href='http://www.sinyi.com.cn/' target="_blank">中國信義</a></li>
+                      <li><a href='http://www.sinyizy.com/' target="_blank">信義置業</a></li>
                     </ul>
                   ) : (
                     null

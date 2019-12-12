@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
+import Select from 'react-select'
+
 
 // const Block = styled.div`
 //   display: none;
@@ -77,8 +79,6 @@ const BtnFooter = styled.div`
   position: fixed;
   bottom:0;
   z-index: 1;
-  background: linear-gradient(#00B1FF, #2B6ED2);
-  color: #fff;
   cursor: pointer;
 `
 const BtnBottomItem = styled.div`
@@ -96,7 +96,56 @@ const BtnBottomItem = styled.div`
     margin-right: 5px;
   }
 `
-
+const FoundList = styled.div`
+  font-size: 20px;
+  color: #969696;
+  border-bottom: 1px solid #E3E3E3;
+  text-align: center;
+  padding: 10px 0;
+`
+const PhoneCall = styled.div`
+  font-size: 27px;
+  color: #00B1FF;
+  padding: 10px 0;
+  border-bottom: 1px solid #E3E3E3;
+  & > a {
+    width: 100%;
+    color: #00B1FF;
+  }
+`
+const FastMessenger = styled.div`
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 50px;
+` 
+const IptName = styled.div`
+  width: 100%;
+  margin-top: 10px;
+  @media (max-width: 768px){
+    width: 100%;
+  }
+`
+const BusCheck = styled.div`
+  font-size: 12px;
+    margin-top: 5px;
+  & > a {
+    color: #00B1FF;
+  }
+`
+const SendButton = styled.div`
+  width: 120px;
+  padding: 8px;
+  background: #00B1FF;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+  cursor: pointer;
+`
 class MobileFooter extends Component {
   constructor(){
     super()
@@ -131,16 +180,66 @@ class MobileFooter extends Component {
             <h6>&copy;2019 信義房屋股份有限公司 版權所有</h6>
           </Footer>
         </BgIcon>
+        <div className='footerDownList footerDown'>
+          <FoundList>辦公</FoundList>
+          <FoundList>店面</FoundList>
+          <FoundList>廠房</FoundList>
+          <FoundList>土地</FoundList>
+          <FoundList>其它</FoundList>
+        </div>
+        <div className='footerDownList footerDown'>
+          <PhoneCall><a href='tel: 02 5468 2596'>02-5468-2596</a></PhoneCall>
+        </div>
+        <div className='footerDownList footerDown'>
+          <FastMessenger>
+            <IptName className=''>
+              <Select 
+                placeholder="買屋"
+                label='Single select'
+                theme={theme => ({
+                  ...theme,
+                  borderRadius: 5,
+                })}
+              />
+            </IptName>
+            <IptName className=''>
+              <input className='form-control' type='text' placeholder='姓名(必填)' />
+            </IptName>
+            <IptName className=''>
+              <input className='form-control' type='text' placeholder='聯絡電話(必填)' />
+            </IptName>
+            <IptName className=''>
+              <input className='form-control' type='text' placeholder='電子郵件(必填)' />
+            </IptName>
+            <IptName className=''>
+              <Select 
+                placeholder="縣市/行政區"
+                label='Single select'
+                theme={theme => ({
+                  ...theme,
+                  borderRadius: 5,
+                })}
+              />
+            </IptName>
+            <IptName className=''>
+              <input className='form-control' type='text' placeholder='路段(必填)' />
+            </IptName>
+            <BusCheck>
+              <input type="checkbox" /> 送出資料前，請點選同意本站<a href=''>隱私權政策</a>
+            </BusCheck>
+            <SendButton>送出</SendButton>
+          </FastMessenger>
+        </div>
         <BtnFooter>
-          <BtnBottomItem>
+          <BtnBottomItem className='footerOff'>
             <img src='/static/img/found.png' />
             查找物件
           </BtnBottomItem>
-          <BtnBottomItem>
+          <BtnBottomItem className='footerOff'>
           <img src='/static/img/phone.png' />
           撥打電話
           </BtnBottomItem>
-          <BtnBottomItem>
+          <BtnBottomItem className='footerOff'>
           <img src='/static/img/messenger.png' />
           快速留言
           </BtnBottomItem>

@@ -73,6 +73,12 @@ const List = styled.ul`
     width: ${props => props.two ? '50px' : '100px'};
   } */
 `
+const ItemBorder = styled.div`
+  width: 100px;
+  & > img {
+    width: 100%;
+  }
+`
 const ItemLi = styled.li`
   font-weight: 500;
   margin: 0 20px;
@@ -106,12 +112,15 @@ const NavBar = () => {
         <Content>
           <Logo>
             <a href='/'>
-              <Img src="static/img/logo.png" alt="" />
+              <Img src="/static/img/logo.png" alt="" />
             </a>
           </Logo>
           <NavList>
             <List>
               <ItemLi>主題特輯
+                {/* <ItemBorder>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder> */}
                 <ItemList>
                   <ListLi>主題 1</ListLi>
                   <ListLi>主題 2</ListLi>

@@ -34,7 +34,7 @@ const ItemList = styled.ul`
   color: #000;
   font-size: 15px;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 35px;
   display: none;
 `
 const ListLi = styled.div`
@@ -73,6 +73,16 @@ const List = styled.ul`
     width: ${props => props.two ? '50px' : '100px'};
   } */
 `
+const ItemBorder = styled.div`
+  width: 66px;
+  height: 7px;
+  display: none;
+  margin-top: -28px;
+  margin-left: ${props => props.short ? '-16px' : '0'};
+  & > img {
+    width: 100%;
+  }
+`
 const ItemLi = styled.li`
   font-weight: 500;
   margin: 0 20px;
@@ -87,6 +97,9 @@ const ItemLi = styled.li`
     font-size: 16px;
   }
   &:hover ${ItemList}{
+    display: block;
+  }
+  &:hover ${ItemBorder}{
     display: block;
   }
 `
@@ -113,6 +126,9 @@ const NavBar = () => {
             <List>
               <ItemLi>
                 主題特輯
+                <ItemBorder>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
                 <ItemList>
                   <ListLi>主題 1</ListLi>
                   <ListLi>主題 2</ListLi>
@@ -120,9 +136,20 @@ const NavBar = () => {
                   <ListLi bottom>主題 4</ListLi>
                 </ItemList>
               </ItemLi>
-              <ItemLi two>買賣</ItemLi>
-              <ItemLi two>租賃</ItemLi>
+              <ItemLi two>買賣
+                <ItemBorder short>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
+              </ItemLi>
+              <ItemLi two>租賃
+                <ItemBorder short>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
+              </ItemLi>
               <ItemLi two>標售
+                <ItemBorder short>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
                 <ItemList>
                   <ListLi>標案 1</ListLi>
                   <ListLi>標案 2</ListLi>
@@ -130,6 +157,9 @@ const NavBar = () => {
                 </ItemList>
               </ItemLi>
               <ItemLi>新聞與研究
+                <ItemBorder className='bdRight'>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
                 <ItemList>
                   <ListLi>焦點新聞</ListLi>
                   <ListLi>月報</ListLi>
@@ -138,13 +168,23 @@ const NavBar = () => {
                 </ItemList>
               </ItemLi>
               <ItemLi>團隊介紹
+                <ItemBorder>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
                 <ItemList>
                   <ListLi>公司簡介</ListLi>
                   <ListLi>加入我們</ListLi>
                   <ListLi bottom>服務據點</ListLi>
                 </ItemList>
               </ItemLi>
-              <ItemLi><a href='' className='linkText' >關於全球</a></ItemLi>
+              <ItemLi>
+                <a href='' className='linkText' >
+                  關於全球
+                  <ItemBorder>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
+              </ItemLi>
               <ItemLi><a href='https://www.facebook.com/sinyiglobal' target="_blank"><Icon src="static/img/icon_fb_w.png" alt="" /></a></ItemLi>
             </List>
           </NavList>

@@ -36,7 +36,22 @@ const HeadList = styled.div`
 	text-align: center;
 	margin-top: 10px;
 	@media (max-width: 768px){
-		width: 90%;
+    width: 90%;
+    display: none;
+		justify-content: space-between;
+  }
+`
+const HeadListMb = styled.div`
+  display: none;
+	margin: 0 auto;
+	width: 60%;
+	border-radius: 5px;
+	border: ${props => props.search ? '2px solid #00B1FF' : ''};
+	text-align: center;
+	margin-top: 10px;
+	@media (max-width: 768px){
+    width: 90%;
+    display: flex;
 		justify-content: space-between;
   }
 `
@@ -52,7 +67,7 @@ const SearchButton = styled.div`
 	text-align: center;
 	color: #fff;
 	font-size: 16px;
-	padding: 17px 0 0 0;
+	padding: 9px 0 0 0;
 	@media (max-width: 768px){
     display: none;
   }
@@ -81,7 +96,6 @@ const Make = styled.div`
 const MakeMb = styled.div`
   text-align: left;
   width: ${props => props.long ? '100%' : '48%'};
-	/* padding-right: 15px; */
 	display: none;
   @media (max-width: 768px){
 		display: block;
@@ -142,13 +156,13 @@ const ItemList = () => {
 			<NavHomeMobile />
 			<SearchDiv>
 				<HeadTag>
-					<div className='itemBuy tagActive'>
+					<div className='itemBuy itemBuyActive'>
 						買賣
-						<img className='makeBorder' src='/static/img/navborder.png' />
+						<img className='itemBorder' src='/static/img/navborder.png' />
 					</div>
 					<div className='itemBuy'>
 						租賃
-						<img className='makeBorder' src='/static/img/navborder_grey.png' />
+						<img className='itemBorder' src='/static/img/navborder_grey.png' />
 					</div>
 				</HeadTag>
 				<HeadList search>
@@ -157,7 +171,7 @@ const ItemList = () => {
 					</IptName>
 					<SearchButton>搜尋</SearchButton>
 				</HeadList>
-				<HeadList>
+				<HeadListMb>
 					<MakeMb long>
 						<Select 
 							placeholder="種類"
@@ -168,8 +182,8 @@ const ItemList = () => {
 							})}
 						/>
 					</MakeMb>
-				</HeadList>
-				<HeadList>
+				</HeadListMb>
+				<HeadListMb>
 					<MakeMb>
 						<Select 
 							placeholder="縣市"
@@ -190,8 +204,8 @@ const ItemList = () => {
 							})}
 						/>
 					</MakeMb>
-				</HeadList>
-				<HeadList>
+				</HeadListMb>
+				<HeadListMb>
 					<MakeMb>
 						<Select 
 							placeholder="租金"
@@ -212,10 +226,10 @@ const ItemList = () => {
 							})}
 						/>
 					</MakeMb>
-				</HeadList>
-				<HeadList>
+				</HeadListMb>
+				<HeadListMb>
 					<SearchButtonMb>搜尋</SearchButtonMb>
-				</HeadList>
+				</HeadListMb>
 				<HeadList>
 					<Make className=''>
 						<Select 
