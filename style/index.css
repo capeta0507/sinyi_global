@@ -159,6 +159,9 @@ input:focus::-webkit-input-placeholder {color: transparent;}
     text-align: center;
 }
 .textCenter{
+    font-size: 30px;
+}
+.textCenter{
     text-align: center;
 }
 .cauHeight{
@@ -1098,12 +1101,27 @@ img {
     margin: 0 auto;
     text-align: center;
 }
-.recruitImg > img {
+.memberCard {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 6px;
+    transition: all .5s;
+}
+.memberImg > img {
     background: red;
     width: 220px;
     height: 220px;
     border-radius: 50%;
     object-fit: cover;
+}
+.memberImg {
+    margin: 0 auto;
+    text-align: center;
+}
+.serviceIcon{
+    width: 30px;
+    margin-right: 10px;
 }
 .recruitTitle {
     margin: 10px 0 20px 0 ;
@@ -1126,6 +1144,14 @@ img {
         width: 160px;
         height: 160px;
     }
+    .memberCard {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .memberImg > img {
+        width: 140px;
+        height: 140px;
+    }
     .recruitTitle {
         margin: 10px 0;
     }
@@ -1145,8 +1171,31 @@ img {
 .recList{
     color: #787878;
 }
+.memberList{
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+    color: #6D6D6D;
+    font-size: 12px;
+}
 .recList > h5{
     font-weight: 400;
+}
+.memberList > h5{
+    display: flex;
+    font-size: 14px;
+    color: #878787;
+    font-weight: 400;
+}
+.memberIcon{
+    width: 15px;
+    margin-right: 10px;
+}
+.placeIcon{
+    width: 18px;
+    height: 18px;
+    margin-top: 6px;
+    margin-right: 6px;
 }
 .ptdolt{
     width: 5px;

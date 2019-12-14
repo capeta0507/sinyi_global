@@ -22,7 +22,7 @@ const SecondContent = styled.div`
   width: 80%;
   margin: 0 auto;
   display: flex;
-  margin-top: 80px
+  margin-top: 80px;
   justify-content: space-between;
   @media (max-width: 768px){
     width: 90%;

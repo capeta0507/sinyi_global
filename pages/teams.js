@@ -6,6 +6,7 @@ import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import FastButton from '../components/fastButton'
 import Manager from '../components/Team/Gmanager'
+import BusOne from '../components/Team/businessOne'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -75,92 +76,6 @@ const Container = styled.div`
   padding-top: 50px;
   padding-bottom: 100px;
 `
-const TeamBlock = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  @media (max-width: 768px){
-    width: 100%;
-  }
-`
-const FirstContent = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  @media (max-width: 768px){
-    width: 90%;
-    display: block;
-  }
-`
-const SecondContent = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  margin-top: 80px
-  justify-content: space-between;
-  @media (max-width: 768px){
-    width: 90%;
-    display: block;
-  }
-`
-const LeftCon = styled.div`
-  width: 40%;
-  & > img {
-    width: 80%;
-  }
-  @media (max-width: 768px){
-    width: 100%;
-    & > img {
-      width: 100%;
-    }
-  }
-`
-const RightCon = styled.div`
-  width: 40%;
-  @media (max-width: 768px){
-    width: 100%
-  }
-`
-const MainContent = styled.div`
-  margin: 50px 0 50px 0;
-  & > h3 {
-    color: #00B1FF;
-    font-size: 26px;
-  }
-  & > h1 {
-    color: #000;
-    font-size: 38px;
-    font-weight: 500;
-  }
-  @media (max-width: 768px){
-    margin: 20px 0 0 50px;
-    & > h3 {
-      font-size: 21px;
-    }
-    & > h1 {
-      font-size: 30px;
-    }
-  }
-`
-const PeopleTitle = styled.div`
-  font-size: 25px;
-  width: 100%;
-  border-bottom: 3px solid #00B1FF;
-  padding-bottom: 8px;
-  font-weight: bold;
-  margin-bottom: 8px;
-`
-const PeopleContwnt = styled.div`
-  width: 310px;
-  font-size: 18px;
-  color: #000;
-  & > p {
-    display:flex;
-  }
-  @media (max-width: 768px){
-    width: 100%;
-  }
-`
 
 
 const Team = () => {
@@ -202,7 +117,8 @@ const Team = () => {
         </NavList>
       </NavTeam>
       <Container>
-        <Manager />
+        {/* <Manager /> */}
+        <BusOne />
       </Container>
       <FastButton />
     </Layout>
