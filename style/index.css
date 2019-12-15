@@ -1191,6 +1191,12 @@ img {
     width: 15px;
     margin-right: 10px;
 }
+.busIcon{
+    width: 16px;
+    height: 16px;
+    margin-top: 8px;
+    margin-right: 10px;
+}
 .placeIcon{
     width: 18px;
     height: 18px;
@@ -1477,6 +1483,10 @@ img {
     }
     .connection{
         display: none;
+    }
+    .serviceTitle{
+        margin-top: 80px;
+        font-size: 30px;
     }
 }
 .itemBuy{

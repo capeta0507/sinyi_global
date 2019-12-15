@@ -31,15 +31,29 @@ const SecondContent = styled.div`
 `
 const LeftCon = styled.div`
   width: 40%;
-  & > img {
-    width: 80%;
-  }
   @media (max-width: 768px){
     width: 100%;
     & > img {
       width: 100%;
     }
   }
+`
+const Photo = styled.div`
+  width: 100%;
+  & > img {
+    width: 80%;
+  }
+  @media (max-width: 768px){
+    & > img {
+      width: 100%;
+    }
+  }
+`
+const SpName = styled.div`
+  width: 100%;
+  color: #969696;
+  font-size: 16px;
+  text-align: right;
 `
 const RightCon = styled.div`
   width: 40%;
@@ -98,7 +112,10 @@ const Manager = () => {
       </MainContent>
       <FirstContent>
         <LeftCon>
-          <img src='/static/img/about/james_ko.png' />
+          <Photo>
+            <img src='/static/img/about/james_ko.png' />
+          </Photo>
+          <SpName>柯宏安 James Ko</SpName>
         </LeftCon>
         <RightCon>
           <MainContent className='mbnone'>

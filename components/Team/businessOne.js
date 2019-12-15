@@ -138,7 +138,7 @@ const Manager = () => {
           <img src='/static/img/about/101.png' />
         </LeftCon>
         <RightCon>
-          <MapContent className='mbnone'>
+          <MapContent>
             <img src='/static/img/about/map.png' />
           </MapContent>
         </RightCon>

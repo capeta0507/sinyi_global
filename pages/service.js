@@ -50,7 +50,7 @@ const PeopleTitle = styled.div`
   margin-bottom: 8px;
 `
 const PeopleContent = styled.div`
-  width: 310px;
+  width: 300px;
   font-size: 18px;
   color: #000;
   & > p {
@@ -62,11 +62,15 @@ const PeopleContent = styled.div`
   }
 `
 const Content = styled.div`
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   margin-top: 30px;
-  justify-content: ${props => props.second ? 'flex-start' : 'space-between'};
+  justify-content: ${props => props.second ? 'flex-start' : 'flex-start'};
+  @media (max-width: 768px){
+    width: 90%;
+    display: block;
+  }
 `
 const JustTitle = styled.div`
   font-size: 18px;
@@ -87,7 +91,14 @@ const JustContent = styled.div`
     color: #00B1FF;
   }
   @media (max-width: 768px){
-    width: 100%;
+    width: 40%;
+    text-align: center;
+    margin: 0 auto;
+    & > p {
+      display:flex;
+      color: #00B1FF;
+      text-align: center;
+    }
   }
 `
 const MapContainer = styled.div`
@@ -99,6 +110,9 @@ const MapContent = styled.div`
   width: 60%;
   margin: 0 auto;
   & > img {
+    width: 100%;
+  }
+  @media (max-width: 768px){
     width: 100%;
   }
 `

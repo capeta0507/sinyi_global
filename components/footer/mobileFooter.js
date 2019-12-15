@@ -52,6 +52,7 @@ const FooterTag = styled.div`
   text-align: center;
   width: ${props => props.long ? '35%' : '30%'};
   margin: 10px 0;
+  font-size: 15px;
 `
 
 const FooterTitle = styled.div`
@@ -82,7 +83,7 @@ const BtnFooter = styled.div`
   cursor: pointer;
 `
 const BtnBottomItem = styled.div`
-  width: 35%
+  width: 35%;
   font-size: 18px;
   text-align: center;
   border-left: 1px solid #fff;

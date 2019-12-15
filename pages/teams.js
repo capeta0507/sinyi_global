@@ -7,6 +7,7 @@ import NavHomeMobile from '../components/nav/navHomeMobile'
 import FastButton from '../components/fastButton'
 import Manager from '../components/Team/Gmanager'
 import BusOne from '../components/Team/businessOne'
+import Businesser from '../components/Team/business'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -117,8 +118,11 @@ const Team = () => {
         </NavList>
       </NavTeam>
       <Container>
+        {/* 總經理 */}
         {/* <Manager /> */}
+        {/* 部門 */}
         <BusOne />
+        {/* <Businesser /> */}
       </Container>
       <FastButton />
     </Layout>
