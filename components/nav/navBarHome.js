@@ -136,15 +136,19 @@ const NavBar = () => {
                   <ListLi bottom>主題 4</ListLi>
                 </ItemList>
               </ItemLi>
-              <ItemLi two>買賣
-                <ItemBorder short>
-                  <img src='/static/img/hover.png' />
-                </ItemBorder>
+              <ItemLi two>
+                <a className='mylink' href='/sellList'>買賣
+                  <ItemBorder short>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
               </ItemLi>
-              <ItemLi two>租賃
-                <ItemBorder short>
-                  <img src='/static/img/hover.png' />
-                </ItemBorder>
+              <ItemLi two>
+                <a className='mylink' href='/itemList'>租賃
+                  <ItemBorder short>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
               </ItemLi>
               <ItemLi two>標售
                 <ItemBorder short>
@@ -161,24 +165,26 @@ const NavBar = () => {
                   <img src='/static/img/hover.png' />
                 </ItemBorder>
                 <ItemList>
-                  <ListLi>焦點新聞</ListLi>
-                  <ListLi>月報</ListLi>
+                  <ListLi><a className='' href='/newsList'>焦點新聞</a></ListLi>
+                  <ListLi><a className='' href='/report'>月報</a></ListLi>
                   <ListLi>季報</ListLi>
                   <ListLi bottom>電子報</ListLi>
                 </ItemList>
               </ItemLi>
-              <ItemLi>團隊介紹
-                <ItemBorder>
-                  <img src='/static/img/hover.png' />
-                </ItemBorder>
+              <ItemLi>
+                <a className='mylink' href='/teams'>團隊介紹
+                  <ItemBorder>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
                 <ItemList>
                   <ListLi>公司簡介</ListLi>
                   <ListLi>加入我們</ListLi>
-                  <ListLi bottom>服務據點</ListLi>
+                  <ListLi bottom><a className='mylink' href='/service'>服務據點</a></ListLi>
                 </ItemList>
               </ItemLi>
               <ItemLi>
-                <a href='' className='linkText' >
+                <a href='/about' className='linkText' >
                   關於全球
                   <ItemBorder>
                     <img src='/static/img/hover.png' />

@@ -55,6 +55,15 @@ const NavList = styled.div`
   width: 60%;
   margin: 0 auto;
   display: flex;
+  @media (max-width: 1560px){
+    width: 70%;
+  }
+  @media (max-width: 1366px){
+    width: 73%;
+  }
+  @media (max-width: 1280px){
+    width: 80%;
+  }
 `
 const NavItem = styled.div`
   display: flex;

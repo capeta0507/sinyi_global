@@ -150,10 +150,45 @@ const SendButton = styled.div`
 class MobileFooter extends Component {
   constructor(){
     super()
-    
+    this.state = {
+      displayMenu1: false,
+      displayMenu2: false,
+      displayMenu3: false
+    }
+  }
+
+  showDropdownMenu1 = (event) => {
+    event.preventDefault();
+    this.setState({ 
+      displayMenu1: !this.state.displayMenu1,
+      displayMenu2: false,
+      displayMenu3: false
+     });
+  }
+  showDropdownMenu2 = (event) => {
+    event.preventDefault();
+    this.setState({ 
+      displayMenu1: false,
+      displayMenu2: !this.state.displayMenu2,
+      displayMenu3: false
+     });
+  }
+  showDropdownMenu3 = (event) => {
+    event.preventDefault();
+    this.setState({ 
+      displayMenu1: false,
+      displayMenu2: false,
+      displayMenu3: !this.state.displayMenu3
+     });
   }
 
   render(){
+    const coll01 = this.state.displayMenu1 ? 'footerOn' : 'footerOff' ;
+    const coll02 = this.state.displayMenu2 ? 'footerOn' : 'footerOff' ;
+    const coll03 = this.state.displayMenu3 ? 'footerOn' : 'footerOff' ;
+    const icon01 = this.state.displayMenu1 ? 'searchActive' : 'found' ;
+    const icon02 = this.state.displayMenu2 ? 'telephoneActive' : 'phone' ;
+    const icon03 = this.state.displayMenu3 ? 'chatActive' : 'messenger' ;
     return(
       <div className='mbFooter'>
         <BgIconList>
@@ -181,67 +216,85 @@ class MobileFooter extends Component {
             <h6>&copy;2019 信義房屋股份有限公司 版權所有</h6>
           </Footer>
         </BgIcon>
-        <div className='footerDownList footerDown'>
-          <FoundList>辦公</FoundList>
-          <FoundList>店面</FoundList>
-          <FoundList>廠房</FoundList>
-          <FoundList>土地</FoundList>
-          <FoundList>其它</FoundList>
-        </div>
-        <div className='footerDownList footerDown'>
-          <PhoneCall><a href='tel: 02 5468 2596'>02-5468-2596</a></PhoneCall>
-        </div>
-        <div className='footerDownList footerDown'>
-          <FastMessenger>
-            <IptName className=''>
-              <Select 
-                placeholder="買屋"
-                label='Single select'
-                theme={theme => ({
-                  ...theme,
-                  borderRadius: 5,
-                })}
-              />
-            </IptName>
-            <IptName className=''>
-              <input className='form-control' type='text' placeholder='姓名(必填)' />
-            </IptName>
-            <IptName className=''>
-              <input className='form-control' type='text' placeholder='聯絡電話(必填)' />
-            </IptName>
-            <IptName className=''>
-              <input className='form-control' type='text' placeholder='電子郵件(必填)' />
-            </IptName>
-            <IptName className=''>
-              <Select 
-                placeholder="縣市/行政區"
-                label='Single select'
-                theme={theme => ({
-                  ...theme,
-                  borderRadius: 5,
-                })}
-              />
-            </IptName>
-            <IptName className=''>
-              <input className='form-control' type='text' placeholder='路段(必填)' />
-            </IptName>
-            <BusCheck>
-              <input type="checkbox" /> 送出資料前，請點選同意本站<a href=''>隱私權政策</a>
-            </BusCheck>
-            <SendButton>送出</SendButton>
-          </FastMessenger>
-        </div>
+        {
+          this.state.displayMenu1 ? (
+            <div className='footerDownList'>
+              <FoundList>辦公</FoundList>
+              <FoundList>店面</FoundList>
+              <FoundList>廠房</FoundList>
+              <FoundList>土地</FoundList>
+              <FoundList>其它</FoundList>
+            </div>
+          ) : (
+            null
+          )
+        }
+        {
+          this.state.displayMenu2 ? (
+            <div className='footerDownList'>
+              <PhoneCall><a href='tel: 02 5468 2596'>02-5468-2596</a></PhoneCall>
+            </div>
+          ) : (
+            null
+          )
+        }
+        {
+          this.state.displayMenu3 ? (
+            <div className='footerDownList'>
+              <FastMessenger>
+                <IptName className=''>
+                  <Select 
+                    placeholder="買屋"
+                    label='Single select'
+                    theme={theme => ({
+                      ...theme,
+                      borderRadius: 5,
+                    })}
+                  />
+                </IptName>
+                <IptName className=''>
+                  <input className='form-control' type='text' placeholder='姓名(必填)' />
+                </IptName>
+                <IptName className=''>
+                  <input className='form-control' type='text' placeholder='聯絡電話(必填)' />
+                </IptName>
+                <IptName className=''>
+                  <input className='form-control' type='text' placeholder='電子郵件(必填)' />
+                </IptName>
+                <IptName className=''>
+                  <Select 
+                    placeholder="縣市/行政區"
+                    label='Single select'
+                    theme={theme => ({
+                      ...theme,
+                      borderRadius: 5,
+                    })}
+                  />
+                </IptName>
+                <IptName className=''>
+                  <input className='form-control' type='text' placeholder='路段(必填)' />
+                </IptName>
+                <BusCheck>
+                  <input type="checkbox" /> 送出資料前，請點選同意本站<a href=''>隱私權政策</a>
+                </BusCheck>
+                <SendButton>送出</SendButton>
+              </FastMessenger>
+            </div>
+          ) : (
+            null
+          )
+        }
         <BtnFooter>
-          <BtnBottomItem className='footerOff'>
-            <img src='/static/img/found.png' />
+          <BtnBottomItem className={`${coll01}`} onClick={this.showDropdownMenu1}>
+            <img src={`/static/img/${icon01}.png`} />
             查找物件
           </BtnBottomItem>
-          <BtnBottomItem className='footerOff'>
-          <img src='/static/img/phone.png' />
+          <BtnBottomItem className={`${coll02}`} onClick={this.showDropdownMenu2}>
+          <img src={`/static/img/${icon02}.png`} />
           撥打電話
           </BtnBottomItem>
-          <BtnBottomItem className='footerOff'>
-          <img src='/static/img/messenger.png' />
+          <BtnBottomItem className={`${coll03}`} onClick={this.showDropdownMenu3}>
+          <img src={`/static/img/${icon03}.png`} />
           快速留言
           </BtnBottomItem>
         </BtnFooter>

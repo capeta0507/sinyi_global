@@ -128,9 +128,13 @@ const NavBar = () => {
                   <ListLi bottom>主題 4</ListLi>
                 </ItemList>
               </ItemLi>
-              <ItemLi two>買賣</ItemLi>
-              <ItemLi two>租賃</ItemLi>
-              <ItemLi two>標售
+              <ItemLi two>
+                <a className='mylink' href='/sellList'>買賣</a>
+              </ItemLi>
+              <ItemLi two>
+                <a className='mylink' href='/itemList'>租賃</a>
+              </ItemLi>
+              <ItemLi two><a className='mylink' href='/bid'>標售</a>
               <ItemList>
                 <ListLi>標案 1</ListLi>
                 <ListLi>標案 2</ListLi>
@@ -139,14 +143,17 @@ const NavBar = () => {
               </ItemLi>
               <ItemLi>新聞與研究
                 <ItemList>
-                  <ListLi>焦點新聞</ListLi>
-                  <ListLi>月報</ListLi>
+                  <ListLi><a className='' href='/newsList'>焦點新聞</a></ListLi>
+                  <ListLi><a className='' href='/report'></a>月報</ListLi>
                   <ListLi>季報</ListLi>
                   <ListLi bottom>電子報</ListLi>
                 </ItemList>
               </ItemLi>
-              <ItemLi>團隊介紹</ItemLi>
-              <ItemLi>關於全球
+              <ItemLi>
+                <a className='mylink' href='/teams'>團隊介紹</a>
+              </ItemLi>
+              <ItemLi>
+                <a className='mylink' href='/about'>關於全球</a>
                 <ItemList>
                   <ListLi>公司簡介</ListLi>
                   <ListLi>加入我們</ListLi>

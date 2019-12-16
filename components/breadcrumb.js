@@ -13,7 +13,7 @@ const MyBread = styled.div`
 const Bread = (props) => {
   return(
     <MyBread>
-      <a href=''>首頁</a> > <a href=''>最新消息</a>
+      <a href=''>首頁</a> > <a href=''>{props.second}</a>
     </MyBread>
   )
 }

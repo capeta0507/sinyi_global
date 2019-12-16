@@ -5,7 +5,6 @@ import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import ItemCard from '../components/Card/itemCard'
-import Breadcrumb from '../components/breadcrumb'
 import FastButton from '../components/fastButton3'
 import Select from 'react-select'
 import '../style/index.css'
@@ -13,8 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SearchDiv = styled.div`
 	background: #566A77;
-  width: 100%;
-  height: 400px;
+	width: 100%;
 	padding: 150px 0 50px 0;
 	@media (max-width: 768px){
 		padding: 80px 0 10px 0;
@@ -40,10 +38,7 @@ const HeadList = styled.div`
 	border-radius: 5px;
 	border: ${props => props.search ? '2px solid #00B1FF' : ''};
 	text-align: center;
-  margin-top: 10px;
-  @media (max-width: 1440px){
-    width: 80%;
-  }
+	margin-top: 10px;
 	@media (max-width: 768px){
     width: 90%;
     display: none;
@@ -57,10 +52,7 @@ const HeadListMb = styled.div`
 	border-radius: 5px;
 	border: ${props => props.search ? '2px solid #00B1FF' : ''};
 	text-align: center;
-  margin-top: 10px;
-  @media (max-width: 1440px){
-    width: 80%;
-  }
+	margin-top: 10px;
 	@media (max-width: 768px){
     width: 90%;
     display: flex;
@@ -156,67 +148,6 @@ const PageImg = styled.img`
     margin-left: ${props => props.next ? '5px' : '8px'};
   }
 `
-const MakeHead = styled.div`
-  width: 100%;
-  // padding-top: 50px;
-  display: flex;
-  justify-content: space-between;
-`
-const Sort = styled.div`
-  width: 15%;
-  padding-top: 20px;
-  @media (max-width: 768px){
-    width: 50%;
-  }
-`
-const DrowDown = styled.div`
-  width: 100%;
-  border: 1px solid #fff;
-  // background: #fff;
-  padding: 15px 10px;
-  border-radius: 5px;
-  color: #fff;
-  cursor: pointer;
-  background: url(/static/img/select_down.png) no-repeat 94% 21px;
-`
-const PlaceOption = styled.div`
-  background: #fff;
-  width: 420px;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-`
-const Check = styled.div`
-  width: 25%;
-  display: flex;
-  & > input{
-    margin-top: 6px;
-    margin-right: 5px;
-  }
-`
-const DrowOption = styled.div`
-  background: #fff;
-  width: 100%;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-`
-const ForSel = styled.div`
-  width: 100%;
-  padding: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-`
-const Back = styled.div`
-  width: 100%;
-  padding: 5px 20px;
-  color: #00B1FF;
-  cursor: pointer;
-`
-const SalSelect = styled.div`
-  width: 40%;
-`
-const SalSpan = styled.div`
-  width: 5%;
-  margin-top: 8px;
-`
 
 const ItemList = () => {
 	return (
@@ -230,18 +161,17 @@ const ItemList = () => {
 			<SearchDiv>
 				<HeadTag>
           <a href=''>
-            <div className='itemBuy'>
-              買賣
-              <img className='itemBorder' src='/static/img/navborder_grey.png' />
-            </div>
-          </a>
-          <a href=''>
             <div className='itemBuy itemBuyActive'>
-              租賃
+              買賣
               <img className='itemBorder' src='/static/img/navborder.png' />
             </div>
           </a>
-
+          <a href=''>
+            <div className='itemBuy'>
+              租賃
+              <img className='itemBorder' src='/static/img/navborder_grey.png' />
+            </div>
+          </a>
 				</HeadTag>
 				<HeadList search>
 					<IptName className=''>
@@ -285,11 +215,18 @@ const ItemList = () => {
 				</HeadListMb>
 				<HeadListMb>
 					<MakeMb>
-						<DrowDown>租金</DrowDown>
+						<Select 
+							placeholder="價格"
+							label='Single select'
+							theme={theme => ({
+								...theme,
+								borderRadius: 5,
+							})}
+						/>
 					</MakeMb>
 					<MakeMb>
 						<Select 
-							placeholder="出租坪數"
+							placeholder="坪數"
 							label='Single select'
 							theme={theme => ({
 								...theme,
@@ -331,128 +268,53 @@ const ItemList = () => {
 						/>
 					</Make>
 					<Make className=''>
-            <DrowDown>行政區</DrowDown>
-            {/* <PlaceOption>
-              <Back>
-                &lt; &nbsp;&nbsp;全區
-              </Back>
-              <ForSel>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-              </ForSel>
-            </PlaceOption> */}
+						<Select 
+							placeholder="行政區"
+							label='Single select'
+							theme={theme => ({
+								...theme,
+								borderRadius: 5,
+								colors: {
+									...theme.colors,
+									primary: '#01AB59',
+								},
+							})}
+						/>
 					</Make>
 					<Make long className=''>
-            <DrowDown>租金</DrowDown>
-            {/* <DrowOption>
-              <ForSel>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                  萬-
-                </SalSpan>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                  萬
-                </SalSpan>
-              </ForSel>
-            </DrowOption> */}
+						<Select 
+							placeholder="租金"
+							label='Single select'
+							theme={theme => ({
+								...theme,
+								borderRadius: 5,
+								colors: {
+									...theme.colors,
+									primary: '#01AB59',
+								},
+							})}
+						/>
 					</Make>
 					<Make className='pdRight'>
-            <DrowDown>出租坪數</DrowDown>
-            {/* <PlaceOption>
-              <ForSel>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                  坪-
-                </SalSpan>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                坪
-                </SalSpan>
-              </ForSel>
-            </PlaceOption> */}
+						<Select 
+							placeholder="出租坪數"
+							label='Single select'
+							theme={theme => ({
+								...theme,
+								borderRadius: 5,
+								colors: {
+									...theme.colors,
+									primary: '#01AB59',
+								},
+							})}
+						/>
 					</Make>
 				</HeadList>
 			</SearchDiv>
 			<Container>
 				<Content>
-          <MakeHead>
-            <Breadcrumb second='租賃' />
-            <Sort>
-              <Select 
-                placeholder="預設排序"
-                label='Single select'
-                theme={theme => ({
-                  ...theme,
-                  borderRadius: 5,
-                })}
-              />
-            </Sort>
-          </MakeHead>
 					<div className='row'>
 						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-            <ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-            <ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-            <ItemCard />
 						<ItemCard />
 						<ItemCard />
 						<ItemCard />

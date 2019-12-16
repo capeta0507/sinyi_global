@@ -16,6 +16,9 @@ const FooterContainer = styled.div`
 `
 const FooterList = styled.div`
   width: 12%;
+  @media (max-width: 1366px){
+    width: 13%;
+  }
 `
 
 const BgIcon = styled.div`

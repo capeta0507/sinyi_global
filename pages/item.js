@@ -6,7 +6,7 @@ import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import { Carousel } from 'react-bootstrap'
 import NewItem from '../components/Card/newItemCard'
-import FastButton from '../components/fastButton'
+import FastButton from '../components/fastButton2'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -110,11 +110,13 @@ const ItemContent = styled.div`
 `
 const Introduction = styled.div`
   width: 100%;
+  margin-top: 24px;
 `
 const IntroTitle = styled.div`
   /* width: 100%; */
   color: #00B1FF;
   font-size: 20px;
+  font-weight: bold;
 `
 const IndList = styled.div`
   border-top: 1px solid #F0F0F0;
@@ -225,6 +227,7 @@ const Join = styled.div`
   color: #00B1FF;
   font-size: 23px;
   cursor: pointer;
+  display: flex;
   @media (max-width: 768px){
     display: none;
   }
@@ -359,6 +362,8 @@ const Item = () => {
               <Button>送出</Button>
             </Busconnection>
             <Join>
+              <img className='makeJoin' src='/static/img/list/join.PNG' />
+              {/* <img className='makeJoin' src='/static/img/list/plusActive.PNG' /> */}
               加入比較
             </Join>
           </Business>
@@ -405,6 +410,40 @@ const Item = () => {
                 <IndName>$0 (不含租金內)</IndName>
                 <IndTag>警衛管理</IndTag>
                 <IndName>有(全天)</IndName>
+              </IndList>
+            </Introduction>
+            {/* 物件詳情 */}
+            <Introduction>
+              <IntroTitle>物件詳情</IntroTitle>
+              <IndList>
+                <IndTag>建物結構</IndTag>
+                <IndName>鋼筋混凝土</IndName>
+                <IndTag>外牆建材</IndTag>
+                <IndName>方塊磚</IndName>
+              </IndList>
+              <IndList>
+                <IndTag>屋齡</IndTag>
+                <IndName>2.6年</IndName>
+                <IndTag>類型</IndTag>
+                <IndName>辦公/廠房</IndName>
+              </IndList>
+              <IndList>
+                <IndTag>樓層</IndTag>
+                <IndName>6樓/12樓</IndName>
+                <IndTag>每層戶數</IndTag>
+                <IndName>4</IndName>
+              </IndList>
+              <IndList>
+                <IndTag>警衛管理</IndTag>
+                <IndName>全天候</IndName>
+                <IndTag>管理費</IndTag>
+                <IndName>5836元/月</IndName>
+              </IndList>
+              <IndList>
+                <IndTag>其他</IndTag>
+                <IndName>--</IndName>
+                <IndTag>注意事項</IndTag>
+                <IndName>--</IndName>
               </IndList>
             </Introduction>
             {/* 物件特色 */}
@@ -479,7 +518,7 @@ const Item = () => {
             <Button>送出</Button>
           </Busconnection>
           <Join>
-            加入比較
+            <div className='comparePlus'></div>加入比較
           </Join>
         </BusinessMb>
         <BigTitle>

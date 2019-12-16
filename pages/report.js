@@ -114,8 +114,8 @@ const PageCircle = styled.div`
   width: 26px;
   height: 26px;
   cursor: pointer;
-	background: #00B9FF;
-  border: 1px solid #00B9FF;
+  color:#ABABAB;
+  border: 1px solid #ABABAB;
 `
 const PageImg = styled.img`
   width: 12px;
