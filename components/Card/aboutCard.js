@@ -15,7 +15,7 @@ const Card = styled.div`
   flex-wrap: wrap;
   transition: all .5s;
   background: #fff;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     margin: 10px 10px;
   }

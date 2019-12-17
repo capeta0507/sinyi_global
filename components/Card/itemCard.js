@@ -17,7 +17,7 @@ const Card = styled.div`
   &:hover {
     box-shadow: 2px 10px 11px rgba(0,0,0,0.2);
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 97%;
     margin: 10px 6px;
   }
@@ -32,7 +32,7 @@ const JustContent = styled.div`
   border-top: 1px solid #B4B4B4;
   padding: 10px 10px;
   display: flex;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -42,7 +42,7 @@ const JustContentMb = styled.div`
   border-top: 1px solid #B4B4B4;
   padding: 10px 10px;
   display: none;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: flex;
   }
 `

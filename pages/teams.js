@@ -8,12 +8,17 @@ import FastButton from '../components/fastButton'
 import Manager from '../components/Team/Gmanager'
 import BusOne from '../components/Team/businessOne'
 import Businesser from '../components/Team/business'
+import Consultant from '../components/Team/consultant'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MakeTop = styled.div`
   width: 100%;
   height: 100px;
+  @media (max-width: 992px){
+    height: 56px;
+  }
+
 `
 
 const BgHead = styled.div`
@@ -24,7 +29,7 @@ const BgHead = styled.div`
     height: 100%;
     object-fit: cover;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -47,7 +52,7 @@ const NavTeam = styled.div`
   width: 100%;
   background: #566A77;
   padding: 14px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -130,8 +135,9 @@ const Team = () => {
         {/* 總經理 */}
         {/* <Manager /> */}
         {/* 部門 */}
-        <BusOne />
+        {/* <BusOne /> */}
         {/* <Businesser /> */}
+        <Consultant />
       </Container>
       <FastButton />
     </Layout>

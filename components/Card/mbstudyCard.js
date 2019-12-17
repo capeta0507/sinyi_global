@@ -11,7 +11,7 @@ const Card = styled.div`
   background: #fff;
   box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
   display: none;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: flex;
     margin: 5px 0;
   }

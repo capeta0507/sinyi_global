@@ -6,7 +6,7 @@ import Select from 'react-select'
 
 // const Block = styled.div`
 //   display: none;
-//   @media (max-width: 768px){
+//   @media (max-width: 992px){
 //     display: bolck;
 //   }
 // `
@@ -123,7 +123,7 @@ const FastMessenger = styled.div`
 const IptName = styled.div`
   width: 100%;
   margin-top: 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `

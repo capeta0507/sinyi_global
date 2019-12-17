@@ -9,7 +9,7 @@ const NewsContainer = styled.div`
   margin: 0 auto;
   background: #FAFAFA;
   margin-bottom: 80px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     margin-bottom: 10px;
   }
@@ -19,7 +19,7 @@ const Content = styled.div`
   justify-content: space-between;
   padding-top: 30px;
   flex-wrap: wrap;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding-top: 0px;
     height: 820px;
   }
@@ -30,7 +30,7 @@ const NewsContent = styled.div`
   margin: 30px 0;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin: 10px 10px;
   }
 `
@@ -38,7 +38,7 @@ const BigTitle = styled.div`
   text-align: center;
   // padding: 60px 0;
   padding: 60px 0 40px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
   }
@@ -49,13 +49,13 @@ const MainNews = styled.div`
   margin: 30px auto;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
 const TitleImg = styled.img`
   width:112px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:112px;
   }
 `
@@ -103,7 +103,7 @@ const NewsSub = styled.div`
 const Other = styled.div`
   width: 32%;
   font-size: 20px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:100%;
   }
 `
@@ -121,7 +121,7 @@ const Show = styled.div`
   & > img{
     width: 100%;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `

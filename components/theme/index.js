@@ -6,7 +6,7 @@ import ThemeCard from './themeCard'
 const MyJob = styled.div`
   background: #fff;
   padding-bottom: 60px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin-top: 30px;
     padding-bottom: 0px;
   }
@@ -15,7 +15,7 @@ const ThemeContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   margin-bottom: 80px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 95%;
   }
 `
@@ -30,14 +30,14 @@ const BigTitle = styled.div`
   text-align: center;
   // padding: 60px 0;
   padding: 60px 0 40px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
   }
 `
 const Img = styled.img`
   width:112px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:112px;
   }
 `

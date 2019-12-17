@@ -9,7 +9,7 @@ const Card = styled.div`
   cursor: pointer;
   transition: all .5s;
   display: flex;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: flex;
     box-shadow: 0 5px 5px rgba(0,0,0,.2);
     justify-content: flex-end;
@@ -25,7 +25,7 @@ const Img = styled.div`
     height: 100%;
     object-fit: cover;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 30%;
     height: auto;
   }
@@ -52,7 +52,7 @@ const Title = styled.div`
   // height: 47px;
   font-weight: bold;
   color: #000;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size: 14px;
   }
 `

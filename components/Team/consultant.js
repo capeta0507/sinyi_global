@@ -31,7 +31,7 @@ const SecondContent = styled.div`
   }
 `
 const LeftCon = styled.div`
-  width: 40%;
+  width: 45%;
   & > img {
     width: 80%;
   }
@@ -53,7 +53,7 @@ const LeftCon = styled.div`
   }
 `
 const RightCon = styled.div`
-  width: 40%;
+  width: 55%;
   @media (max-width: 992px){
     width: 100%
   }
@@ -127,7 +127,7 @@ const PeopleContwnt = styled.div`
 `
 
 
-const BusinessOne = () => {
+const Consultant = () => {
   return (
     <TeamBlock>
       <FirstContent>
@@ -144,11 +144,7 @@ const BusinessOne = () => {
         </RightCon>
       </FirstContent>
       <MainContent className=''>
-        <h3><img className='prize' src='/static/img/about/hotel.png' /><span className='prizeName'>分店簡介</span></h3>
-        <p>在百貨公司及豪宅林立的信義計畫區，是許多頂尖服務業必爭之地，在信義計畫區中心－世界最高地標101大樓旁，信義房屋買下了屬於自己的信義大樓，並於96年10月24日成立了信義101店。 信義101店是信義房屋在台灣的第200家直營單位，也因位於總部的1樓的特殊位置，所以服務的客群包含豪宅、商辦及周邊辦公大樓的商務人士外，還是信義房屋總部服務的重要窗口。 信義101店提供垂直整合的服務，包含個案企劃銷售、室內設計、水電修繕等轉介等服務，希望以強大的整合力、優質的服務人才，提供給客戶最頂級的服務。</p>
-      </MainContent>
-      <MainContent className=''>
-        <h3><span className='prizeName'>商仲二部</span></h3>
+        <h3><span className='prizeName'>顧問服務團隊</span></h3>
         <MemberBlock>
           <Member>
             <MemberCard name='康錫晃' engName='Casper Kang' list1='0945612356' list2='s194806@sinyi.com.tw' list3='s194806' />
@@ -165,4 +161,4 @@ const BusinessOne = () => {
   )
 }
 
-export default BusinessOne
+export default Consultant

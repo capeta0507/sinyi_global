@@ -3,14 +3,14 @@ import { Carousel } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const Photo = styled(Carousel.Item)`
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     height: 400px;
   }
 `
 const Cas = styled.div`
   display: none;
   background: #fff;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: block;
   }
 `

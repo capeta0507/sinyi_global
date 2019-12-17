@@ -17,7 +17,7 @@ const Card = styled.div`
   &:hover ${Introduction}{
     background: #E5F7FF;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `

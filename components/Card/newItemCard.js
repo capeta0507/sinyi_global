@@ -17,7 +17,7 @@ const Card = styled.div`
   &:hover {
     box-shadow: 2px 10px 11px rgba(0,0,0,0.2);
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 47%;
     margin: 5px 5px;
   }
@@ -32,7 +32,7 @@ const JustContent = styled.div`
   border-top: 1px solid #B4B4B4;
   padding: 10px 10px;
   display: flex;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -42,7 +42,7 @@ const JustContentMb = styled.div`
   border-top: 1px solid #B4B4B4;
   padding: 10px 10px;
   display: none;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: flex;
   }
 `
@@ -53,7 +53,7 @@ const Monthly = styled.div`
   color: #00B1FF;
   padding: 0 10px;
   margin: 10px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size: 15px;
   }
 `
@@ -68,7 +68,7 @@ const DownPrice = styled.div`
   font-weight: 300;
   font-size: 12px;
   color: #fff;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -83,7 +83,7 @@ const Title = styled.div`
   font-size: 22px;
   font-weight: bold;
   padding: 0 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size: 18px;
     padding: 0 0px;
   }
@@ -100,7 +100,7 @@ const Content = styled.div`
   color: #5A5A5A;
   /* margin:10px 0 20px 0; */
   padding: 0 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size: 12px;
     padding: 0 0px;
   }

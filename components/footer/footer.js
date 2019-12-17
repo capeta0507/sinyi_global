@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Block = styled.div`
   display: block;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `

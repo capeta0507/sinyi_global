@@ -21,7 +21,7 @@ const MainDescription = styled.div`
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -32,7 +32,7 @@ const Title = styled.div`
     font-weight: bold;
     font-size: 28px;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     & > h1{
       font-weight: bold;
       font-size: 26px;
@@ -41,7 +41,7 @@ const Title = styled.div`
 `
 const TitleImg = styled.img`
   width: 100%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin-top: 17px;
   }
 `
@@ -49,7 +49,7 @@ const Content = styled.div`
   width: 100%;
   margin-top: 45px;
   border-bottom: ${props => props.none ? 'none' : '1px solid #E8E8E8'};
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     margin: 0 auto;
   }
@@ -57,7 +57,7 @@ const Content = styled.div`
 const ListContent = styled.div`
   width: 60%;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -66,7 +66,7 @@ const ConTitle = styled.div`
   padding-left: 8px;
   font-size: 24px;
   color: #00B1FF;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size: 18px;
     margin-top: 10px;
   }
@@ -79,7 +79,7 @@ const ConText = styled.div`
   & > p {
     margin-bottom: 0;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size:12px;
   }
 `
@@ -102,7 +102,7 @@ const Account = styled.div`
   margin: 0 auto;
   color: #5A5A5A;
   font-size: 14px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     font-size: 12px;
   }
@@ -122,7 +122,7 @@ const IptName = styled.div`
   @media (max-width: 1440px){
     width: ${props => props.long ? '12.5%' : '25%'};
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: ${props => props.long ? '23%' : '23%'};
     font-size: 14px;
     padding-left: 10px;
@@ -134,7 +134,7 @@ const IptControl = styled.div`
   margin: 5px 0;
   padding-left: 10px;
   padding-right: 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     padding-left: 10px;
     padding-right: 10px;
@@ -155,7 +155,7 @@ const Button = styled.div`
 const ItpBlock = styled.div`
   width: ${props => props.long ? '100%' : '50%'};
   display: flex;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: ${props => props.long ? '95%' : '95%'};
     margin: 0 auto;
   }
@@ -167,7 +167,7 @@ const BusCheck = styled.div`
   & > a {
     color: #00B1FF;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin-left: 0px;
   }
 `
@@ -175,7 +175,7 @@ const ExTex = styled.div`
   width: 85%;
   padding-left: 11px;
   padding-right: 9px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const TeamBlock = styled.div`
   width: 80%;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -13,7 +13,7 @@ const FirstContent = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     display: block;
   }
@@ -24,14 +24,14 @@ const SecondContent = styled.div`
   display: flex;
   margin-top: 80px;
   justify-content: space-between;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     display: block;
   }
 `
 const LeftCon = styled.div`
-  width: 40%;
-  @media (max-width: 768px){
+  width: 45%;
+  @media (max-width: 992px){
     width: 100%;
     & > img {
       width: 100%;
@@ -43,7 +43,7 @@ const Photo = styled.div`
   & > img {
     width: 80%;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     & > img {
       width: 100%;
     }
@@ -56,8 +56,8 @@ const SpName = styled.div`
   text-align: right;
 `
 const RightCon = styled.div`
-  width: 40%;
-  @media (max-width: 768px){
+  width: 55%;
+  @media (max-width: 992px){
     width: 100%
   }
 `
@@ -72,7 +72,7 @@ const MainContent = styled.div`
     font-size: 38px;
     font-weight: 500;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin: 20px 0 0 50px;
     & > h3 {
       font-size: 21px;
@@ -97,7 +97,7 @@ const PeopleContwnt = styled.div`
   & > p {
     display:flex;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `

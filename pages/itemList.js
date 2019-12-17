@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
@@ -16,7 +16,7 @@ const SearchDiv = styled.div`
   width: 100%;
   height: 400px;
 	padding: 150px 0 50px 0;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
 		padding: 80px 0 10px 0;
   }
 `
@@ -29,7 +29,7 @@ const HeadTag = styled.div`
   @media (max-width: 1560px){
     width: 22%;
   }
-	@media (max-width: 768px){
+	@media (max-width: 992px){
     width: 90%;
   }
 `
@@ -44,7 +44,7 @@ const HeadList = styled.div`
   @media (max-width: 1440px){
     width: 80%;
   }
-	@media (max-width: 768px){
+	@media (max-width: 992px){
     width: 90%;
     display: none;
 		justify-content: space-between;
@@ -61,7 +61,7 @@ const HeadListMb = styled.div`
   @media (max-width: 1440px){
     width: 80%;
   }
-	@media (max-width: 768px){
+	@media (max-width: 992px){
     width: 90%;
     display: flex;
 		justify-content: space-between;
@@ -69,7 +69,7 @@ const HeadListMb = styled.div`
 `
 const IptName = styled.div`
   width: 85%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -80,7 +80,7 @@ const SearchButton = styled.div`
 	color: #fff;
 	font-size: 16px;
 	padding: 9px 0 0 0;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
     display: none;
   }
 `
@@ -93,7 +93,7 @@ const SearchButtonMb = styled.div`
 	padding: 5px 0;
 	border-radius: 5px;
 	display: none;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
     display: block;
   }
 `
@@ -101,7 +101,7 @@ const Make = styled.div`
   text-align: left;
   width: ${props => props.long ? '30%' : '18%'};
   padding-right: 15px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
 		display: none;
   }
 `
@@ -109,7 +109,7 @@ const MakeMb = styled.div`
   text-align: left;
   width: ${props => props.long ? '100%' : '48%'};
 	display: none;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
 		display: block;
   }
 `
@@ -121,7 +121,7 @@ const Container = styled.div`
 const Content = styled.div`
 	width: 80%;
 	margin: 0 auto;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
 		width: 90%;
 	}
 `
@@ -150,7 +150,7 @@ const PageImg = styled.img`
   width: 12px;
   margin-top: -3px;
   margin-left: ${props => props.next ? '6px' : '9px'};
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 12px;
     margin-top: 0px;
     margin-left: ${props => props.next ? '5px' : '8px'};
@@ -165,7 +165,7 @@ const MakeHead = styled.div`
 const Sort = styled.div`
   width: 15%;
   padding-top: 20px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 50%;
   }
 `
@@ -183,6 +183,7 @@ const PlaceOption = styled.div`
   background: #fff;
   width: 420px;
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  margin-top: 10px;
 `
 const Check = styled.div`
   width: 25%;
@@ -196,6 +197,7 @@ const DrowOption = styled.div`
   background: #fff;
   width: 100%;
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+  margin-top: 10px;
 `
 const ForSel = styled.div`
   width: 100%;
@@ -219,6 +221,19 @@ const SalSpan = styled.div`
 `
 
 const ItemList = () => {
+  const [district, setDistrict] = useState(false)
+  const [rent, setRent] = useState(false)
+  const [rentPing, setRentPing] = useState(false)
+
+  const showDir = () => {
+    setDistrict(!district)
+  }
+  const showRent = () => {
+    setRent(!rent)
+  }
+  const showRentPing = () => {
+    setRentPing(!rentPing)
+  }
 	return (
 		<Layout>
 			<Head
@@ -229,13 +244,13 @@ const ItemList = () => {
 			<NavHomeMobile />
 			<SearchDiv>
 				<HeadTag>
-          <a href=''>
+          <a href='/sellList'>
             <div className='itemBuy'>
               買賣
               <img className='itemBorder' src='/static/img/navborder_grey.png' />
             </div>
           </a>
-          <a href=''>
+          <a href='/itemList'>
             <div className='itemBuy itemBuyActive'>
               租賃
               <img className='itemBorder' src='/static/img/navborder.png' />
@@ -331,96 +346,116 @@ const ItemList = () => {
 						/>
 					</Make>
 					<Make className=''>
-            <DrowDown>行政區</DrowDown>
-            {/* <PlaceOption>
-              <Back>
-                &lt; &nbsp;&nbsp;全區
-              </Back>
-              <ForSel>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-                <Check>
-                  <input type='checkbox' />中山區
-                </Check>
-              </ForSel>
-            </PlaceOption> */}
+            <DrowDown onClick={showDir}>行政區</DrowDown>
+            {
+              district ? (
+                <PlaceOption>
+                  <Back>
+                    &lt; &nbsp;&nbsp;全區
+                  </Back>
+                  <ForSel>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                    <Check>
+                      <input type='checkbox' />中山區
+                    </Check>
+                  </ForSel>
+                </PlaceOption>
+              ) : (
+                null
+              )
+            }
+            
 					</Make>
 					<Make long className=''>
-            <DrowDown>租金</DrowDown>
-            {/* <DrowOption>
-              <ForSel>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                  萬-
-                </SalSpan>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                  萬
-                </SalSpan>
-              </ForSel>
-            </DrowOption> */}
+            <DrowDown onClick={showRent}>租金</DrowDown>
+            {
+              rent ? (
+                <DrowOption>
+                  <ForSel>
+                    <SalSelect>
+                      <select className='form-control'>
+                        <option>請選擇</option>
+                      </select>
+                    </SalSelect>
+                    <SalSpan>
+                      萬-
+                    </SalSpan>
+                    <SalSelect>
+                      <select className='form-control'>
+                        <option>請選擇</option>
+                      </select>
+                    </SalSelect>
+                    <SalSpan>
+                      萬
+                    </SalSpan>
+                  </ForSel>
+                </DrowOption>
+              ) : (
+                null
+              )
+            }
 					</Make>
 					<Make className='pdRight'>
-            <DrowDown>出租坪數</DrowDown>
-            {/* <PlaceOption>
-              <ForSel>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                  坪-
-                </SalSpan>
-                <SalSelect>
-                  <select className='form-control'>
-                    <option>請選擇</option>
-                  </select>
-                </SalSelect>
-                <SalSpan>
-                坪
-                </SalSpan>
-              </ForSel>
-            </PlaceOption> */}
+            <DrowDown onClick={showRentPing}>出租坪數</DrowDown>
+            {
+              rentPing ? (
+                <PlaceOption>
+                  <ForSel>
+                    <SalSelect>
+                      <select className='form-control'>
+                        <option>請選擇</option>
+                      </select>
+                    </SalSelect>
+                    <SalSpan>
+                      坪-
+                    </SalSpan>
+                    <SalSelect>
+                      <select className='form-control'>
+                        <option>請選擇</option>
+                      </select>
+                    </SalSelect>
+                    <SalSpan>
+                    坪
+                    </SalSpan>
+                  </ForSel>
+                </PlaceOption>
+              ) : (
+                null
+              )
+            }
+            
 					</Make>
 				</HeadList>
 			</SearchDiv>

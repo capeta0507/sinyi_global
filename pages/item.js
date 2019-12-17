@@ -17,7 +17,7 @@ const Container = styled.div`
 `
 const Main = styled.div`
   width: 60%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -41,7 +41,7 @@ const Title = styled.div`
     color: #00AAF5;
     font-size: 28px;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     & > h1{
       color: #000;
       font-size: 22px;
@@ -53,7 +53,7 @@ const MbTitle = styled.h1`
   font-size: 22px;
   display: none;
   margin-top: 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: block;
   }
 `
@@ -66,7 +66,7 @@ const Specification = styled.div`
   display: flex;
   margin-top: 22px;
   margin-bottom: 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     display: none;
   }
@@ -77,13 +77,13 @@ const SpecificationMb = styled.div`
   margin-top: 22px;
   margin-bottom: 10px;
   justify-content: space-between;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: block;
   }
 `
 const Cau = styled.div`
   width: 95%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -91,20 +91,20 @@ const BigTitle = styled.div`
   text-align: center;
   // padding: 60px 0;
   padding: 60px 0 40px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
   }
 `
 const TitleImg = styled.img`
   width:112px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:112px;
   }
 `
 const ItemContent = styled.div`
   width: 60%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -128,7 +128,7 @@ const IndTag = styled.div`
   width: 20%
   color: #969696;
   font-size: 14px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 20%;
     font-size: 12px;
   }
@@ -136,7 +136,7 @@ const IndTag = styled.div`
 const IndName = styled.div`
   width: 30%;
   font-size: 14px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 40%;
     font-size: 12px;
   }
@@ -150,7 +150,7 @@ const Business = styled.div`
     color: #00B1FF;
     padding-left: 10px;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     display: none;
   }
@@ -164,7 +164,7 @@ const BusinessMb = styled.div`
     color: #00B1FF;
     padding-left: 10px;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: block;
     padding: 20px 0;
   }
@@ -174,7 +174,7 @@ const BusPeople = styled.div`
   display: flex;
   padding: 10px 0;
   border-bottom: 1px solid #E8E8E8;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin: 0 auto;
     width: 80%;
   }
@@ -195,7 +195,7 @@ const IptName = styled.div`
   padding-left: 15px;
   padding-right: 15px;
   margin: 5px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     padding-left: 30px;
     padding-right: 30px;
@@ -218,7 +218,7 @@ const BusCheck = styled.div`
   & > a {
     color: #00B1FF;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding-left: 30px;
     padding-right: 30px;
   }
@@ -228,7 +228,7 @@ const Join = styled.div`
   font-size: 23px;
   cursor: pointer;
   display: flex;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `

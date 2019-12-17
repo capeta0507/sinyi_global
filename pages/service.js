@@ -11,6 +11,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const MakeTop = styled.div`
   width: 100%;
   height: 100px;
+  @media (max-width: 992px){
+    height: 56px;
+  }
 `
 
 const BgHead = styled.div`
@@ -57,7 +60,7 @@ const PeopleContent = styled.div`
     color: #878787;
     display:flex;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -67,7 +70,22 @@ const Content = styled.div`
   display: flex;
   margin-top: 30px;
   justify-content: ${props => props.second ? 'flex-start' : 'flex-start'};
-  @media (max-width: 768px){
+  @media (max-width: 1920px){
+    width: 70%;
+  }
+  @media (max-width: 1560px){
+    width: 75%;
+  }
+  @media (max-width: 1440px){
+    width: 80%;
+  }
+  @media (max-width: 1366px){
+    width: 85%;
+  }
+  @media (max-width: 1280px){
+    width: 90%;
+  }
+  @media (max-width: 992px){
     width: 90%;
     display: block;
   }
@@ -90,7 +108,7 @@ const JustContent = styled.div`
     display:flex;
     color: #00B1FF;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 40%;
     text-align: center;
     margin: 0 auto;
@@ -112,7 +130,7 @@ const MapContent = styled.div`
   & > img {
     width: 100%;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `

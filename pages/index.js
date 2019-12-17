@@ -24,7 +24,7 @@ const Nav = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   display: flex;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -33,7 +33,7 @@ const NavMb = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   display: none;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: block;
   }
 `

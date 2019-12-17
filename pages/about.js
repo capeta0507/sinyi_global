@@ -48,7 +48,7 @@ const BigTitle = styled.div`
   width: 25%;
   padding: 60px 0 40px 0;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 80%;
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
@@ -61,7 +61,7 @@ const AboutUs = styled.div`
   width: 60%;
   margin: 0 auto;
   color: #404040;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
   }
 `
@@ -71,7 +71,7 @@ const History = styled.div`
   margin: 0 auto;
   position: relative;
   margin-top: ${props => props.long ? '50px' : '0px'};
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
   }
 `
@@ -80,7 +80,7 @@ const Historybd = styled.img`
   height: 1564px;
   left: 6px;
   top: 16px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     height: 2532px;
   }
 `
@@ -94,7 +94,7 @@ const HistoryList = styled.div`
     font-size: 16px;
     color: #878787;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin-left: 26px;
     margin-top:20px;
   }

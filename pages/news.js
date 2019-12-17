@@ -17,7 +17,7 @@ const MainContain = styled.div`
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -28,7 +28,7 @@ const Title = styled.div`
     font-weight: bold;
     font-size: 28px;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     & > h1{
       font-weight: bold;
       font-size: 26px;
@@ -42,20 +42,20 @@ const NewsDate = styled.div`
 `
 const TitleImg = styled.img`
   width: 100%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin-top: 17px;
   }
 `
 const OtherTitle = styled.img`
   width:112px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:112px;
   }
 `
 const Content = styled.div`
   width: 100%;
   margin-top: 45px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     margin: 0 auto;
   }
@@ -65,7 +65,7 @@ const ConTitle = styled.div`
   padding-left: 8px;
   font-size: 24px;
   color: #00B1FF;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size: 18px;
     margin-top: 10px;
   }
@@ -78,7 +78,7 @@ const ConText = styled.div`
   & > p {
     margin-bottom: 0;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     font-size:12px;
     padding: 0;
   }
@@ -89,7 +89,7 @@ const StatisticsImg = styled.div`
   & > img {
     width: 100%;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -97,7 +97,7 @@ const BigTitle = styled.div`
   text-align: center;
   // padding: 60px 0;
   padding: 60px 0 40px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
   }
@@ -120,7 +120,7 @@ const NewsBlock = styled.div`
     position: absolute;
     left: 43%;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     margin: 0 auto;
     & > img {

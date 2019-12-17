@@ -15,7 +15,7 @@ const NavMB = styled(Navbar)`
 const Logo = styled.div`
   display:inline-block;
   width: 125px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100px;
   }
 `

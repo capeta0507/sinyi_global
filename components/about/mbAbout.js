@@ -6,7 +6,7 @@ const MainTitle = styled.div`
   width: 100%;
   background: #fff;
   padding:50px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding:0 30px;
   }
 `
@@ -15,7 +15,7 @@ const AboutTitle = styled.div`
   width: 40%;
   padding: 60px 0 40px 0;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     padding: 10px 0 20px 0;
   }
@@ -33,7 +33,7 @@ const AboutUs = styled.div`
   width: 60%;
   margin: 0 auto;
   color: #404040;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
   }
 `
@@ -58,7 +58,7 @@ const History = styled.div`
   margin: 0 auto;
   position: relative;
   margin-top: ${props => props.long ? '50px' : '0px'};
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
   }
 `

@@ -30,7 +30,7 @@ html,body{
 .css-1okebmr-indicatorSeparator {
     display: none;
 }
-@media (max-width: 768px){
+@media (max-width: 992px){
     .css-ql68v7-control{
         height: 40px;
         /* background: url(/static/img/select_arrow.png) no-repeat 94% 10px;
@@ -224,7 +224,7 @@ input:focus::-webkit-input-placeholder {color: transparent;}
 .basicTop{
     margin-top: 20px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .form-control{
         height: 40px;
         font-size: initial;
@@ -422,7 +422,7 @@ input[type=radio]:checked + label{
 .pdRight{
     padding-right: 0px !important;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .gendermg{
         margin-left: 0px !important;
         margin-right: 0px !important;
@@ -592,7 +592,7 @@ ul,li{
     font-size: 28px;
     text-shadow: 5px 5px 5px rgb(37, 37, 37);
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .mg-1{
         margin-left: 40px;
     }
@@ -671,7 +671,7 @@ ul,li{
     font-size: 22px;
     width: 14%;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .myPosition {
         top: 282px;
         font-size: 20px;
@@ -708,7 +708,7 @@ ul,li{
     font-size: 22px;
     width: 14%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .btnText{
         font-size: 25px;
         width: 60%;
@@ -736,7 +736,7 @@ ul,li{
 .resBot{
     margin-bottom: 60px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .bgWhite {
         color: #fff;
         border: 2px solid white;
@@ -767,7 +767,7 @@ ul,li{
     margin: 0;
     font-size: 14px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .bdGreen {
         color: #fff;
         margin: auto;
@@ -797,7 +797,7 @@ ul,li{
 .navBlock{
     display: none;
 }
-@media screen and (max-width: 985px) {
+@media screen and (max-width: 992px) {
     .navList{
         display: none;
     }
@@ -1131,7 +1131,7 @@ img {
     font-weight: bold;
     font-size: 28px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .navItem{
         width: 49%;
         height: 65px;
@@ -1237,7 +1237,7 @@ img {
     margin-right: 10px;
     margin-top: 10px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .recList{
         margin-bottom: 20px;
     }
@@ -1256,7 +1256,7 @@ img {
     width: 100%;
     height: 130%;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .siVideo {
         height: 190px;
     }
@@ -1524,7 +1524,7 @@ img {
         right: 90px;
     }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     /* .getTop{
         position: fixed;
         right: 3.5%;
@@ -1589,7 +1589,7 @@ img {
     height: 250px;
     transition: all .5s;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .videoItem{
         text-align: center;
     }
@@ -1645,7 +1645,7 @@ img {
     padding: 5px 0;
     margin-left: 20px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .numOl > li{
         list-style-type: decimal; 
         padding: 5px 0;
@@ -1762,7 +1762,7 @@ img {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
     .pd{
         padding: 0 50px 20px 18px;
     }
@@ -1876,7 +1876,7 @@ img {
     opacity: .75;
     color: #01AB59 !important;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 992px){
     .bgContent{
         height: 140px;
     }
@@ -1910,7 +1910,7 @@ img {
     text-align: right;
     padding-top: 10px;
 }
-@media (max-width: 768px){
+@media (max-width: 992px){
     .formTitle{
         text-align: left;
     }

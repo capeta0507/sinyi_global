@@ -5,7 +5,7 @@ import Select from 'react-select'
 const IptName = styled.div`
   width: 100%;
   margin-top: 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `

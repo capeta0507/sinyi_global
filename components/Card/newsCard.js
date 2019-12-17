@@ -12,7 +12,7 @@ const Card = styled.div`
   &:hover {
     box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `

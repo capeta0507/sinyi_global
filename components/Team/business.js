@@ -5,7 +5,7 @@ import ItemCard from '../Card/itemCard'
 const TeamBlock = styled.div`
   width: 80%;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -18,7 +18,7 @@ const FirstContent = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     display: block;
   }
@@ -30,14 +30,14 @@ const SecondContent = styled.div`
   margin-top: 80px;
   background: #fff;
   justify-content: space-between;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     display: block;
   }
 `
 const LeftCon = styled.div`
   width: 40%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     & > img {
       width: 100%;
@@ -49,7 +49,7 @@ const Photo = styled.div`
   & > img {
     width: 80%;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     & > img {
       width: 100%;
     }
@@ -60,14 +60,14 @@ const SpName = styled.div`
   color: #969696;
   font-size: 16px;
   text-align: right;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     font-size: 12px;
   }
 `
 const RightCon = styled.div`
   width: 40%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%
   }
 `
@@ -82,7 +82,7 @@ const MainContent = styled.div`
     font-size: 38px;
     font-weight: 500;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin: 20px 0 0 50px;
     & > h3 {
       font-size: 21px;
@@ -107,7 +107,7 @@ const PeopleContwnt = styled.div`
   & > p {
     display:flex;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
   }
 `
@@ -120,7 +120,7 @@ const MyPhone = styled.div`
     color: #878787;
     font-weight: 400;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 60%;
   }
 `
@@ -130,7 +130,7 @@ const ListContent = styled.div`
   & > p {
     display:flex;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 90%;
     margin: 0 auto;
   }
@@ -139,14 +139,14 @@ const BigTitle = styled.div`
   text-align: center;
   // padding: 60px 0;
   padding: 60px 0 40px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
   }
 `
 const TitleImg = styled.img`
   width:112px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:112px;
   }
 `

@@ -8,7 +8,7 @@ const StudyContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   margin-bottom: 80px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     margin-bottom: 10px;
   }
@@ -25,7 +25,7 @@ const StudyContent = styled.div`
   margin: 30px 0;
   justify-content: space-between;
   flex-wrap: wrap;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     margin: 10px 10px;
   }
 `
@@ -33,21 +33,21 @@ const BigTitle = styled.div`
   text-align: center;
   // padding: 60px 0;
   padding: 60px 0 40px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
   }
 `
 const TitleImg = styled.img`
   width:112px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:112px;
   }
 `
 const Item = styled.div`
   width: 48%;
   font-size: 20px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:100%;
   }
 `
@@ -55,7 +55,7 @@ const BtnContent = styled.div`
   width:100%;
   text-align: center;
   padding: 20px 0 60px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 20px 0;
   }
 `

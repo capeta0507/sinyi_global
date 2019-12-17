@@ -6,7 +6,7 @@ const ThemeCard = styled.div`
   width: 100%;
   background: #fff;
   padding: 50px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     margin: 5px 0;
     display: flex;
@@ -17,7 +17,7 @@ const ThemeCard = styled.div`
 const Context = styled.div`
   width: 80%;
   margin: 0 auto;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     display: flex;
   }
@@ -29,7 +29,7 @@ const SendButton = styled.div`
   color: #fff;
   text-align: center;
   padding: 8px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     position: absolute;
     right: 40px;
     margin: 0;

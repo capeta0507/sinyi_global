@@ -10,7 +10,7 @@ const Card = styled.div`
   transition: all .5s;
   display: none;
   box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: flex;
   }
 `

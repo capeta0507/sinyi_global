@@ -18,7 +18,7 @@ const Container = styled.div`
   margin: 0 auto;
   margin-top: 70px;
   margin-bottom: 70px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -35,7 +35,7 @@ const ListNumber = styled.div`
   font-size: 19px;
   padding: 0 20px;
   font-weight: 500;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -43,7 +43,7 @@ const ListTitle = styled.div`
   font-size: 19px;
   padding: 0 20px;
   margin-bottom: 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `

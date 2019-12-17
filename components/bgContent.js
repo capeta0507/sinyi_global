@@ -8,7 +8,7 @@ const Background = styled.div`
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 992px){
     background-position: -99px -9338px;
     & before{
       content: ""; 

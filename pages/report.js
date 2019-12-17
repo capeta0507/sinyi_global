@@ -13,7 +13,7 @@ const SearchDiv = styled.div`
 	background: #566A77;
 	width: 100%;
 	padding: 150px 0 50px 0;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
 		padding: 80px 0 10px 0;
   }
 `
@@ -24,7 +24,7 @@ const HeadTag = styled.div`
   text-align: center;
   font-size: 28px;
   padding-top: 30px;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
     width: 90%;
   }
 `
@@ -35,14 +35,14 @@ const HeadList = styled.div`
 	border-radius: 5px;
 	text-align: center;
 	margin-top: 10px;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
 		width: 90%;
 		justify-content: space-between;
   }
 `
 const IptName = styled.div`
   width: 85%;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 75%;
   }
 `
@@ -53,7 +53,7 @@ const SearchButton = styled.div`
 	color: #fff;
 	font-size: 16px;
   padding: 8px 0 0 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 25%;
   }
 `
@@ -61,35 +61,35 @@ const Container = styled.div`
 	width: 100%;
 	background: #F1F1F1;
   padding: 0 0 100px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 10px 0 100px 0;
   }
 `
 const Content = styled.div`
 	width: 80%;
 	margin: 0 auto;
-	@media (max-width: 768px){
+	@media (max-width: 992px){
 		width: 90%;
 	}
 `
 const NewsBlock = styled.div`
   width: 32%;
   margin: 0 5px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
 		width: 100%;
 	}
 `
 const BigTitle = styled.div`
   text-align: center;
   padding: 60px 0 40px 0;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
   }
 `
 const TitleImg = styled.img`
   width:112px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width:98px;
   }
 `
@@ -106,7 +106,7 @@ const PageInfo = styled.div`
       margin-right: 10px;
     } 
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
 		top: 30px;
 	}
 `
@@ -121,7 +121,7 @@ const PageImg = styled.img`
   width: 12px;
   margin-top: -3px;
   margin-left: ${props => props.next ? '6px' : '9px'};
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 12px;
     margin-top: 0px;
     margin-left: ${props => props.next ? '5px' : '8px'};

@@ -11,7 +11,7 @@ const Nav = styled.div`
   background: rgba(0,0,0,.2);
   color: #fff;
   font-weight: bold;
-  @media (max-width: 985px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -50,7 +50,7 @@ const ListLi = styled.div`
 const Logo = styled.div`
   display:inline-block;
   width: 180px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 100px;
   }
 `

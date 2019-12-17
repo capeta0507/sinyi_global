@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const Cas = styled.div`
   display: block;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     display: none;
   }
 `
@@ -20,7 +20,7 @@ const Photo = styled(Carousel.Item)`
   @media (max-width: 1366px){
     height: 550px;
   }
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     height: 400px;
   }
 `

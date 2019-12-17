@@ -6,7 +6,7 @@ const ThemeCard = styled.div`
   width: 24%;
   padding-left: 10px;
   padding-right: 10px;
-  @media (max-width: 768px){
+  @media (max-width: 992px){
     width: 50%;
     padding-left: 5px;
     padding-right: 5px;
