@@ -170,6 +170,10 @@ const DrowDown = styled.div`
   color: #fff;
   cursor: pointer;
   background: url(/static/img/select_down.png) no-repeat 94% 21px;
+  @media (max-width: 992px){
+    padding: 7px 10px;
+    background: url(/static/img/select_down.png) no-repeat 92% 15px;
+  }
 `
 const PlaceOption = styled.div`
   background: #fff;
@@ -210,6 +214,24 @@ const SalSelect = styled.div`
 const SalSpan = styled.div`
   width: 5%;
   margin-top: 8px;
+`
+const BtnContent = styled.div`
+  width:100%;
+  text-align: center;
+  padding: 20px 0 60px 0;
+  @media (max-width: 992px){
+    padding: 20px 0 20px 0;
+  }
+`
+const Show = styled.div`
+  width: 82px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin: 0 auto;
+  cursor: pointer;
+  & > img{
+    width: 100%;
+  }
 `
 
 const ItemList = () => {
@@ -279,36 +301,15 @@ const ItemList = () => {
 						/>
 					</MakeMb>
 					<MakeMb>
-						<Select 
-							placeholder="行政區"
-							label='Single select'
-							theme={theme => ({
-								...theme,
-								borderRadius: 5,
-							})}
-						/>
+            <DrowDown>行政區</DrowDown>
 					</MakeMb>
 				</HeadListMb>
 				<HeadListMb>
 					<MakeMb>
-						<Select 
-							placeholder="價格"
-							label='Single select'
-							theme={theme => ({
-								...theme,
-								borderRadius: 5,
-							})}
-						/>
+            <DrowDown>價格</DrowDown>
 					</MakeMb>
 					<MakeMb>
-						<Select 
-							placeholder="坪數"
-							label='Single select'
-							theme={theme => ({
-								...theme,
-								borderRadius: 5,
-							})}
-						/>
+            <DrowDown>坪數</DrowDown>
 					</MakeMb>
 				</HeadListMb>
 				<HeadListMb>
@@ -470,7 +471,7 @@ const ItemList = () => {
               />
             </Sort>
           </MakeHead>
-					<div className='row'>
+					<div className='row mbnone'>
 						<ItemCard />
 						<ItemCard />
 						<ItemCard />
@@ -488,42 +489,59 @@ const ItemList = () => {
 						<ItemCard />
 						<ItemCard />
 					</div>
+          <div className='row navBlock'>
+						<ItemCard />
+						<ItemCard />
+						<ItemCard />
+						<ItemCard />
+            <ItemCard />
+						<ItemCard />
+						<ItemCard />
+					</div>
 				</Content>
-				<PageInfo>
+				<PageInfo className='mbnone'>
           <ul>
-          <li>
-            <PageCircle>
-              <PageImg src='/static/img/prev.png' />
-            </PageCircle>
-          </li>
-          <li>
-            <div className='pagination paginationActive'>1</div>
-          </li>
-          <li>
-            <div className='pagination'>2</div>
-          </li>
-          <li>
-             <div className='pagination'>3</div>
-          </li>
-          <li>
-            <div className='pagination'>4</div>
-          </li>
-          <li>
-            <div className='pagination'>5</div>
-          </li>
-          <li>
-            <div className='pagination'>6</div>
-          </li>
-          <li>
-            <div className='pagination'>7</div>
-          </li>
-          <li>
-          <PageCircle>
-            <PageImg next src='/static/img/next.png' />
-          </PageCircle>
-          </li>
+            <li>
+              <PageCircle>
+                <PageImg src='/static/img/prev.png' />
+              </PageCircle>
+            </li>
+            <li>
+              <div className='pagination paginationActive'>1</div>
+            </li>
+            <li>
+              <div className='pagination'>2</div>
+            </li>
+            <li>
+              <div className='pagination'>3</div>
+            </li>
+            <li>
+              <div className='pagination'>4</div>
+            </li>
+            <li>
+              <div className='pagination'>5</div>
+            </li>
+            <li>
+              <div className='pagination'>6</div>
+            </li>
+            <li>
+              <div className='pagination'>7</div>
+            </li>
+            <li>
+              <PageCircle>
+                <PageImg next src='/static/img/next.png' />
+              </PageCircle>
+            </li>
           </ul>
+          <Show className='navBlock'>
+            <img src='/static/img/show_all.png' />
+          </Show>
         </PageInfo>
+        <BtnContent className='navBlock'>
+          <Show>
+            <img src='/static/img/show_all.png' />
+          </Show>
+        </BtnContent>
 			</Container>
       <FastButton />
 		</Layout>

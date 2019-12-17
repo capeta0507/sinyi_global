@@ -53,6 +53,10 @@ html,body{
     display: flex;
     justify-content: space-between;
 }
+.walkicon{
+    width: 10px;
+    height: 15px;
+}
 .peoList{
     width: 7px;
     height: 7px;
