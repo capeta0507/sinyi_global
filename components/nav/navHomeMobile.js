@@ -71,14 +71,14 @@ const NavHomeMobile = () => {
                   </NavLink>
                   <ItemBod src='/static/img/navborder.png' />
                 </li>
-                <li>
+                {/* <li>
                   <NavLink>
                     <Link href="">
                       <Item>主題特輯</Item>
                     </Link>
                   </NavLink>
                   <ItemBod src='/static/img/navborder.png' />
-                </li>
+                </li> */}
                 <li>
                   <NavLink>
                     <Link href="#features">

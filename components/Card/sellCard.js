@@ -93,7 +93,7 @@ const Content = styled.div`
 `
 const ItemCard = () => {
   return (
-    <Link href='/item'>
+    <Link href='/sell'>
       <Card>
         <Img>
           <img src='/static/img/25358613_1553657854750443_452107410832652332_o.jpg' />

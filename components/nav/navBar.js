@@ -117,17 +117,17 @@ const NavBar = () => {
           </Logo>
           <NavList>
             <List>
-              <ItemLi>主題特輯
-                {/* <ItemBorder>
+              {/* <ItemLi>主題特輯
+                <ItemBorder>
                   <img src='/static/img/hover.png' />
-                </ItemBorder> */}
+                </ItemBorder>
                 <ItemList>
                   <ListLi>主題 1</ListLi>
                   <ListLi>主題 2</ListLi>
                   <ListLi>主題 3</ListLi>
                   <ListLi bottom>主題 4</ListLi>
                 </ItemList>
-              </ItemLi>
+              </ItemLi> */}
               <ItemLi two>
                 <a className='mylink' href='/sellList'>買賣</a>
               </ItemLi>
@@ -146,7 +146,7 @@ const NavBar = () => {
                   <ListLi><a className='' href='/newsList'>焦點新聞</a></ListLi>
                   <ListLi><a className='' href='/report'></a>月報</ListLi>
                   <ListLi>季報</ListLi>
-                  <ListLi bottom>電子報</ListLi>
+                  {/* <ListLi bottom>電子報</ListLi> */}
                 </ItemList>
               </ItemLi>
               <ItemLi>

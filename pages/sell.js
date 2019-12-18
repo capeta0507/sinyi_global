@@ -236,10 +236,11 @@ const BusInfo = styled.div`
 	width: 100%;
 	height: 125px;
 	overflow: hidden;
-	overflow:scroll;
+	overflow-y:scroll;
 	border: 1px solid #F0F0F0;
 	@media (max-width: 992px){
-		height: auto;
+    height: auto;
+    overflow-y:none;
 		overflow:none;
   }
 `
@@ -480,6 +481,16 @@ const Item = () => {
                 <IndTag></IndTag>
                 <IndName className='flex'><div className='ptdolt'></div>氣派門面完善管理</IndName>
               </IndList>
+            </Introduction>
+            {/* 格局圖 */}
+            <Introduction  className='navBlock'>
+              <IntroTitle>格局圖</IntroTitle>
+              <img src='/static/img/pic_place.png' />
+            </Introduction>
+            {/* 物件地圖 */}
+            <Introduction className='navBlock'>
+              <IntroTitle>物件地圖</IntroTitle>
+              <img src='/static/img/pic12.png' />
             </Introduction>
             {/* 交通資訊 */}
             <Introduction>

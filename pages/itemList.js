@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{Component} from 'react'
 import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
@@ -101,6 +101,7 @@ const Make = styled.div`
   text-align: left;
   width: ${props => props.long ? '30%' : '18%'};
   padding-right: 15px;
+  z-index: 1;
   @media (max-width: 992px){
 		display: none;
   }
@@ -108,7 +109,8 @@ const Make = styled.div`
 const MakeMb = styled.div`
   text-align: left;
   width: ${props => props.long ? '100%' : '48%'};
-	display: none;
+  display: none;
+  z-index: 1;
   @media (max-width: 992px){
 		display: block;
   }
@@ -176,11 +178,11 @@ const DrowDown = styled.div`
   width: 100%;
   border: 1px solid #fff;
   // background: #fff;
-  padding: 15px 10px;
+  padding: 7px 10px;
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  background: url(/static/img/select_down.png) no-repeat 94% 21px;
+  background: url(/static/img/select_down.png) no-repeat 94% 13px;
   @media (max-width: 992px){
     padding: 7px 10px;
     background: url(/static/img/select_down.png) no-repeat 92% 15px;
@@ -188,9 +190,14 @@ const DrowDown = styled.div`
 `
 const PlaceOption = styled.div`
   background: #fff;
-  width: 420px;
+  width: 330px;
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   margin-top: 10px;
+  @media (max-width: 992px){
+    left: 3%;
+    width: 340px;
+    position: absolute;
+  }
 `
 const Check = styled.div`
   width: 25%;
@@ -205,6 +212,11 @@ const DrowOption = styled.div`
   width: 100%;
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   margin-top: 10px;
+  border-radius: 10px;
+  @media (max-width: 992px){
+    width: 90%;
+    position: absolute;
+  }
 `
 const ForSel = styled.div`
   width: 100%;
@@ -212,6 +224,24 @@ const ForSel = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+`
+const DrowMenu = styled.ul`
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 200px;
+  & > li {
+    width: 100%;
+    padding: 8px 15px;
+    color:  #969696;
+    font-size: 16px;
+    &:hover {
+      background: rgba(0,177,255,.1);
+      color: #00B1FF;
+    }
+  }
 `
 const Back = styled.div`
   width: 100%;
@@ -245,318 +275,515 @@ const Show = styled.div`
   }
 `
 
-const ItemList = () => {
-  const [district, setDistrict] = useState(false)
-  const [rent, setRent] = useState(false)
-  const [rentPing, setRentPing] = useState(false)
+class ItemList extends Component {
+  constructor(){
+    super()
+    this.state = {
+      kind: false,
+      place: false,
+      district: false,
+      rent: false,
+      rentPing: false
+    }
+  }
 
-  const showDir = () => {
-    setDistrict(!district)
+  showKind = (e) => {
+    e.preventDefault();
+    this.setState({ kind: true }, () => {
+      document.addEventListener('click', this.hideKind)
+    })
   }
-  const showRent = () => {
-    setRent(!rent)
-  }
-  const showRentPing = () => {
-    setRentPing(!rentPing)
-  }
-	return (
-		<Layout>
-			<Head
-				title="信義全球資產"
-				description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
-			/>
-			<Navbar />
-			<NavHomeMobile />
-			<SearchDiv>
-				<HeadTag>
-          <a href='/sellList'>
-            <div className='itemBuy'>
-              買賣
-              <img className='itemBorder' src='/static/img/navborder_grey.png' />
-            </div>
-          </a>
-          <a href='/itemList'>
-            <div className='itemBuy itemBuyActive'>
-              租賃
-              <img className='itemBorder' src='/static/img/navborder.png' />
-            </div>
-          </a>
+  hideKind = () => {
+    this.setState({ kind: false },() => {
+      document.removeEventListener('click', this.hideKind)
+    })
 
-				</HeadTag>
-				<HeadList search>
-					<IptName className=''>
-						<input className='form-control' type='text' placeholder='關鍵字...' />
-					</IptName>
-					<SearchButton>搜尋</SearchButton>
-				</HeadList>
-				<HeadListMb>
-					<MakeMb long>
-						<Select 
-							placeholder="種類"
-							label='Single select'
-							theme={theme => ({
-								...theme,
-								borderRadius: 5,
-							})}
-						/>
-					</MakeMb>
-				</HeadListMb>
-				<HeadListMb>
-					<MakeMb>
-						<Select 
-							placeholder="縣市"
-							label='Single select'
-							theme={theme => ({
-								...theme,
-								borderRadius: 5,
-							})}
-						/>
-					</MakeMb>
-					<MakeMb>
-            <DrowDown>行政區</DrowDown>
-					</MakeMb>
-				</HeadListMb>
-				<HeadListMb>
-					<MakeMb>
-						<DrowDown>租金</DrowDown>
-					</MakeMb>
-          <MakeMb>
-						<DrowDown>出租坪數</DrowDown>
-					</MakeMb>
-				</HeadListMb>
-				<HeadListMb>
-					<SearchButtonMb>搜尋</SearchButtonMb>
-				</HeadListMb>
-				<HeadList>
-					<Make className=''>
-						<Select 
-							placeholder="種類"
-							label='Single select'
-							theme={theme => ({
-								...theme,
-								borderRadius: 5,
-								colors: {
-									...theme.colors,
-									primary: '#01AB59',
-								},
-							})}
-						/>
-					</Make>
-					<Make className=''>
-						<Select 
-							placeholder="縣市"
-							label='Single select'
-							theme={theme => ({
-								...theme,
-								borderRadius: 5,
-								colors: {
-									...theme.colors,
-									primary: '#01AB59',
-								},
-							})}
-						/>
-					</Make>
-					<Make className=''>
-            <DrowDown onClick={showDir}>行政區</DrowDown>
-            {
-              district ? (
-                <PlaceOption>
-                  <Back>
-                    &lt; &nbsp;&nbsp;全區
-                  </Back>
-                  <ForSel>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                    <Check>
-                      <input type='checkbox' />中山區
-                    </Check>
-                  </ForSel>
-                </PlaceOption>
-              ) : (
-                null
-              )
-            }
-            
-					</Make>
-					<Make long className=''>
-            <DrowDown onClick={showRent}>租金</DrowDown>
-            {
-              rent ? (
-                <DrowOption>
-                  <ForSel>
-                    <SalSelect>
-                      <select className='form-control'>
-                        <option>請選擇</option>
-                      </select>
-                    </SalSelect>
-                    <SalSpan>
-                      萬-
-                    </SalSpan>
-                    <SalSelect>
-                      <select className='form-control'>
-                        <option>請選擇</option>
-                      </select>
-                    </SalSelect>
-                    <SalSpan>
-                      萬
-                    </SalSpan>
-                  </ForSel>
-                </DrowOption>
-              ) : (
-                null
-              )
-            }
-					</Make>
-					<Make className='pdRight'>
-            <DrowDown onClick={showRentPing}>出租坪數</DrowDown>
-            {
-              rentPing ? (
-                <PlaceOption>
-                  <ForSel>
-                    <SalSelect>
-                      <select className='form-control'>
-                        <option>請選擇</option>
-                      </select>
-                    </SalSelect>
-                    <SalSpan>
-                      坪-
-                    </SalSpan>
-                    <SalSelect>
-                      <select className='form-control'>
-                        <option>請選擇</option>
-                      </select>
-                    </SalSelect>
-                    <SalSpan>
-                    坪
-                    </SalSpan>
-                  </ForSel>
-                </PlaceOption>
-              ) : (
-                null
-              )
-            }
-            
-					</Make>
-				</HeadList>
-			</SearchDiv>
-			<Container>
-				<Content>
-          <MakeHead>
-            <Breadcrumb second='租賃' />
-            <Sort>
-              <Select 
-                placeholder="預設排序"
-                label='Single select'
-                theme={theme => ({
-                  ...theme,
-                  borderRadius: 5,
-                })}
-              />
-            </Sort>
-          </MakeHead>
-					<div className='row mbnone'>
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-            <ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-            <ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-            <ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-					</div>
-          <div className='row navBlock'>
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-						<ItemCard />
-            <ItemCard />
-						<ItemCard />
-						<ItemCard />
-					</div>
-				</Content>
-				<PageInfo className='mbnone'>
-          <ul>
-            <li>
-              <PageCircle>
-                <PageImg src='/static/img/prev.png' />
-              </PageCircle>
-            </li>
-            <li>
-              <div className='pagination paginationActive'>1</div>
-            </li>
-            <li>
-              <div className='pagination'>2</div>
-            </li>
-            <li>
-              <div className='pagination'>3</div>
-            </li>
-            <li>
-              <div className='pagination'>4</div>
-            </li>
-            <li>
-              <div className='pagination'>5</div>
-            </li>
-            <li>
-              <div className='pagination'>6</div>
-            </li>
-            <li>
-              <div className='pagination'>7</div>
-            </li>
-            <li>
-              <PageCircle>
-                <PageImg next src='/static/img/next.png' />
-              </PageCircle>
-            </li>
-          </ul>
-        </PageInfo>
-        <BtnContent className='navBlock'>
-          <Show>
-            <img src='/static/img/show_all.png' />
-          </Show>
-        </BtnContent>
-			</Container>
-      <FastButton />
-		</Layout>
-	)
+  }
+  showPlace = (e) => {
+    e.preventDefault();
+    this.setState({ place: true }, () => {
+      document.addEventListener('click', this.hidePlace)
+    })
+  }
+  hidePlace = () => {
+    this.setState({ place: false },() => {
+      document.removeEventListener('click', this.hidePlace)
+    })
+
+  }
+  showDir = (e) => {
+    e.preventDefault();
+    this.setState({ district: !this.state.district })
+  }
+  showRent = (e) => {
+    e.preventDefault();
+    this.setState({ rent: !this.state.rent })
+  }
+  showRentPing = (e) => {
+    e.preventDefault();
+    this.setState({ rentPing: !this.state.rentPing })
+  }
+  render(){
+    return (
+      <Layout>
+        <Head
+          title="信義全球資產"
+          description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+        />
+        <Navbar />
+        <NavHomeMobile />
+        <SearchDiv>
+          <HeadTag>
+            <a href='/sellList'>
+              <div className='itemBuy'>
+                買賣
+                <img className='itemBorder' src='/static/img/navborder_grey.png' />
+              </div>
+            </a>
+            <a href='/itemList'>
+              <div className='itemBuy itemBuyActive'>
+                租賃
+                <img className='itemBorder' src='/static/img/navborder.png' />
+              </div>
+            </a>
+  
+          </HeadTag>
+          <HeadList search>
+            <IptName className=''>
+              <input className='form-control' type='text' placeholder='關鍵字...' />
+            </IptName>
+            <SearchButton>搜尋</SearchButton>
+          </HeadList>
+          <HeadListMb>
+            <MakeMb long>
+              <DrowDown onClick={this.showKind}>種類</DrowDown>
+                {
+                  this.state.kind ? (
+                    <DrowOption>
+                      <DrowMenu>
+                        <li>辦公</li>
+                        <li>店面</li>
+                        <li>廠房</li>
+                        <li>土地</li>
+                        <li>其他</li>
+                      </DrowMenu>
+                    </DrowOption>
+                  ) : (
+                    null
+                  )
+                }
+            </MakeMb>
+          </HeadListMb>
+          <HeadListMb>
+            <MakeMb>
+              <DrowDown onClick={this.showPlace}>縣市</DrowDown>
+                {
+                  this.state.place ? (
+                    <DrowOption>
+                      <DrowMenu>
+                        <li>台北市</li>
+                        <li>新北市</li>
+                        <li>基隆市</li>
+                        <li>桃園市</li>
+                        <li>新竹市</li>
+                        <li>新竹縣</li>
+                        <li>苗栗縣</li>
+                        <li>台中市</li>
+                      </DrowMenu>
+                    </DrowOption>
+                  ) : (
+                    null
+                  )
+                }
+            </MakeMb>
+            <MakeMb>
+            <DrowDown onClick={this.showDir}>行政區</DrowDown>
+              {
+                this.state.district ? (
+                  <PlaceOption>
+                    <Back>
+                      &lt; &nbsp;&nbsp;全區
+                    </Back>
+                    <ForSel>
+                      <Check>
+                        <input type='checkbox' />中山區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />中正區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />信義區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />內湖區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />北投區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />南港區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />士林區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />大同區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />大安區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />文山區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />松山區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />萬華區
+                      </Check>
+                    </ForSel>
+                  </PlaceOption>
+                ) : (
+                  null
+                )
+              }
+            </MakeMb>
+          </HeadListMb>
+          <HeadListMb>
+            <MakeMb>
+            <DrowDown onClick={this.showRent}>租金</DrowDown>
+              {
+                this.state.rent ? (
+                  <DrowOption>
+                    <ForSel>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                        萬-
+                      </SalSpan>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                        萬
+                      </SalSpan>
+                    </ForSel>
+                    <DrowMenu>
+                      <li>0</li>
+                      <li>200</li>
+                      <li>400</li>
+                      <li>800</li>
+                      <li>1200</li>
+                      <li>2000</li>
+                      <li>3500</li>
+                      <li>5000</li>
+                      <li>6000</li>
+                      <li>8000</li>
+                      <li>10000</li>
+                    </DrowMenu>
+                  </DrowOption>
+                ) : (
+                  null
+                )
+              }
+            </MakeMb>
+            <MakeMb>
+            <DrowDown onClick={this.showRentPing}>出租坪數</DrowDown>
+              {
+                this.state.rentPing ? (
+                  <PlaceOption>
+                    <ForSel>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                        坪-
+                      </SalSpan>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                      坪
+                      </SalSpan>
+                    </ForSel>
+                    <DrowMenu>
+                      <li>10</li>
+                      <li>20</li>
+                      <li>30</li>
+                      <li>40</li>
+                      <li>50</li>
+                      <li>60</li>
+                      <li>100</li>
+                      <li>不限</li>
+                    </DrowMenu>
+                  </PlaceOption>
+                ) : (
+                  null
+                )
+              }
+            </MakeMb>
+          </HeadListMb>
+          <HeadListMb>
+            <SearchButtonMb>搜尋</SearchButtonMb>
+          </HeadListMb>
+          <HeadList>
+            <Make className=''>
+              <DrowDown onClick={this.showKind}>種類</DrowDown>
+                {
+                  this.state.kind ? (
+                    <DrowOption>
+                      <DrowMenu>
+                        <li>辦公</li>
+                        <li>店面</li>
+                        <li>廠房</li>
+                        <li>土地</li>
+                        <li>其他</li>
+                      </DrowMenu>
+                    </DrowOption>
+                  ) : (
+                    null
+                  )
+                }
+            </Make>
+            <Make className=''>
+              <DrowDown onClick={this.showPlace}>縣市</DrowDown>
+                {
+                  this.state.place ? (
+                    <DrowOption>
+                      <DrowMenu>
+                        <li>台北市</li>
+                        <li>新北市</li>
+                        <li>基隆市</li>
+                        <li>桃園市</li>
+                        <li>新竹市</li>
+                        <li>新竹縣</li>
+                        <li>苗栗縣</li>
+                        <li>台中市</li>
+                      </DrowMenu>
+                    </DrowOption>
+                  ) : (
+                    null
+                  )
+                }
+            </Make>
+            <Make className=''>
+              <DrowDown onClick={this.showDir}>行政區</DrowDown>
+              {
+                this.state.district ? (
+                  <PlaceOption>
+                    <Back>
+                      &lt; &nbsp;&nbsp;全區
+                    </Back>
+                    <ForSel>
+                      <Check>
+                        <input type='checkbox' />中山區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />中正區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />信義區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />內湖區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />北投區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />南港區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />士林區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />大同區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />大安區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />文山區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />松山區
+                      </Check>
+                      <Check>
+                        <input type='checkbox' />萬華區
+                      </Check>
+                    </ForSel>
+                  </PlaceOption>
+                ) : (
+                  null
+                )
+              }
+              
+            </Make>
+            <Make long className=''>
+              <DrowDown onClick={this.showRent}>租金</DrowDown>
+              {
+                this.state.rent ? (
+                  <DrowOption>
+                    <ForSel>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                        萬-
+                      </SalSpan>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                        萬
+                      </SalSpan>
+                    </ForSel>
+                    <DrowMenu>
+                      <li>0</li>
+                      <li>200</li>
+                      <li>400</li>
+                      <li>800</li>
+                      <li>1200</li>
+                      <li>2000</li>
+                      <li>3500</li>
+                      <li>5000</li>
+                      <li>6000</li>
+                      <li>8000</li>
+                      <li>10000</li>
+                    </DrowMenu>
+                  </DrowOption>
+                ) : (
+                  null
+                )
+              }
+            </Make>
+            <Make className='pdRight'>
+              <DrowDown onClick={this.showRentPing}>出租坪數</DrowDown>
+              {
+                this.state.rentPing ? (
+                  <PlaceOption>
+                    <ForSel>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                        坪-
+                      </SalSpan>
+                      <SalSelect>
+                        <input className='form-control' type='text' placeholder='請選擇' />
+                      </SalSelect>
+                      <SalSpan>
+                      坪
+                      </SalSpan>
+                    </ForSel>
+                    <DrowMenu>
+                      <li>10</li>
+                      <li>20</li>
+                      <li>30</li>
+                      <li>40</li>
+                      <li>50</li>
+                      <li>60</li>
+                      <li>100</li>
+                      <li>不限</li>
+                    </DrowMenu>
+                  </PlaceOption>
+                ) : (
+                  null
+                )
+              }
+              
+            </Make>
+          </HeadList>
+        </SearchDiv>
+        <Container>
+          <Content>
+            <MakeHead>
+              <Breadcrumb second='租賃' />
+              <Sort>
+                <Select 
+                  placeholder="預設排序"
+                  label='Single select'
+                  theme={theme => ({
+                    ...theme,
+                    borderRadius: 5,
+                  })}
+                />
+              </Sort>
+            </MakeHead>
+            <div className='row mbnone'>
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+            </div>
+            <div className='row navBlock'>
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+              <ItemCard />
+            </div>
+          </Content>
+          <PageInfo className='mbnone'>
+            <ul>
+              <li>
+                <PageCircle>
+                  <PageImg src='/static/img/prev.png' />
+                </PageCircle>
+              </li>
+              <li>
+                <div className='pagination paginationActive'>1</div>
+              </li>
+              <li>
+                <div className='pagination'>2</div>
+              </li>
+              <li>
+                <div className='pagination'>3</div>
+              </li>
+              <li>
+                <div className='pagination'>4</div>
+              </li>
+              <li>
+                <div className='pagination'>5</div>
+              </li>
+              <li>
+                <div className='pagination'>6</div>
+              </li>
+              <li>
+                <div className='pagination'>7</div>
+              </li>
+              <li>
+                <PageCircle>
+                  <PageImg next src='/static/img/next.png' />
+                </PageCircle>
+              </li>
+            </ul>
+          </PageInfo>
+          <BtnContent className='navBlock'>
+            <Show>
+              <img src='/static/img/show_all.png' />
+            </Show>
+          </BtnContent>
+        </Container>
+        <FastButton />
+      </Layout>
+    )
+  }
 }
 
 export default ItemList

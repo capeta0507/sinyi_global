@@ -124,7 +124,7 @@ const NavBar = () => {
           </Logo>
           <NavList>
             <List>
-              <ItemLi>
+              {/* <ItemLi>
                 主題特輯
                 <ItemBorder>
                   <img src='/static/img/hover.png' />
@@ -135,7 +135,7 @@ const NavBar = () => {
                   <ListLi>主題 3</ListLi>
                   <ListLi bottom>主題 4</ListLi>
                 </ItemList>
-              </ItemLi>
+              </ItemLi> */}
               <ItemLi two>
                 <a className='mylink' href='/sellList'>買賣
                   <ItemBorder short>
@@ -168,7 +168,7 @@ const NavBar = () => {
                   <ListLi><a className='' href='/newsList'>焦點新聞</a></ListLi>
                   <ListLi><a className='' href='/report'>月報</a></ListLi>
                   <ListLi>季報</ListLi>
-                  <ListLi bottom>電子報</ListLi>
+                  {/* <ListLi bottom>電子報</ListLi> */}
                 </ItemList>
               </ItemLi>
               <ItemLi>

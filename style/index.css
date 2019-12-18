@@ -9,21 +9,24 @@ html,body{
 }
 /* react-select */
 .css-ql68v7-control{
-    height: 56px;
-    background-color: #FAFAFA !important;
+    height: 40px;
+    background-color: #fff !important;
+    /* color: #fff !important;
+    border-color: #fff !important; */
+
     /* -webkit-appearance: none;
     -moz-appearance: none;
     background: url(/static/img/select_arrow.png) no-repeat 94% 18px;
     background-size: 15px; */
 }
 .css-1hwfws3{
-    height: 56px;
+    height: 40px;
 }
 .css-1uccc91-singleValue{
    font-size: 18px;
 }
 .css-1wa3eu0-placeholder{
-    color: #B4B4B4 !important;
+    /* color: #fff !important; */
     font-size: 18px !important;
     font-weight: 300;
 }
@@ -134,6 +137,9 @@ input:focus::-webkit-input-placeholder {color: transparent;}
 }
 .absolute{
     position: absolute;
+}
+.relative{
+    position: relative;
 }
 .point1{
     top: 14px;
@@ -297,16 +303,16 @@ input[type=radio]{
 }
 .checkmark{
     position: absolute;
-    top: 0;
-    left: -28px;
-    height: 26px;
-    width: 26px;
+    top: 6px;
+    left: -11px;
+    height: 16px;
+    width: 16px;
     border:1px solid #969696;
     border-radius: 50%;
     background-color: #fff;
 }
 input[type=radio]:checked ~ .checkmark {
-    border:1px solid #01AB59;
+    border:1px solid #00B1FF;
 }
 .checkmark:after {
     content: "";
@@ -322,7 +328,7 @@ input:checked ~ .checkmark:after {
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: #01AB59;
+    background-color: #00B1FF;
 }
 input[type=radio]:checked:before{
     content: "";
@@ -333,10 +339,10 @@ input[type=radio]:checked:before{
     width: 17px;
     height: 17px;
     border-radius: 50%;
-    background-color: #01AB59;
+    background-color: #00B1FF;
 }
 .checkPlace:checked ~ .checkmark {
-    border:1px solid #01AB59;
+    border:1px solid #00B1FF;
 }
 .checkPlace:checked:before{
     content: "";
@@ -352,6 +358,7 @@ input[type=radio]:checked:before{
 .myCheckLabel{
     color: #969696;
     font-size: 14px;
+    margin-left: 8px;
 }
 input[type=radio]:checked + .myCheckLabel{
     color: #000;
@@ -1551,6 +1558,9 @@ img {
         width: 100%;
         top: 0;
         right: 0;
+    }
+    .fastButton {
+        top: 50%;
     }
 }
 .itemBuy{
