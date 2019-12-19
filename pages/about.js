@@ -12,7 +12,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MakeTop = styled.div`
   width: 100%;
-  height: 100px;
+  height: 80px;
+  @media (max-width: 992px){
+    height: 56px;
+  }
 `
 
 const BgHead = styled.div`
@@ -32,13 +35,22 @@ const BgHead = styled.div`
     top: 300px;
     left: 210px;
   }
+  @media (max-width: 992px){
+    & > h1 {
+      font-size: 30px;
+      left: 40px;
+    }
+  }
 `
 const Mask = styled.div`
   background: #000;
   width: 100%;
-  height: 580px;
+  height: 560px;
   opacity: .5;
   top: 0px;
+  @media (max-width: 992px){
+    height: 535px;
+  }
 `
 const Container = styled.div`
   width: 100%;

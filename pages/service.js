@@ -3,6 +3,7 @@ import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
+import Breadcrumb from '../components/breadcrumb'
 import FastButton from '../components/fastButton'
 import styled from 'styled-components'
 import '../style/index.css'
@@ -10,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MakeTop = styled.div`
   width: 100%;
-  height: 100px;
+  height: 80px;
   @media (max-width: 992px){
     height: 56px;
   }
@@ -18,7 +19,7 @@ const MakeTop = styled.div`
 
 const BgHead = styled.div`
   width: 100%;
-  height: 480px;
+  height: 500px;
   & > img{
     width: 100%;
     height: 100%;
@@ -134,9 +135,13 @@ const MapContent = styled.div`
     width: 100%;
   }
 `
+const Bread = styled.div`
+  width: 80%;
+  margin: 0 auto;
+`
 
-
-const About = () => (
+const About = () => {
+  return(
     <Layout>
       <Head
         title="信義全球資產"
@@ -151,6 +156,9 @@ const About = () => (
         <h1>信任，帶來新幸福!</h1>
       </BgHead>
       <Container>
+        <Bread>
+          <Breadcrumb second='關於全球' />
+        </Bread>
         <h1 className='textCenter serviceTitle'><img className='serviceIcon' src='/static/img/about/service_phone.png' />服務電話</h1>
         <Content>
           <PeopleContent>
@@ -207,6 +215,7 @@ const About = () => (
       </MapContainer>
       <FastButton />
     </Layout>
-  )
+    )
+  }
   
   export default About

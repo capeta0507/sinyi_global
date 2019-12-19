@@ -542,8 +542,8 @@ input[type=radio]:checked + label{
 .menu.active ul{
     opacity: 1;
     background-color: #263843; 
-    max-height: 1200%;
-    height: 1200%;
+    max-height: 1250%;
+    height: 1250%;
     z-index: 9999999999999;
 }
 .menu ul li a{
@@ -1523,6 +1523,12 @@ img {
 .mylink:hover{
     color: #fff;
 }
+.navLink{
+    color: #000;
+}
+.navLink:hover{
+    color: #00B1FF;
+}
 @media screen and (max-width: 1366px){
     .fastForm{
         display: block;
@@ -1582,6 +1588,7 @@ img {
     font-size: 28px;
     font-weight: bold;
     color: #B4B4B4;
+    cursor: pointer;
     /* margin-bottom: 20px; */
 }
 .tagActive{

@@ -41,7 +41,7 @@ const LeftCon = styled.div`
 const Photo = styled.div`
   width: 100%;
   & > img {
-    width: 80%;
+    width: 100%;
   }
   @media (max-width: 992px){
     & > img {
@@ -56,13 +56,15 @@ const SpName = styled.div`
   text-align: right;
 `
 const RightCon = styled.div`
-  width: 55%;
+  width: 45%;
+  // padding-top: 50px;
   @media (max-width: 992px){
-    width: 100%
+    width: 100%;
+    padding-top: 0px;
   }
 `
 const MainContent = styled.div`
-  margin: 50px 0 50px 0;
+  margin: 100px 0 50px 0;
   & > h3 {
     color: #00B1FF;
     font-size: 26px;

@@ -184,7 +184,7 @@ const Businesser = () => {
           </LeftCon>
           <RightCon>
             <MainContent className='mbnone'>
-              <h3><img className='prize' src='/static/img/about/prize.png' /><span className='prizeName'>總經理</span></h3>
+              <h3><img className='prize' src='/static/img/about/user.png' /><span className='prizeName'>商仲二部</span></h3>
               <h1>康錫晃 Casper Kang</h1>
               <MyPhone>
                 <h5><img className='busIcon' src='/static/img/about/telephone.png' />0945612356</h5>

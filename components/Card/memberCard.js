@@ -1,5 +1,6 @@
 import React from 'react'
 import { Col } from 'react-bootstrap'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 const ThemeCard = styled.div`
@@ -29,6 +30,7 @@ const SendButton = styled.div`
   color: #fff;
   text-align: center;
   padding: 8px 0;
+  cursor: pointer;
   @media (max-width: 992px){
     position: absolute;
     right: 40px;
@@ -72,7 +74,9 @@ const MemberCard = (props) => {
             <h5><img className='memberIcon' src='/static/img/about/line.png' />{props.list3}</h5>
           </MyPhone>
           <p className='mbnone'>多年來經營內湖科學園區、大直重劃區、內湖五期重劃區，本著協助客戶洞見未來的初衷，帶領代理一部的夥伴精益求精，於不動產管理領域提供最專業與優質的服務，成為客戶最佳的資產 ...</p>
-          <SendButton>詳細介紹</SendButton>
+          <Link href='/teamDetail'>
+            <SendButton>詳細介紹</SendButton>
+          </Link>
         </div>
       </Context>
     </ThemeCard>

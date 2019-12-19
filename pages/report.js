@@ -3,8 +3,10 @@ import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
+import Breadcrumb from '../components/breadcrumb'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import StudyCard from '../components/Card/studyCard'
+import Link from 'next/link'
 import MbStudyCard from '../components/Card/mbstudyCard'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const SearchDiv = styled.div`
 	background: #566A77;
 	width: 100%;
-	padding: 150px 0 50px 0;
+	padding: 130px 0 50px 0;
 	@media (max-width: 992px){
 		padding: 80px 0 10px 0;
   }
@@ -127,6 +129,11 @@ const PageImg = styled.img`
     margin-left: ${props => props.next ? '5px' : '8px'};
   }
 `
+const Bread = styled.div`
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10px; 
+`
 
 const ItemList = () => {
 	return (
@@ -146,15 +153,22 @@ const ItemList = () => {
 				</HeadList>
 			</SearchDiv>
 			<Container>
+        <Bread>
+          <Breadcrumb second='季報' />        
+        </Bread>
         <HeadTag>
-					<div className='reportBuy tagActive'>
-            季報
-						<img className='makeBorder' src='/static/img/navborder.png' />
-					</div>
-					<div className='reportBuy'>
-						月報
-						<img className='makeBorder' src='/static/img/navborder_grey.png' />
-					</div>
+          <Link href='/report'>
+            <div className='reportBuy tagActive'>
+              季報
+              <img className='makeBorder' src='/static/img/navborder.png' />
+            </div>
+          </Link>          
+          <Link href='/reportMonth'>
+            <div className='reportBuy'>
+              月報
+              <img className='makeBorder' src='/static/img/navborder_grey.png' />
+            </div>
+          </Link>
 				</HeadTag>
 				<Content>
 					<div className='row'>

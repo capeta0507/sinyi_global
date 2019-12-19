@@ -3,27 +3,25 @@ import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
+import Breadcrumb from '../components/breadcrumb'
+import Link from 'next/link'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import FastButton from '../components/fastButton'
-import Manager from '../components/Team/Gmanager'
-import BusOne from '../components/Team/businessOne'
 import Businesser from '../components/Team/business'
-import Consultant from '../components/Team/consultant'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MakeTop = styled.div`
   width: 100%;
-  height: 100px;
+  height: 80px;
   @media (max-width: 992px){
     height: 56px;
   }
 
 `
-
 const BgHead = styled.div`
   width: 100%;
-  height: 480px;
+  height: 500px;
   & > img{
     width: 100%;
     height: 100%;
@@ -91,6 +89,10 @@ const Container = styled.div`
   padding-top: 50px;
   padding-bottom: 100px;
 `
+const Bread = styled.div`
+  width: 80%;
+  margin: 0 auto;
+`
 
 
 const Team = () => {
@@ -132,12 +134,11 @@ const Team = () => {
         </NavList>
       </NavTeam>
       <Container>
-        {/* 總經理 */}
-        {/* <Manager /> */}
-        {/* 部門 */}
-        {/* <BusOne /> */}
-        {/* <Businesser /> */}
-        <Consultant />
+        <Bread>
+          <Breadcrumb second='團隊介紹' />
+        </Bread>
+        {/* 同仁明細 */}
+        <Businesser />
       </Container>
       <FastButton />
     </Layout>

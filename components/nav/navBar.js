@@ -6,10 +6,11 @@ const Nav = styled.div`
   position: absolute;
   z-index: 2;
   width: 100%;
-  height: 100px;
+  height: 80px;
   line-height:60px;
   background: #3B4B55;
   color: #fff;
+  position: fixed;
   font-weight: bold;
   @media (max-width: 992px){
     display: none;
@@ -25,7 +26,7 @@ const NavContainer = styled.div`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
+  padding-top: 10px;
   flex-wrap: wrap;
 `
 const ItemList = styled.ul`
@@ -34,7 +35,7 @@ const ItemList = styled.ul`
   color: #000;
   font-size: 15px;
   border-radius: 10px;
-  margin-top: 10px;
+  margin-top: 35px;
   display: none;
 `
 const ListLi = styled.div`
@@ -74,7 +75,11 @@ const List = styled.ul`
   } */
 `
 const ItemBorder = styled.div`
-  width: 100px;
+  width: 66px;
+  height: 7px;
+  display: none;
+  margin-top: -28px;
+  margin-left: ${props => props.short ? '-16px' : '0'};
   & > img {
     width: 100%;
   }
@@ -93,6 +98,9 @@ const ItemLi = styled.li`
     font-size: 16px;
   }
   &:hover ${ItemList}{
+    display: block;
+  }
+  &:hover ${ItemBorder}{
     display: block;
   }
 `
@@ -129,35 +137,92 @@ const NavBar = () => {
                 </ItemList>
               </ItemLi> */}
               <ItemLi two>
-                <a className='mylink' href='/sellList'>買賣</a>
+                <a className='mylink' href='/sellList'>
+                  買賣
+                  <ItemBorder short>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
               </ItemLi>
               <ItemLi two>
-                <a className='mylink' href='/itemList'>租賃</a>
+                <a className='mylink' href='/itemList'>
+                  租賃
+                  <ItemBorder short>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
               </ItemLi>
-              <ItemLi two><a className='mylink' href='/bid'>標售</a>
-              <ItemList>
-                <ListLi>標案 1</ListLi>
-                <ListLi>標案 2</ListLi>
-                <ListLi bottom>標案 3</ListLi>
-              </ItemList>
+              <ItemLi two>標售
+                <ItemBorder short>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
+                <ItemList>
+                  <Link href='/about'>
+                    <a className='navLink'>
+                      <ListLi>服務與實績</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi>標案 1</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi>標案 2</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi bottom>標案 3</ListLi>
+                    </a>
+                  </Link>
+                </ItemList>
               </ItemLi>
               <ItemLi>新聞與研究
+                <ItemBorder className='bdRight'>
+                  <img src='/static/img/hover.png' />
+                </ItemBorder>
                 <ItemList>
-                  <ListLi><a className='' href='/newsList'>焦點新聞</a></ListLi>
-                  <ListLi><a className='' href='/report'></a>月報</ListLi>
-                  <ListLi>季報</ListLi>
+                  <Link href='/newsList'>
+                    <a className='navLink'>
+                      <ListLi>焦點新聞</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/reportMonth'>
+                    <a className='navLink'>
+                      <ListLi>月報</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/report'>
+                    <a className='navLink'>
+                      <ListLi bottom>季報</ListLi>
+                    </a>
+                  </Link>
                   {/* <ListLi bottom>電子報</ListLi> */}
                 </ItemList>
               </ItemLi>
               <ItemLi>
-                <a className='mylink' href='/teams'>團隊介紹</a>
+                <a className='mylink' href='/team'>
+                  團隊介紹
+                  <ItemBorder>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
               </ItemLi>
               <ItemLi>
-                <a className='mylink' href='/about'>關於全球</a>
+                <a className='mylink' href='/about'>
+                  關於全球
+                  <ItemBorder>
+                    <img src='/static/img/hover.png' />
+                  </ItemBorder>
+                </a>
                 <ItemList>
                   <ListLi>公司簡介</ListLi>
                   <ListLi>加入我們</ListLi>
-                  <ListLi bottom>服務據點</ListLi>
+                  <Link href='/service'>
+                    <a className='navLink'><ListLi bottom>服務據點</ListLi></a>
+                  </Link>
                 </ItemList>
               </ItemLi>
               <ItemLi><a href='https://www.facebook.com/sinyiglobal' target="_blank"><Icon src="static/img/icon_fb_w.png" alt="" /></a></ItemLi>

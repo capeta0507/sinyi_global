@@ -1,5 +1,5 @@
 import React from 'react'
-// import Link from 'next/link'
+import Link from 'next/link'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import MyCarousel from '../components/carousel'
@@ -55,11 +55,21 @@ const Home = () => (
     <MobileCarousel />
     <HomeNav>
       <Nav>
-        <div className='navItem place'></div>
-        <div className='navItem shop'></div>
-        <div className='navItem factory'></div>
-        <div className='navItem land'></div>
-        <div className='navItem other'></div>
+        <Link href='/sellList'>
+          <a className='navItem place'></a>
+        </Link>
+        <Link href='/sellList'>
+          <a className='navItem shop'></a>          
+        </Link>
+        <Link href='/sellList'>
+          <a className='navItem factory'></a>
+        </Link>
+        <Link href='/sellList'>
+          <a className='navItem land'></a>
+        </Link>
+        <Link href='/sellList'>
+          <a className='navItem other'></a>
+        </Link>
       </Nav>
       <NavMb>
         <MbNavList>

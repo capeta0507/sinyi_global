@@ -63,7 +63,7 @@ const Content = styled.div`
 
 const NewsCard = () => {
   return(
-    <Link>
+    <Link href='/news'>
       <Card>
         <Img>
           <img src='/static/img/11-02607-005.jpg' />

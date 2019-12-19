@@ -15,7 +15,7 @@ const SearchDiv = styled.div`
 	background: #566A77;
   width: 100%;
   height: 400px;
-	padding: 150px 0 50px 0;
+	padding: 130px 0 50px 0;
 	@media (max-width: 992px){
 		padding: 80px 0 10px 0;
   }

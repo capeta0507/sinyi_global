@@ -22,10 +22,11 @@ const Head = props => (
     <link rel="icon" href="/static/sinylogo.png" />
     <meta property="og:url" content={props.url || defaultOGURL} />
     <meta property="og:title" content={props.title || ''} />
-    <meta
-      property="og:description"
-      content={props.description || defaultDescription}
-    />
+    <meta property="og:title" content={props.og_title || props.title} />
+    <meta property="og:description" content={props.og_description || props.description|| defaultDescription} />
+    <meta property="og:image" content={props.og_image || ''} />
+    <meta property="og:site_name" content="信義房屋集團人才招募網" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=11" />
     <meta name="twitter:site" content={props.url || defaultOGURL} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={props.ogImage || defaultOGImage} />

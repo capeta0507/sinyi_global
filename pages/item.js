@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
+import Breadcrumb from '../components/breadcrumb'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import { Carousel } from 'react-bootstrap'
 import NewItem from '../components/Card/newItemCard'
@@ -13,7 +14,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const Container = styled.div`
 	width: 90%;
   margin: 0 auto;
-	padding: 150px 0 50px 0;
+	padding: 130px 0 50px 0;
 `
 const Main = styled.div`
   width: 60%;
@@ -145,6 +146,7 @@ const Business = styled.div`
   width: 310px;
   box-shadow: 0px 0px 10px ;
   padding: 20px;
+  margin-left: 100px;
   & > h3{
     font-size: 20px;
     color: #00B1FF;
@@ -251,7 +253,8 @@ const Item = () => {
 			/>
 			<Navbar />
       <Container>
-        <div className='row juseBet gendermg'>
+        <Breadcrumb second='租賃' />
+        <div className='row gendermg'>
           <Main>
             <Title>
               <h1>勤樸辦公廠房Ａ</h1>

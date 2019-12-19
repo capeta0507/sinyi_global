@@ -4,6 +4,7 @@ import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
+import Breadcrumb from '../components/breadcrumb'
 import OtherNewsCard from '../components/Card/otherNewsCard'
 import FastButton from '../components/fastButton'
 import '../style/index.css'
@@ -11,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MainContain = styled.div`
   width: 100%;
-  padding: 150px 0 50px 0;
+  padding: 80px 0 50px 0;
   background: #fff;
 `
 const Container = styled.div`
@@ -143,6 +144,7 @@ const News = () => {
       <NavHomeMobile />
       <MainContain>
         <Container>
+        <Breadcrumb second='新聞' />
           <Title>
             <h1>台北科技走廊最後一塊版圖 北士科土地交易發燙</h1>
             <NewsDate className='mbnone'>2019/09/24</NewsDate>

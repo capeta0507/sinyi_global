@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
+import Breadcrumb from '../components/breadcrumb'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import FastButton from '../components/fastButton'
 import '../style/index.css'
@@ -10,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MainContain = styled.div`
   width: 100%;
-  padding: 150px 0 50px 0;
+  padding: 80px 0 50px 0;
   background: #fff;
 `
 const MainDescription = styled.div`
@@ -191,6 +192,7 @@ const Bid = () => {
       <NavHomeMobile />
       <MainContain>
         <Container>
+          <Breadcrumb second='標售' />
           <Title>
             <h1>信義全球資產管理(股)公司</h1>
             <h1>臺北市精華地段辦公標售案</h1>

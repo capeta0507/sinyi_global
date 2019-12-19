@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
@@ -6,10 +6,11 @@ const Nav = styled.div`
   position: absolute;
   z-index: 2;
   width: 100%;
-  height: 100px;
+  height: 80px;
   line-height:60px;
   background: rgba(0,0,0,.2);
   color: #fff;
+  position: fixed;
   font-weight: bold;
   @media (max-width: 992px){
     display: none;
@@ -25,7 +26,7 @@ const NavContainer = styled.div`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
+  padding-top: 10px;
   flex-wrap: wrap;
 `
 const ItemList = styled.ul`
@@ -155,9 +156,26 @@ const NavBar = () => {
                   <img src='/static/img/hover.png' />
                 </ItemBorder>
                 <ItemList>
-                  <ListLi>標案 1</ListLi>
-                  <ListLi>標案 2</ListLi>
-                  <ListLi bottom>標案 3</ListLi>
+                  <Link href='/about'>
+                    <a className='navLink'>
+                      <ListLi>服務與實績</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi>標案 1</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi>標案 2</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi bottom>標案 3</ListLi>
+                    </a>
+                  </Link>
                 </ItemList>
               </ItemLi>
               <ItemLi>新聞與研究
@@ -165,14 +183,26 @@ const NavBar = () => {
                   <img src='/static/img/hover.png' />
                 </ItemBorder>
                 <ItemList>
-                  <ListLi><a className='' href='/newsList'>焦點新聞</a></ListLi>
-                  <ListLi><a className='' href='/report'>月報</a></ListLi>
-                  <ListLi>季報</ListLi>
+                  <Link href='/newsList'>
+                    <a className='navLink'>
+                      <ListLi>焦點新聞</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/reportMonth'>
+                    <a className='navLink'>
+                      <ListLi>月報</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/report'>
+                    <a className='navLink'>
+                      <ListLi bottom>季報</ListLi>
+                    </a>
+                  </Link>
                   {/* <ListLi bottom>電子報</ListLi> */}
                 </ItemList>
               </ItemLi>
               <ItemLi>
-                <a className='mylink' href='/teams'>團隊介紹
+                <a className='mylink' href='/team'>團隊介紹
                   <ItemBorder>
                     <img src='/static/img/hover.png' />
                   </ItemBorder>
@@ -180,7 +210,9 @@ const NavBar = () => {
                 <ItemList>
                   <ListLi>公司簡介</ListLi>
                   <ListLi>加入我們</ListLi>
-                  <ListLi bottom><a className='mylink' href='/service'>服務據點</a></ListLi>
+                  <Link href='/service'>
+                    <a className='navLink'><ListLi bottom>服務據點</ListLi></a>
+                  </Link>
                 </ItemList>
               </ItemLi>
               <ItemLi>
