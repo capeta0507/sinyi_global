@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components'
 import ItemCard from '../Card/itemCard'
 
@@ -26,17 +26,27 @@ const FirstContent = styled.div`
 const SecondContent = styled.div`
   width: 80%;
   margin: 0 auto;
-  display: flex;
-  margin-top: 80px;
+  display: ${props => props.second ? 'flex' : 'flex'};
+  margin-top: 50px;
   background: #fff;
+  flex-wrap: wrap;
+  padding: 30px 0px;
   justify-content: space-between;
+  @media (max-width: 992px){
+    width: 100%;
+    display: ${props => props.second ? 'none' : 'block'};
+    padding: 0px;
+  }
+`
+const SecondContentMb = styled.div`
+  display: none;
   @media (max-width: 992px){
     width: 100%;
     display: block;
   }
 `
 const LeftCon = styled.div`
-  width: 40%;
+  width: 45%;
   @media (max-width: 992px){
     width: 100%;
     & > img {
@@ -66,7 +76,7 @@ const SpName = styled.div`
   }
 `
 const RightCon = styled.div`
-  width: 40%;
+  width: 55%;
   @media (max-width: 992px){
     width: 100%
   }
@@ -99,6 +109,13 @@ const PeopleTitle = styled.div`
   padding-bottom: 8px;
   font-weight: bold;
   margin-bottom: 8px;
+  & > img {
+    width: 12px;
+  }
+  @media (max-width: 992px){
+    position: relative;
+    justify-content: space-between;
+  }
 `
 const PeopleContwnt = styled.div`
   width: 100%;
@@ -108,7 +125,16 @@ const PeopleContwnt = styled.div`
     display:flex;
   }
   @media (max-width: 992px){
+    display: none;
+  }
+`
+const PeopleContwntMb = styled.div`
+  display: none;
+  @media (max-width: 992px){
     width: 100%;
+    font-size: 18px;
+    color: #000;
+    display: block;
   }
 `
 const MyPhone = styled.div`
@@ -125,7 +151,7 @@ const MyPhone = styled.div`
   }
 `
 const ListContent = styled.div`
-  width: 25%;
+  width: 20%;
   margin: 0 10px;
   & > p {
     display:flex;
@@ -156,6 +182,7 @@ const Show = styled.div`
   margin-bottom: 80px;
   margin: 0 auto;
   cursor: pointer;
+  margin-bottom: 50px;
   & > img{
     width: 100%;
   }
@@ -163,6 +190,32 @@ const Show = styled.div`
 
 
 const Businesser = () => {
+  const [intro, setIntro] = useState(false)
+  const [seniority, setSeniority] = useState(false)
+  const [club, setClub] = useState(false)
+  const [expertise, setExpertise] = useState(false)
+  const [service, setService] = useState(false)
+
+  const displayIntor = () => {
+    setIntro(!intro)
+  }
+  const displaySeniority = () => {
+    setSeniority(!seniority)
+  }
+  const displayClub = () => {
+    setClub(!club)
+  }
+  const displayExpertise = () => {
+    setExpertise(!expertise)
+  }
+  const displayService = () => {
+    setService(!service)
+  }
+  const display01 = intro ? 'none' : '';
+  const display02 = seniority ? 'none' : '';
+  const display03 = club ? 'none' : '';
+  const display04 = expertise ? 'none' : '';
+  const display05 = service ? 'none' : '';
   return (
     <>
       <TeamBlock>
@@ -200,7 +253,92 @@ const Businesser = () => {
         </FirstContent>
       </TeamBlock>
       <SecondBlock>
-        <SecondContent>
+        {/* 手機 */}
+        <SecondContentMb>
+          <PeopleContwntMb>
+            <ListContent>
+              <PeopleTitle onClick={displayIntor}>個人簡介<img className={`downicon ${display01}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+              {
+                intro ? (
+                  <p>多年來經營內湖科學園區、大直重劃區、內湖五期重劃區，本著協助客戶洞見未來的初衷，帶領商仲一部的夥伴精益求精，於不動產管理領域提供最專業與優質的服務，成為客戶最佳的資產管理顧問。</p>
+                ) : (
+                  ''
+                )
+              }
+            </ListContent>
+          </PeopleContwntMb>
+          <PeopleContwntMb>
+            <ListContent>
+              <PeopleTitle onClick={displaySeniority}>個人資歷<img className={`downicon ${display02}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+              {
+                seniority ? (
+                  <>
+                    <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
+                    <p><div className='peoList'></div>信義房屋商仲一組主管</p>
+                    <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
+                    <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
+                    <p><div className='peoList'></div>經紀人</p>
+                  </>
+                ) : (
+                  ''
+                )
+              }
+              
+            </ListContent>
+          </PeopleContwntMb>
+          <PeopleContwntMb>
+            <ListContent>
+              <PeopleTitle onClick={displayClub}>參與社團<img className={`downicon ${display03}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+              {
+                club ? (
+                  <>
+                    <p><div className='peoList'></div>中華民國中小企業總會</p>
+                    <p><div className='peoList'></div>台北市中小企業協會</p>
+                  </>
+                ) : (
+                  ''
+                )
+              }
+            </ListContent>
+          </PeopleContwntMb>
+          <PeopleContwntMb>
+            <ListContent>
+              <PeopleTitle onClick={displayExpertise}>專業證照&專長<img className={`downicon ${display04}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+              {
+                expertise ? (
+                  <>
+                    <p><div className='peoList'></div>高級證券業務員</p>
+                    <p><div className='peoList'></div>期貨業務人員</p>
+                    <p><div className='peoList'></div>理財人員</p>
+                    <p><div className='peoList'></div>信託人員</p>
+                  </>
+                ) : (
+                  ''
+                )
+              }
+
+            </ListContent>
+          </PeopleContwntMb>
+          <PeopleContwntMb>
+            <ListContent>
+              <PeopleTitle onClick={displayService}>服務實績<img className={`downicon ${display05}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+              {
+                service ? (
+                  <>
+                    <p><div className='peoList'></div>桃園科技園區科技廠房</p>
+                    <p><div className='peoList'></div>愛丁堡科技大樓</p>
+                    <p><div className='peoList'></div>大帝國科技大樓</p>
+                    <p><div className='peoList'></div>世紀經貿科技大樓</p>
+                  </>
+                ) : (
+                  ''
+                )
+              }
+            </ListContent>
+          </PeopleContwntMb>
+        </SecondContentMb>
+        {/* 桌機 */}
+        <SecondContent second>
           <ListContent>
             <PeopleTitle>個人資歷</PeopleTitle>
             <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
@@ -235,6 +373,10 @@ const Businesser = () => {
       </BigTitle>
       <SecondBlock>
         <SecondContent>
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
+          <ItemCard />
           <ItemCard />
           <ItemCard />
           <ItemCard />

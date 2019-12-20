@@ -6,7 +6,7 @@ import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import { Carousel } from 'react-bootstrap'
 import Breadcrumb from '../components/breadcrumb'
-import NewItem from '../components/Card/newItemCard'
+import NewSellCard from '../components/Card/newSellCard'
 import FastButton from '../components/fastButton2'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -353,6 +353,40 @@ const Item = () => {
                   />
                 </div>
               </Carousel>
+              {/* <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div className="carousel-inner">
+                  <div className="carousel-item cauimg active">
+                    <img className="d-block cauHeight" src="/static/img/sean-pollock-PhYq704ffdA-unsplash.jpg" alt="First slide" />
+                  </div>
+                  <div className="carousel-item cauimg">
+                    <img className="d-block cauHeight" src="/static/img/7152019128020115162m.jpg" alt="Second slide" />
+                  </div>
+                  <div className="carousel-item cauimg">
+                    <img className="d-block cauHeight" src="/static/img/11-02607-005.jpg" alt="Third slide" />
+                  </div>
+                </div>
+                <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span className="sr-only">Previous</span>
+                </a>
+                <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="sr-only">Next</span>
+                </a>
+                <div className="container pt-4 pb-5">
+                  <div className="row carousel-indicators">
+                    <div className="col-md-4 item">
+                      <img className="d-block cauHeight" src="/static/img/sean-pollock-PhYq704ffdA-unsplash.jpg" class="img-fluid" data-target="#carouselExampleIndicators" data-slide-to="0"/>
+                    </div>
+                    <div className="col-md-4 item">
+                      <img className="d-block cauHeight" src="/static/img/7152019128020115162m.jpg" class="img-fluid" data-target="#carouselExampleIndicators" data-slide-to="1"/>
+                    </div>
+                    <div className="col-md-4 item">
+                      <img className="d-block cauHeight" src="/static/img/11-02607-005.jpg" class="img-fluid" data-target="#carouselExampleIndicators" data-slide-to="2"/>
+                    </div>
+                  </div>
+                </div>
+              </div> */}
             </Cau>
           </Main>
           <Business>
@@ -572,16 +606,14 @@ const Item = () => {
           <TitleImg src='/static/img/t5_newItem.png' />
         </BigTitle>
         <div className='row gendermg mbnone'>
-          <NewItem />
-          <NewItem />
-          <NewItem />
-          <NewItem />
+          <NewSellCard />
+          <NewSellCard />
+          <NewSellCard />
+          <NewSellCard />
         </div>
         <div className='row gendermg mbFlex'>
-          <NewItem />
-          <NewItem />
-          <NewItem />
-          <NewItem />
+          <NewSellCard />
+          <NewSellCard />
         </div>
       </Container>
       <FastButton />

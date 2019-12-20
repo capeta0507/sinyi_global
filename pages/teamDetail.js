@@ -87,7 +87,6 @@ const Container = styled.div`
   width: 100%;
   background: #F1F1F1;
   padding-top: 50px;
-  padding-bottom: 100px;
 `
 const Bread = styled.div`
   width: 80%;

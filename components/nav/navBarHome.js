@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
@@ -8,7 +8,6 @@ const Nav = styled.div`
   width: 100%;
   height: 80px;
   line-height:60px;
-  background: rgba(0,0,0,.2);
   color: #fff;
   position: fixed;
   font-weight: bold;
@@ -37,6 +36,7 @@ const ItemList = styled.ul`
   border-radius: 10px;
   margin-top: 35px;
   display: none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2);
 `
 const ListLi = styled.div`
   padding: 0 0 0 10px ;
@@ -114,8 +114,23 @@ const Icon = styled.img`
 `
 
 const NavBar = () => {
+  const [navTop, setNavTop] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener( 'scroll', winScroll);
+  })
+
+  const winScroll = () => {
+    let navRoll = window.pageYOffset;
+    if(navRoll > 100){
+      setNavTop(true)
+    } else {
+      setNavTop(false)
+    }
+  }
+  const navColor = navTop ? 'hewdDown' : 'headUp'
   return(
-    <Nav>
+    <Nav className={`transition ${navColor}`}>
       <NavContainer>
         <Content>
           <Logo>
@@ -156,7 +171,7 @@ const NavBar = () => {
                   <img src='/static/img/hover.png' />
                 </ItemBorder>
                 <ItemList>
-                  <Link href='/about'>
+                  <Link href='/about#bid'>
                     <a className='navLink'>
                       <ListLi>服務與實績</ListLi>
                     </a>

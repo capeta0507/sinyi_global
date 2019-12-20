@@ -105,9 +105,9 @@ const Content = styled.div`
     padding: 0 0px;
   }
 `
-const ItemCard = () => {
+const SellCard = () => {
   return (
-    <Link hred='/item'>
+    <Link hred='/sell'>
       <Card>
         <Img>
           <img src='/static/img/25358613_1553657854750443_452107410832652332_o.jpg' />
@@ -150,9 +150,9 @@ const ItemCard = () => {
           <div className='join flex'><img className='listJoin' src='/static/img/list/join.PNG' />加入比較</div>
           </JustContentMb>
         </Introduction>
-      </Card>   
+      </Card>
     </Link>
   )
 }
 
-export default ItemCard
+export default SellCard

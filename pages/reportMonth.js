@@ -6,8 +6,8 @@ import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import Breadcrumb from '../components/breadcrumb'
 import Link from 'next/link'
-import StudyCard from '../components/Card/studyCard'
-import MbStudyCard from '../components/Card/mbstudyCard'
+import StudyMonthCard from '../components/Card/studyMonthCard'
+import MbStudyMonthCard from '../components/Card/mbstudyMonthCard'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -134,6 +134,24 @@ const Bread = styled.div`
   margin: 0 auto;
   padding-top: 10px; 
 `
+const BtnContent = styled.div`
+  width:100%;
+  text-align: center;
+  padding: 20px 0 60px 0;
+  @media (max-width: 992px){
+    padding: 20px 0 20px 0;
+  }
+`
+const Show = styled.div`
+  width: 82px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin: 0 auto;
+  cursor: pointer;
+  & > img{
+    width: 100%;
+  }
+`
 
 const ItemList = () => {
 	return (
@@ -173,32 +191,32 @@ const ItemList = () => {
 				<Content>
 					<div className='row'>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <StudyMonthCard />
+              <MbStudyMonthCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <StudyMonthCard />
+              <MbStudyMonthCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <StudyMonthCard />
+              <MbStudyMonthCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <StudyMonthCard />
+              <MbStudyMonthCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <StudyMonthCard />
+              <MbStudyMonthCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <StudyMonthCard />
+              <MbStudyMonthCard />
             </NewsBlock>
 					</div>
 				</Content>
-				<PageInfo>
+				<PageInfo className='mbnone'>
           <ul>
           <li>
             <PageCircle>
@@ -233,6 +251,11 @@ const ItemList = () => {
           </li>
           </ul>
         </PageInfo>
+        <BtnContent className='navBlock'>
+          <Show>
+            <img src='/static/img/show_all.png' />
+          </Show>
+        </BtnContent>
 			</Container>
 		</Layout>
 	)

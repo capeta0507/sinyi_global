@@ -134,6 +134,24 @@ const Bread = styled.div`
   margin: 0 auto;
   padding-top: 10px; 
 `
+const BtnContent = styled.div`
+  width:100%;
+  text-align: center;
+  padding: 20px 0 60px 0;
+  @media (max-width: 992px){
+    padding: 20px 0 20px 0;
+  }
+`
+const Show = styled.div`
+  width: 82px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin: 0 auto;
+  cursor: pointer;
+  & > img{
+    width: 100%;
+  }
+`
 
 const ItemList = () => {
 	return (
@@ -198,7 +216,7 @@ const ItemList = () => {
             </NewsBlock>
 					</div>
 				</Content>
-				<PageInfo>
+				<PageInfo className='mbnone'>
           <ul>
           <li>
             <PageCircle>
@@ -233,6 +251,11 @@ const ItemList = () => {
           </li>
           </ul>
         </PageInfo>
+        <BtnContent className='navBlock'>
+          <Show>
+            <img src='/static/img/show_all.png' />
+          </Show>
+        </BtnContent>
 			</Container>
 		</Layout>
 	)

@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Link from 'next/link'
 import StudyCard from '../components/Card/studyCard'
 import MbStudyCard from '../components/Card/mbstudyCard'
+import StudyMonthCard from '../components/Card/studyMonthCard'
+import MbStudyMonthCard from '../components/Card/mbstudyMonthCard'
 
 const StudyContainer = styled.div`
   width: 80%;
@@ -89,8 +91,8 @@ const StudyList = (props) => {
              <MbStudyCard />
             </Item>
             <Item>
-             <StudyCard />
-             <MbStudyCard />
+             <StudyMonthCard />
+             <MbStudyMonthCard />
             </Item>
           </StudyContent>
           <BtnContent>

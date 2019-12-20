@@ -41,6 +41,7 @@ const MbNavList = styled.div`
   width: 100%;
   justify-content: space-between;
   display: flex;
+  margin-bottom: 10px;
 `
 
 const Home = () => (
@@ -73,25 +74,37 @@ const Home = () => (
       </Nav>
       <NavMb>
         <MbNavList>
-          <div className='navItem placeMb2'>
-            <img src='/static/img/home_icon/01_m.png' />
-          </div>
+          <Link href='/sellList'>
+            <a>
+              <div className='navItem placeMb2'>
+                <img src='/static/img/home_icon/01_m.png' />
+              </div>
+            </a>
+          </Link>
         </MbNavList>
         <MbNavList>
-          <div className='navItem'>
-            <img src='/static/img/home_icon/02.png' />
-          </div>
-          <div className='navItem'>
-            <img src='/static/img/home_icon/03.png' />
-          </div>
+          <Link href='/sellList'>
+              <a className='navItem'>
+                <img src='/static/img/home_icon/02.png' />
+              </a>
+          </Link>
+          <Link href='/sellList'>
+              <a className='navItem'>
+                <img src='/static/img/home_icon/03.png' />
+              </a>
+          </Link>
         </MbNavList>
         <MbNavList>
-          <div className='navItem'>
-          <img src='/static/img/home_icon/04.png' />
-          </div>
-          <div className='navItem'>
-          <img src='/static/img/home_icon/05.png' />
-          </div>
+          <Link href='/sellList'>
+              <a className='navItem'>
+                <img src='/static/img/home_icon/04.png' />
+              </a>
+          </Link>
+          <Link href='/sellList'>
+              <a className='navItem'>
+                <img src='/static/img/home_icon/05.png' />
+              </a>
+          </Link>
         </MbNavList>
       </NavMb>
     </HomeNav>

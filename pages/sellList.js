@@ -4,7 +4,7 @@ import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
-import ItemCard from '../components/Card/itemCard'
+import SellCard from '../components/Card/sellCard'
 import Breadcrumb from '../components/breadcrumb'
 import FastButton from '../components/fastButton3'
 import Select from 'react-select'
@@ -220,8 +220,24 @@ const DrowMenu = styled.ul`
   margin-top: 10px;
   border-radius: 10px;
   overflow: hidden;
+  & > li {
+    width: 100%;
+    padding: 8px 15px;
+    color:  #969696;
+    font-size: 16px;
+    &:hover {
+      background: rgba(0,177,255,.1);
+      color: #00B1FF;
+    }
+  }
+`
+const DrowMenuCity = styled.ul`
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
   overflow-y: scroll;
-  height: 200px;
+  height: 250px;
   & > li {
     width: 100%;
     padding: 8px 15px;
@@ -264,6 +280,16 @@ const Show = styled.div`
     width: 100%;
   }
 `
+const PresetOption = [
+  { value: '降價幅度高到低', label: '降價幅度高到低'},
+  { value: '上架時間新到舊', label: '上架時間新到舊'},
+  { value: '總價從低到高', label: '總價從低到高'},
+  { value: '總價從高到低', label: '總價從高到低'},
+  { value: '坪數從小到大', label: '坪數從小到大'},
+  { value: '坪數從小到大', label: '坪數從小到大'},
+  { value: '屋齡從低到高', label: '屋齡從低到高'},
+  { value: '屋齡從高到低', label: '屋齡從高到低'}
+]
 
 class ItemList extends Component {
   constructor(){
@@ -279,7 +305,13 @@ class ItemList extends Component {
 
   showKind = (e) => {
     e.preventDefault();
-    this.setState({ kind: true }, () => {
+    this.setState({ 
+      kind: true,
+      place: false,
+      district: false,
+      price: false,
+      ping: false
+     }, () => {
       document.addEventListener('click', this.hideKind)
     })
   }
@@ -291,7 +323,13 @@ class ItemList extends Component {
   }
   showPlace = (e) => {
     e.preventDefault();
-    this.setState({ place: true }, () => {
+    this.setState({ 
+      place: true,
+      place: false,
+      district: false,
+      price: false,
+      ping: false
+     }, () => {
       document.addEventListener('click', this.hidePlace)
     })
   }
@@ -303,15 +341,33 @@ class ItemList extends Component {
   }
   showDir = (e) => {
     e.preventDefault();
-    this.setState({ district: !this.state.district })
+    this.setState({ 
+      kind: false,
+      place: false,
+      district: !this.state.district,
+      price: false,
+      ping: false
+     })
   }
   showPrice = (e) => {
     e.preventDefault();
-    this.setState({ price: !this.state.price })
+    this.setState({ 
+      kind: false,
+      place: false,
+      district: false,
+      price: !this.state.price,
+      ping: false
+     })
   }
   showPing = (e) => {
     e.preventDefault();
-    this.setState({ ping: !this.state.ping })
+    this.setState({
+      kind: false,
+      place: false,
+      district: false,
+      ping: false,
+      ping: !this.state.ping
+     })
   }
   render(){
     return (
@@ -369,7 +425,7 @@ class ItemList extends Component {
               {
                 this.state.place ? (
                   <DrowOption>
-                    <DrowMenu>
+                    <DrowMenuCity>
                       <li>台北市</li>
                       <li>新北市</li>
                       <li>基隆市</li>
@@ -378,7 +434,24 @@ class ItemList extends Component {
                       <li>新竹縣</li>
                       <li>苗栗縣</li>
                       <li>台中市</li>
-                    </DrowMenu>
+                      <li>彰化縣</li>
+                      <li>彰化市</li>
+                      <li>雲林縣</li>
+                      <li>雲林市</li>
+                      <li>嘉義縣</li>
+                      <li>嘉義市</li>
+                      <li>台南縣</li>
+                      <li>台南市</li>
+                      <li>高雄縣</li>
+                      <li>高雄市</li>
+                      <li>屏東縣</li>
+                      <li>宜蘭縣</li>
+                      <li>宜蘭市</li>
+                      <li>花蓮縣</li>
+                      <li>花蓮市</li>
+                      <li>台東縣</li>
+                      <li>台東市</li>
+                    </DrowMenuCity>
                   </DrowOption>
                 ) : (
                   null
@@ -460,16 +533,11 @@ class ItemList extends Component {
                     </ForSel>
                     <DrowMenu>
                       <li>0</li>
-                      <li>200</li>
-                      <li>400</li>
-                      <li>800</li>
-                      <li>1200</li>
-                      <li>2000</li>
-                      <li>3500</li>
-                      <li>5000</li>
-                      <li>6000</li>
-                      <li>8000</li>
-                      <li>10000</li>
+                      <li>3,000</li>
+                      <li>6,000</li>
+                      <li>8,000</li>
+                      <li>10,000</li>
+                      <li>30,000</li>
                     </DrowMenu>
                   </DrowOption>
                 ) : (
@@ -516,14 +584,14 @@ class ItemList extends Component {
                       </SalSpan>
                     </ForSel>
                     <DrowMenu>
-                      <li>10</li>
-                      <li>20</li>
-                      <li>30</li>
-                      <li>40</li>
-                      <li>50</li>
+                      <li>0</li>
                       <li>60</li>
+                      <li>80</li>
                       <li>100</li>
-                      <li>不限</li>
+                      <li>200</li>
+                      <li>300</li>
+                      <li>400</li>
+                      <li>500</li>
                     </DrowMenu>
                   </PlaceOption>
                 ) : (
@@ -559,7 +627,7 @@ class ItemList extends Component {
               {
                 this.state.place ? (
                   <DrowOption>
-                    <DrowMenu>
+                    <DrowMenuCity>
                       <li>台北市</li>
                       <li>新北市</li>
                       <li>基隆市</li>
@@ -568,7 +636,24 @@ class ItemList extends Component {
                       <li>新竹縣</li>
                       <li>苗栗縣</li>
                       <li>台中市</li>
-                    </DrowMenu>
+                      <li>彰化縣</li>
+                      <li>彰化市</li>
+                      <li>雲林縣</li>
+                      <li>雲林市</li>
+                      <li>嘉義縣</li>
+                      <li>嘉義市</li>
+                      <li>台南縣</li>
+                      <li>台南市</li>
+                      <li>高雄縣</li>
+                      <li>高雄市</li>
+                      <li>屏東縣</li>
+                      <li>宜蘭縣</li>
+                      <li>宜蘭市</li>
+                      <li>花蓮縣</li>
+                      <li>花蓮市</li>
+                      <li>台東縣</li>
+                      <li>台東市</li>
+                    </DrowMenuCity>
                   </DrowOption>
                 ) : (
                   null
@@ -648,16 +733,11 @@ class ItemList extends Component {
                     </ForSel>
                     <DrowMenu>
                       <li>0</li>
-                      <li>200</li>
-                      <li>400</li>
-                      <li>800</li>
-                      <li>1200</li>
-                      <li>2000</li>
-                      <li>3500</li>
-                      <li>5000</li>
-                      <li>6000</li>
-                      <li>8000</li>
-                      <li>10000</li>
+                      <li>3,000</li>
+                      <li>6,000</li>
+                      <li>8,000</li>
+                      <li>10,000</li>
+                      <li>30,000</li>
                     </DrowMenu>
                   </DrowOption>
                 ) : (
@@ -704,14 +784,14 @@ class ItemList extends Component {
                       </SalSpan>
                     </ForSel>
                     <DrowMenu>
-                      <li>10</li>
-                      <li>20</li>
-                      <li>30</li>
-                      <li>40</li>
-                      <li>50</li>
+                      <li>0</li>
                       <li>60</li>
+                      <li>80</li>
                       <li>100</li>
-                      <li>不限</li>
+                      <li>200</li>
+                      <li>300</li>
+                      <li>400</li>
+                      <li>500</li>
                     </DrowMenu>
                   </PlaceOption>
                 ) : (
@@ -729,6 +809,7 @@ class ItemList extends Component {
                 <Select 
                   placeholder="預設排序"
                   label='Single select'
+                  options={PresetOption}
                   theme={theme => ({
                     ...theme,
                     borderRadius: 5,
@@ -737,31 +818,31 @@ class ItemList extends Component {
               </Sort>
             </MakeHead>
             <div className='row mbnone'>
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
             </div>
             <div className='row navBlock'>
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
-              <ItemCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
+              <SellCard />
             </div>
           </Content>
           <PageInfo className='mbnone'>

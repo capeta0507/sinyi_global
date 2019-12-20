@@ -33,6 +33,12 @@ html,body{
 .css-1okebmr-indicatorSeparator {
     display: none;
 }
+.headUp{
+    background: rgba(0,0,0,.2);
+}
+.hewdDown{
+    background: #3B4B55;
+}
 @media (max-width: 992px){
     .css-ql68v7-control{
         height: 40px;
@@ -432,6 +438,11 @@ input[type=radio]:checked + label{
 } */
 .pdRight{
     padding-right: 0px !important;
+}
+.downicon{
+    position: absolute;
+    right: 0;
+    top: 20px;
 }
 @media screen and (max-width: 992px) {
     .gendermg{
@@ -1482,10 +1493,10 @@ img {
     width: 80%;
     height: 100%;
     top: 0;
-    right: 240px;
+    right: 180px;
     z-index: 99999;
     background: #fff;
-    overflow:scroll;
+    overflow-y:scroll;
 }
 .compareForm{
     margin-top: 20px;

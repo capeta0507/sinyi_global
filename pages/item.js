@@ -536,8 +536,6 @@ const Item = () => {
         <div className='row gendermg mbFlex'>
           <NewItem />
           <NewItem />
-          <NewItem />
-          <NewItem />
         </div>
       </Container>
       <FastButton />

@@ -37,6 +37,7 @@ const ItemList = styled.ul`
   border-radius: 10px;
   margin-top: 35px;
   display: none;
+  box-shadow: 5px 5px 5px rgba(0,0,0,.2);
 `
 const ListLi = styled.div`
   padding: 0 0 0 10px ;
@@ -157,7 +158,7 @@ const NavBar = () => {
                   <img src='/static/img/hover.png' />
                 </ItemBorder>
                 <ItemList>
-                  <Link href='/about'>
+                  <Link href='/about#bid'>
                     <a className='navLink'>
                       <ListLi>服務與實績</ListLi>
                     </a>

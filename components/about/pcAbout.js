@@ -245,7 +245,7 @@ const About = () => (
             <AboutCard />
           </CardBlock>
         </SixCardBlock>
-        <SixTitle>
+        <SixTitle id='bid'>
           <h1>公開標售</h1>
           <Bdtag src='/static/img/aboutTag.png' />
         </SixTitle>

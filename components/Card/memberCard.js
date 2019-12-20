@@ -6,8 +6,15 @@ import styled from 'styled-components'
 const ThemeCard = styled.div`
   width: 100%;
   background: #fff;
-  padding: 50px 0;
+  padding: 20px 0;
+  background: -webkit-linear-gradient(to bottom right,white 50%, #E5F7FF 50%);
+  background: -o-linear-gradient(to bottom right,white 50%, #E5F7FF 50%);
+  background: -moz-linear-gradient(to bottom right,white 50%, #E5F7FF 50%);
+  background: linear-gradient(to bottom right,white 50%, #E5F7FF 50%);
+  background-size: 100% 100%;
+  box-shadow: 0 5px 5px rgba(0,0,0,.2);
   @media (max-width: 992px){
+    position: relative;
     width: 100%;
     margin: 5px 0;
     display: flex;
@@ -31,12 +38,15 @@ const SendButton = styled.div`
   text-align: center;
   padding: 8px 0;
   cursor: pointer;
+  box-shadow: 5px 5px #C7D1D6;
   @media (max-width: 992px){
     position: absolute;
     right: 40px;
     margin: 0;
     width: 70px;
     font-size: 12px;
+    box-shadow: none;
+    bottom: 15px;
   }
 `
 const MyPhone = styled.div`
