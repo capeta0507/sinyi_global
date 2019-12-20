@@ -325,7 +325,7 @@ class ItemList extends Component {
     e.preventDefault();
     this.setState({ 
       place: true,
-      place: false,
+      kind: false,
       district: false,
       price: false,
       ping: false
