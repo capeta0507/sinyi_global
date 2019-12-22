@@ -54,7 +54,7 @@ const ItemBod = styled.img`
   margin-top: -20px;
 `
 
-const NavHomeMobile = () => {
+const NavHomeMobile = (props) => {
   const [active ,setActive] = useState(false)
   const [bid, setBid] = useState(false)
   const [news, setNews] = useState(false)
@@ -191,42 +191,58 @@ const NavHomeMobile = () => {
                       team ? (
                         <ItemList>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(1)
+                            }}>
                               <ListLi>總經理</ListLi>
                             </a>
                           </Link>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(2)
+                            }}>
                               <ListLi>商仲一部</ListLi>
                             </a>
                           </Link>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(3)
+                            }}>
                               <ListLi bottom>商仲二部</ListLi>
                             </a>
                           </Link>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(4)
+                            }}>
                               <ListLi bottom>投資一部</ListLi>
                             </a>
                           </Link>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(5)
+                            }}>
                               <ListLi bottom>投資二部</ListLi>
                             </a>
                           </Link>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(6)
+                            }}>
                               <ListLi bottom>工業產地部</ListLi>
                             </a>
                           </Link>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(7)
+                            }}>
                               <ListLi bottom>顧問服務團隊</ListLi>
                             </a>
                           </Link>
                           <Link href='/team'>
-                            <a className='navLink'>
+                            <a className='navLink' onClick={() => {
+                              props.changeTeam(8)
+                            }}>
                               <ListLi bottom>估價師團隊</ListLi>
                             </a>
                           </Link>

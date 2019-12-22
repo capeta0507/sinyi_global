@@ -264,10 +264,58 @@ const Item = () => {
   const [nextIcon] = useState(<img className='carouselArrow' src='/static/img/arrow_wR.png' />)
   const [prevIcon] = useState(<img className='carouselArrow' src='/static/img/arrow_wL.png' />)
   const [showModal, setShowModal] = useState(false)
+  const [imgData] = useState([
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/E.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/F.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG'},
+  ])
+  const [imgData2] = useState([
+    {
+      'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/E.JPG',
+      'icon': '/static/img/ic-im-pattern.svg',
+      'name': '格局'
+    },
+    {
+      'img':'https://res.sinyi.com.tw/buy/45258B/lifeimg/45258B_MAP.JPG',
+      'icon': '/static/img/ic-im-map.svg',
+      'name': '地圖'
+    },
+  ])
+  const [showMainImg, setShowMainImg] = useState('https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG')
+
+  const showImg = () => {
+      return (
+        <div className="carousel-item carousel-content-size active">
+          <div onClick={openModal}
+            src={showMainImg}
+            className="carousel-content-size carousel-current-img"
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+              backgroundImage:
+              `url(${showMainImg})`
+            }}
+          >
+          <img
+            src={showMainImg}
+            style={{ width: 0, height: 0 }}
+          />
+          </div>
+        </div>
+      )
+  }
 
   var g_index = 0;
   var items
-  // console.log(items.length);
+//   console.log(items.length);
   var thumbnail
   // console.log('thumb', thumbnail.length);
 
@@ -276,51 +324,44 @@ const Item = () => {
     setDirection(e.direction);
   };
   const imgClick = (e,idx) => {
-    // console.log(idx)
-    items = document.getElementsByClassName('carousel-item');
-    thumbnail = document.getElementsByClassName('carousel-thumbnail-img');
     g_index = idx;
-    for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove('active')
-    }
-
-    for (let i = 0; i < thumbnail.length; i++) {
-      thumbnail[i].classList.remove('carousel-thumbnail-active')
-    }
-
-    items[g_index].classList.add('active')
-    thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    setShowMainImg(imgData[g_index].img)
+  }
+  const imgClick2 = (e,idx) => {
+    setShowMainImg(imgData2[idx].img)
   }
   const nextImg = () => {
     g_index++;
-    if (g_index >= items.length) {
-      g_index = items.length - 1
+    if (g_index >= imgData.length) {
+      g_index = imgData.length - 1
     }
-    if (g_index >= thumbnail.length) {
-      g_index = thumbnail.length - 1
+    if (g_index >= imgData.length) {
+      g_index = imgData.length - 1
     }
-    for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove('active')
-    }
-    items[g_index].classList.add('active')
-    for (let i = 0; i < thumbnail.length; i++) {
-      thumbnail[i].classList.remove('carousel-thumbnail-active')
-    }
-    thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    // for (let i = 0; i < items.length; i++) {
+    //   items[i].classList.remove('active')
+    // }
+    // items[g_index].classList.add('active')
+    // for (let i = 0; i < thumbnail.length; i++) {
+    //   thumbnail[i].classList.remove('carousel-thumbnail-active')
+    // }
+    // thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    setShowMainImg(imgData[g_index].img)
   }
   const prevImg = () => {
     g_index--;
     if (g_index < 0) {
       g_index = 0
     }
-    for (let i = 0; i < items.length; i++) {
-      items[i].classList.remove('active')
-    }
-    items[g_index].classList.add('active')
-    for (let i = 0; i < thumbnail.length; i++) {
-      thumbnail[i].classList.remove('carousel-thumbnail-active')
-    }
-    thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    // for (let i = 0; i < items.length; i++) {
+    //   items[i].classList.remove('active')
+    // }
+    // items[g_index].classList.add('active')
+    // for (let i = 0; i < thumbnail.length; i++) {
+    //   thumbnail[i].classList.remove('carousel-thumbnail-active')
+    // }
+    // thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    setShowMainImg(imgData[g_index].img)
   }
   const openModal = () => {
     setShowModal(true)
@@ -677,9 +718,10 @@ const Item = () => {
                             style={{ width: "100%", height: "100%" }}
                           >
                             <div className="carousel-inner carousel-content-size">
+                              {/* {showImg} */}
                               <div className="carousel-item carousel-content-size active">
                                 <div onClick={openModal}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG"
+                                  src={showMainImg}
                                   className="carousel-content-size carousel-current-img"
                                   style={{
                                     width: "100%",
@@ -688,153 +730,13 @@ const Item = () => {
                                     backgroundRepeat: "no-repeat",
                                     backgroundSize: "cover",
                                     backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG)"
+                                      `url(${showMainImg})`
                                   }}
                                 >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                              </div>
-                              <div className="carousel-item carousel-content-size ">
-                                <div onClick={openModal}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG"
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                              </div>
-                              <div className="carousel-item carousel-content-size ">
-                                <div onClick={openModal}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG"
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                              </div>
-                              <div className="carousel-item carousel-content-size ">
-                                <div
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG"
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                              </div>
-                              <div className="carousel-item carousel-content-size ">
-                                <div onClick={openModal}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG"
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                              </div>
-                              <div className="carousel-item carousel-content-size ">
-                                <div onClick={openModal}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG"
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                              </div>
-                              <div className="carousel-item carousel-content-size ">
-                                <div onClick={openModal}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/I.JPG"
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/I.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/I.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                              </div>
-                              <div className="carousel-item carousel-content-size ">
-                                <div onClick={openModal}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/J.JPG"
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/J.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/J.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
+                                <img
+                                  src={showMainImg}
+                                  style={{ width: 0, height: 0 }}
+                                />
                                 </div>
                               </div>
                               <div className="carousel-paging-num">
@@ -868,32 +770,27 @@ const Item = () => {
                           </div>
                         </div>
                         <div className="carousel-thumbnail-frame mbnone">
-                          <div
-                            className="carousel-thumbnail-pattern"
-                            style={{
-                              backgroundImage:
-                                "url(https://res.sinyi.com.tw/buy/45258B/bigimg/E.JPG)",
-                              backgroundPosition: "center center",
-                              backgroundRepeat: "no-repeat"
-                            }}
-                          >
-                            <div className="carousel-thumbnail-mask">
-                              <img src="/static/img/ic-im-pattern.svg" />
-                              <span>格局</span>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-thumbnail-map"
-                            style={{
-                              backgroundImage:
-                                "url(https://res.sinyi.com.tw/buy/45258B/lifeimg/45258B_MAP.JPG)"
-                            }}
-                          >
-                            <div className="carousel-thumbnail-mask">
-                              <img src="/static/img/ic-im-map.svg" />
-                              <span>地圖</span>
-                            </div>
-                          </div>
+                          {
+                            imgData2.map((data, idx) => {
+                              return(
+                                <div
+                                  className="carousel-thumbnail-pattern"
+                                  onClick={(e) => {imgClick2(e, idx)}}
+                                  style={{
+                                    backgroundImage:
+                                      `url(${data.img})`,
+                                    backgroundPosition: "center center",
+                                    backgroundRepeat: "no-repeat"
+                                  }}
+                                >
+                                  <div className="carousel-thumbnail-mask">
+                                    <img src={data.icon} />
+                                    <span>{data.name}</span>
+                                  </div>
+                                </div>
+                              )
+                            })
+                          }
                           <div className="carousel-thumbnail-cutting" />
                           <div
                             style={{
@@ -910,158 +807,31 @@ const Item = () => {
                             </div>
                             <div className="carousel-thumbnail-img-frame">
                               <div style={{ width: 675 }}>
-                                <div
-                                  onClick={(e) => imgClick(e,0)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG"
-                                  className="carousel-thumbnail-img carousel-thumbnail-active"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                                <div
-                                  onClick={(e) => imgClick(e,1)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG"
-                                  className="carousel-thumbnail-img "
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                                <div
-                                  onClick={(e) => imgClick(e,2)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG"
-                                  className="carousel-thumbnail-img "
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                                <div
-                                  onClick={(e) => imgClick(e,3)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG"
-                                  className="carousel-thumbnail-img "
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                                <div
-                                  onClick={(e) => imgClick(e,4)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG"
-                                  className="carousel-thumbnail-img "
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                                <div
-                                  onClick={(e) => imgClick(e,5)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG"
-                                  className="carousel-thumbnail-img "
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                                <div
-                                  onClick={(e) => imgClick(e,6)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/I.JPG"
-                                  className="carousel-thumbnail-img "
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/I.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/I.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
-                                <div
-                                  onClick={(e) => imgClick(e,7)}
-                                  src="https://res.sinyi.com.tw/buy/45258B/bigimg/J.JPG"
-                                  className="carousel-thumbnail-img "
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/J.JPG)"
-                                  }}
-                                >
-                                  <img
-                                    src="https://res.sinyi.com.tw/buy/45258B/bigimg/J.JPG"
-                                    style={{ width: 0, height: 0 }}
-                                  />
-                                </div>
+                                {
+                                  imgData.map((img,idx) => {
+                                    return(
+                                      <div
+                                        onClick={(e) => imgClick(e,idx)}
+                                        src={img.img}
+                                        className="carousel-thumbnail-img carousel-thumbnail-active"
+                                        style={{
+                                          width: "100%",
+                                          height: "100%",
+                                          backgroundPosition: "center",
+                                          backgroundRepeat: "no-repeat",
+                                          backgroundSize: "cover",
+                                          backgroundImage:
+                                            `url(${img.img})`
+                                        }}
+                                      >
+                                        <img
+                                          src={img.img}
+                                          style={{ width: 0, height: 0 }}
+                                        />
+                                      </div>
+                                    )
+                                  })
+                                }
                               </div>
                             </div>
                             <div
