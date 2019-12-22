@@ -299,7 +299,9 @@ class ItemList extends Component {
       place: false,
       district: false,
       price: false,
-      ping: false
+      ping: false,
+      makePrice: false,
+      makePlace: false
     }
   }
 
@@ -365,11 +367,37 @@ class ItemList extends Component {
       kind: false,
       place: false,
       district: false,
-      ping: false,
+      price: false,
       ping: !this.state.ping
      })
   }
+  price01 = (e) => {
+    e.preventDefault();
+    this.setState({
+      makePrice: false
+    })
+  }
+  price02 = (e) => {
+    e.preventDefault();
+    this.setState({
+      makePrice: true
+    })
+  }
+  place01 = (e) => {
+    e.preventDefault();
+    this.setState({
+      makePlace: false
+    })
+  }
+  place02 = (e) => {
+    e.preventDefault();
+    this.setState({
+      makePlace: true
+    })
+  }
   render(){
+    const colPrice = this.state.makePrice ? 'secondFocus' : ''
+    const colPlace = this.state.makePlace ? 'secondFocus' : ''
     return (
       <Layout>
         <Head
@@ -519,25 +547,25 @@ class ItemList extends Component {
                   <DrowOption>
                     <ForSel>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.price01} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                         萬-
                       </SalSpan>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.price02} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                         萬
                       </SalSpan>
                     </ForSel>
                     <DrowMenu>
-                      <li>0</li>
-                      <li>3,000</li>
-                      <li>6,000</li>
-                      <li>8,000</li>
-                      <li>10,000</li>
-                      <li>30,000</li>
+                      <li className={`${colPrice}`}>0</li>
+                      <li className={`${colPrice}`}>3,000</li>
+                      <li className={`${colPrice}`}>6,000</li>
+                      <li className={`${colPrice}`}>8,000</li>
+                      <li className={`${colPrice}`}>10,000</li>
+                      <li className={`${colPrice}`}>30,000</li>
                     </DrowMenu>
                   </DrowOption>
                 ) : (
@@ -571,27 +599,27 @@ class ItemList extends Component {
                     </ForSel>
                     <ForSel>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.place01} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                         坪-
                       </SalSpan>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.place02} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                       坪
                       </SalSpan>
                     </ForSel>
                     <DrowMenu>
-                      <li>0</li>
-                      <li>60</li>
-                      <li>80</li>
-                      <li>100</li>
-                      <li>200</li>
-                      <li>300</li>
-                      <li>400</li>
-                      <li>500</li>
+                      <li className={`${colPlace}`}>0</li>
+                      <li className={`${colPlace}`}>60</li>
+                      <li className={`${colPlace}`}>80</li>
+                      <li className={`${colPlace}`}>100</li>
+                      <li className={`${colPlace}`}>200</li>
+                      <li className={`${colPlace}`}>300</li>
+                      <li className={`${colPlace}`}>400</li>
+                      <li className={`${colPlace}`}>500</li>
                     </DrowMenu>
                   </PlaceOption>
                 ) : (
@@ -719,25 +747,25 @@ class ItemList extends Component {
                   <DrowOption>
                     <ForSel>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.price01} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                         萬-
                       </SalSpan>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.price02} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                         萬
                       </SalSpan>
                     </ForSel>
                     <DrowMenu>
-                      <li>0</li>
-                      <li>3,000</li>
-                      <li>6,000</li>
-                      <li>8,000</li>
-                      <li>10,000</li>
-                      <li>30,000</li>
+                      <li className={`${colPrice}`}>0</li>
+                      <li className={`${colPrice}`}>3,000</li>
+                      <li className={`${colPrice}`}>6,000</li>
+                      <li className={`${colPrice}`}>8,000</li>
+                      <li className={`${colPrice}`}>10,000</li>
+                      <li className={`${colPrice}`}>30,000</li>
                     </DrowMenu>
                   </DrowOption>
                 ) : (
@@ -771,27 +799,27 @@ class ItemList extends Component {
                     </ForSel>
                     <ForSel>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.place01} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                         坪-
                       </SalSpan>
                       <SalSelect>
-                        <input className='form-control' type='text' placeholder='請選擇' />
+                        <input onFocus={this.place02} className='form-control' type='text' placeholder='請選擇' />
                       </SalSelect>
                       <SalSpan>
                       坪
                       </SalSpan>
                     </ForSel>
                     <DrowMenu>
-                      <li>0</li>
-                      <li>60</li>
-                      <li>80</li>
-                      <li>100</li>
-                      <li>200</li>
-                      <li>300</li>
-                      <li>400</li>
-                      <li>500</li>
+                      <li className={`${colPlace}`}>0</li>
+                      <li className={`${colPlace}`}>60</li>
+                      <li className={`${colPlace}`}>80</li>
+                      <li className={`${colPlace}`}>100</li>
+                      <li className={`${colPlace}`}>200</li>
+                      <li className={`${colPlace}`}>300</li>
+                      <li className={`${colPlace}`}>400</li>
+                      <li className={`${colPlace}`}>500</li>
                     </DrowMenu>
                   </PlaceOption>
                 ) : (

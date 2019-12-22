@@ -100,6 +100,14 @@ const Bread = styled.div`
 
 const Team = () => {
   const [page, setPage] = useState(1)
+  const col01 = page == 1 ? 'teamActive' : ''
+  const col02 = page == 2 ? 'teamActive' : ''
+  const col03 = page == 3 ? 'teamActive' : ''
+  const col04 = page == 4 ? 'teamActive' : ''
+  const col05 = page == 5 ? 'teamActive' : ''
+  const col06 = page == 6 ? 'teamActive' : ''
+  const col07 = page == 7 ? 'teamActive' : ''
+  const col08 = page == 8 ? 'teamActive' : ''
   return (
     <Layout>
       <Head
@@ -119,37 +127,37 @@ const Team = () => {
         <NavList>
           <NavItem>
             <a href='/team'>
-              <ItemName className='teamActive' onClick={() => {
+              <ItemName className={`${col01}`} onClick={() => {
                 setPage(1)
               }}>總經理</ItemName>
             </a>
           </NavItem>
           <NavItem>
-            <ItemName onClick={() => {
+            <ItemName className={`${col02}`} onClick={() => {
                 setPage(2)
-              }}>商仲一部</ItemName>&nbsp;&nbsp;&nbsp;&nbsp; <ItemName onClick={() => {
+              }}>商仲一部</ItemName>&nbsp;&nbsp;&nbsp;&nbsp; <ItemName className={`${col03}`} onClick={() => {
                 setPage(3)
               }}>商仲二部</ItemName>
           </NavItem>
           <NavItem>
-            <ItemName onClick={() => {
+            <ItemName className={`${col04}`} onClick={() => {
                 setPage(4)
-              }}>投資一部</ItemName>&nbsp;&nbsp;&nbsp;&nbsp; <ItemName onClick={() => {
+              }}>投資一部</ItemName>&nbsp;&nbsp;&nbsp;&nbsp; <ItemName className={`${col05}`} onClick={() => {
                 setPage(5)
               }}>投資二部</ItemName>
           </NavItem>
           <NavItem>
-            <ItemName onClick={() => {
+            <ItemName className={`${col06}`} onClick={() => {
                 setPage(6)
               }}>工業地產部</ItemName>
           </NavItem>
           <NavItem>
-            <ItemName onClick={() => {
+            <ItemName className={`${col07}`} onClick={() => {
                 setPage(7)
               }}>顧問服務團隊</ItemName>
           </NavItem>
           <NavItem>
-            <ItemName onClick={() => {
+            <ItemName className={`${col08}`} onClick={() => {
               setPage(8)
             }}>估價師團隊</ItemName>
           </NavItem>
