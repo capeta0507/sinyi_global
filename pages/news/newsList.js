@@ -1,14 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
-import Head from '../components/head'
-import Layout from '../components/layout'
-import Navbar from '../components/nav/navBar'
-import Breadcrumb from '../components/breadcrumb'
-import NavHomeMobile from '../components/nav/navHomeMobile'
-import StudyCard from '../components/Card/studyCard'
+import Head from '../../components/head'
+import Layout from '../../components/layout'
+import Navbar from '../../components/nav/navBar'
+import NavHomeMobile from '../../components/nav/navHomeMobile'
+import NewsCard from '../../components/Card/newsCard'
+import Breadcrumb from '../../components/breadcrumb'
 import Link from 'next/link'
-import MbStudyCard from '../components/Card/mbstudyCard'
-import '../style/index.css'
+import MbNewsCard from '../../components/Card/mbnewsCard'
+// import '../../style/index.css'
+import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const SearchDiv = styled.div`
@@ -22,12 +23,10 @@ const SearchDiv = styled.div`
 const HeadTag = styled.div`
 	display: flex;
 	margin: 0 auto;
-	width: 40%;
-  text-align: center;
-  font-size: 28px;
-  padding-top: 30px;
+	width: 10%;
+	text-align: center;
 	@media (max-width: 992px){
-    width: 90%;
+    width: 50%;
   }
 `
 const HeadList = styled.div`
@@ -132,25 +131,7 @@ const PageImg = styled.img`
 const Bread = styled.div`
   width: 80%;
   margin: 0 auto;
-  padding-top: 10px; 
-`
-const BtnContent = styled.div`
-  width:100%;
-  text-align: center;
-  padding: 20px 0 60px 0;
-  @media (max-width: 992px){
-    padding: 20px 0 20px 0;
-  }
-`
-const Show = styled.div`
-  width: 82px;
-  text-align: center;
-  margin-bottom: 80px;
-  margin: 0 auto;
-  cursor: pointer;
-  & > img{
-    width: 100%;
-  }
+  padding-top: 30px;
 `
 
 const ItemList = () => {
@@ -172,51 +153,40 @@ const ItemList = () => {
 			</SearchDiv>
 			<Container>
         <Bread>
-          <Breadcrumb second='季報' />        
+          <Breadcrumb second='新聞' />
         </Bread>
-        <HeadTag>
-          <Link href='/report'>
-            <div className='reportBuy tagActive'>
-              季報
-              <img className='makeBorder' src='/static/img/navborder.png' />
-            </div>
-          </Link>          
-          <Link href='/reportMonth'>
-            <div className='reportBuy'>
-              月報
-              <img className='makeBorder' src='/static/img/navborder_grey.png' />
-            </div>
-          </Link>
-				</HeadTag>
+        <BigTitle>
+          <TitleImg src='/static/img/t2_job.png' />
+        </BigTitle>
 				<Content>
 					<div className='row'>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <NewsCard />
+              <MbNewsCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <NewsCard />
+              <MbNewsCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <NewsCard />
+              <MbNewsCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <NewsCard />
+              <MbNewsCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <NewsCard />
+              <MbNewsCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyCard />
-              <MbStudyCard />
+              <NewsCard />
+              <MbNewsCard />
             </NewsBlock>
 					</div>
 				</Content>
-				<PageInfo className='mbnone'>
+				<PageInfo>
           <ul>
           <li>
             <PageCircle>
@@ -251,11 +221,6 @@ const ItemList = () => {
           </li>
           </ul>
         </PageInfo>
-        <BtnContent className='navBlock'>
-          <Show>
-            <img src='/static/img/show_all.png' />
-          </Show>
-        </BtnContent>
 			</Container>
 		</Layout>
 	)

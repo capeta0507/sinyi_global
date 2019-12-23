@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
-import NavHomeMobile from '../components/nav/navHomeMobile'
 import Breadcrumb from '../components/breadcrumb'
+import NavHomeMobile from '../components/nav/navHomeMobile'
+import StudyCard from '../components/Card/studyCard'
 import Link from 'next/link'
-import StudyMonthCard from '../components/Card/studyMonthCard'
-import MbStudyMonthCard from '../components/Card/mbstudyMonthCard'
+import MbStudyCard from '../components/Card/mbstudyCard'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -172,47 +172,47 @@ const ItemList = () => {
 			</SearchDiv>
 			<Container>
         <Bread>
-          <Breadcrumb second='月報' />
+          <Breadcrumb second='季報' />        
         </Bread>
         <HeadTag>
-          <Link href='/report'>
-            <div className='reportBuy'>
-              季報
-              <img className='makeBorder' src='/static/img/navborder_grey.png' />
-            </div>
-          </Link>
-          <Link href='/reportMonth'>
+          <Link href='/newsReport'>
             <div className='reportBuy tagActive'>
-              月報
+              季報
               <img className='makeBorder' src='/static/img/navborder.png' />
+            </div>
+          </Link>          
+          <Link href='/newsReportMonth'>
+            <div className='reportBuy'>
+              月報
+              <img className='makeBorder' src='/static/img/navborder_grey.png' />
             </div>
           </Link>
 				</HeadTag>
 				<Content>
 					<div className='row'>
             <NewsBlock>
-              <StudyMonthCard />
-              <MbStudyMonthCard />
+              <StudyCard />
+              <MbStudyCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyMonthCard />
-              <MbStudyMonthCard />
+              <StudyCard />
+              <MbStudyCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyMonthCard />
-              <MbStudyMonthCard />
+              <StudyCard />
+              <MbStudyCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyMonthCard />
-              <MbStudyMonthCard />
+              <StudyCard />
+              <MbStudyCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyMonthCard />
-              <MbStudyMonthCard />
+              <StudyCard />
+              <MbStudyCard />
             </NewsBlock>
             <NewsBlock>
-              <StudyMonthCard />
-              <MbStudyMonthCard />
+              <StudyCard />
+              <MbStudyCard />
             </NewsBlock>
 					</div>
 				</Content>

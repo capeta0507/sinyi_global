@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import styled from 'styled-components'
 import '../../style/index.css'
@@ -72,6 +72,17 @@ const NavHomeMobile = (props) => {
   const displayTeams = () => {
     setTeam(!team)
   }
+  useEffect(() => {
+    // 取得目前的web 路徑
+    let xPage = window.location.href;
+    // 檢查目前路徑字串,indexOf看看有沒有 'team'
+    let pageIdx = xPage.indexOf('/team');
+    // 如果Team Menu 被展開，但是目前路徑不在 '/team'
+    if(team && pageIdx == -1){
+      window.location.href = '/team'
+    }
+  },[team])
+
   return(
     <>
       <NavMB className='navBlock' collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -164,12 +175,12 @@ const NavHomeMobile = (props) => {
                               <ListLi>焦點新聞</ListLi>
                             </a>
                           </Link>
-                          <Link href='/reportMonth'>
+                          <Link href='/newsReportMonth'>
                             <a className='navLink'>
                               <ListLi>月報</ListLi>
                             </a>
                           </Link>
-                          <Link href='/report'>
+                          <Link href='/newsReport'>
                             <a className='navLink'>
                               <ListLi bottom>季報</ListLi>
                             </a>

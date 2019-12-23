@@ -241,9 +241,6 @@ input:focus::-webkit-input-placeholder {color: transparent;}
     margin-top: 20px;
 }
 @media screen and (max-width: 992px){
-    .getBlock{
-        display: none;
-    }
     .form-control{
         height: 40px;
         font-size: initial;

@@ -106,13 +106,13 @@ const SixDes = styled.p`
 
 
 const About = () => (
-    <div className='mbnone'>
+    <div className='getBlock'>
       <MainTitle>
         <AboutTitle>
           <OtherTitle src='/static/img/aboutT2.png' />
         </AboutTitle>
       </MainTitle>
-      <AboutContent className='mbnone'>
+      <AboutContent className='getBlock'>
         <AboutUs>
           <MakeChinese>
             秉持著信義企業「以人為本」的精神，我們投注企業資源在企業社會責任上，不遺餘力地，也因此有了「社區一家」贊助計畫的產生，藉由參與社區志工活動，拉近人與人之間的距離，創造善的循環。
@@ -134,7 +134,7 @@ const About = () => (
           <OtherTitle src='/static/img/aboutT3.png' />
         </AboutTitle>
       </MainTitle>
-      <AboutContent className='mbnone'>
+      <AboutContent className='getBlock'>
         <AboutUs>
           <MakeChinese>
           做為信義集團各專業資源整合，以及全球商用不動產的服務平台，
@@ -155,7 +155,7 @@ const About = () => (
           <OtherTitle src='/static/img/aboutT4.png' />
         </AboutTitle>
       </MainTitle>
-      <History className='textCenter mbnone'>
+      <History className='textCenter getBlock'>
         <SixTitle>
           <h1>商業仲介</h1>
           <Bdtag src='/static/img/aboutTag.png' />
@@ -269,7 +269,7 @@ const About = () => (
           <OtherTitle src='/static/img/aboutT5.png' />
         </AboutTitle>
       </MainTitle>
-      <Service className='mbnone'>
+      <Service className='getBlock'>
         <h3>正確的事持續做  用心才能看見美好</h3>
         <p>信義全球資產為信義集團專營商用不動產及工業地產團隊，我們依據每位客戶需求，透過專業服務團隊的水平分工，加上信義集團上中下游服務鏈的垂直整合，提供客戶全方位顧問服務。涵蓋商業仲介、價格評估、建築開發、預售交易、信託管理等，從台灣發展到海外房地產，依據每位客戶的需求與特性，擬定策略及長遠的資產計劃，信義全球資產為您走在市場及法令的最前端，扮演客戶信賴的房地產後盾。</p>
         <h3>正確的事持續做  用心才能看見美好</h3>
