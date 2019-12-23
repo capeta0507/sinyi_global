@@ -819,12 +819,18 @@ ul,li{
 .navBlock{
     display: none;
 }
+.titleBlock{
+    display: block;
+}
 @media screen and (max-width: 992px) {
     .navList{
         display: none;
     }
     .navBlock{
         display: block;
+    }
+    .titleBlock{
+        display: none;
     }
 }
 .aboutdown{

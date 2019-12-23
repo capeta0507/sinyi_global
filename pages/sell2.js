@@ -773,7 +773,7 @@ const Item = () => {
                           {
                             imgData2.map((data, idx) => {
                               return(
-                                <div
+                                <div key={idx}
                                   className="carousel-thumbnail-pattern"
                                   onClick={(e) => {imgClick2(e, idx)}}
                                   style={{
@@ -810,7 +810,7 @@ const Item = () => {
                                 {
                                   imgData.map((img,idx) => {
                                     return(
-                                      <div
+                                      <div key={idx}
                                         onClick={(e) => imgClick(e,idx)}
                                         src={img.img}
                                         className="carousel-thumbnail-img carousel-thumbnail-active"

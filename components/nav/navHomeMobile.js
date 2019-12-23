@@ -28,7 +28,7 @@ const ItemList = styled.div`
   margin-top: 10px;
 `
 const ListLi = styled.div`
-  margin-bottom: 15px ;
+  margin-bottom: 0px ;
   height: 20px;
   color: #B4B4B4;
   z-index: 5;

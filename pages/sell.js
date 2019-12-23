@@ -438,7 +438,7 @@ const Item = () => {
                                   className="carousel-diolog-content-img"
                                   style={{
                                     backgroundImage:
-                                      "url(https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG)"
+                                     `url(${showMainImg})`
                                   }}
                                 ></div>
                                 <div className="carousel-dialog-paging-num">

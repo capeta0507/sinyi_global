@@ -120,7 +120,7 @@ const Manager = () => {
           <SpName>柯宏安 James Ko</SpName>
         </LeftCon>
         <RightCon>
-          <MainContent className='mbnone'>
+          <MainContent className='titleBlock'>
             <h3><img className='prize' src='/static/img/about/prize.png' /><span className='prizeName'>總經理</span></h3>
             <h1>柯宏安 James Ko</h1>
           </MainContent>
