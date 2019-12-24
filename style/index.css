@@ -55,6 +55,15 @@ html,body{
         font-size: 14px !important;
     }
 }
+.zIn{
+    z-index: 5;
+}
+.zIn2{
+    z-index: 4;
+}
+.zIn3{
+    z-index: 3;
+}
 .speTag{
     width: 50%;
 }
@@ -241,9 +250,6 @@ input:focus::-webkit-input-placeholder {color: transparent;}
     margin-top: 20px;
 }
 @media screen and (max-width: 992px){
-    .getBlock{
-        display: none;
-    }
     .form-control{
         height: 40px;
         font-size: initial;
@@ -332,8 +338,8 @@ input:checked ~ .checkmark:after {
     display: block;
 }
 .checkmark:after {
-    top: 3px;
-    left: 3px;
+    top: -2px;
+    left: -2px;
     width: 18px;
     height: 18px;
     border-radius: 50%;
@@ -556,8 +562,8 @@ input[type=radio]:checked + label{
 .menu.active ul{
     opacity: 1;
     background-color: #263843; 
-    max-height: 1250%;
-    height: 1250%;
+    max-height: 1280%;
+    height: 1280%;
     z-index: 9999999999999;
 }
 .menu ul li a{
@@ -1209,6 +1215,9 @@ img {
     color: #6D6D6D;
     font-size: 12px;
 }
+.autoCenter{
+    margin: 0 auto !important;
+}
 .recList > h5{
     font-weight: 400;
 }
@@ -1449,7 +1458,7 @@ img {
     width: 100%;
     text-align: center;
     background: #fff;
-    bottom: 48px;
+    bottom: 47px;
 }
 .fastButton {
     position: fixed;
@@ -1507,6 +1516,26 @@ img {
     background: #fff;
     overflow-y:scroll;
 }
+.provicy{
+    position: fixed;
+    padding: 30px 20px 10px 20px;
+    border-radius: 15px;
+    width: 50%;
+    height: 400px;
+    top: 25%;
+    right: 25%;
+    z-index: 99999;
+    background: #fff;
+}
+.sendMsg{
+    position: fixed;
+    padding: 40px;
+    width: 25%;
+    top: 35%;
+    right: 35%;
+    z-index: 99999;
+    background: #fff;
+}
 .compareForm{
     margin-top: 20px;
 }
@@ -1560,6 +1589,12 @@ img {
         top: 15%;
         right: 90px;
     }
+    .provicy {
+        width: 90%;
+        height: 600px;
+        top: 66px;
+        right: 20px;
+    }
 }
 @media screen and (max-width: 992px) {
     /* .getTop{
@@ -1590,11 +1625,14 @@ img {
     }
 }
 .itemBuy{
-    width: 40%;
+    width: 30%;
     margin: 0 auto;
     font-size: 20px;
     color: #B4B4B4;
     /* margin-bottom: 20px; */
+}
+.itemBuy:hover{
+    color: #fff;
 }
 .itemBorder{
     margin-top: -20px;
@@ -1667,7 +1705,7 @@ img {
 }
 .mbFooter{
     display: none;
-    margin-bottom: 47px;
+    margin-bottom: 48px;
 }
 .mbFlex{
     display: none;
@@ -2575,7 +2613,12 @@ img {
 .overseas-detail-main-image-slider-component .slick-dots li.slick-active button:before {
     background-color: #dd2525
 }
-
+@media (max-width:992px){
+    .buy-carousel-content-frame {
+        width: 100%;
+        height: 300px;
+    }
+}
 @media (min-width:992px) {
     .oveaseas-list-search {
         max-width: 960px;

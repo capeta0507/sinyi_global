@@ -95,7 +95,6 @@ const Make = styled.div`
   text-align: left;
   width: ${props => props.long ? '30%' : '18%'};
   padding-right: 15px;
-  z-index: 1;
   @media (max-width: 992px){
 		display: none;
   }
@@ -104,7 +103,6 @@ const MakeMb = styled.div`
   text-align: left;
   width: ${props => props.long ? '100%' : '48%'};
   display: none;
-  z-index: 1;
   @media (max-width: 992px){
 		display: block;
   }
@@ -181,6 +179,7 @@ const DrowDown = styled.div`
 const PlaceOption = styled.div`
   background: #fff;
   width: 330px;
+  // width: 200%;
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   margin-top: 10px;
   @media (max-width: 992px){
@@ -305,8 +304,23 @@ class ItemList extends Component {
     }
   }
 
+  componentDidMount(){
+    document.addEventListener('click', (e) => {
+      this.setState({
+        kind: false,
+        place: false,
+        district: false,
+        price: false,
+        ping: false,
+        makePrice: false,
+        makePlace: false
+      })
+    })
+  }
+
   showKind = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       kind: true,
       place: false,
@@ -325,6 +339,7 @@ class ItemList extends Component {
   }
   showPlace = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       place: true,
       kind: false,
@@ -339,10 +354,10 @@ class ItemList extends Component {
     this.setState({ place: false },() => {
       document.removeEventListener('click', this.hidePlace)
     })
-
   }
   showDir = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       kind: false,
       place: false,
@@ -353,6 +368,7 @@ class ItemList extends Component {
   }
   showPrice = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       kind: false,
       place: false,
@@ -363,6 +379,7 @@ class ItemList extends Component {
   }
   showPing = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       kind: false,
       place: false,
@@ -373,27 +390,34 @@ class ItemList extends Component {
   }
   price01 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePrice: false
     })
   }
   price02 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePrice: true
     })
   }
   place01 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePlace: false
     })
   }
   place02 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePlace: true
     })
+  }
+  stopPropagation(e) {
+    e.nativeEvent.stopImmediatePropagation();
   }
   render(){
     const colPrice = this.state.makePrice ? 'secondFocus' : ''
@@ -408,14 +432,14 @@ class ItemList extends Component {
         <NavHomeMobile />
         <SearchDiv>
           <HeadTag>
-            <a href='/sellList'>
-              <div className='itemBuy itemBuyActive'>
+            <a className='itemBuy itemBuyActive' href='/sellList'>
+              <div>
                 買賣
                 <img className='itemBorder' src='/static/img/navborder.png' />
               </div>
             </a>
-            <a href='/itemList'>
-              <div className='itemBuy'>
+            <a className='itemBuy' href='/itemList'>
+              <div>
                 租賃
                 <img className='itemBorder' src='/static/img/navborder_grey.png' />
               </div>
@@ -428,7 +452,7 @@ class ItemList extends Component {
             <SearchButton>搜尋</SearchButton>
           </HeadList>
           <HeadListMb>
-            <MakeMb long>
+            <MakeMb long className='zIn'>
               <DrowDown onClick={this.showKind}>種類</DrowDown>
               {
                 this.state.kind ? (
@@ -448,7 +472,7 @@ class ItemList extends Component {
             </MakeMb>
           </HeadListMb>
           <HeadListMb>
-            <MakeMb>
+            <MakeMb className='zIn2'>
             <DrowDown onClick={this.showPlace}>縣市</DrowDown>
               {
                 this.state.place ? (
@@ -486,11 +510,11 @@ class ItemList extends Component {
                 )
               }
             </MakeMb>
-            <MakeMb>
+            <MakeMb className='zIn2'>
             <DrowDown onClick={this.showDir}>行政區</DrowDown>
               {
                 this.state.district ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <Back>
                       &lt; &nbsp;&nbsp;全區
                     </Back>
@@ -540,11 +564,11 @@ class ItemList extends Component {
             </MakeMb>
           </HeadListMb>
           <HeadListMb>
-            <MakeMb>
+            <MakeMb className='zIn3'>
             <DrowDown onClick={this.showPrice}>價格</DrowDown>
               {
                 this.state.price ? (
-                  <DrowOption>
+                  <DrowOption onClick={this.stopPropagation}>
                     <ForSel>
                       <SalSelect>
                         <input onFocus={this.price01} className='form-control' type='text' placeholder='請選擇' />
@@ -573,11 +597,11 @@ class ItemList extends Component {
                 )
               }
             </MakeMb>
-            <MakeMb>
+            <MakeMb className='zIn3'>
               <DrowDown onClick={this.showPing}>坪數</DrowDown>
               {
                 this.state.ping ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <ForSel>
                       <label className="form-check-label gendermg3 relative" htmlFor="build">
                         <input className="form-check-input mgtop yesno" type="radio" id="build" name="gender" value="建築面積" />
@@ -594,8 +618,8 @@ class ItemList extends Component {
                         <label className="form-check-label myCheckLabel" htmlFor="land">土地面積</label>
                         <span class="checkmark"></span>
                       </label>
-                      <input type='radio' />
-                      <input type='radio' />
+                      {/* <input type='radio' />
+                      <input type='radio' /> */}
                     </ForSel>
                     <ForSel>
                       <SalSelect>
@@ -632,7 +656,7 @@ class ItemList extends Component {
             <SearchButtonMb>搜尋</SearchButtonMb>
           </HeadListMb>
           <HeadList>
-            <Make className=''>
+            <Make className='zIn3'>
               <DrowDown onClick={this.showKind}>種類</DrowDown>
               {
                 this.state.kind ? (
@@ -650,7 +674,7 @@ class ItemList extends Component {
                 )
               }
             </Make>
-            <Make className=''>
+            <Make className='zIn3'>
               <DrowDown onClick={this.showPlace}>縣市</DrowDown>
               {
                 this.state.place ? (
@@ -688,11 +712,11 @@ class ItemList extends Component {
                 )
               }
             </Make>
-            <Make className=''>
+            <Make className='zIn'>
             <DrowDown onClick={this.showDir}>行政區</DrowDown>
               {
                 this.state.district ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <Back>
                       &lt; &nbsp;&nbsp;全區
                     </Back>
@@ -740,11 +764,11 @@ class ItemList extends Component {
                 )
               }
             </Make>
-            <Make long className=''>
+            <Make long className='zIn3'>
             <DrowDown onClick={this.showPrice}>價格</DrowDown>
               {
                 this.state.price ? (
-                  <DrowOption>
+                  <DrowOption onClick={this.stopPropagation}>
                     <ForSel>
                       <SalSelect>
                         <input onFocus={this.price01} className='form-control' type='text' placeholder='請選擇' />
@@ -773,29 +797,27 @@ class ItemList extends Component {
                 )
               }
             </Make>
-            <Make className='pdRight'>
+            <Make className='pdRight zIn3'>
             <DrowDown onClick={this.showPing}>坪數</DrowDown>
               {
                 this.state.ping ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <ForSel>
-                      <label className="form-check-label gendermg3 relative" htmlFor="build">
-                        <input className="form-check-input mgtop yesno" type="radio" id="build" name="gender" value="建築面積" />
-                        <label className="form-check-label myCheckLabel" htmlFor="build">建築面積</label>
+                      <label className="form-check-label gendermg3 relative" htmlFor="build2">
+                        <input className="form-check-input mgtop yesno" type="radio" id="build2" name="gender" value="建築面積" />
+                        <label className="form-check-label myCheckLabel" htmlFor="build2">建築面積</label>
                         <span class="checkmark"></span>
                       </label>
-                      <label className="form-check-label gendermg3 relative" htmlFor="sun">
-                        <input className="form-check-input mgtop yesno" type="radio" id="sun" name="gender" value="主+陽" />
-                        <label className="form-check-label myCheckLabel" htmlFor="sun">主+陽</label>
+                      <label className="form-check-label gendermg3 relative" htmlFor="sun2">
+                        <input className="form-check-input mgtop yesno" type="radio" id="sun2" name="gender" value="主+陽" />
+                        <label className="form-check-label myCheckLabel" htmlFor="sun2">主+陽</label>
                         <span class="checkmark"></span>
                       </label>
-                      <label className="form-check-label gendermg3 relative" htmlFor="land">
-                        <input className="form-check-input mgtop yesno" type="radio" id="land" name="gender" value="土地面積" />
-                        <label className="form-check-label myCheckLabel" htmlFor="land">土地面積</label>
+                      <label className="form-check-label gendermg3 relative" htmlFor="land2">
+                        <input className="form-check-input mgtop yesno" type="radio" id="land2" name="gender" value="土地面積" />
+                        <label className="form-check-label myCheckLabel" htmlFor="land2">土地面積</label>
                         <span class="checkmark"></span>
                       </label>
-                      <input type='radio' />
-                      <input type='radio' />
                     </ForSel>
                     <ForSel>
                       <SalSelect>

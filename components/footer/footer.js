@@ -80,7 +80,7 @@ class MyFooter extends Component {
       <Block>
         <BgIcon className='text-left'>
           <FooterContainer>
-            <FooterList className="iconList">
+            {/* <FooterList className="iconList">
               <div className="footerTitle">
                 <span>主題特輯</span>
               </div>
@@ -90,53 +90,54 @@ class MyFooter extends Component {
               <h6>主題4</h6>
               <h6>主題5</h6>
               <h6>主題6</h6>
-            </FooterList>
+            </FooterList> */}
             <FooterList className="iconList">
               <div className="footerTitle">
                 <span>買賣</span>
               </div>
-              <h6>辦公</h6>
-              <h6>店面</h6>
-              <h6>廠房</h6>
-              <h6>土地</h6>
-              <h6>其他</h6>
+              <h6><a href='/sellList'>辦公</a></h6>
+              <h6><a href='/sellList'>店面</a></h6>
+              <h6><a href='/sellList'>廠房</a></h6>
+              <h6><a href='/sellList'>土地</a></h6>
+              <h6><a href='/sellList'>其他</a></h6>
             </FooterList>
             <FooterList className="iconList">
               <div className="footerTitle">
                 <span>租賃</span>
               </div>
-              <h6>辦公</h6>
-              <h6>店面</h6>
-              <h6>土地</h6>
-              <h6>其他</h6>
+              <h6><a href='/itemList'>辦公</a></h6>
+              <h6><a href='/itemList'>店面</a></h6>
+              <h6><a href='/itemList'>土地</a></h6>
+              <h6><a href='/itemList'>其他</a></h6>
             </FooterList>
             <FooterList className="iconList">
               <div className="footerTitle">
                 <span>標售</span>
               </div>
-              <h6>服務與實續</h6>
-              <h6>標案1</h6>
-              <h6>標案2</h6>
-              <h6>標案3</h6>
+              <h6><a href='/about#bid'>服務與實續</a></h6>
+              <h6><a href='/bid'>標案1</a></h6>
+              <h6><a href='/bid'>標案2</a></h6>
+              <h6><a href='/bid'>標案3</a></h6>
               <div className="footerTitle">
                 <span>新聞與研究</span>
               </div>
-              <h6>焦點新聞</h6>
-              <h6>季報</h6>
-              <h6>月報</h6>
-              <h6>電子報</h6>
+              <h6><a href='/newsList'>焦點新聞</a></h6>
+              <h6><a href='/report'>季報</a></h6>
+              <h6><a href='/reportMonth'>月報</a></h6>
+              {/* <h6>電子報</h6> */}
             </FooterList>
             <FooterList className="iconList">
               <div className="footerTitle">
                 <span>團隊介紹</span>
               </div>
-              <h6>總經理</h6>
-              <h6>商仲一部</h6>
-              <h6>商仲二部</h6>
-              <h6>投資一部</h6>
-              <h6>工業地產部</h6>
-              <h6>顧問服務團隊</h6>
-              <h6>估價師團隊</h6>
+              <h6><a href='/team_manager'>總經理</a></h6>
+              <h6><a href='/team_BusinessOne'>商仲一部</a></h6>
+              <h6><a href='/team_BusinessTwo'>商仲二部</a></h6>
+              <h6><a href='/team_investmentOne'>投資一部</a></h6>
+              <h6><a href='/team_investmentTwo'>投資二部</a></h6>
+              <h6><a href='/team_industry'>工業地產部</a></h6>
+              <h6><a href='/team_Consultant'>顧問服務團隊</a></h6>
+              <h6><a href='/team_valuation'>估價師團隊</a></h6>
             </FooterList>
             <FooterList className="iconList">
               <div className="footerTitle">
@@ -144,7 +145,7 @@ class MyFooter extends Component {
               </div>
               <h6>公司簡介</h6>
               <h6>加入我們</h6>
-              <h6>服務據點</h6>
+              <h6><a href='/service'>服務據點</a></h6>
             </FooterList>
             <FooterList className="iconList">
               <div className="footerTitle">

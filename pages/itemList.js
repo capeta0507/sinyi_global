@@ -101,7 +101,6 @@ const Make = styled.div`
   text-align: left;
   width: ${props => props.long ? '30%' : '18%'};
   padding-right: 15px;
-  z-index: 1;
   @media (max-width: 992px){
 		display: none;
   }
@@ -110,7 +109,6 @@ const MakeMb = styled.div`
   text-align: left;
   width: ${props => props.long ? '100%' : '48%'};
   display: none;
-  z-index: 1;
   @media (max-width: 992px){
 		display: block;
   }
@@ -314,15 +312,30 @@ class ItemList extends Component {
       makePlace: false
     }
   }
+  componentDidMount(){
+    document.addEventListener('click', (e) => {
+      this.setState({
+        kind: false,
+        place: false,
+        district: false,
+        rent: false,
+        rentPing: false,
+        makePrice: false,
+        makePlace: false
+      })
+    })
+  }
 
   showKind = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       kind: true,
       place: false,
       district: false,
       rent: false,
-      rentPing: false }, () => {
+      rentPing: false 
+    }, () => {
       document.addEventListener('click', this.hideKind)
     })
   }
@@ -334,23 +347,25 @@ class ItemList extends Component {
   }
   showPlace = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       place: true,
       kind: false,
       district: false,
       rent: false,
-      rentPing: false }, () => {
-      document.addEventListener('click', this.hidePlace)
+      rentPing: false 
+    }, () => {
+      document.removeEventListener('click', this.hidePlace)
     })
   }
   hidePlace = () => {
     this.setState({ place: false },() => {
       document.removeEventListener('click', this.hidePlace)
     })
-
   }
   showDir = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       kind: false,
       place: false,
@@ -361,6 +376,7 @@ class ItemList extends Component {
   }
   showRent = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       kind: false,
       place: false,
@@ -371,6 +387,7 @@ class ItemList extends Component {
   }
   showRentPing = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({ 
       kind: false,
       place: false,
@@ -381,27 +398,34 @@ class ItemList extends Component {
   }
   price01 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePrice: false
     })
   }
   price02 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePrice: true
     })
   }
   place01 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePlace: false
     })
   }
   place02 = (e) => {
     e.preventDefault();
+    this.stopPropagation(e);
     this.setState({
       makePlace: true
     })
+  }  
+  stopPropagation(e) {
+    e.nativeEvent.stopImmediatePropagation();
   }
   render(){
     const colPrice = this.state.makePrice ? 'secondFocus' : ''
@@ -416,14 +440,14 @@ class ItemList extends Component {
         <NavHomeMobile />
         <SearchDiv>
           <HeadTag>
-            <a href='/sellList'>
-              <div className='itemBuy'>
+            <a className='itemBuy' href='/sellList'>
+              <div>
                 買賣
                 <img className='itemBorder' src='/static/img/navborder_grey.png' />
               </div>
             </a>
-            <a href='/itemList'>
-              <div className='itemBuy itemBuyActive'>
+            <a className='itemBuy itemBuyActive' href='/itemList'>
+              <div>
                 租賃
                 <img className='itemBorder' src='/static/img/navborder.png' />
               </div>
@@ -437,7 +461,7 @@ class ItemList extends Component {
             <SearchButton>搜尋</SearchButton>
           </HeadList>
           <HeadListMb>
-            <MakeMb long>
+            <MakeMb long className='zIn'>
               <DrowDown onClick={this.showKind}>種類</DrowDown>
                 {
                   this.state.kind ? (
@@ -456,7 +480,7 @@ class ItemList extends Component {
             </MakeMb>
           </HeadListMb>
           <HeadListMb>
-            <MakeMb>
+            <MakeMb className='zIn2'>
               <DrowDown onClick={this.showPlace}>縣市</DrowDown>
                 {
                   this.state.place ? (
@@ -494,11 +518,11 @@ class ItemList extends Component {
                   )
                 }
             </MakeMb>
-            <MakeMb>
+            <MakeMb className='zIn2'>
             <DrowDown onClick={this.showDir}>行政區</DrowDown>
               {
                 this.state.district ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <Back>
                       &lt; &nbsp;&nbsp;全區
                     </Back>
@@ -548,11 +572,11 @@ class ItemList extends Component {
             </MakeMb>
           </HeadListMb>
           <HeadListMb>
-            <MakeMb>
+            <MakeMb className='zIn3'>
             <DrowDown onClick={this.showRent}>租金</DrowDown>
               {
                 this.state.rent ? (
-                  <DrowOption>
+                  <DrowOption onClick={this.stopPropagation}>
                     <ForSel>
                       <SalSelect>
                         <input onFocus={this.price01} className='form-control' type='text' placeholder='請選擇' />
@@ -581,11 +605,11 @@ class ItemList extends Component {
                 )
               }
             </MakeMb>
-            <MakeMb>
+            <MakeMb className='zIn3'>
             <DrowDown onClick={this.showRentPing}>出租坪數</DrowDown>
               {
                 this.state.rentPing ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <ForSel>
                       <SalSelect>
                         <input onFocus={this.place01} className='form-control' type='text' placeholder='請選擇' />
@@ -621,7 +645,7 @@ class ItemList extends Component {
             <SearchButtonMb>搜尋</SearchButtonMb>
           </HeadListMb>
           <HeadList>
-            <Make className=''>
+            <Make className='zIn3'>
               <DrowDown onClick={this.showKind}>種類</DrowDown>
                 {
                   this.state.kind ? (
@@ -638,7 +662,7 @@ class ItemList extends Component {
                   )
                 }
             </Make>
-            <Make className=''>
+            <Make className='zIn3'>
               <DrowDown onClick={this.showPlace}>縣市</DrowDown>
                 {
                   this.state.place ? (
@@ -676,11 +700,11 @@ class ItemList extends Component {
                   )
                 }
             </Make>
-            <Make className=''>
+            <Make className='zIn'>
               <DrowDown onClick={this.showDir}>行政區</DrowDown>
               {
                 this.state.district ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <Back>
                       &lt; &nbsp;&nbsp;全區
                     </Back>
@@ -729,11 +753,11 @@ class ItemList extends Component {
               }
               
             </Make>
-            <Make long className=''>
+            <Make long className='zIn3'>
               <DrowDown onClick={this.showRent}>租金</DrowDown>
               {
                 this.state.rent ? (
-                  <DrowOption>
+                  <DrowOption onClick={this.stopPropagation}>
                     <ForSel>
                       <SalSelect>
                         <input onFocus={this.price01} className='form-control' type='text' placeholder='請選擇' />
@@ -762,11 +786,11 @@ class ItemList extends Component {
                 )
               }
             </Make>
-            <Make className='pdRight'>
+            <Make className='pdRight zIn3'>
               <DrowDown onClick={this.showRentPing}>出租坪數</DrowDown>
               {
                 this.state.rentPing ? (
-                  <PlaceOption>
+                  <PlaceOption onClick={this.stopPropagation}>
                     <ForSel>
                       <SalSelect>
                         <input onFocus={this.place01} className='form-control' type='text' placeholder='請選擇' />

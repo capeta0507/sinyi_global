@@ -195,6 +195,7 @@ const Businesser = () => {
   const [club, setClub] = useState(false)
   const [expertise, setExpertise] = useState(false)
   const [service, setService] = useState(false)
+  const [showIntor, setShowIntor] = useState(false)
 
   const displayIntor = () => {
     setIntro(!intro)
@@ -211,11 +212,16 @@ const Businesser = () => {
   const displayService = () => {
     setService(!service)
   }
+  const displayPCIntor = () => {
+    setShowIntor(!showIntor)
+  }
   const display01 = intro ? 'none' : '';
   const display02 = seniority ? 'none' : '';
   const display03 = club ? 'none' : '';
   const display04 = expertise ? 'none' : '';
   const display05 = service ? 'none' : '';
+  const deskShow = showIntor ? 'hideClose' : 'show_all';
+
   return (
     <>
       <TeamBlock>
@@ -236,7 +242,7 @@ const Businesser = () => {
             </MyPhone>
           </LeftCon>
           <RightCon>
-            <MainContent className='mbnone'>
+            <MainContent className='titleBlock'>
               <h3><img className='prize' src='/static/img/about/user.png' /><span className='prizeName'>商仲二部</span></h3>
               <h1>康錫晃 Casper Kang</h1>
               <MyPhone>
@@ -341,32 +347,67 @@ const Businesser = () => {
         <SecondContent second>
           <ListContent>
             <PeopleTitle>個人資歷</PeopleTitle>
-            <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
-            <p><div className='peoList'></div>信義房屋商仲一組主管</p>
-            <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
-            <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
-            <p><div className='peoList'></div>經紀人</p>
+            {
+              showIntor ? (
+                <React.Fragment>
+                  <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
+                  <p><div className='peoList'></div>信義房屋商仲一組主管</p>
+                  <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
+                  <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
+                  <p><div className='peoList'></div>經紀人</p>
+                </React.Fragment>
+              ) : (
+                ''
+              )
+            }
           </ListContent>
           <ListContent>
             <PeopleTitle>參與社團</PeopleTitle>
-            <p><div className='peoList'></div>中華民國中小企業總會</p>
-            <p><div className='peoList'></div>台北市中小企業協會</p>
+            {
+              showIntor ? (
+                <React.Fragment>
+                   <p><div className='peoList'></div>中華民國中小企業總會</p>
+                   <p><div className='peoList'></div>台北市中小企業協會</p>
+                </React.Fragment>
+              ) : (
+                ''
+              )
+            }
           </ListContent>
           <ListContent>
             <PeopleTitle>專業證照&專長</PeopleTitle>
-            <p><div className='peoList'></div>高級證券業務員</p>
-            <p><div className='peoList'></div>期貨業務人員</p>
-            <p><div className='peoList'></div>理財人員</p>
-            <p><div className='peoList'></div>信託人員</p>
+            {
+              showIntor ? (
+                <React.Fragment>
+                  <p><div className='peoList'></div>高級證券業務員</p>
+                  <p><div className='peoList'></div>期貨業務人員</p>
+                  <p><div className='peoList'></div>理財人員</p>
+                  <p><div className='peoList'></div>信託人員</p>
+                </React.Fragment>
+              ) : (
+                ''
+              )
+            }
           </ListContent>
           <ListContent>
             <PeopleTitle>服務實績</PeopleTitle>
-            <p><div className='peoList'></div>桃園科技園區科技廠房</p>
-            <p><div className='peoList'></div>愛丁堡科技大樓</p>
-            <p><div className='peoList'></div>大帝國科技大樓</p>
-            <p><div className='peoList'></div>世紀經貿科技大樓</p>
+            {
+              showIntor ? (
+                <React.Fragment>
+                  <p><div className='peoList'></div>桃園科技園區科技廠房</p>
+                  <p><div className='peoList'></div>愛丁堡科技大樓</p>
+                  <p><div className='peoList'></div>大帝國科技大樓</p>
+                  <p><div className='peoList'></div>世紀經貿科技大樓</p>
+                </React.Fragment>
+              ) : (
+                ''
+              )
+            }
           </ListContent>
         </SecondContent>
+        <Show className='' onClick={displayPCIntor}>
+          <img src={`/static/img/${deskShow}.png`} />
+        </Show>
       </SecondBlock>
       <BigTitle>
         <TitleImg src='/static/img/about/serviceItem.png' />

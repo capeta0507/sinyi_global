@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import Link from 'next/link'
 import Select from 'react-select'
+import ProvicyModal from '../Modal/privacyModal'
+import ServiceModal from '../Modal/serviceModal'
+import SuccessModal from '../Modal/successModal'
 
 
 // const Block = styled.div`
@@ -23,7 +26,7 @@ const BgIcon = styled.div`
 const BgIconList = styled.div`
   width: 100%;
   padding: 10px 0;
-  height: 200px;
+  // height: 200px;
   background: #3B4B55;
   display: flex;
   color: #fff;
@@ -50,15 +53,21 @@ const FooterList = styled.div`
 `
 const FooterTag = styled.div`
   text-align: center;
-  width: ${props => props.long ? '35%' : '30%'};
+  width: ${props => props.long ? '35%' : '32%'};
   margin: 10px 0;
   font-size: 15px;
+`
+const FooterIntTag = styled.div`
+  text-align: center;
+  width: ${props => props.long ? '35%' : '30%'};
+  font-size: 15px;
+  color: #B4B4B4;
 `
 
 const FooterTitle = styled.div`
   width:90%;
   margin:0 auto;
-  margin-bottom: 50px;
+  // margin-bottom: 50px;
 `
 const Footer = styled.div`
   width: 100%;
@@ -147,13 +156,37 @@ const SendButton = styled.div`
   text-align: center;
   cursor: pointer;
 `
+const Show = styled.div`
+  width: 82px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin: 0 auto;
+  cursor: pointer;
+  & > img{
+    width: 100%;
+  }
+`
+const ItemList = styled.div`
+  margin-bottom: 0;
+  color: #B4B4B4;
+  z-index: 5;
+  margin: 15px 0;
+  & > div{
+    margin: 15px 0;
+    font-size: 13px;
+    & > a {
+      color: #B4B4B4;
+    }
+  }
+`
 class MobileFooter extends Component {
   constructor(){
     super()
     this.state = {
       displayMenu1: false,
       displayMenu2: false,
-      displayMenu3: false
+      displayMenu3: false,
+      displayAll: false
     }
   }
 
@@ -181,6 +214,34 @@ class MobileFooter extends Component {
       displayMenu3: !this.state.displayMenu3
      });
   }
+  showAllMenu = (event) => {
+    event.preventDefault();
+    this.setState({ 
+      displayMenu1: false,
+      displayMenu2: false,
+      displayMenu3: false,
+      displayAll: !this.state.displayAll
+     });
+  }
+
+  showProvicy = () => {
+    this.setState({ displayProvicy: true });
+  }
+  closeProvicy = () => {
+    this.setState({ displayProvicy: false });
+  }
+  showService = () => {
+    this.setState({ displayService: true });
+  }
+  closeService = () => {
+    this.setState({ displayService: false });
+  }
+  sendMessenger = () => {
+    this.setState({ displaySend: true });
+  }
+  closeMessenger = () => {
+    this.setState({ displaySend: false });
+  }
 
   render(){
     const coll01 = this.state.displayMenu1 ? 'footerOn' : 'footerOff' ;
@@ -189,25 +250,190 @@ class MobileFooter extends Component {
     const icon01 = this.state.displayMenu1 ? 'searchActive' : 'found' ;
     const icon02 = this.state.displayMenu2 ? 'telephoneActive' : 'phone' ;
     const icon03 = this.state.displayMenu3 ? 'chatActive' : 'messenger' ;
+    const showAllList = this.state.displayAll ? 'hideClose' : 'show_all';
     return(
       <div className='mbFooter'>
         <BgIconList>
           <FooterTitle>
-            <FooterList>
-              <FooterTag className='textCenter'>主題特輯</FooterTag>
-              <FooterTag className='textCenter'>買賣</FooterTag>
-              <FooterTag className='textCenter'>租賃</FooterTag>
-            </FooterList>
-            <FooterList>
-              <FooterTag className='textCenter'>標售</FooterTag>
-              <FooterTag className='textCenter'>新聞與研究</FooterTag>
-              <FooterTag className='textCenter'>團隊介紹</FooterTag>
-            </FooterList>
-            <FooterList>
-              <FooterTag className='textCenter'>關於全球</FooterTag>
-              <FooterTag long className='textCenter'>集團與社會責任</FooterTag>
-              <FooterTag>&nbsp;</FooterTag>
-            </FooterList>
+          <Show onClick={this.showAllMenu}>
+            <img src={`/static/img/${showAllList}.png`} />
+          </Show>
+          {
+            this.state.displayAll ? (
+              <React.Fragment>
+                <FooterList>
+                  {/* <FooterTag className='textCenter'>主題特輯</FooterTag> */}
+                  <FooterTag className='textCenter'>
+                    買賣
+                    <ItemList>
+                      <div><a href='/sellList'>辦公</a></div>
+                      <div><a href='/sellList'>店面</a></div>
+                      <div><a href='/sellList'>廠房</a></div>
+                      <div><a href='/sellList'>土地</a></div>
+                      <div><a href='/sellList'>其他</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    租賃
+                    <ItemList>
+                      <div><a href='/itemList'>辦公</a></div>
+                      <div><a href='/itemList'>店面</a></div>
+                      <div><a href='/itemList'>廠房</a></div>
+                      <div><a href='/itemList'>土地</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    標售
+                    <ItemList>
+                      <div><a href='/about#bid'>服務與實績</a></div>
+                      <div><a href='/bid'>標案1</a></div>
+                      <div><a href='/bid'>標案2</a></div>
+                      <div><a href='/bid'>標案3</a></div>
+                    </ItemList>
+                  </FooterTag>
+                </FooterList>
+                <FooterList>
+                  {/* <FooterTag className='textCenter'>
+                    標售
+                    <ItemList>
+                      <div><a href='/about#bid'>服務與實績</a></div>
+                      <div><a href='/bid'>標案1</a></div>
+                      <div><a href='/bid'>標案2</a></div>
+                      <div><a href='/bid'>標案3</a></div>
+                    </ItemList>
+                  </FooterTag> */}
+                  <FooterTag className='textCenter'>
+                    新聞與研究
+                    <ItemList>
+                      <div><a href='/newsList'>焦點新聞</a></div>
+                      <div><a href='/report'>季報</a></div>
+                      <div><a href='/reportMonth'>月報</a></div>
+                      {/* <div>電子報</div> */}
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    關於全球
+                    <ItemList>
+                      <div>公司簡介</div>
+                      <div>加入我們</div>
+                      <div><a href='/service'>服務據點</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag>&nbsp;</FooterTag>
+                </FooterList>
+                <FooterList>
+                  <FooterTag className='textCenter'>
+                    &nbsp;
+                    <ItemList>
+                      <div><a href='/team_manager'>總經理</a></div>
+                      <div><a href='/team_BusinessOne'>商仲一部</a></div>
+                      <div><a href='/team_BusinessTwo'>商仲二部</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    團隊介紹
+                    <ItemList>
+                      <div><a href='/team_investmentOne'>投資一部</a></div>
+                      <div><a href='/team_investmentTwo'>投資二部</a></div>
+                      <div><a href='/team_industry'>工業地產部</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    &nbsp;
+                    <ItemList>
+                      <div><a href='/team_Consultant'>顧問服務團隊</a></div>
+                      <div><a href='/team_valuation'>估價師團隊</a></div>
+                    </ItemList>
+                  </FooterTag>
+                </FooterList>
+                <FooterList>
+                  <FooterTag long className='textCenter'>
+                    &nbsp;
+                    <ItemList>
+                      <div><a href='https://www.sinyi.com.tw/aboutsinyi/aboutsinyi_aboutsinyi' target="_blank">了解信義</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag long className='textCenter'>
+                    集團與社會責任
+                    <ItemList>
+                      <div><a href='https://hr.sinyi.com.tw/' target="_blank">人才招募</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag long className='textCenter'>
+                    &nbsp;
+                  </FooterTag>
+                </FooterList>
+                <FooterList>
+                  <FooterTag className='textCenter'>
+                    投資人專區
+                    <ItemList>
+                      <div><a href='https://www.sinyi.com.tw/investors/investors-ch_mainpage' target="_blank">投資人專區</a></div>
+                      <div><a href='https://www.sinyi.com.tw/investors/investors-en_mainpage-en' target="_blank">investor relations</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    企業社會責任
+                    <ItemList>
+                      <div><a href='https://csr.sinyi.com.tw/' target="_blank">企業社會責任</a></div>
+                      <div><a href='https://www.sinyicharity.org.tw/' target="_blank">信義公益基金會</a></div>
+                      <div><a href='https://www.sinyischool.org.tw/' target="_blank">信義學堂</a></div>
+                      <div><a href='https://www.taiwan4718.tw/' target="_blank">社區一家</a></div>
+                    </ItemList>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    集團企業
+                    <ItemList>
+                      <div><a href='https://csr.sinyi.com.tw/' target="_blank">信義房屋</a></div>
+                      <div><a href='https://living.sinyi.com.tw/' target="_blank">信義居家</a></div>
+                      <div><a href='https://www.sinyi-rema.com.tw/' target="_blank">信義代銷</a></div>
+                      <div><a href='https://www.xinyikf.sinyi.com.tw/' target="_blank">信義開發</a></div>
+                      <div><a href='https://app.sinyi.com.tw/' target="_blank">信義鑑定</a></div>
+                      <div><a href='https://www.an-sin.com.tw/' target="_blank">安信建經</a></div>
+                      <div><a href='https://www.sinyijapan.com.tw/' target="_blank">東京信義</a></div>
+                      <div><a href='https://malaysia.sinyi.com.tw/' target="_blank">信義大馬</a></div>
+                      <div><a href='https://www.sinyi.com.cn/' target="_blank">中國信義</a></div>
+                      <div><a href='https://www.sinyizy.com/' target="_blank">信義置業</a></div>
+                    </ItemList>
+                  </FooterTag>
+                </FooterList>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                <FooterList>
+                  {/* <FooterTag className='textCenter'>主題特輯</FooterTag> */}
+                  <FooterTag className='textCenter'>
+                    <a className='mylink' href='/sellList'>買賣</a>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                  <a className='mylink' href='/itemList'> 租賃</a>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    <a className='mylink' href='/bid'>標售</a>
+                  </FooterTag>
+                </FooterList>
+                <FooterList>
+                  {/* <FooterTag className='textCenter'>
+                    <a className='mylink' href='/bid'>標售</a>
+                  </FooterTag> */}
+                  <FooterTag className='textCenter'>
+                    <a className='mylink' href='/newsList'>新聞與研究</a>
+                  </FooterTag>
+                  <FooterTag className='textCenter'>
+                    <a className='mylink' href='/team_manager'>團隊介紹</a>
+                  </FooterTag>
+                  <FooterTag className='textCenter'><a className='mylink' href='/about'>關於全球</a></FooterTag>
+                </FooterList>
+                <FooterList>
+                  {/* <FooterTag className='textCenter'><a className='mylink' href='/about'>關於全球</a></FooterTag> */}
+                  <FooterTag long className='textCenter'>
+                    集團與社會責任
+                  </FooterTag>
+                  <FooterTag>&nbsp;</FooterTag>
+                  <FooterTag>&nbsp;</FooterTag>
+                </FooterList>
+              </React.Fragment>
+            )
+          }
           </FooterTitle>
         </BgIconList>
         <BgIcon>
@@ -275,7 +501,7 @@ class MobileFooter extends Component {
                   <input className='form-control' type='text' placeholder='路段(必填)' />
                 </IptName>
                 <BusCheck>
-                  <input type="checkbox" /> 送出資料前，請點選同意本站<a href=''>隱私權政策</a>
+                  <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={this.showProvicy}>隱私權政策</a>及<a onClick={this.showService}>服務條款</a>
                 </BusCheck>
                 <SendButton>送出</SendButton>
               </FastMessenger>
@@ -298,6 +524,17 @@ class MobileFooter extends Component {
           快速留言
           </BtnBottomItem>
         </BtnFooter>
+        <ProvicyModal
+          show={this.state.displayProvicy}
+          close={this.closeProvicy}
+         />
+         <ServiceModal
+          show={this.state.displayService}
+          close={this.closeService}
+         />
+         <SuccessModal 
+          show={this.state.displaySend}
+          close={this.closeMessenger} />
       </div>
     )
   }

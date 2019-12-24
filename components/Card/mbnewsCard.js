@@ -61,7 +61,7 @@ const Content = styled.div`
 
 const MbNewsCard = () => {
   return(
-    <Link>
+    <Link href='/news'>
       <Card>
         <Introduction>
           <Title>
