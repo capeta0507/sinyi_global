@@ -137,8 +137,9 @@ const News = () => {
   return(
     <Layout>
       <Head
-        title="信義全球資產"
-        description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+        title="{程式抓取新聞標題} - 信義全球資產"
+        description="台北科技走廊最後一塊版圖 北士科土地交易發燙"
+        url=""
       />
       <Navbar />
       <NavHomeMobile />

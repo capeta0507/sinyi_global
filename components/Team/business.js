@@ -43,6 +43,7 @@ const SecondContentMb = styled.div`
   @media (max-width: 992px){
     width: 100%;
     display: block;
+    padding: 15px 0;
   }
 `
 const LeftCon = styled.div`
@@ -186,10 +187,15 @@ const Show = styled.div`
   & > img{
     width: 100%;
   }
+  @media (max-width: 992px){
+    display: none;
+  }
 `
 
 
 const Businesser = () => {
+  // 如果有個人簡介及以下資歷的話要秀出，否則隱藏
+  const [intorData, setIntorData] = useState(true)
   const [intro, setIntro] = useState(false)
   const [seniority, setSeniority] = useState(false)
   const [club, setClub] = useState(false)
@@ -260,154 +266,168 @@ const Businesser = () => {
       </TeamBlock>
       <SecondBlock>
         {/* 手機 */}
-        <SecondContentMb>
-          <PeopleContwntMb>
-            <ListContent>
-              <PeopleTitle onClick={displayIntor}>個人簡介<img className={`downicon ${display01}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
-              {
-                intro ? (
-                  <p>多年來經營內湖科學園區、大直重劃區、內湖五期重劃區，本著協助客戶洞見未來的初衷，帶領商仲一部的夥伴精益求精，於不動產管理領域提供最專業與優質的服務，成為客戶最佳的資產管理顧問。</p>
-                ) : (
-                  ''
-                )
-              }
-            </ListContent>
-          </PeopleContwntMb>
-          <PeopleContwntMb>
-            <ListContent>
-              <PeopleTitle onClick={displaySeniority}>個人資歷<img className={`downicon ${display02}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
-              {
-                seniority ? (
-                  <>
-                    <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
-                    <p><div className='peoList'></div>信義房屋商仲一組主管</p>
-                    <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
-                    <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
-                    <p><div className='peoList'></div>經紀人</p>
-                  </>
-                ) : (
-                  ''
-                )
-              }
-              
-            </ListContent>
-          </PeopleContwntMb>
-          <PeopleContwntMb>
-            <ListContent>
-              <PeopleTitle onClick={displayClub}>參與社團<img className={`downicon ${display03}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
-              {
-                club ? (
-                  <>
-                    <p><div className='peoList'></div>中華民國中小企業總會</p>
-                    <p><div className='peoList'></div>台北市中小企業協會</p>
-                  </>
-                ) : (
-                  ''
-                )
-              }
-            </ListContent>
-          </PeopleContwntMb>
-          <PeopleContwntMb>
-            <ListContent>
-              <PeopleTitle onClick={displayExpertise}>專業證照&專長<img className={`downicon ${display04}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
-              {
-                expertise ? (
-                  <>
-                    <p><div className='peoList'></div>高級證券業務員</p>
-                    <p><div className='peoList'></div>期貨業務人員</p>
-                    <p><div className='peoList'></div>理財人員</p>
-                    <p><div className='peoList'></div>信託人員</p>
-                  </>
-                ) : (
-                  ''
-                )
-              }
+        {
+          intorData ? (
+            <SecondContentMb>
+              <PeopleContwntMb>
+                <ListContent>
+                  <PeopleTitle onClick={displayIntor}>個人簡介<img className={`downicon ${display01}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+                  {
+                    intro ? (
+                      <p>多年來經營內湖科學園區、大直重劃區、內湖五期重劃區，本著協助客戶洞見未來的初衷，帶領商仲一部的夥伴精益求精，於不動產管理領域提供最專業與優質的服務，成為客戶最佳的資產管理顧問。</p>
+                    ) : (
+                      ''
+                    )
+                  }
+                </ListContent>
+              </PeopleContwntMb>
+              <PeopleContwntMb>
+                <ListContent>
+                  <PeopleTitle onClick={displaySeniority}>個人資歷<img className={`downicon ${display02}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+                  {
+                    seniority ? (
+                      <>
+                        <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
+                        <p><div className='peoList'></div>信義房屋商仲一組主管</p>
+                        <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
+                        <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
+                        <p><div className='peoList'></div>經紀人</p>
+                      </>
+                    ) : (
+                      ''
+                    )
+                  }
+                  
+                </ListContent>
+              </PeopleContwntMb>
+              <PeopleContwntMb>
+                <ListContent>
+                  <PeopleTitle onClick={displayClub}>參與社團<img className={`downicon ${display03}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+                  {
+                    club ? (
+                      <>
+                        <p><div className='peoList'></div>中華民國中小企業總會</p>
+                        <p><div className='peoList'></div>台北市中小企業協會</p>
+                      </>
+                    ) : (
+                      ''
+                    )
+                  }
+                </ListContent>
+              </PeopleContwntMb>
+              <PeopleContwntMb>
+                <ListContent>
+                  <PeopleTitle onClick={displayExpertise}>專業證照&專長<img className={`downicon ${display04}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+                  {
+                    expertise ? (
+                      <>
+                        <p><div className='peoList'></div>高級證券業務員</p>
+                        <p><div className='peoList'></div>期貨業務人員</p>
+                        <p><div className='peoList'></div>理財人員</p>
+                        <p><div className='peoList'></div>信託人員</p>
+                      </>
+                    ) : (
+                      ''
+                    )
+                  }
 
-            </ListContent>
-          </PeopleContwntMb>
-          <PeopleContwntMb>
-            <ListContent>
-              <PeopleTitle onClick={displayService}>服務實績<img className={`downicon ${display05}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
-              {
-                service ? (
-                  <>
-                    <p><div className='peoList'></div>桃園科技園區科技廠房</p>
-                    <p><div className='peoList'></div>愛丁堡科技大樓</p>
-                    <p><div className='peoList'></div>大帝國科技大樓</p>
-                    <p><div className='peoList'></div>世紀經貿科技大樓</p>
-                  </>
-                ) : (
-                  ''
-                )
-              }
-            </ListContent>
-          </PeopleContwntMb>
-        </SecondContentMb>
+                </ListContent>
+              </PeopleContwntMb>
+              <PeopleContwntMb>
+                <ListContent>
+                  <PeopleTitle onClick={displayService}>服務實績<img className={`downicon ${display05}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
+                  {
+                    service ? (
+                      <>
+                        <p><div className='peoList'></div>桃園科技園區科技廠房</p>
+                        <p><div className='peoList'></div>愛丁堡科技大樓</p>
+                        <p><div className='peoList'></div>大帝國科技大樓</p>
+                        <p><div className='peoList'></div>世紀經貿科技大樓</p>
+                      </>
+                    ) : (
+                      ''
+                    )
+                  }
+                </ListContent>
+              </PeopleContwntMb>
+            </SecondContentMb>
+          ) : (
+            ''
+          )
+        }
         {/* 桌機 */}
-        <SecondContent second>
-          <ListContent>
-            <PeopleTitle>個人資歷</PeopleTitle>
-            {
-              showIntor ? (
-                <React.Fragment>
-                  <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
-                  <p><div className='peoList'></div>信義房屋商仲一組主管</p>
-                  <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
-                  <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
-                  <p><div className='peoList'></div>經紀人</p>
-                </React.Fragment>
-              ) : (
-                ''
-              )
-            }
-          </ListContent>
-          <ListContent>
-            <PeopleTitle>參與社團</PeopleTitle>
-            {
-              showIntor ? (
-                <React.Fragment>
-                   <p><div className='peoList'></div>中華民國中小企業總會</p>
-                   <p><div className='peoList'></div>台北市中小企業協會</p>
-                </React.Fragment>
-              ) : (
-                ''
-              )
-            }
-          </ListContent>
-          <ListContent>
-            <PeopleTitle>專業證照&專長</PeopleTitle>
-            {
-              showIntor ? (
-                <React.Fragment>
-                  <p><div className='peoList'></div>高級證券業務員</p>
-                  <p><div className='peoList'></div>期貨業務人員</p>
-                  <p><div className='peoList'></div>理財人員</p>
-                  <p><div className='peoList'></div>信託人員</p>
-                </React.Fragment>
-              ) : (
-                ''
-              )
-            }
-          </ListContent>
-          <ListContent>
-            <PeopleTitle>服務實績</PeopleTitle>
-            {
-              showIntor ? (
-                <React.Fragment>
-                  <p><div className='peoList'></div>桃園科技園區科技廠房</p>
-                  <p><div className='peoList'></div>愛丁堡科技大樓</p>
-                  <p><div className='peoList'></div>大帝國科技大樓</p>
-                  <p><div className='peoList'></div>世紀經貿科技大樓</p>
-                </React.Fragment>
-              ) : (
-                ''
-              )
-            }
-          </ListContent>
-        </SecondContent>
-        <Show className='' onClick={displayPCIntor}>
-          <img src={`/static/img/${deskShow}.png`} />
-        </Show>
+        {
+          intorData ? (
+            <React.Fragment>
+              <SecondContent second>
+                <ListContent>
+                  <PeopleTitle>個人資歷</PeopleTitle>
+                  {
+                    showIntor ? (
+                      <React.Fragment>
+                        <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
+                        <p><div className='peoList'></div>信義房屋商仲一組主管</p>
+                        <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
+                        <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
+                        <p><div className='peoList'></div>經紀人</p>
+                      </React.Fragment>
+                    ) : (
+                      ''
+                    )
+                  }
+                </ListContent>
+                <ListContent>
+                  <PeopleTitle>參與社團</PeopleTitle>
+                  {
+                    showIntor ? (
+                      <React.Fragment>
+                        <p><div className='peoList'></div>中華民國中小企業總會</p>
+                        <p><div className='peoList'></div>台北市中小企業協會</p>
+                      </React.Fragment>
+                    ) : (
+                      ''
+                    )
+                  }
+                </ListContent>
+                <ListContent>
+                  <PeopleTitle>專業證照&專長</PeopleTitle>
+                  {
+                    showIntor ? (
+                      <React.Fragment>
+                        <p><div className='peoList'></div>高級證券業務員</p>
+                        <p><div className='peoList'></div>期貨業務人員</p>
+                        <p><div className='peoList'></div>理財人員</p>
+                        <p><div className='peoList'></div>信託人員</p>
+                      </React.Fragment>
+                    ) : (
+                      ''
+                    )
+                  }
+                </ListContent>
+                <ListContent>
+                  <PeopleTitle>服務實績</PeopleTitle>
+                  {
+                    showIntor ? (
+                      <React.Fragment>
+                        <p><div className='peoList'></div>桃園科技園區科技廠房</p>
+                        <p><div className='peoList'></div>愛丁堡科技大樓</p>
+                        <p><div className='peoList'></div>大帝國科技大樓</p>
+                        <p><div className='peoList'></div>世紀經貿科技大樓</p>
+                      </React.Fragment>
+                    ) : (
+                      ''
+                    )
+                  }
+                </ListContent>
+              </SecondContent>
+              <Show className='' onClick={displayPCIntor}>
+                <img src={`/static/img/${deskShow}.png`} />
+              </Show>
+            </React.Fragment>
+          ) : (
+          ''
+          )
+        }
       </SecondBlock>
       <BigTitle>
         <TitleImg src='/static/img/about/serviceItem.png' />

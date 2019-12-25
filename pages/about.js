@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
@@ -20,14 +20,14 @@ const MakeTop = styled.div`
 
 const BgHead = styled.div`
   width: 100%;
-  height: 480px;
+  height: 415px;
   // background: url(/static/img/about.png) no-repeat;
   & > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  & > h1 {
+  & > h2 {
     font-size: 53px;
     font-weight: bold;
     color: #fff;
@@ -45,11 +45,23 @@ const BgHead = styled.div`
 const Mask = styled.div`
   background: #000;
   width: 100%;
-  height: 560px;
+  height: 495px;
   opacity: .5;
   top: 0px;
   @media (max-width: 992px){
     height: 535px;
+  }
+`
+const Desk = styled.div`
+  display: block;
+  @media (max-width: 992px){
+    display: none;
+  }
+`
+const Mb = styled.div`
+  display: none;
+  @media (max-width: 992px){
+    display: block;
   }
 `
 const Container = styled.div`
@@ -61,9 +73,9 @@ const BigTitle = styled.div`
   padding: 60px 0 40px 0;
   margin: 0 auto;
   @media (max-width: 992px){
-    width: 80%;
-    padding: 20px 0 40px 0;
-    padding-bottom: 20px;
+    width: 85%;
+    padding: 0;
+    padding-top: 20px;
   }
 `
 const OtherTitle = styled.img`
@@ -92,8 +104,11 @@ const Historybd = styled.img`
   height: 1564px;
   left: 6px;
   top: 16px;
+  @media (max-width: 1560px){
+    height: 1585px;
+  }
   @media (max-width: 992px){
-    height: 2532px;
+    height: 2414px;
   }
 `
 const HistoryList = styled.div`
@@ -124,11 +139,20 @@ const ListTitle = styled.div`
 `
 
 
-const About = () => (
+const About = () => {
+  const [displayHistory, setDisplayHistory] = useState(false)
+
+  const showHistory = (event) => {
+    event.preventDefault();
+    setDisplayHistory(!displayHistory)
+  }
+  const coll01 = displayHistory ? 'downActive' : '' ;
+  return(
     <Layout>
       <Head
-        title="信義全球資產"
-        description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+        title="公司介紹 - 信義全球資產"
+        description="信義全球資產整合商用不動產投資、代理、顧問與資產管理服務，提供客戶更專業、全面的服務。秉持著信義企業立業宗旨：實現家業夢想，扮演客戶一路上最值得信賴的成長夥伴。"
+        url=""
       />
       <Navbar />
       <NavHomeMobile />
@@ -136,97 +160,200 @@ const About = () => (
       <BgHead>
         <img src='/static/img/about.png' />
         <Mask className='absolute' />
-        <h1>信任，帶來新幸福!</h1>
+        <h2>信任，帶來新幸福!</h2>
       </BgHead>
-      <Container>
-        <BigTitle>
-          <OtherTitle src='/static/img/about_us.png' />
-        </BigTitle>
-        <AboutUs>
-          信義全球資產(Sinyi Global)，為臺灣上市公司信義房屋(TWSE：9940)集團之內，專營商用不動產的全資子公司，創立20多年來，
-          業務範疇從商業仲介、租賃招商、公開標售，擴及工業地產、資產管理、顧問服務等。
-          營運期間協助3000組以上客戶完成不動產交易，累計交易金額逾800億元。
-          作為臺灣商用不動產領導品牌，信義全球資產整合信義集團完整的上、中、下游及關聯產業服務，
-          以及400多個直營據點及行銷通路，滿足客戶多元及客製化服務，為企業成長最佳後盾。
-          <br /><br />
-          Sinyi Realty is tasked with the mission of helping people fulfill their dreams of becoming a homeowner, while playing the role as the most trustworthy partner that grows with our clients.
-          <br /><br />
-          In January 2010, Sinyi Global Assets Management Ltd. was inaugurated by merging the Commercial Property Brokerage Department, which had been long devoted to the commercial properties in Taipei and a true player in commercial real estate, with the Assets Management Department, which had been offering asset consulting services for foreign investment funds such as Morgan Stanley ever since NPL came into being.
-          <br /><br />
-          Together, we now offer integrated commercial property services, such as investment, brokerage, consulting, and asset management, to professionally cater to our clients’diverse needs.
+      <Desk>
+        <Container>
+          {/* seo h1 */}
+          <h1 className='zero'>關於我們</h1>
+          <BigTitle>
+            <OtherTitle src='/static/img/about_us.png' />
+          </BigTitle>
+          <AboutUs>
+            信義全球資產(Sinyi Global)，為臺灣上市公司信義房屋(TWSE：9940)集團之內，專營商用不動產的全資子公司，創立20多年來，
+            業務範疇從商業仲介、租賃招商、公開標售，擴及工業地產、資產管理、顧問服務等。
+            營運期間協助3000組以上客戶完成不動產交易，累計交易金額逾800億元。
+            作為臺灣商用不動產領導品牌，信義全球資產整合信義集團完整的上、中、下游及關聯產業服務，
+            以及400多個直營據點及行銷通路，滿足客戶多元及客製化服務，為企業成長最佳後盾。
+            <br /><br />
+            Sinyi Realty is tasked with the mission of helping people fulfill their dreams of becoming a homeowner, while playing the role as the most trustworthy partner that grows with our clients.
+            <br /><br />
+            In January 2010, Sinyi Global Assets Management Ltd. was inaugurated by merging the Commercial Property Brokerage Department, which had been long devoted to the commercial properties in Taipei and a true player in commercial real estate, with the Assets Management Department, which had been offering asset consulting services for foreign investment funds such as Morgan Stanley ever since NPL came into being.
+            <br /><br />
+            Together, we now offer integrated commercial property services, such as investment, brokerage, consulting, and asset management, to professionally cater to our clients’diverse needs.
 
-        </AboutUs>
-        <History long>
-          <Historybd className='absolute' src='/static/img/aboutBorder.png' />
-          <Point className='absolute point1' src='/static/img/point.png' />
-          <ListTitle>2004-2006</ListTitle>
-          <HistoryList>
-            <p>獲Cheers雜誌「最佳企業雇主」</p>
-            <p>信義房屋直營店店數突破200家店，信義101店開幕</p>
-            <p>信義企業集團全球營業總部成立，並進駐「信義大樓」</p>
-            <p>連續14年蟬聯天下雜誌「五百大服務業」不動產經紀類第一名(1995-2008)</p>
-            <p>連續3年蟬聯遠見雜誌「企業社會責任獎」-服務業楷模</p>
-            <p>Recognized as the Best Enterprise Employer by Cheers Magazine</p>
-            <p>The number of direct stores hit 200 with the grand opening of the Sinyi Store near Taipei 101</p>
-            <p>Sinyi Group Global Headquarters established in the Sinyi Building</p>
-            <p>Ranked No.1 in Top 500 Service Industry Companies in the Realty Agency category by Common-Wealth Magazine for 14 consecutive years (1995-2008)</p>
-            <p>Won the Corporate Social Responsibility - Service Model Award from Global Views Magazine for 3 years in a row</p>
-          </HistoryList>
-          <Point className='absolute point2' src='/static/img/point.png' />
-          <ListTitle>2001-2005</ListTitle>
-          <HistoryList>
-            <p>與業界合資成立吉家網，成為台灣最大不動產交易平台</p>
-            <p>信義房屋成為國內唯一股票上市房仲</p>
-            <p>信義不動產估價事務所正式掛牌營業，不動產估價邁向新里程碑</p>
-            <p>連續14年蟬聯天下雜誌「五百大服務業」不動產經紀類第一名(1995-2008)</p>
-            <p>獲中國國務院頒發「中國房地產百強企業第二名」</p>
-            <p>Co-founded GigaHouse in a joint venture with other real estate partners to become the biggest real estate trading platform in Taiwan</p>
-            <p>Became the first listed real estate agency in the Taiwan Exchange</p>
-            <p>Sinyi Real Estate Valuation Office officially launched, marking a new milestone in real estate valuation</p>
-            <p>Awarded Second Place in China’s Top 100 Real Estate Companies by China's State Council</p>
-          </HistoryList>
-          <Point className='absolute point3' src='/static/img/point.png' />
-          <ListTitle>1996-2000</ListTitle>
-          <HistoryList>
-            <p>信義房屋為全國第一家實施「成屋履約保證制度」的房屋仲介公司</p>
-            <p>信義房屋推出國內首見「信義房價指數」，提供更客觀的市場行情</p>
-            <p>取得美國知名房仲品牌Goldwell Banker大中國地區品牌代理權</p>
-            <p>Full implementation of the House Performance Assurance System, as the first real estate agency to launch this new </p>
-            <p>secure trading system in Taiwan</p>
-            <p>Launched Sinyi Housing Price Indexes to offer realistic market price information</p>
-            <p>Became an official brand agency for Goldwell Banker, an renowned American real estate franchise, in the Greater </p>
-            <p>China region</p>
-          </HistoryList>
-          <Point className='absolute point4' src='/static/img/point.png' />
-          <ListTitle>1991-1995</ListTitle>
-          <HistoryList>
-            <p>成立流程管理推動組織，展開服務品質元年</p>
-            <p>實施「購屋全面保障系統」</p>
-            <p>上海信義房屋開幕，正式跨足大陸市場</p>
-            <p>「土地登記專業流程」獲頒第四屆品質優良案例獎</p>
-            <p>Established the Process Management Promotion Organization, ushering into the era of high service quality</p>
-            <p>Implemented the Comprehensive Protection System for Homebuyers</p>
-            <p>Grand opening of Sinyi Shanghai, officially branching out to the China market</p>
-            <p>Our Land Registration Process won the 4th Best Practice of Quality Management Award</p>
-          </HistoryList>
-          <Point className='absolute point5' src='/static/img/point.png' />
-          <ListTitle>1981-1990</ListTitle>
-          <HistoryList>
-            <p>1981年3月公司成立</p>
-            <p>率先採行「先調查產權，再進行買賣」</p>
-            <p>總公司成立，導入CIS，強化企業形象</p>
-            <p>製作「不動產說明書」，創仲介業製作「不動產說明書」之先</p>
-            <p>Founded in March 1981</p>
-            <p>A pioneer in implementing the Pre-Sale Property Rights Investigation system</p>
-            <p>Headquarters established, incorporating CIS and strengthening corporate image</p>
-            <p>The first in the industry to provide Real Estate Statements</p>
-          </HistoryList>
-        </History>
-        <PcAbout />
-        <MbAbout />
-      </Container>
+          </AboutUs>
+          <History long>
+            <Historybd className='absolute' src='/static/img/aboutBorder.png' />
+            <Point className='absolute point1' src='/static/img/point.png' />
+            <ListTitle>2004-2006</ListTitle>
+            <HistoryList>
+              <p>獲Cheers雜誌「最佳企業雇主」</p>
+              <p>信義房屋直營店店數突破200家店，信義101店開幕</p>
+              <p>信義企業集團全球營業總部成立，並進駐「信義大樓」</p>
+              <p>連續14年蟬聯天下雜誌「五百大服務業」不動產經紀類第一名(1995-2008)</p>
+              <p>連續3年蟬聯遠見雜誌「企業社會責任獎」-服務業楷模</p>
+              <p>Recognized as the Best Enterprise Employer by Cheers Magazine</p>
+              <p>The number of direct stores hit 200 with the grand opening of the Sinyi Store near Taipei 101</p>
+              <p>Sinyi Group Global Headquarters established in the Sinyi Building</p>
+              <p>Ranked No.1 in Top 500 Service Industry Companies in the Realty Agency category by Common-Wealth Magazine for 14 consecutive years (1995-2008)</p>
+              <p>Won the Corporate Social Responsibility - Service Model Award from Global Views Magazine for 3 years in a row</p>
+            </HistoryList>
+            <Point className='absolute point2' src='/static/img/point.png' />
+            <ListTitle>2001-2005</ListTitle>
+            <HistoryList>
+              <p>與業界合資成立吉家網，成為台灣最大不動產交易平台</p>
+              <p>信義房屋成為國內唯一股票上市房仲</p>
+              <p>信義不動產估價事務所正式掛牌營業，不動產估價邁向新里程碑</p>
+              <p>連續14年蟬聯天下雜誌「五百大服務業」不動產經紀類第一名(1995-2008)</p>
+              <p>獲中國國務院頒發「中國房地產百強企業第二名」</p>
+              <p>Co-founded GigaHouse in a joint venture with other real estate partners to become the biggest real estate trading platform in Taiwan</p>
+              <p>Became the first listed real estate agency in the Taiwan Exchange</p>
+              <p>Sinyi Real Estate Valuation Office officially launched, marking a new milestone in real estate valuation</p>
+              <p>Awarded Second Place in China’s Top 100 Real Estate Companies by China's State Council</p>
+            </HistoryList>
+            <Point className='absolute point3' src='/static/img/point.png' />
+            <ListTitle>1996-2000</ListTitle>
+            <HistoryList>
+              <p>信義房屋為全國第一家實施「成屋履約保證制度」的房屋仲介公司</p>
+              <p>信義房屋推出國內首見「信義房價指數」，提供更客觀的市場行情</p>
+              <p>取得美國知名房仲品牌Goldwell Banker大中國地區品牌代理權</p>
+              <p>Full implementation of the House Performance Assurance System, as the first real estate agency to launch this new </p>
+              <p>secure trading system in Taiwan</p>
+              <p>Launched Sinyi Housing Price Indexes to offer realistic market price information</p>
+              <p>Became an official brand agency for Goldwell Banker, an renowned American real estate franchise, in the Greater </p>
+              <p>China region</p>
+            </HistoryList>
+            <Point className='absolute point4' src='/static/img/point.png' />
+            <ListTitle>1991-1995</ListTitle>
+            <HistoryList>
+              <p>成立流程管理推動組織，展開服務品質元年</p>
+              <p>實施「購屋全面保障系統」</p>
+              <p>上海信義房屋開幕，正式跨足大陸市場</p>
+              <p>「土地登記專業流程」獲頒第四屆品質優良案例獎</p>
+              <p>Established the Process Management Promotion Organization, ushering into the era of high service quality</p>
+              <p>Implemented the Comprehensive Protection System for Homebuyers</p>
+              <p>Grand opening of Sinyi Shanghai, officially branching out to the China market</p>
+              <p>Our Land Registration Process won the 4th Best Practice of Quality Management Award</p>
+            </HistoryList>
+            <Point className='absolute point5' src='/static/img/point.png' />
+            <ListTitle>1981-1990</ListTitle>
+            <HistoryList>
+              <p>1981年3月公司成立</p>
+              <p>率先採行「先調查產權，再進行買賣」</p>
+              <p>總公司成立，導入CIS，強化企業形象</p>
+              <p>製作「不動產說明書」，創仲介業製作「不動產說明書」之先</p>
+              <p>Founded in March 1981</p>
+              <p>A pioneer in implementing the Pre-Sale Property Rights Investigation system</p>
+              <p>Headquarters established, incorporating CIS and strengthening corporate image</p>
+              <p>The first in the industry to provide Real Estate Statements</p>
+            </HistoryList>
+          </History>
+          <PcAbout />
+          <MbAbout />
+        </Container>
+      </Desk>
+      <Mb>
+        <Container>
+          <BigTitle onClick={showHistory}>
+            <OtherTitle src='/static/img/about_us_mb.png' />
+            <img className={`aboutdown ${coll01}`} src='static/img/about_down.png' />
+          </BigTitle>
+          {
+            displayHistory ?(
+              <React.Fragment>
+                <AboutUs>
+                  信義全球資產(Sinyi Global)，為臺灣上市公司信義房屋(TWSE：9940)集團之內，專營商用不動產的全資子公司，創立20多年來，
+                  業務範疇從商業仲介、租賃招商、公開標售，擴及工業地產、資產管理、顧問服務等。
+                  營運期間協助3000組以上客戶完成不動產交易，累計交易金額逾800億元。
+                  作為臺灣商用不動產領導品牌，信義全球資產整合信義集團完整的上、中、下游及關聯產業服務，
+                  以及400多個直營據點及行銷通路，滿足客戶多元及客製化服務，為企業成長最佳後盾。
+                  <br /><br />
+                  Sinyi Realty is tasked with the mission of helping people fulfill their dreams of becoming a homeowner, while playing the role as the most trustworthy partner that grows with our clients.
+                  <br /><br />
+                  In January 2010, Sinyi Global Assets Management Ltd. was inaugurated by merging the Commercial Property Brokerage Department, which had been long devoted to the commercial properties in Taipei and a true player in commercial real estate, with the Assets Management Department, which had been offering asset consulting services for foreign investment funds such as Morgan Stanley ever since NPL came into being.
+                  <br /><br />
+                  Together, we now offer integrated commercial property services, such as investment, brokerage, consulting, and asset management, to professionally cater to our clients’diverse needs.
+
+                </AboutUs>
+                <History long>
+                  <Historybd className='absolute' src='/static/img/aboutBorder.png' />
+                  <Point className='absolute point1' src='/static/img/point.png' />
+                  <ListTitle>2004-2006</ListTitle>
+                  <HistoryList>
+                    <p>獲Cheers雜誌「最佳企業雇主」</p>
+                    <p>信義房屋直營店店數突破200家店，信義101店開幕</p>
+                    <p>信義企業集團全球營業總部成立，並進駐「信義大樓」</p>
+                    <p>連續14年蟬聯天下雜誌「五百大服務業」不動產經紀類第一名(1995-2008)</p>
+                    <p>連續3年蟬聯遠見雜誌「企業社會責任獎」-服務業楷模</p>
+                    <p>Recognized as the Best Enterprise Employer by Cheers Magazine</p>
+                    <p>The number of direct stores hit 200 with the grand opening of the Sinyi Store near Taipei 101</p>
+                    <p>Sinyi Group Global Headquarters established in the Sinyi Building</p>
+                    <p>Ranked No.1 in Top 500 Service Industry Companies in the Realty Agency category by Common-Wealth Magazine for 14 consecutive years (1995-2008)</p>
+                    <p>Won the Corporate Social Responsibility - Service Model Award from Global Views Magazine for 3 years in a row</p>
+                  </HistoryList>
+                  <Point className='absolute point2' src='/static/img/point.png' />
+                  <ListTitle>2001-2005</ListTitle>
+                  <HistoryList>
+                    <p>與業界合資成立吉家網，成為台灣最大不動產交易平台</p>
+                    <p>信義房屋成為國內唯一股票上市房仲</p>
+                    <p>信義不動產估價事務所正式掛牌營業，不動產估價邁向新里程碑</p>
+                    <p>連續14年蟬聯天下雜誌「五百大服務業」不動產經紀類第一名(1995-2008)</p>
+                    <p>獲中國國務院頒發「中國房地產百強企業第二名」</p>
+                    <p>Co-founded GigaHouse in a joint venture with other real estate partners to become the biggest real estate trading platform in Taiwan</p>
+                    <p>Became the first listed real estate agency in the Taiwan Exchange</p>
+                    <p>Sinyi Real Estate Valuation Office officially launched, marking a new milestone in real estate valuation</p>
+                    <p>Awarded Second Place in China’s Top 100 Real Estate Companies by China's State Council</p>
+                  </HistoryList>
+                  <Point className='absolute point3' src='/static/img/point.png' />
+                  <ListTitle>1996-2000</ListTitle>
+                  <HistoryList>
+                    <p>信義房屋為全國第一家實施「成屋履約保證制度」的房屋仲介公司</p>
+                    <p>信義房屋推出國內首見「信義房價指數」，提供更客觀的市場行情</p>
+                    <p>取得美國知名房仲品牌Goldwell Banker大中國地區品牌代理權</p>
+                    <p>Full implementation of the House Performance Assurance System, as the first real estate agency to launch this new </p>
+                    <p>secure trading system in Taiwan</p>
+                    <p>Launched Sinyi Housing Price Indexes to offer realistic market price information</p>
+                    <p>Became an official brand agency for Goldwell Banker, an renowned American real estate franchise, in the Greater </p>
+                    <p>China region</p>
+                  </HistoryList>
+                  <Point className='absolute point4' src='/static/img/point.png' />
+                  <ListTitle>1991-1995</ListTitle>
+                  <HistoryList>
+                    <p>成立流程管理推動組織，展開服務品質元年</p>
+                    <p>實施「購屋全面保障系統」</p>
+                    <p>上海信義房屋開幕，正式跨足大陸市場</p>
+                    <p>「土地登記專業流程」獲頒第四屆品質優良案例獎</p>
+                    <p>Established the Process Management Promotion Organization, ushering into the era of high service quality</p>
+                    <p>Implemented the Comprehensive Protection System for Homebuyers</p>
+                    <p>Grand opening of Sinyi Shanghai, officially branching out to the China market</p>
+                    <p>Our Land Registration Process won the 4th Best Practice of Quality Management Award</p>
+                  </HistoryList>
+                  <Point className='absolute point5' src='/static/img/point.png' />
+                  <ListTitle>1981-1990</ListTitle>
+                  <HistoryList>
+                    <p>1981年3月公司成立</p>
+                    <p>率先採行「先調查產權，再進行買賣」</p>
+                    <p>總公司成立，導入CIS，強化企業形象</p>
+                    <p>製作「不動產說明書」，創仲介業製作「不動產說明書」之先</p>
+                    <p>Founded in March 1981</p>
+                    <p>A pioneer in implementing the Pre-Sale Property Rights Investigation system</p>
+                    <p>Headquarters established, incorporating CIS and strengthening corporate image</p>
+                    <p>The first in the industry to provide Real Estate Statements</p>
+                  </HistoryList>
+                </History>
+              </React.Fragment>
+            ) : (
+              ''
+            )
+          }
+          <PcAbout />
+          <MbAbout />
+        </Container>
+      </Mb>
       <FastButton />
     </Layout>
-  )
+    )
+  }
   
   export default About

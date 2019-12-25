@@ -17,7 +17,8 @@ const Card = styled.div`
   background: #fff;
   @media (max-width: 992px){
     width: 100%;
-    margin: 10px 10px;
+    margin: 0;
+    margin-top: 30px;
   }
 `
 const Img = styled.div`
@@ -29,21 +30,21 @@ const JustContent = styled.div`
   color: #878787;
   text-align: center;
 `
-const ItemCard = () => {
+const ItemCard = (props) => {
   return (
     <Card>
       <Img>
-        <img src='/static/img/25358613_1553657854750443_452107410832652332_o.jpg' />
+        <img src={`/static/img/about_six/${props.img}`} />
       </Img>
       <Introduction>
         <JustContent>
-          內湖長虹旗艦辦公
+          {props.content1}
         </JustContent>
         <JustContent>
-          客戶：中華郵政
+          {props.content2}
         </JustContent>
         <JustContent>
-          面積：648坪
+          {props.content3}
         </JustContent>
       </Introduction>
     </Card>

@@ -107,7 +107,6 @@ const ItemCard = () => {
           </Content>
           <Monthly>
             50萬元/月
-            <DownPrice>↓16.81%</DownPrice>
           </Monthly>
           <JustContent>
             <div><img className='list2' src='/static/img/list/list01.png' />&nbsp;&nbsp;土地 114.6 坪</div>

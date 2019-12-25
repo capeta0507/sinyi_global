@@ -19,7 +19,7 @@ const MakeTop = styled.div`
 
 const BgHead = styled.div`
   width: 100%;
-  height: 500px;
+  height: 415x;
   & > img{
     width: 100%;
     height: 100%;
@@ -37,13 +37,13 @@ const BgHead = styled.div`
 const Mask = styled.div`
   background: #000;
   width: 100%;
-  height: 580px;
+  height: 495px;
   opacity: .5;
   top: 0px;
 `
 const Container = styled.div`
   width: 100%;
-  padding: 30px 0;
+  padding: 0px 0 30px 0;
 `
 const PeopleTitle = styled.div`
   font-size: 24px;
@@ -144,8 +144,9 @@ const About = () => {
   return(
     <Layout>
       <Head
-        title="信義全球資產"
-        description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+        title="服務據點 - 信義全球資產"
+        description="工業地產部：台北市內湖區洲子街73之1號、總部：台北市信義區信義路五段2號11樓震旦國際大樓、商業仲介部：台北市松山區南京東路三段276號"
+        url=""
       />
       <Navbar />
       <NavHomeMobile />
@@ -156,10 +157,12 @@ const About = () => {
         <h1>信任，帶來新幸福!</h1>
       </BgHead>
       <Container>
+        {/* seo h1 */}
+        <h1 className='zero'>服務據點</h1>
         <Bread>
-          <Breadcrumb second='關於全球' />
+          <Breadcrumb second='服務據點' />
         </Bread>
-        <h1 className='textCenter serviceTitle'><img className='serviceIcon' src='/static/img/about/service_phone.png' />服務電話</h1>
+        <h2 className='textCenter serviceTitle'><img className='serviceIcon' src='/static/img/about/service_phone.png' />服務電話</h2>
         <Content>
           <PeopleContent>
             <PeopleTitle>總部-震旦國際大樓</PeopleTitle>
@@ -206,7 +209,7 @@ const About = () => {
             <p><img className='placeIcon' src='/static/img/about/Group_3298.png' />02-2659-2828</p>
           </JustContent>
         </Content>
-        <h1 className='textCenter serviceTitle'><img className='serviceIcon' src='/static/img/about/placeholder.png' />服務據點</h1>
+        <h2 className='textCenter serviceTitle'><img className='serviceIcon' src='/static/img/about/placeholder.png' />服務據點</h2>
       </Container>
       <MapContainer>
         <MapContent>

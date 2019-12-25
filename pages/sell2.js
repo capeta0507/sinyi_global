@@ -18,7 +18,7 @@ import '../style/index.css'
 const Container = styled.div`
 	width: 70%;
   margin: 0 auto;
-  padding: 130px 0 50px 0;
+  padding: 70px 0 50px 0;
   @media (max-width: 1560px){
     width: 75%;
   }
@@ -86,6 +86,7 @@ const MbTitle = styled.h1`
 `
 const SubTitle = styled.div`
   width: 100%;
+  position: relative;
 `
 const Specification = styled.div`
   width: 60%;
@@ -170,6 +171,7 @@ const IndName = styled.div`
 `
 const Business = styled.div`
   width: 310px;
+  height: 535px;
   box-shadow: 0px 0px 10px ;
   padding: 20px;
   margin-left: 100px;
@@ -284,6 +286,18 @@ const BusImformation = styled.div`
 		font-size: 10px;
   }
 `
+const DownPrice = styled.div`
+  position: absolute;
+  width: 60px;
+  background: #EE0000;
+  right: 0%;
+  top: 3px;
+  padding: 2px;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+`
 
 var g_index = 0;
 
@@ -326,18 +340,31 @@ const Item = () => {
   var items
 //   console.log(items.length);
   var thumbnail
+  var thumbModal
   // console.log('thumb', thumbnail.length);
 
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-    setDirection(e.direction);
-  };
   const imgClick = (e,idx) => {
     g_index = idx;
+    thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
+    thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
+    for(let i = 0; i < thumbnail.length; i++){
+      thumbnail[i].classList.remove('carousel-thumbnail-active')
+      thumbModal[i].classList.remove('carousel-thumbnail-active')
+    }
+    thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    thumbModal[g_index].classList.add('carousel-thumbnail-active')
     setShowMainImg(imgData[g_index].img)
     setDisplayArrow(true)
   }
   const imgClick2 = (e,idx) => {
+    thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
+    thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
+    for(let i = 0; i < thumbnail.length; i++){
+      thumbnail[i].classList.remove('carousel-thumbnail-active')
+      thumbModal[i].classList.remove('carousel-thumbnail-active')
+    }
+    thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    thumbModal[g_index].classList.add('carousel-thumbnail-active')
     setShowMainImg(imgData2[idx].img)
     setDisplayArrow(false)
   }
@@ -355,6 +382,14 @@ const Item = () => {
     if(g_index > 0 ){
       setDisplayLeftArrow(true)
     }
+    thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
+    thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
+    for(let i = 0; i < thumbnail.length; i++){
+      thumbnail[i].classList.remove('carousel-thumbnail-active')
+      thumbModal[i].classList.remove('carousel-thumbnail-active')
+    }
+    thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    thumbModal[g_index].classList.add('carousel-thumbnail-active')
     setShowMainImg(imgData[g_index].img)
   }
   const prevImg = () => {
@@ -368,6 +403,14 @@ const Item = () => {
     if(g_index < imgData.length - 1){
       setDisplayRightArrow(true)
     }
+    thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
+    thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
+    for(let i = 0; i < thumbnail.length; i++){
+      thumbnail[i].classList.remove('carousel-thumbnail-active')
+      thumbModal[i].classList.remove('carousel-thumbnail-active')
+    }
+    thumbnail[g_index].classList.add('carousel-thumbnail-active')
+    thumbModal[g_index].classList.add('carousel-thumbnail-active')
     setShowMainImg(imgData[g_index].img)
   }
   const openModal = () => {
@@ -398,11 +441,14 @@ const Item = () => {
 	return (
 		<Layout>
 			<Head
-				title="信義全球資產"
-				description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+				title=" {程式抓取物件名稱}- 信義全球資產"
+        description="{物件名稱}，總價{總價}，單價{單價}/坪，土地{土地坪數}/坪，買賣{物件詳情-類型}物件都在信義全球資產。"
+        url=""
 			/>
 			<Navbar />
       <Container>
+        {/* seo h1 */}
+        <h1 className='zero'>勤樸辦公廠房Ａ</h1>
         <Breadcrumb second='買賣' />
         <div className='row gendermg'>
           <Main>
@@ -414,7 +460,7 @@ const Item = () => {
               <h2 className='mbnone'>6,000元/月</h2>
             </Title>
             <SubTitle>
-              <span className='itemPlace'>地址</span><span className='itemPlace2'> 新北市蘆洲區長興路</span>
+              <span className='itemPlace'>地址</span><span className='itemPlace2'> 新北市蘆洲區長興路</span><DownPrice>↓16.81%</DownPrice>
             </SubTitle>
             <MbTitle>6,000元/月</MbTitle>
             <Specification>
@@ -574,7 +620,7 @@ const Item = () => {
                                           <div key={idx}
                                             onClick={(e) => imgClick(e,idx)}
                                             src={img.img}
-                                            className="carousel-thumbnail-img carousel-thumbnail-active"
+                                            className={"carousel-thumbnail-img-Modal" + ((idx==0)?" carousel-thumbnail-active":"")}
                                             style={{
                                               width: "100%",
                                               height: "100%",
@@ -727,7 +773,7 @@ const Item = () => {
                                       <div key={idx}
                                         onClick={(e) => imgClick(e,idx)}
                                         src={img.img}
-                                        className="carousel-thumbnail-img carousel-thumbnail-active"
+                                        className={"carousel-thumbnail-img" + ((idx==0)?" carousel-thumbnail-active":"")}
                                         style={{
                                           width: "100%",
                                           height: "100%",

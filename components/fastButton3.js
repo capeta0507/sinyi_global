@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import CompareModal from '../components/Card/compareModal'
 import Select from 'react-select'
+import ProvicyModal from './Modal/privacyModal'
+import ServiceModal from './Modal/serviceModal'
+import SuccessModal from './Modal/successModal'
 
 const IptName = styled.div`
   width: 100%;
@@ -42,7 +45,33 @@ class FastButton extends Component {
     this.state = {
       intervalId: 0,
       displayConnection: false,
-      displayCompare: false
+      displayCompare: false,
+      displayService: false,
+      displayProvicy: false,
+      displaySend: false,
+      rocketPo: false
+    }
+  }
+
+  componentDidMount(){
+    window.scroll(0, 1);
+    window.addEventListener( 'scroll', this.winScroll);
+  }
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.winScroll);
+  }
+
+  winScroll = () => {
+    let navRoll = window.pageYOffset;
+
+    if (navRoll > 200){
+      this.setState({
+        rocketPo : true
+      });
+    }else{
+      this.setState({
+        rocketPo : false
+      })
     }
   }
 
@@ -50,6 +79,25 @@ class FastButton extends Component {
     event.preventDefault();
     this.setState({ displayConnection: !this.state.displayConnection });
   }
+  showProvicy = () => {
+    this.setState({ displayProvicy: true });
+  }
+  closeProvicy = () => {
+    this.setState({ displayProvicy: false });
+  }
+  showService = () => {
+    this.setState({ displayService: true });
+  }
+  closeService = () => {
+    this.setState({ displayService: false });
+  }
+  sendMessenger = () => {
+    this.setState({ displaySend: true });
+  }
+  closeMessenger = () => {
+    this.setState({ displaySend: false });
+  }
+
   showCompare = (event) => {
     event.preventDefault();
     this.setState({ displayCompare: true });
@@ -71,10 +119,11 @@ class FastButton extends Component {
     })
   }
   render(){
-    // const connectBlock = this.state.displayConnection ? 'getBlock' : 'getNone'
+    const { rocketPo } = this.state;
+    let rocketSty = rocketPo ? "top-on":"top-off";
     return(
       <div>
-        <div className='fastButton'>
+        <div className={`fastButton ${rocketSty}`}>
           <div className='compare' onClick={this.showCompare}>
             <img className='compareIcon' src='/static/img/found.png' />
             <div className='compareText'>查看比較(3/3)</div>
@@ -125,9 +174,9 @@ class FastButton extends Component {
                 <input className='form-control' type='text' placeholder='路段(必填)' />
               </IptName>
               <BusCheck>
-                <input type="checkbox" /> 送出資料前，請點選同意本站<a href=''>隱私權政策</a>
+                <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={this.showProvicy}>隱私權政策</a>及<a onClick={this.showService}>服務條款</a>
               </BusCheck>
-              <SendButton>送出</SendButton>
+              <SendButton onClick={this.sendMessenger}>送出</SendButton>
               <ConnectPhone>聯絡電話：02-8979-6060</ConnectPhone>
             </div>
           ) : (
@@ -135,6 +184,17 @@ class FastButton extends Component {
           )
         }
         <CompareModal show={this.state.displayCompare} close={this.closeComparer} />
+        <ProvicyModal
+          show={this.state.displayProvicy}
+          close={this.closeProvicy}
+         />
+         <ServiceModal
+          show={this.state.displayService}
+          close={this.closeService}
+         />
+         <SuccessModal 
+          show={this.state.displaySend}
+          close={this.closeMessenger} />
       </div>
     )
   }

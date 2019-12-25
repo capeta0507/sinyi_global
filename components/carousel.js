@@ -15,10 +15,10 @@ const Photo = styled(Carousel.Item)`
     height: 700px;
   }
   @media (max-width: 1680px){
-    height: 600px;
+    height: 500px;
   }
   @media (max-width: 1366px){
-    height: 550px;
+    height: 450px;
   }
   @media (max-width: 992px){
     height: 400px;

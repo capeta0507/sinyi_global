@@ -5,6 +5,18 @@ import MemberCard from '../Card/memberCard'
 const TeamBlock = styled.div`
   width: 80%;
   margin: 0 auto;
+  @media (max-width: 1560px){
+    width: 85%;
+  }
+  @media (max-width: 1440px){
+    width: 90%;
+  }
+  @media (max-width: 1366px){
+    width: 95%;
+  }
+  @media (max-width: 1280px){
+    width: 100%;
+  }
   @media (max-width: 992px){
     width: 100%;
   }

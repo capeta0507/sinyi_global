@@ -433,8 +433,9 @@ class ItemList extends Component {
     return (
       <Layout>
         <Head
-          title="信義全球資產"
-          description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+          title="租賃商用不動產、商辦、工業地產、土地物件列表 - 信義全球資產"
+          description="眾多商用不動產、商辦大樓、工業廠房、土地物件出租，由專業商用不動產顧問團隊為您評估物件合適性、提供投資建議，歡迎立即預約諮詢！"
+          url=""
         />
         <Navbar />
         <NavHomeMobile />
@@ -823,6 +824,7 @@ class ItemList extends Component {
               
             </Make>
           </HeadList>
+          <h1 className='zero'>租賃</h1>
         </SearchDiv>
         <Container>
           <Content>
@@ -840,7 +842,7 @@ class ItemList extends Component {
                 />
               </Sort>
             </MakeHead>
-            <div className='row mbnone'>
+            <div className='row mbnone speAround'>
               <ItemCard />
               <ItemCard />
               <ItemCard />

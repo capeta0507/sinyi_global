@@ -46,7 +46,31 @@ class FastButton extends Component {
       displayConnection: false,
       displayService: false,
       displayProvicy: false,
-      displaySend: false
+      displaySend: false,
+      displayButton: false,
+      rocketPo: false
+    }
+  }
+
+  componentDidMount(){
+    window.scroll(0, 1);
+    window.addEventListener( 'scroll', this.winScroll);
+  }
+  componentWillUnmount(){
+    window.removeEventListener('scroll', this.winScroll);
+  }
+
+  winScroll = () => {
+    let navRoll = window.pageYOffset;
+
+    if (navRoll > 200){
+      this.setState({
+        rocketPo : true
+      });
+    }else{
+      this.setState({
+        rocketPo : false
+      })
     }
   }
 
@@ -86,10 +110,11 @@ class FastButton extends Component {
     })
   }
   render(){
-    // const connectBlock = this.state.displayConnection ? 'getBlock' : 'getNone'
+    const { rocketPo } = this.state;
+    let rocketSty = rocketPo ? "top-on":"top-off";
     return(
       <div>
-        <div className='fastButton'>
+        <div className={`fastButton ${rocketSty}`}>
           <div className='connection' onClick={this.showConnection}>
             <img className='connectionIcon' src='/static/img/list/fast_connection.png' />
             <div className='connectionText'>快速聯絡</div>
@@ -136,9 +161,9 @@ class FastButton extends Component {
                 <input className='form-control' type='text' placeholder='路段(必填)' />
               </IptName>
               <BusCheck>
-              <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={this.showProvicy}>隱私權政策</a>及<a onClick={this.showService}>服務條款</a>
+                <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={this.showProvicy}>隱私權政策</a>及<a onClick={this.showService}>服務條款</a>
               </BusCheck>
-              <SendButton>送出</SendButton>
+              <SendButton onClick={this.sendMessenger}>送出</SendButton>
               <ConnectPhone>聯絡電話：02-8979-6060</ConnectPhone>
             </div>
           ) : (

@@ -11,7 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MainContain = styled.div`
   width: 100%;
-  padding: 80px 0 50px 0;
+  padding: 30px 0 50px 0;
   background: #fff;
 `
 const MainDescription = styled.div`
@@ -185,13 +185,16 @@ const Bid = () => {
   return (
     <Layout>
       <Head
-        title="信義全球資產"
-        description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+        title="{標售案名稱} - 信義全球資產"
+        description="{標售案名稱} ，詳細標售案內容介紹、標的說明、投標文件修正及標售公告，由專人為您提供專業投資亮點介紹。"
+        url=""
       />
       <Navbar />
       <NavHomeMobile />
       <MainContain>
         <Container>
+          {/* seo h1 */}
+          <h1 className='zero'>臺北市精華地段辦公標售案</h1>
           <Breadcrumb second='標售' />
           <Title>
             <h1>信義全球資產管理(股)公司</h1>

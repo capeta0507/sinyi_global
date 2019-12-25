@@ -86,7 +86,7 @@ const ItemName = styled.div`
 const Container = styled.div`
   width: 100%;
   background: #F1F1F1;
-  padding-top: 50px;
+  padding-top: 0px;
 `
 const Bread = styled.div`
   width: 80%;
@@ -98,8 +98,9 @@ const Team = () => {
   return (
     <Layout>
       <Head
-          title="信義全球資產"
-          description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+        title="{部門/職稱}{抓取網頁姓名} - 信義全球資產"
+        description=""
+        url=""
       />
       <Navbar />
       <NavHomeMobile />
@@ -113,26 +114,47 @@ const Team = () => {
       <NavTeam>
         <NavList>
           <NavItem>
-            <ItemName className='teamActive'>總經理</ItemName>
+            <a href='/team_manager'>
+              <ItemName>總經理</ItemName>
+            </a>
           </NavItem>
           <NavItem>
-            <ItemName>商仲一部</ItemName>&nbsp;&nbsp;&nbsp;&nbsp; <ItemName>商仲二部</ItemName>
+            <a href='/team_BusinessOne'>
+              <ItemName>商仲一部</ItemName>
+            </a>&nbsp;&nbsp;&nbsp;&nbsp; 
+            <a href='/team'>
+              <ItemName className='teamActive'>商仲二部</ItemName>
+            </a>
           </NavItem>
           <NavItem>
-            <ItemName>投資一部</ItemName>&nbsp;&nbsp;&nbsp;&nbsp; <ItemName>投資二部</ItemName>
+            <a href='/teame'>
+              <ItemName>投資一部</ItemName>
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp; 
+            <a href='/team'>
+              <ItemName>投資二部</ItemName>              
+            </a>
           </NavItem>
           <NavItem>
-            <ItemName>工業地產部</ItemName>
+            <a href='/team'>
+              <ItemName>工業地產部</ItemName>
+            </a>
           </NavItem>
           <NavItem>
-            <ItemName>顧問服務團隊</ItemName>
+            <a href='/team'>
+              <ItemName>顧問服務團隊</ItemName>
+            </a>
           </NavItem>
           <NavItem>
-            <ItemName>估價師團隊</ItemName>
+            <a href='/team'>
+              <ItemName>估價師團隊</ItemName>
+            </a>
           </NavItem>
         </NavList>
       </NavTeam>
       <Container>
+        {/* seo h1 */}
+        <h1 className='zero'>商仲一部/專員 康錫晃</h1>
         <Bread>
           <Breadcrumb second='團隊介紹' />
         </Bread>
