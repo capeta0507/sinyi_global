@@ -74,10 +74,10 @@ const MbNewsCard = () => {
     <Link>
       <Card>
         {/* 桌機板 */}
-        <Img className='mbnone'>
+        <Img className='getMbnone'>
           <img src='/static/img/11-02607-005.jpg' />
         </Img>
-        <Introduction className='mbnone'>
+        <Introduction className='getMbnone'>
           <NewsDate>2019/03/02</NewsDate>
           <Title>
             Q2買方信心轉強 辦公需求穩定成長 供給持續緊縮

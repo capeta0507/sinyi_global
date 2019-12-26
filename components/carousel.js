@@ -11,18 +11,19 @@ const Cas = styled.div`
 `
 
 const Photo = styled(Carousel.Item)`
-  @media (max-width: 1920px){
-    height: 700px;
-  }
-  @media (max-width: 1680px){
-    height: 500px;
-  }
-  @media (max-width: 1366px){
-    height: 450px;
-  }
-  @media (max-width: 992px){
-    height: 400px;
-  }
+  height: 450px;
+  // @media (max-width: 1920px){
+  //   height: 480px;
+  // }
+  // @media (max-width: 1680px){
+  //   height: 500px;
+  // }
+  // @media (max-width: 1366px){
+  //   height: 450px;
+  // }
+  // @media (max-width: 992px){
+  //   height: 400px;
+  // }
 `
 
 const MyCarousel = () => {

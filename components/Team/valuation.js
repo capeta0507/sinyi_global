@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import MemberCard from '../Card/memberCard'
+import ValuationCard from '../Card/valuationCard'
+import Link from 'next/link'
 
 const TeamBlock = styled.div`
   width: 80%;
@@ -108,14 +109,16 @@ const MapContent = styled.div`
 const MemberBlock = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   flex-wrap: wrap;
   margin: 29px 0;
 `
 const Member = styled.div`
   width: 32%;
+  padding: 10px;
   @media (max-width: 992px){
     width: 100%;
+    padding: 0px;
   }
 `
 const PeopleTitle = styled.div`
@@ -159,13 +162,29 @@ const Consultant = () => {
         <h3><span className='prizeName'>估價師團隊</span></h3>
         <MemberBlock>
           <Member>
-            <MemberCard name='康錫晃' engName='Casper Kang' list1='0945612356' list2='s194806@sinyi.com.tw' list3='s194806' />
+            <a href='https://app.sinyi.com.tw/branch/branch.php#top1' target="_blank">
+              <ValuationCard name='邱千惠' years='19年' />
+            </a>
           </Member>
           <Member>
-            <MemberCard name='康錫晃' engName='Casper Kang' list1='0945612356' list2='s194806@sinyi.com.tw' list3='s194806' />
+            <a href='https://app.sinyi.com.tw/branch/branch.php#top2' target="_blank">
+              <ValuationCard name='遲維斯' years='17年' />
+            </a>
           </Member>
           <Member>
-            <MemberCard name='康錫晃' engName='Casper Kang' list1='0945612356' list2='s194806@sinyi.com.tw' list3='s194806' />
+            <a href='https://app.sinyi.com.tw/branch/branch.php#top3' target="_blank">
+              <ValuationCard name='王士鳴' years='8年' />
+            </a>
+          </Member>
+          <Member>
+            <a href='https://app.sinyi.com.tw/branch/branch.php#top4' target="_blank">
+              <ValuationCard name='紀亮安' years='13年' />
+            </a>
+          </Member>
+          <Member>
+            <a href='https://app.sinyi.com.tw/branch/branch.php#top5' target="_blank">
+              <ValuationCard name='蔡文哲' years='8年' />
+            </a>
           </Member>
         </MemberBlock>
       </MainContent>

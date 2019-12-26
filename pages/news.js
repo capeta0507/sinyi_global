@@ -13,7 +13,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const MainContain = styled.div`
   width: 100%;
   padding: 80px 0 50px 0;
-  background: #fff;
+  background-color: #fff
+  background-image: url(/static/img/icon/white.png);
+  background-repeat:  repeat-x;
 `
 const Container = styled.div`
   width: 80%;
@@ -132,6 +134,54 @@ const NewsBlock = styled.div`
 
   }
 `
+const DownContent = styled.div`
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 70px;
+  display: flex;
+  & > span{
+    font-size: 16px;
+    color: #5A5A5A;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  @media (max-width: 992px){
+    width: 100%;
+    display: block;
+    margin-top: 40px;
+    & > span{
+      text-align: center;
+    }
+  }
+`
+const DownloadBtn = styled.div`
+  width: 144px;
+  padding: 10px;
+  cursor: pointer;
+  background: #00B1FF;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  border-radius: 5px;
+  & > img {
+    width: 20px;
+  }
+  & > span {
+    margin-left: 10px;
+  }
+  @media (max-width: 992px){
+    margin: 0 auto;
+    margin-top: 10px;
+    & > img {
+      width: 18px;
+      height: 18px;
+      margin: 5px 0 0 0px;
+    }
+    & > span {
+      margin-left: 20px;
+    }
+  }
+`
 
 const News = () => {
   return(
@@ -145,7 +195,7 @@ const News = () => {
       <NavHomeMobile />
       <MainContain>
         <Container>
-        <Breadcrumb second='新聞' />
+        <Breadcrumb data={[{title:"新聞" , link:"/newsList"} , {title: "台北科技走廊最後一塊版圖 北士科土地交易發燙"}]}/>
           <Title>
             <h1>台北科技走廊最後一塊版圖 北士科土地交易發燙</h1>
             <NewsDate className='mbnone'>2019/09/24</NewsDate>
@@ -170,6 +220,11 @@ const News = () => {
             </StatisticsImg>
             <DataFrom>資料來源:信義全球資產</DataFrom>
           </Content>
+          <DownContent>
+            <span className='mbBlock'>台北科技走廊最後一塊版圖</span>
+            <DownloadBtn><img src='/static/img/download.png'></img><span>檔案下載</span></DownloadBtn>
+            <span className='getMbnone'>台北科技走廊最後一塊版圖</span>
+          </DownContent>
         </Container>
         </MainContain>
         <OtherNewsContent>

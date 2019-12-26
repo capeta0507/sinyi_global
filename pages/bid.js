@@ -5,14 +5,17 @@ import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
 import Breadcrumb from '../components/breadcrumb'
 import NavHomeMobile from '../components/nav/navHomeMobile'
+import MobileFooter from '../components/footer/mobileFooterBid'
 import FastButton from '../components/fastButton'
 import '../style/index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MainContain = styled.div`
   width: 100%;
-  padding: 30px 0 50px 0;
-  background: #fff;
+  padding: 0px 0 50px 0;
+  background-color: #fff;
+  background-image: url(/static/img/icon/white.png);
+  background-repeat:  repeat-x;
 `
 const MainDescription = styled.div`
   width: 100%;
@@ -60,6 +63,26 @@ const ListContent = styled.div`
   margin: 0 auto;
   @media (max-width: 992px){
     width: 100%;
+  }
+`
+const DownContent = styled.div`
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 70px;
+  display: flex;
+  & > span{
+    font-size: 16px;
+    color: #5A5A5A;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  @media (max-width: 992px){
+    width: 100%;
+    display: block;
+    margin-top: 40px;
+    & > span{
+      text-align: center;
+    }
   }
 `
 const ConTitle = styled.div`
@@ -124,7 +147,7 @@ const IptName = styled.div`
     width: ${props => props.long ? '12.5%' : '25%'};
   }
   @media (max-width: 992px){
-    width: ${props => props.long ? '23%' : '23%'};
+    width: ${props => props.long ? '30%' : '30%'};
     font-size: 14px;
     padding-left: 10px;
     padding-right: 10px;
@@ -180,6 +203,34 @@ const ExTex = styled.div`
     width: 100%;
   }
 `
+const DownloadBtn = styled.div`
+  width: 144px;
+  padding: 10px;
+  cursor: pointer;
+  background: #00B1FF;
+  color: #fff;
+  font-size: 16px;
+  display: flex;
+  border-radius: 5px;
+  & > img {
+    width: 20px;
+  }
+  & > span {
+    margin-left: 10px;
+  }
+  @media (max-width: 992px){
+    margin: 0 auto;
+    margin-top: 10px;
+    & > img {
+      width: 18px;
+      height: 18px;
+      margin: 5px 0 0 0px;
+    }
+    & > span {
+      margin-left: 20px;
+    }
+  }
+`
 
 const Bid = () => {
   return (
@@ -195,7 +246,7 @@ const Bid = () => {
         <Container>
           {/* seo h1 */}
           <h1 className='zero'>臺北市精華地段辦公標售案</h1>
-          <Breadcrumb second='標售' />
+          <Breadcrumb data={[{title:"標售" , link:"/bid"}]}/>
           <Title>
             <h1>信義全球資產管理(股)公司</h1>
             <h1>臺北市精華地段辦公標售案</h1>
@@ -297,7 +348,7 @@ const Bid = () => {
                 </ListContent>
               </Content>
               <Content>
-              <ListContent>
+                <ListContent>
                   <ConTitle>投資亮點</ConTitle>
                   <ConText>
                   <ConList><Dolt />東區SOGO商圈，核心蛋黃地段</ConList>
@@ -307,6 +358,11 @@ const Bid = () => {
                   <ConList><Dolt />商業區高容積與高土地持份面積，未來更新再開發潛在利益優勢</ConList></ConText>
                 </ListContent>
               </Content>
+              <DownContent>
+                <span className='mbBlock'>台北精華地段辦公標售案公告</span>
+                <DownloadBtn id='message'><img src='/static/img/download.png'></img><span>檔案下載</span></DownloadBtn>
+                <span className='getMbnone'>台北精華地段辦公標售案公告</span>
+              </DownContent>
             </Account>
           </Container>
         </MainDescription>
@@ -363,6 +419,7 @@ const Bid = () => {
             </ListContent>
           </Container>
         </MainContain>
+        <MobileFooter />
       <FastButton />
     </Layout>
   )

@@ -109,7 +109,9 @@ const MakeMb = styled.div`
 `
 const Container = styled.div`
 	width: 100%;
-	background: #F1F1F1;
+  background-color: #F3F3F3;
+  background-image: url(/static/img/icon/grey.png);
+  background-repeat:  repeat-x;
 	padding: 0 0 60px 0;
 `
 const Content = styled.div`
@@ -159,7 +161,7 @@ const Sort = styled.div`
   width: 15%;
   padding-top: 20px;
   @media (max-width: 992px){
-    width: 50%;
+    width: 70%;
   }
 `
 const DrowDown = styled.div`
@@ -183,8 +185,8 @@ const PlaceOption = styled.div`
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   margin-top: 10px;
   @media (max-width: 992px){
-    left: 3%;
-    width: 340px;
+    left: 5%;
+    width: 90%;
     position: absolute;
   }
 `
@@ -194,6 +196,9 @@ const Check = styled.div`
   & > input{
     margin-top: 6px;
     margin-right: 5px;
+  }
+  @media (max-width: 992px){
+      padding: 10px 5px;
   }
 `
 const DrowOption = styled.div`
@@ -209,10 +214,13 @@ const DrowOption = styled.div`
 `
 const ForSel = styled.div`
   width: 100%;
-  padding: 15px;
+  padding: ${props => props.long ? '15px' : '15px'};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  @media (max-width: 992px){
+    padding: ${props => props.long ? '0 15px 15px 15px' : '15px'};
+  }
 `
 const DrowMenu = styled.ul`
   width: 100%;
@@ -245,6 +253,11 @@ const DrowMenuCity = styled.ul`
     &:hover {
       background: rgba(0,177,255,.1);
       color: #00B1FF;
+    }
+  }
+  @media (max-width: 992px){
+    & > li {
+      padding: 10px 5px;
     }
   }
 `
@@ -322,7 +335,7 @@ class ItemList extends Component {
     e.preventDefault();
     this.stopPropagation(e);
     this.setState({ 
-      kind: true,
+      kind: !this.state.kind,
       place: false,
       district: false,
       price: false,
@@ -341,7 +354,7 @@ class ItemList extends Component {
     e.preventDefault();
     this.stopPropagation(e);
     this.setState({ 
-      place: true,
+      place: !this.state.place,
       kind: false,
       district: false,
       price: false,
@@ -519,42 +532,42 @@ class ItemList extends Component {
                     <Back>
                       &lt; &nbsp;&nbsp;全區
                     </Back>
-                    <ForSel>
+                    <ForSel long>
                       <Check>
-                        <input type='checkbox' />中山區
+                        <input id='city001' type='checkbox' /><label htmlFor="city001">中山區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />中正區
+                        <input id='city002' type='checkbox' /><label htmlFor="city002">中正區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />信義區
+                        <input id='city003' type='checkbox' /><label htmlFor="city003">信義區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />內湖區
+                        <input id='city004' type='checkbox' /><label htmlFor="city004">內湖區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />北投區
+                        <input id='city005' type='checkbox' /><label htmlFor="city005">北投區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />南港區
+                        <input id='city006' type='checkbox' /><label htmlFor="city006">南港區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />士林區
+                        <input id='city007' type='checkbox' /><label htmlFor="city007">士林區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />大同區
+                        <input id='city008' type='checkbox' /><label htmlFor="city008">大同區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />大安區
+                        <input id='city009' type='checkbox' /><label htmlFor="city009">大安區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />文山區
+                        <input id='city010' type='checkbox' /><label htmlFor="city010">文山區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />松山區
+                        <input id='city011' type='checkbox' /><label htmlFor="city011">松山區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />萬華區
+                        <input id='city012' type='checkbox' /><label htmlFor="city012">萬華區</label>
                       </Check>
                     </ForSel>
                   </PlaceOption>
@@ -723,40 +736,40 @@ class ItemList extends Component {
                     </Back>
                     <ForSel>
                       <Check>
-                        <input type='checkbox' />中山區
+                        <input id='city101' type='checkbox' /><label htmlFor="city101">中山區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />中正區
+                        <input id='city102' type='checkbox' /><label htmlFor="city102">中正區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />信義區
+                        <input id='city103' type='checkbox' /><label htmlFor="city103">信義區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />內湖區
+                        <input id='city104' type='checkbox' /><label htmlFor="city104">內湖區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />北投區
+                        <input id='city105' type='checkbox' /><label htmlFor="city105">北投區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />南港區
+                        <input id='city106' type='checkbox' /><label htmlFor="city106">南港區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />士林區
+                        <input id='city107' type='checkbox' /><label htmlFor="city107">士林區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />大同區
+                        <input id='city108' type='checkbox' /><label htmlFor="city108">大同區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />大安區
+                        <input id='city109' type='checkbox' /><label htmlFor="city109">大安區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />文山區
+                        <input id='city110' type='checkbox' /><label htmlFor="city110">文山區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />松山區
+                        <input id='city111' type='checkbox' /><label htmlFor="city111">松山區</label>
                       </Check>
                       <Check>
-                        <input type='checkbox' />萬華區
+                        <input id='city112' type='checkbox' /><label htmlFor="city112">萬華區</label>
                       </Check>
                     </ForSel>
                   </PlaceOption>
@@ -856,11 +869,13 @@ class ItemList extends Component {
         <Container>
           <Content>
             <MakeHead>
-              <Breadcrumb second='買賣' />
+              <Breadcrumb data={[{title:"買賣" , link:"/sellList"}]}/>
               <Sort>
                 <Select 
                   placeholder="預設排序"
                   label='Single select'
+                  inputProps={{readOnly:true}}
+                  isSearchable={ false }
                   options={PresetOption}
                   theme={theme => ({
                     ...theme,

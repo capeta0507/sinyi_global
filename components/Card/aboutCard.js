@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Introduction = styled.div`
   padding:10px 0px;
-  background:#fff;
+  // background:#fff;
   margin-top: 10px;
 `
 const Card = styled.div`
@@ -14,7 +14,7 @@ const Card = styled.div`
   cursor: pointer;
   flex-wrap: wrap;
   transition: all .5s;
-  background: #fff;
+  // background: #fff;
   @media (max-width: 992px){
     width: 100%;
     margin: 0;

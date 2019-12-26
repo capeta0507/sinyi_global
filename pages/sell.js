@@ -11,9 +11,16 @@ import FastButton from '../components/fastButton2'
 import ProvicyModal from '../components/Modal/privacyModal'
 import ServiceModal from '../components/Modal/serviceModal'
 import SuccessModal from '../components/Modal/successModal'
+import MobileFooter from '../components/footer/mobileFooterSell'
 import '../style/index.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../style/main.css'
+const MainContainer = styled.div`
+  width: 100%;
+  background-color: #fff
+  background-image: url(/static/img/icon/white.png);
+  background-repeat:  repeat-x;
+`
 
 const Container = styled.div`
 	width: 70%;
@@ -24,6 +31,10 @@ const Container = styled.div`
   }
   @media (max-width: 1366px){
     width: 80%;
+  }
+  @media (max-width: 992px){
+    width: 90%;
+    padding: 0px 0 50px 0;
   }
 `
 const Main = styled.div`
@@ -46,7 +57,7 @@ const Title = styled.div`
     padding-top: 15px;
     color: #969696;
     font-size: 14px;
-    margin-left: -250px;
+    // margin-left: -250px;
   }
   & > h2{
     color: #00AAF5;
@@ -57,7 +68,7 @@ const Title = styled.div`
       padding-top: 15px;
       color: #969696;
       font-size: 14px;
-      margin-left: -165px;
+      // margin-left: -165px;
     }
   }
   @media (max-width: 1440px){
@@ -65,11 +76,12 @@ const Title = styled.div`
       padding-top: 15px;
       color: #969696;
       font-size: 14px;
-      margin-left: -165px;
+      // margin-left: -165px;
     }
   }
   @media (max-width: 992px){
     & > h1{
+      padding-top: 6px;
       color: #000;
       font-size: 22px;
     }
@@ -87,6 +99,17 @@ const MbTitle = styled.h1`
 const SubTitle = styled.div`
   width: 100%;
   position: relative;
+  @media (max-width: 992px){
+    display: none;
+  }
+`
+const SubTitleMb = styled.div`
+  width: 100%;
+  position: relative;
+  display: none;
+  @media (max-width: 992px){
+    display: block;
+  }
 `
 const Specification = styled.div`
   width: 60%;
@@ -172,9 +195,13 @@ const IndName = styled.div`
 const Business = styled.div`
   width: 310px;
   height: 535px;
-  box-shadow: 0px 0px 10px ;
+  box-shadow: 0px 0px 5px ;
   padding: 20px;
-  margin-left: 100px;
+  position: fixed;
+  right: 13%;
+  top: 83px;
+  z-index: 5;
+  background: #fff;
   & > h3{
     font-size: 20px;
     color: #00B1FF;
@@ -297,6 +324,10 @@ const DownPrice = styled.div`
   font-weight: 300;
   font-size: 12px;
   color: #fff;
+  @media (max-width: 992px){
+    top: 60px;
+    right: 40%;
+  }
 `
 
 var g_index = 0;
@@ -446,91 +477,256 @@ const Item = () => {
         url=""
 			/>
 			<Navbar />
-      <Container>
-        {/* seo h1 */}
-        <h1 className='zero'>勤樸辦公廠房Ａ</h1>
-        <Breadcrumb second='買賣' />
-        <div className='row gendermg'>
-          <Main>
-            <Title>
-              <h1>勤樸辦公廠房Ａ</h1>
-              <div>
-                案件編號：32092Y
-              </div>
-              <h2 className='mbnone'>6,000元/月</h2>
-            </Title>
-            <SubTitle>
-              <span className='itemPlace'>地址</span><span className='itemPlace2'> 新北市蘆洲區長興路</span><DownPrice>↓16.81%</DownPrice>
-            </SubTitle>
-            <MbTitle>6,000元/月</MbTitle>
-            <Specification>
-              <div className='flex'>
-                <div className='spcTitle flex'><img className='listSp' src='/static/img/list/list01.png' />&nbsp;&nbsp;權狀</div>
-                <div className='spcTitle2'>114.6 坪</div>
-              </div>
-              <div className='flex'>
-                <span className='spcTitle'><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;出租</span>
-                <span className='spcTitle2'>62.3 坪</span>
-              </div>
-              <div className='flex'>
-                <span className='spcTitle'><img className='list' src='/static/img/list/list03.png' />&nbsp;&nbsp;樓層</span>
-                <span className='spcTitle2'>1樓</span>
-              </div>
-              <div className='flex'>
-                <span className='spcTitle'><img className='list' src='/static/img/list/list04.png' />&nbsp;&nbsp;屋齡</span>
-                <span className='spcTitle2'>10.5 年</span>
-              </div>
-            </Specification>
-            <SpecificationMb>
-              <div className='mbSpec'>
-                <div className='speTag'>
-                  <span className='spcTitle'>權狀</span>
-                  <span className='spcTitle2'> 114.6 坪</span>
+      <MainContainer>
+        <Container>
+          {/* seo h1 */}
+          <h1 className='zero'>信義獨棟透天別墅</h1>
+          <Breadcrumb data={[{title:"買賣" , link:"/sellList"} , {title: "信義獨棟透天別墅"}]}/>
+          <div className='row gendermg'>
+            <Main>
+              <Title>
+                <h1>信義獨棟透天別墅</h1>
+                <div>
+                  案件編號：32092Y
                 </div>
-                <div className='speTag'>
-                  <span className='spcTitle'>出租</span>
-                  <span className='spcTitle2'> 62.3 坪</span>
+                <h2 className='mbnone'>6,000元/月</h2>
+              </Title>
+              <SubTitle>
+                <span className='itemPlace'>地址</span><span className='itemPlace2'> 新北市蘆洲區長興路</span>&nbsp;&nbsp;<span className='itemPlace'>單價</span><span className='itemPlace2'> 本物件含車位及家蓋，詳洽經紀人員</span><DownPrice>↓16.81%</DownPrice>
+              </SubTitle>
+              <SubTitleMb>
+                <div>
+                  <span className='itemPlace'>地址</span><span className='itemPlace2'> 新北市蘆洲區長興路</span>
                 </div>
-              </div>
-              <div className='mbSpec'>
-                <div className='speTag'>
-                  <span className='spcTitle'>樓層</span>
-                  <span className='spcTitle2'> 1樓</span>
+                <div>
+                  <span className='itemPlace'>單價</span><span className='itemPlace2'> 本物件含車位及家蓋，詳洽經紀人員</span>
                 </div>
-                <div className='speTag'>
-                  <span className='spcTitle'>屋齡</span>
-                  <span className='spcTitle2'> 10.5 年</span>
+                <DownPrice>↓16.81%</DownPrice>
+              </SubTitleMb>
+              <MbTitle>6,000元/月</MbTitle>
+              <Specification>
+                <div className='flex'>
+                  <div className='spcTitle flex'><img className='listSp' src='/static/img/list/list01.png' />&nbsp;&nbsp;權狀</div>
+                  <div className='spcTitle2'>114.6 坪</div>
                 </div>
-              </div>
-            </SpecificationMb>
-            <Cau>
-              <div className="buy-content-detail">
-                <div className="buy-content-detail-body">
-                  <div className="buy-content-detail-carousel">
-                    <div>
-                      <div className={`modal fade carousel-dialog-frame ${displayModal}`}>
-                        <div onClick={closeModal} className="carousel-dialog-close d-none d-lg-block">
-                          <img src="/static/img/ic-baseline_clear_white.png" />
+                <div className='flex'>
+                  <span className='spcTitle'><img className='list' src='/static/img/list/list02.png' />&nbsp;&nbsp;出租</span>
+                  <span className='spcTitle2'>62.3 坪</span>
+                </div>
+                <div className='flex'>
+                  <span className='spcTitle'><img className='list' src='/static/img/list/list03.png' />&nbsp;&nbsp;樓層</span>
+                  <span className='spcTitle2'>1樓</span>
+                </div>
+                <div className='flex'>
+                  <span className='spcTitle'><img className='list' src='/static/img/list/list04.png' />&nbsp;&nbsp;屋齡</span>
+                  <span className='spcTitle2'>10.5 年</span>
+                </div>
+              </Specification>
+              <SpecificationMb>
+                <div className='mbSpec'>
+                  <div className='speTag'>
+                    <span className='spcTitle'>權狀</span>
+                    <span className='spcTitle2'> 114.6 坪</span>
+                  </div>
+                  <div className='speTag'>
+                    <span className='spcTitle'>出租</span>
+                    <span className='spcTitle2'> 62.3 坪</span>
+                  </div>
+                </div>
+                <div className='mbSpec'>
+                  <div className='speTag'>
+                    <span className='spcTitle'>樓層</span>
+                    <span className='spcTitle2'> 1樓</span>
+                  </div>
+                  <div className='speTag'>
+                    <span className='spcTitle'>屋齡</span>
+                    <span className='spcTitle2'> 10.5 年</span>
+                  </div>
+                </div>
+              </SpecificationMb>
+              <Cau>
+                <div className="buy-content-detail">
+                  <div className="buy-content-detail-body">
+                    <div className="buy-content-detail-carousel">
+                      <div>
+                        <div className={`modal fade carousel-dialog-frame ${displayModal}`}>
+                          <div onClick={closeModal} className="carousel-dialog-close d-none d-lg-block">
+                            <img src="/static/img/ic-baseline_clear_white.png" />
+                          </div>
+                          <div onClick={closeModal} className="carousel-dialog-close d-block d-lg-none">
+                            <img src="/static/img/ic-baseline_clear_white.png" />
+                          </div>
+                          <div>
+                            <div className="carousel-diolog-content">
+                              <div
+                                data-ride="carousel"
+                                className="carousel slide"
+                                style={{ width: "100%", height: "100%" }}
+                              >
+                                <div className="carousel-inner carousel-content-size">
+                                  <div
+                                    className="carousel-diolog-content-img"
+                                    style={{
+                                      backgroundImage:
+                                        `url(${showMainImg})`
+                                    }}
+                                  ></div>
+                                  <div className="carousel-dialog-paging-num">
+                                    1{/* */}/{/* */}8
+                                  </div>
+                                </div>
+                                {
+                                  displayArrow ? (
+                                    <React.Fragment>
+                                      <div
+                                        onClick={prevImg}
+                                        className="carousel-control-prev"
+                                        style={{ cursor: "pointer", opacity: ".6" }}
+                                      >
+                                        <img
+                                          className="d-block carousel-img-arrow"
+                                          src="/static/img/Path_1112.png"
+                                        />
+                                      </div>
+                                      <div
+                                        className="carousel-control-next"
+                                        onClick={nextImg}
+                                        style={{
+                                          transform: "rotate(180deg)",
+                                          cursor: "pointer",
+                                          opacity: 1
+                                        }}
+                                      >
+                                        <img
+                                          className="d-block carousel-img-arrow"
+                                          src="/static/img/Path_1112.png"
+                                        />
+                                      </div>
+                                    </React.Fragment>
+                                  ) : (
+                                    ''
+                                  )
+                                }
+                              </div>
+                            </div>
+                            <div className="carousel-dialog-thumbnail-frmae">
+                              <div className="carousel-thumbnail-frame">
+                                {
+                                  imgData2.map((data, idx) => {
+                                    return(
+                                      <div key={idx}
+                                        className="carousel-thumbnail-pattern"
+                                        onClick={(e) => {imgClick2(e, idx)}}
+                                        style={{
+                                          backgroundImage:
+                                            `url(${data.img})`,
+                                          backgroundPosition: "center center",
+                                          backgroundRepeat: "no-repeat"
+                                        }}
+                                      >
+                                        <div className="carousel-thumbnail-mask">
+                                          <img src={data.icon} />
+                                          <span>{data.name}</span>
+                                        </div>
+                                      </div>
+                                    )
+                                  })
+                                }
+                                <div className="carousel-thumbnail-cutting" />
+                                <div
+                                  style={{
+                                    width: "calc(100% - 85px - 85px - 7px)",
+                                    position: "relative",
+                                    display: "inline-block"
+                                  }}
+                                >
+                                  {
+                                    displayLeftArrow ? (
+                                      <div
+                                        onClick={prevImg}
+                                        className="carousel-thumbnail-arrow-l"
+                                      >
+                                        <img src="/static/img/ic-arrow-gray.svg" />
+                                      </div>
+                                    ) : (
+                                      ''
+                                    )
+                                  }
+                                  
+                                  <div className="carousel-thumbnail-img-frame">
+                                    <div style={{ width: 675 }}>
+                                      {
+                                        imgData.map((img,idx) => {
+                                          return(
+                                            <div key={idx}
+                                              onClick={(e) => imgClick(e,idx)}
+                                              src={img.img}
+                                              className={"carousel-thumbnail-img-Modal" + ((idx==0)?" carousel-thumbnail-active":"")}
+                                              style={{
+                                                width: "100%",
+                                                height: "100%",
+                                                backgroundPosition: "center",
+                                                backgroundRepeat: "no-repeat",
+                                                backgroundSize: "cover",
+                                                backgroundImage:
+                                                  `url(${img.img})`
+                                              }}
+                                            >
+                                              <img
+                                                src={img.img}
+                                                style={{ width: 0, height: 0 }}
+                                              />
+                                            </div>
+                                          )
+                                        })
+                                      }
+                                    </div>
+                                  </div>
+                                  {
+                                    displayRightArrow ? (
+                                      <div onClick={nextImg} className="carousel-thumbnail-arrow-r">
+                                        <img src="/static/img/ic-arrow-gray.svg" />
+                                      </div>
+                                    ) : (
+                                      ''
+                                    )
+                                  }
+                                  
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div onClick={closeModal} className="carousel-dialog-close d-block d-lg-none">
-                          <img src="/static/img/ic-baseline_clear_white.png" />
-                        </div>
-                        <div>
-                          <div className="carousel-diolog-content">
+                        <div className="buy-carousel-frame">
+                          <div className="buy-carousel-content-frame">
                             <div
                               data-ride="carousel"
                               className="carousel slide"
                               style={{ width: "100%", height: "100%" }}
                             >
                               <div className="carousel-inner carousel-content-size">
-                                <div
-                                  className="carousel-diolog-content-img"
-                                  style={{
-                                    backgroundImage:
-                                      `url(${showMainImg})`
-                                  }}
-                                ></div>
-                                <div className="carousel-dialog-paging-num">
+                                {/* {showImg} */}
+                                <div className="carousel-item carousel-content-size active">
+                                  <div onClick={openModal}
+                                    src={showMainImg}
+                                    className="carousel-content-size carousel-current-img"
+                                    style={{
+                                      width: "100%",
+                                      height: "100%",
+                                      backgroundPosition: "center",
+                                      backgroundRepeat: "no-repeat",
+                                      backgroundSize: "cover",
+                                      backgroundImage:
+                                        `url(${showMainImg})`
+                                    }}
+                                  >
+                                  <img
+                                    src={showMainImg}
+                                    style={{ width: 0, height: 0 }}
+                                  />
+                                  </div>
+                                </div>
+                                <div className="carousel-paging-num">
                                   1{/* */}/{/* */}8
                                 </div>
                               </div>
@@ -548,8 +744,8 @@ const Item = () => {
                                       />
                                     </div>
                                     <div
-                                      className="carousel-control-next"
                                       onClick={nextImg}
+                                      className="carousel-control-next"
                                       style={{
                                         transform: "rotate(180deg)",
                                         cursor: "pointer",
@@ -568,254 +764,277 @@ const Item = () => {
                               }
                             </div>
                           </div>
-                          <div className="carousel-dialog-thumbnail-frmae">
-                            <div className="carousel-thumbnail-frame ">
-                              {
-                                imgData2.map((data, idx) => {
-                                  return(
-                                    <div key={idx}
-                                      className="carousel-thumbnail-pattern"
-                                      onClick={(e) => {imgClick2(e, idx)}}
-                                      style={{
-                                        backgroundImage:
-                                          `url(${data.img})`,
-                                        backgroundPosition: "center center",
-                                        backgroundRepeat: "no-repeat"
-                                      }}
-                                    >
-                                      <div className="carousel-thumbnail-mask">
-                                        <img src={data.icon} />
-                                        <span>{data.name}</span>
-                                      </div>
-                                    </div>
-                                  )
-                                })
-                              }
-                              <div className="carousel-thumbnail-cutting" />
-                              <div
-                                style={{
-                                  width: "calc(100% - 85px - 85px - 7px)",
-                                  position: "relative",
-                                  display: "inline-block"
-                                }}
-                              >
-                                {
-                                  displayLeftArrow ? (
-                                    <div
-                                      onClick={prevImg}
-                                      className="carousel-thumbnail-arrow-l"
-                                    >
-                                      <img src="/static/img/ic-arrow-gray.svg" />
-                                    </div>
-                                  ) : (
-                                    ''
-                                  )
-                                }
-                                
-                                <div className="carousel-thumbnail-img-frame">
-                                  <div style={{ width: 675 }}>
-                                    {
-                                      imgData.map((img,idx) => {
-                                        return(
-                                          <div key={idx}
-                                            onClick={(e) => imgClick(e,idx)}
-                                            src={img.img}
-                                            className={"carousel-thumbnail-img-Modal" + ((idx==0)?" carousel-thumbnail-active":"")}
-                                            style={{
-                                              width: "100%",
-                                              height: "100%",
-                                              backgroundPosition: "center",
-                                              backgroundRepeat: "no-repeat",
-                                              backgroundSize: "cover",
-                                              backgroundImage:
-                                                `url(${img.img})`
-                                            }}
-                                          >
-                                            <img
-                                              src={img.img}
-                                              style={{ width: 0, height: 0 }}
-                                            />
-                                          </div>
-                                        )
-                                      })
-                                    }
-                                  </div>
-                                </div>
-                                {
-                                  displayRightArrow ? (
-                                    <div onClick={nextImg} className="carousel-thumbnail-arrow-r">
-                                      <img src="/static/img/ic-arrow-gray.svg" />
-                                    </div>
-                                  ) : (
-                                    ''
-                                  )
-                                }
-                                
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="buy-carousel-frame">
-                        <div className="buy-carousel-content-frame">
-                          <div
-                            data-ride="carousel"
-                            className="carousel slide"
-                            style={{ width: "100%", height: "100%" }}
-                          >
-                            <div className="carousel-inner carousel-content-size">
-                              {/* {showImg} */}
-                              <div className="carousel-item carousel-content-size active">
-                                <div onClick={openModal}
-                                  src={showMainImg}
-                                  className="carousel-content-size carousel-current-img"
-                                  style={{
-                                    width: "100%",
-                                    height: "100%",
-                                    backgroundPosition: "center",
-                                    backgroundRepeat: "no-repeat",
-                                    backgroundSize: "cover",
-                                    backgroundImage:
-                                      `url(${showMainImg})`
-                                  }}
-                                >
-                                <img
-                                  src={showMainImg}
-                                  style={{ width: 0, height: 0 }}
-                                />
-                                </div>
-                              </div>
-                              <div className="carousel-paging-num">
-                                1{/* */}/{/* */}8
-                              </div>
-                            </div>
+                          <div className="carousel-thumbnail-frame mbnone">
                             {
-                              displayArrow ? (
-                                <React.Fragment>
-                                  <div
-                                    onClick={prevImg}
-                                    className="carousel-control-prev"
-                                    style={{ cursor: "pointer", opacity: ".6" }}
-                                  >
-                                    <img
-                                      className="d-block carousel-img-arrow"
-                                      src="/static/img/Path_1112.png"
-                                    />
-                                  </div>
-                                  <div
-                                    onClick={nextImg}
-                                    className="carousel-control-next"
+                              imgData2.map((data, idx) => {
+                                return(
+                                  <div key={idx}
+                                    className="carousel-thumbnail-pattern"
+                                    onClick={(e) => {imgClick2(e, idx)}}
                                     style={{
-                                      transform: "rotate(180deg)",
-                                      cursor: "pointer",
-                                      opacity: 1
+                                      backgroundImage:
+                                        `url(${data.img})`,
+                                      backgroundPosition: "center center",
+                                      backgroundRepeat: "no-repeat"
                                     }}
                                   >
-                                    <img
-                                      className="d-block carousel-img-arrow"
-                                      src="/static/img/Path_1112.png"
-                                    />
+                                    <div className="carousel-thumbnail-mask">
+                                      <img src={data.icon} />
+                                      <span>{data.name}</span>
+                                    </div>
                                   </div>
-                                </React.Fragment>
-                              ) : (
-                                ''
-                              )
+                                )
+                              })
                             }
-                          </div>
-                        </div>
-                        <div className="carousel-thumbnail-frame mbnone">
-                          {
-                            imgData2.map((data, idx) => {
-                              return(
-                                <div key={idx}
-                                  className="carousel-thumbnail-pattern"
-                                  onClick={(e) => {imgClick2(e, idx)}}
-                                  style={{
-                                    backgroundImage:
-                                      `url(${data.img})`,
-                                    backgroundPosition: "center center",
-                                    backgroundRepeat: "no-repeat"
-                                  }}
-                                >
-                                  <div className="carousel-thumbnail-mask">
-                                    <img src={data.icon} />
-                                    <span>{data.name}</span>
+                            <div className="carousel-thumbnail-cutting" />
+                            <div
+                              style={{
+                                width: "calc(100% - 85px - 85px - 7px)",
+                                position: "relative",
+                                display: "inline-block"
+                              }}
+                            >
+                              {
+                                displayLeftArrow ? (
+                                  <div
+                                    onClick={prevImg}
+                                    className="carousel-thumbnail-arrow-l"
+                                  >
+                                    <img src="/static/img/ic-arrow-gray.svg" />
                                   </div>
-                                </div>
-                              )
-                            })
-                          }
-                          <div className="carousel-thumbnail-cutting" />
-                          <div
-                            style={{
-                              width: "calc(100% - 85px - 85px - 7px)",
-                              position: "relative",
-                              display: "inline-block"
-                            }}
-                          >
-                            {
-                              displayLeftArrow ? (
-                                <div
-                                  onClick={prevImg}
-                                  className="carousel-thumbnail-arrow-l"
-                                >
-                                  <img src="/static/img/ic-arrow-gray.svg" />
-                                </div>
-                              ) : (
-                                ''
-                              )
-                            }
-                            <div className="carousel-thumbnail-img-frame">
-                              <div style={{ width: 675 }}>
-                                {
-                                  imgData.map((img,idx) => {
-                                    return(
-                                      <div key={idx}
-                                        onClick={(e) => imgClick(e,idx)}
-                                        src={img.img}
-                                        className={"carousel-thumbnail-img" + ((idx==0)?" carousel-thumbnail-active":"")}
-                                        style={{
-                                          width: "100%",
-                                          height: "100%",
-                                          backgroundPosition: "center",
-                                          backgroundRepeat: "no-repeat",
-                                          backgroundSize: "cover",
-                                          backgroundImage:
-                                            `url(${img.img})`
-                                        }}
-                                      >
-                                        <img
+                                ) : (
+                                  ''
+                                )
+                              }
+                              <div className="carousel-thumbnail-img-frame">
+                                <div style={{ width: 675 }}>
+                                  {
+                                    imgData.map((img,idx) => {
+                                      return(
+                                        <div key={idx}
+                                          onClick={(e) => imgClick(e,idx)}
                                           src={img.img}
-                                          style={{ width: 0, height: 0 }}
-                                        />
-                                      </div>
-                                    )
-                                  })
-                                }
-                              </div>
-                            </div>
-                            {
-                              displayRightArrow ? (
-                                <div
-                                  onClick={nextImg}
-                                  className="carousel-thumbnail-arrow-r"
-                                >
-                                  <img src="/static/img/ic-arrow-gray.svg" />
+                                          className={"carousel-thumbnail-img" + ((idx==0)?" carousel-thumbnail-active":"")}
+                                          style={{
+                                            width: "100%",
+                                            height: "100%",
+                                            backgroundPosition: "center",
+                                            backgroundRepeat: "no-repeat",
+                                            backgroundSize: "cover",
+                                            backgroundImage:
+                                              `url(${img.img})`
+                                          }}
+                                        >
+                                          <img
+                                            src={img.img}
+                                            style={{ width: 0, height: 0 }}
+                                          />
+                                        </div>
+                                      )
+                                    })
+                                  }
                                 </div>
-                              ) : (
-                                ''
-                              )
-                            }
+                              </div>
+                              {
+                                displayRightArrow ? (
+                                  <div
+                                    onClick={nextImg}
+                                    className="carousel-thumbnail-arrow-r"
+                                  >
+                                    <img src="/static/img/ic-arrow-gray.svg" />
+                                  </div>
+                                ) : (
+                                  ''
+                                )
+                              }
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </Cau>
-          </Main>
-          <Business>
+              </Cau>
+            </Main>
+            <Business>
+              <h3>本案經紀人員</h3>
+              <BusPeople>
+                <div className='busCard'>
+                  <div className="busImg">
+                    <img className="newsPhoto" src='/static/img/bench-accounting-8D2k7a3wMKQ-unsplash.jpg' />
+                  </div>
+                </div>
+                <div className='busName'>
+                  <Name name>蔡佳宏</Name>
+                  <Name>長春吉林店</Name>
+                  <Name>0911259808</Name>
+                  <Name>C02897523</Name>
+                </div>
+              </BusPeople>
+                <h3>與我聯繫</h3>
+              <Busconnection>
+                <IptName>
+                  <input className='form-control' type='text' placeholder='姓名(必填)' />
+                </IptName>
+                <IptName>
+                  <input className='form-control' type='phone' placeholder='聯絡電話(必填)' />
+                </IptName>
+                <IptName>
+                  <input className='form-control' type='text' placeholder='電子郵件(必填)' />
+                </IptName>
+                <BusCheck>
+                  <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={showProvicy}>隱私權政策</a>及<a onClick={showService}>服務條款</a>
+                </BusCheck>
+                <Button onClick={sendMessenger}>送出</Button>
+              </Busconnection>
+              <Join>
+                <img className='makeJoin' src='/static/img/list/join.PNG' />
+                {/* <img className='makeJoin' src='/static/img/list/plusActive.PNG' /> */}
+                加入比較
+              </Join>
+            </Business>
+            <ItemContent>
+              <BigTitle>
+                <TitleImg src='/static/img/t4_list.png' />
+              </BigTitle>
+              <h3 className='itemConTitle'>勤樸辦公廠房Ａ</h3>
+              {/* 基本資料 */}
+              <Introduction>
+                <IntroTitle>基本資料</IntroTitle>
+                <IndList>
+                  <IndTag>地址</IndTag>
+                  <IndName>新北市蘆洲區長興路</IndName>
+                  <IndTag>產權登記</IndTag>
+                  <IndName>有</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>型態</IndTag>
+                  <IndName>大樓(11層含以上有電梯)</IndName>
+                  <IndTag>屋齡</IndTag>
+                  <IndName>10年</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>權狀坪數</IndTag>
+                  <IndName>47.5坪</IndName>
+                  <IndTag>樓層</IndTag>
+                  <IndName>9樓/共17樓</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>公共設施</IndTag>
+                  <IndName>0.0坪</IndName>
+                  <IndTag>該層戶數</IndTag>
+                  <IndName>1戶</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>類型</IndTag>
+                  <IndName>成屋</IndName>
+                  <IndTag>大樓朝向</IndTag>
+                  <IndName>西</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>管理費</IndTag>
+                  <IndName>$0 (不含租金內)</IndName>
+                  <IndTag>警衛管理</IndTag>
+                  <IndName>有(全天)</IndName>
+                </IndList>
+              </Introduction>
+              {/* 物件詳情 */}
+              <Introduction>
+                <IntroTitle>物件詳情</IntroTitle>
+                <IndList>
+                  <IndTag>建物結構</IndTag>
+                  <IndName>鋼筋混凝土</IndName>
+                  <IndTag>外牆建材</IndTag>
+                  <IndName>方塊磚</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>屋齡</IndTag>
+                  <IndName>2.6年</IndName>
+                  <IndTag>類型</IndTag>
+                  <IndName>辦公/廠房</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>樓層</IndTag>
+                  <IndName>6樓/12樓</IndName>
+                  <IndTag>每層戶數</IndTag>
+                  <IndName>4</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>警衛管理</IndTag>
+                  <IndName>全天候</IndName>
+                  <IndTag>管理費</IndTag>
+                  <IndName>5836元/月</IndName>
+                </IndList>
+                <IndList>
+                  <IndTag>其他</IndTag>
+                  <IndName>--</IndName>
+                  <IndTag>注意事項</IndTag>
+                  <IndName>--</IndName>
+                </IndList>
+              </Introduction>
+              {/* 物件特色 */}
+              <Introduction>
+                <IntroTitle>物件特色</IntroTitle>
+                <IndList>
+                  <IndName className='flex'><div className='ptdolt'></div>一二三四五六七八九十一 </IndName>
+                  <IndTag></IndTag>
+                  <IndName className='flex'><div className='ptdolt'></div>穩定收租投資自用皆宜</IndName>
+                </IndList>
+                <IndList>
+                  <IndName className='flex'><div className='ptdolt'></div>近大汐止經貿園區</IndName>
+                  <IndTag></IndTag>
+                  <IndName className='flex'><div className='ptdolt'></div>氣派門面完善管理</IndName>
+                </IndList>
+              </Introduction>
+              {/* 格局圖 */}
+              <Introduction  className='navBlock'>
+                <IntroTitle>格局圖</IntroTitle>
+                <img src='/static/img/pic_place.png' />
+              </Introduction>
+              {/* 物件地圖 */}
+              <Introduction className='navBlock'>
+                <IntroTitle>物件地圖</IntroTitle>
+                <img src='/static/img/pic12.png' />
+              </Introduction>
+              {/* 交通資訊 */}
+              <Introduction>
+                <IntroTitle>交通資訊</IntroTitle>
+                {/* 地圖位置 */}
+                <img src='/static/img/pic08.png' />
+                <BusInfo>
+                  <BusImformation>
+                    <div>P 中和新蘆線-中山國小站 出口一</div>
+                    <div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
+                  </BusImformation>
+                  <BusImformation>
+                    <div>P 中和新蘆線-中山國小站 出口一</div>
+                    <div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
+                  </BusImformation>
+                  <BusImformation>
+                    <div>P 中和新蘆線-中山國小站 出口一</div>
+                    <div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
+                  </BusImformation>
+                  <BusImformation>
+                    <div>P 中和新蘆線-中山國小站 出口一</div>
+                    <div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
+                  </BusImformation>
+                  <BusImformation>
+                    <div>P 中和新蘆線-中山國小站 出口一</div>
+                    <div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
+                  </BusImformation>
+                  <BusImformation id='business'>
+                    <div>P 中和新蘆線-中山國小站 出口一</div>
+                    <div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
+                  </BusImformation>
+                  <BusImformation>
+                    <div>P 中和新蘆線-中山國小站 出口一</div>
+                    <div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
+                  </BusImformation>
+                </BusInfo>
+              </Introduction>
+            </ItemContent>
+          </div>
+          <BusinessMb>
             <h3>本案經紀人員</h3>
             <BusPeople>
               <div className='busCard'>
@@ -830,7 +1049,7 @@ const Item = () => {
                 <Name>C02897523</Name>
               </div>
             </BusPeople>
-              <h3>與我聯繫</h3>
+              <h3 className='connection'>與我聯繫</h3>
             <Busconnection>
               <IptName>
                 <input className='form-control' type='text' placeholder='姓名(必填)' />
@@ -842,206 +1061,29 @@ const Item = () => {
                 <input className='form-control' type='text' placeholder='電子郵件(必填)' />
               </IptName>
               <BusCheck>
-                <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={showProvicy}>隱私權政策</a>及<a onClick={showService}>服務條款</a>
+                <input type="checkbox" /> 送出資料前，請點選同意本站 <a onClick={showProvicy}>隱私權政策</a>及<a onClick={showService}>服務條款</a>
               </BusCheck>
               <Button onClick={sendMessenger}>送出</Button>
             </Busconnection>
             <Join>
-              <img className='makeJoin' src='/static/img/list/join.PNG' />
-              {/* <img className='makeJoin' src='/static/img/list/plusActive.PNG' /> */}
-              加入比較
+              <div className='comparePlus'></div>加入比較
             </Join>
-          </Business>
-          <ItemContent>
-            <BigTitle>
-              <TitleImg src='/static/img/t4_list.png' />
-            </BigTitle>
-            <h3 className='itemConTitle'>勤樸辦公廠房Ａ</h3>
-            {/* 基本資料 */}
-            <Introduction>
-              <IntroTitle>基本資料</IntroTitle>
-              <IndList>
-                <IndTag>地址</IndTag>
-                <IndName>新北市蘆洲區長興路</IndName>
-                <IndTag>產權登記</IndTag>
-                <IndName>有</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>型態</IndTag>
-                <IndName>大樓(11層含以上有電梯)</IndName>
-                <IndTag>屋齡</IndTag>
-                <IndName>10年</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>權狀坪數</IndTag>
-                <IndName>47.5坪</IndName>
-                <IndTag>樓層</IndTag>
-                <IndName>9樓/共17樓</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>公共設施</IndTag>
-                <IndName>0.0坪</IndName>
-                <IndTag>該層戶數</IndTag>
-                <IndName>1戶</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>類型</IndTag>
-                <IndName>成屋</IndName>
-                <IndTag>大樓朝向</IndTag>
-                <IndName>西</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>管理費</IndTag>
-                <IndName>$0 (不含租金內)</IndName>
-                <IndTag>警衛管理</IndTag>
-                <IndName>有(全天)</IndName>
-              </IndList>
-            </Introduction>
-            {/* 物件詳情 */}
-            <Introduction>
-              <IntroTitle>物件詳情</IntroTitle>
-              <IndList>
-                <IndTag>建物結構</IndTag>
-                <IndName>鋼筋混凝土</IndName>
-                <IndTag>外牆建材</IndTag>
-                <IndName>方塊磚</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>屋齡</IndTag>
-                <IndName>2.6年</IndName>
-                <IndTag>類型</IndTag>
-                <IndName>辦公/廠房</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>樓層</IndTag>
-                <IndName>6樓/12樓</IndName>
-                <IndTag>每層戶數</IndTag>
-                <IndName>4</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>警衛管理</IndTag>
-                <IndName>全天候</IndName>
-                <IndTag>管理費</IndTag>
-                <IndName>5836元/月</IndName>
-              </IndList>
-              <IndList>
-                <IndTag>其他</IndTag>
-                <IndName>--</IndName>
-                <IndTag>注意事項</IndTag>
-                <IndName>--</IndName>
-              </IndList>
-            </Introduction>
-            {/* 物件特色 */}
-            <Introduction>
-              <IntroTitle>物件特色</IntroTitle>
-              <IndList>
-                <IndName className='flex'><div className='ptdolt'></div>一二三四五六七八九十一 </IndName>
-                <IndTag></IndTag>
-                <IndName className='flex'><div className='ptdolt'></div>穩定收租投資自用皆宜</IndName>
-              </IndList>
-              <IndList>
-                <IndName className='flex'><div className='ptdolt'></div>近大汐止經貿園區</IndName>
-                <IndTag></IndTag>
-                <IndName className='flex'><div className='ptdolt'></div>氣派門面完善管理</IndName>
-              </IndList>
-            </Introduction>
-            {/* 格局圖 */}
-            <Introduction  className='navBlock'>
-              <IntroTitle>格局圖</IntroTitle>
-              <img src='/static/img/pic_place.png' />
-            </Introduction>
-            {/* 物件地圖 */}
-            <Introduction className='navBlock'>
-              <IntroTitle>物件地圖</IntroTitle>
-              <img src='/static/img/pic12.png' />
-            </Introduction>
-            {/* 交通資訊 */}
-            <Introduction>
-              <IntroTitle>交通資訊</IntroTitle>
-							{/* 地圖位置 */}
-              <img src='/static/img/pic08.png' />
-							<BusInfo>
-								<BusImformation>
-									<div>P 中和新蘆線-中山國小站 出口一</div>
-									<div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
-								</BusImformation>
-								<BusImformation>
-									<div>P 中和新蘆線-中山國小站 出口一</div>
-									<div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
-								</BusImformation>
-								<BusImformation>
-									<div>P 中和新蘆線-中山國小站 出口一</div>
-									<div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
-								</BusImformation>
-								<BusImformation>
-									<div>P 中和新蘆線-中山國小站 出口一</div>
-									<div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
-								</BusImformation>
-								<BusImformation>
-									<div>P 中和新蘆線-中山國小站 出口一</div>
-									<div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
-								</BusImformation>
-								<BusImformation>
-									<div>P 中和新蘆線-中山國小站 出口一</div>
-									<div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
-								</BusImformation>
-								<BusImformation>
-									<div>P 中和新蘆線-中山國小站 出口一</div>
-									<div> 0.56km<img className='walkicon' src='/static/img/walk.png' /> 7分鐘</div>
-								</BusImformation>
-							</BusInfo>
-            </Introduction>
-          </ItemContent>
-        </div>
-        <BusinessMb>
-          <h3>本案經紀人員</h3>
-          <BusPeople>
-            <div className='busCard'>
-              <div className="busImg">
-                <img className="newsPhoto" src='/static/img/bench-accounting-8D2k7a3wMKQ-unsplash.jpg' />
-              </div>
-            </div>
-            <div className='busName'>
-              <Name name>蔡佳宏</Name>
-              <Name>長春吉林店</Name>
-              <Name>0911259808</Name>
-              <Name>C02897523</Name>
-            </div>
-          </BusPeople>
-            <h3 className='connection'>與我聯繫</h3>
-          <Busconnection>
-            <IptName>
-              <input className='form-control' type='text' placeholder='姓名(必填)' />
-            </IptName>
-            <IptName>
-              <input className='form-control' type='phone' placeholder='聯絡電話(必填)' />
-            </IptName>
-            <IptName>
-              <input className='form-control' type='text' placeholder='電子郵件(必填)' />
-            </IptName>
-            <BusCheck>
-              <input type="checkbox" /> 送出資料前，請點選同意本站 <a onClick={showProvicy}>隱私權政策</a>及<a onClick={showService}>服務條款</a>
-            </BusCheck>
-            <Button onClick={sendMessenger}>送出</Button>
-          </Busconnection>
-          <Join>
-            <div className='comparePlus'></div>加入比較
-          </Join>
-        </BusinessMb>
-        <BigTitle>
-          <TitleImg src='/static/img/t5_newItem.png' />
-        </BigTitle>
-        <div className='row gendermg mbnone'>
-          <NewSellCard />
-          <NewSellCard />
-          <NewSellCard />
-          <NewSellCard />
-        </div>
-        <div className='row gendermg mbFlex'>
-          <NewSellCard />
-          <NewSellCard />
-        </div>
-      </Container>
+          </BusinessMb>
+          <BigTitle>
+            <TitleImg src='/static/img/t5_newItem.png' />
+          </BigTitle>
+          <div className='row gendermg mbnone'>
+            <NewSellCard />
+            <NewSellCard />
+            <NewSellCard />
+            <NewSellCard />
+          </div>
+          <div className='row gendermg mbFlex'>
+            <NewSellCard />
+            <NewSellCard />
+          </div>
+        </Container>
+      </MainContainer>
       <FastButton />
     	<NavHomeMobile />
       <ProvicyModal
@@ -1055,6 +1097,7 @@ const Item = () => {
       <SuccessModal 
         show={displaySend}
         close={closeMessenger} />
+        <MobileFooter />
 		</Layout>
 	)
 }

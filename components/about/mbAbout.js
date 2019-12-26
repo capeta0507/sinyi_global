@@ -65,7 +65,7 @@ const History = styled.div`
 `
 const AboutContent = styled.div`
   width: 100%;
-  background: #F1F1F1;
+  background: #F3F3F3;
   padding: 40px 0;
 `
 const Bdtag = styled.img`

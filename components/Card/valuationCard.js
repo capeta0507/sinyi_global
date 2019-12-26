@@ -60,38 +60,55 @@ const MyPhone = styled.div`
     font-weight: 400;
   }
 `
+const MakeYear = styled.h3`
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 20px;
+  @media (max-width: 992px){
+    font-size: 16px;
+  }
+`
+const YearTitle = styled.h4`
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 0;
+  @media (max-width: 992px){
+    font-size: 16px;
+  }
+`
+const YearsBlock = styled.div`
+  display: block;
+  @media (max-width: 992px){
+    display: flex;
+    padding-left: 75px;
+  }
+`
 
 const MemberCard = (props) => {
   return(
 		<ThemeCard className='text-center'>
-      <Link href='/teamDetail'>
-        <Context>
-          <div className='memberCard'>
-            <div className="memberImg">
-              <img className="newsPhoto" src='/static/img/bench-accounting-8D2k7a3wMKQ-unsplash.jpg' />
+      <Context>
+        <div className='memberCard'>
+          <div className="valuationImg">
+            <img className="newsPhoto" src='/static/img/people.png' />
+          </div>
+        </div>
+        <div className="recruitTitle titleBlock">
+          <h2>{props.name}</h2>
+        </div>
+        <div className="memberList text-center">
+          <MyPhone>
+            <div className="recruitTitle navBlock">
+              <h2>{props.name}</h2>
             </div>
-          </div>
-          <div className="recruitTitle titleBlock">
-            <h2>{props.name}</h2>
-            <h2>{props.engName}</h2>
-          </div>
-          <div className="memberList">
-            <MyPhone>
-              <div className="recruitTitle navBlock">
-                <h2>{props.name}</h2>
-                <h2>{props.engName}</h2>
-              </div>
-              <h5><img className='memberIcon' src='/static/img/about/telephone.png' />{props.list1}</h5>
-              <h5><img className='memberIcon' src='/static/img/about/message-closed-envelope.png' />{props.list2}</h5>
-              <h5><img className='memberIcon' src='/static/img/about/line.png' />{props.list3}</h5>
-            </MyPhone>
-            <p className='mbnone'>多年來經營內湖科學園區、大直重劃區、內湖五期重劃區，本著協助客戶洞見未來的初衷，帶領代理一部的夥伴精益求精，於不動產管理領域提供最專業與優質的服務，成為客戶最佳的資產 ...</p>
-            <Link href='/teamDetail'>
-              <SendButton>詳細介紹</SendButton>
-            </Link>
-          </div>
-        </Context>
-      </Link>
+          </MyPhone>
+          <YearsBlock>
+            <YearTitle>估價年資</YearTitle>
+            <MakeYear>{props.years}</MakeYear>
+          </YearsBlock>
+          <SendButton>詳細介紹</SendButton>
+        </div>
+      </Context>
     </ThemeCard>
   )
 }

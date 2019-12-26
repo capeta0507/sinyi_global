@@ -19,31 +19,36 @@ const MakeTop = styled.div`
 
 const BgHead = styled.div`
   width: 100%;
-  height: 415x;
+  height: 415px;
   & > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  & > h1 {
-    font-size: 53px;
-    font-weight: bold;
-    color: #fff;
-    position: absolute;
-    top: 300px;
-    left: 210px;
+  @media (max-width: 992px){
+    display: none;
   }
 `
-const Mask = styled.div`
-  background: #000;
+const BgHeadMb = styled.div`
   width: 100%;
-  height: 495px;
-  opacity: .5;
-  top: 0px;
+  height: 213px;
+  display: none;
+  & > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 992px){
+    display: block;
+  }
 `
+
 const Container = styled.div`
   width: 100%;
   padding: 0px 0 30px 0;
+  background-color: #fff;
+  background-image: url(/static/img/icon/white.png);
+  background-repeat:  repeat-x;
 `
 const PeopleTitle = styled.div`
   font-size: 24px;
@@ -63,6 +68,12 @@ const PeopleContent = styled.div`
   }
   @media (max-width: 992px){
     width: 100%;
+    text-align: center;
+    & > p {
+      color: #878787;
+      display:block;
+      text-align: center;
+    }
   }
 `
 const Content = styled.div`
@@ -123,7 +134,7 @@ const JustContent = styled.div`
 const MapContainer = styled.div`
   width: 100%;
   padding: 60px 0;
-  background: #F1F1F1;
+  background: #F3F3F3;
 `
 const MapContent = styled.div`
   width: 60%;
@@ -152,15 +163,14 @@ const About = () => {
       <NavHomeMobile />
       <MakeTop />
       <BgHead>
-        <img src='/static/img/about.png' />
-        <Mask className='absolute' />
-        <h1>信任，帶來新幸福!</h1>
+        <img src='/static/img/aboutbanner/banner-2.png' />
       </BgHead>
+      <BgHeadMb>
+        <img src='/static/img/aboutbanner/M_banner-2.png' />
+      </BgHeadMb>
       <Container>
-        {/* seo h1 */}
-        <h1 className='zero'>服務據點</h1>
         <Bread>
-          <Breadcrumb second='服務據點' />
+          <Breadcrumb data={[{title:"服務據點" , link:"/service"}]}/>
         </Bread>
         <h2 className='textCenter serviceTitle'><img className='serviceIcon' src='/static/img/about/service_phone.png' />服務電話</h2>
         <Content>
@@ -188,6 +198,8 @@ const About = () => {
             <JustTitle>顧問發展部</JustTitle>
             <p><img className='placeIcon' src='/static/img/about/Group_3298.png' />02-2720-8896</p>
           </JustContent>
+          {/* seo h1 */}
+          <h1 className='zero'>服務據點</h1>
         </Content>
         <Content second>
           <PeopleContent>

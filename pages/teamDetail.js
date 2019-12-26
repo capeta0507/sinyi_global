@@ -85,7 +85,8 @@ const ItemName = styled.div`
 
 const Container = styled.div`
   width: 100%;
-  background: #F1F1F1;
+  background: #F3F3F3;
+  // background: linear-gradient(to top, #f1f1f1, rgba(255, 255, 255, 0));
   padding-top: 0px;
 `
 const Bread = styled.div`
@@ -122,31 +123,31 @@ const Team = () => {
             <a href='/team_BusinessOne'>
               <ItemName>商仲一部</ItemName>
             </a>&nbsp;&nbsp;&nbsp;&nbsp; 
-            <a href='/team'>
+            <a href='/team_BusinessTwo'>
               <ItemName className='teamActive'>商仲二部</ItemName>
             </a>
           </NavItem>
           <NavItem>
-            <a href='/teame'>
+            <a href='/team_investmentOne'>
               <ItemName>投資一部</ItemName>
             </a>
             &nbsp;&nbsp;&nbsp;&nbsp; 
-            <a href='/team'>
+            <a href='/team_investmentTwo'>
               <ItemName>投資二部</ItemName>              
             </a>
           </NavItem>
           <NavItem>
-            <a href='/team'>
+            <a href='/team_industry'>
               <ItemName>工業地產部</ItemName>
             </a>
           </NavItem>
           <NavItem>
-            <a href='/team'>
+            <a href='/team_Consultant'>
               <ItemName>顧問服務團隊</ItemName>
             </a>
           </NavItem>
           <NavItem>
-            <a href='/team'>
+            <a href='/team_Valuation'>
               <ItemName>估價師團隊</ItemName>
             </a>
           </NavItem>
@@ -156,7 +157,7 @@ const Team = () => {
         {/* seo h1 */}
         <h1 className='zero'>商仲一部/專員 康錫晃</h1>
         <Bread>
-          <Breadcrumb second='團隊介紹' />
+          <Breadcrumb data={[{title:"團隊介紹" , link:"/team_manager"}]} />
         </Bread>
         {/* 同仁明細 */}
         <Businesser />

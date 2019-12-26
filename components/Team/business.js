@@ -17,6 +17,7 @@ const FirstContent = styled.div`
   width: 80%;
   margin: 0 auto;
   display: flex;
+  background-image: linear-gradient(to top, #f1f1f1, rgba(255, 255, 255, 0));
   justify-content: space-between;
   @media (max-width: 992px){
     width: 90%;
@@ -164,8 +165,7 @@ const ListContent = styled.div`
 `
 const BigTitle = styled.div`
   text-align: center;
-  // padding: 60px 0;
-  padding: 60px 0 40px 0;
+  padding:0;
   @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;

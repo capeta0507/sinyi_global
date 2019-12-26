@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
 import NavHomeMobile from '../components/nav/navHomeMobile'
 import FastButton from '../components/fastButton'
+import Breadcrumb from '../components/breadcrumb'
 import PcAbout from '../components/about/pcAbout'
 import MbAbout from '../components/about/mbAbout'
 import styled from 'styled-components'
@@ -21,35 +22,26 @@ const MakeTop = styled.div`
 const BgHead = styled.div`
   width: 100%;
   height: 415px;
-  // background: url(/static/img/about.png) no-repeat;
   & > img{
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  & > h2 {
-    font-size: 53px;
-    font-weight: bold;
-    color: #fff;
-    position: absolute;
-    top: 300px;
-    left: 210px;
-  }
   @media (max-width: 992px){
-    & > h1 {
-      font-size: 30px;
-      left: 40px;
-    }
+    display: none;
   }
 `
-const Mask = styled.div`
-  background: #000;
+const BgHeadMb = styled.div`
   width: 100%;
-  height: 495px;
-  opacity: .5;
-  top: 0px;
+  height: 213px;
+  display: none;
+  & > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   @media (max-width: 992px){
-    height: 535px;
+    display: block;
   }
 `
 const Desk = styled.div`
@@ -66,11 +58,19 @@ const Mb = styled.div`
 `
 const Container = styled.div`
   width: 100%;
+  background: url(/static/img/icon/logo.png) no-repeat;
+  background-position: 50% 100px;
+  background-attachment: fixed;
+  @media (max-width: 992px){
+    background: none;
+    background-position: 0;
+    background-attachment: none;
+  }
 `
 const BigTitle = styled.div`
   text-align: center;
-  width: 25%;
-  padding: 60px 0 40px 0;
+  width: 30%;
+  padding: 40px 0 0px 0;
   margin: 0 auto;
   @media (max-width: 992px){
     width: 85%;
@@ -91,7 +91,7 @@ const AboutUs = styled.div`
 `
 const History = styled.div`
   width: 70%;
-  background: #fff;
+  // background: #fff;
   margin: 0 auto;
   position: relative;
   margin-top: ${props => props.long ? '50px' : '0px'};
@@ -137,7 +137,10 @@ const ListTitle = styled.div`
   margin-left: 30px;
   font-weight: 600;
 `
-
+const Bread = styled.div`
+  width: 80%;
+  margin: 0 auto;
+`
 
 const About = () => {
   const [displayHistory, setDisplayHistory] = useState(false)
@@ -158,17 +161,21 @@ const About = () => {
       <NavHomeMobile />
       <MakeTop />
       <BgHead>
-        <img src='/static/img/about.png' />
-        <Mask className='absolute' />
-        <h2>信任，帶來新幸福!</h2>
-      </BgHead>
+        <img src='/static/img/aboutbanner/banner-2.png' />
+        </BgHead>
+        <BgHeadMb>
+          <img src='/static/img/aboutbanner/M_banner-2.png' />
+        </BgHeadMb>
       <Desk>
         <Container>
-          {/* seo h1 */}
-          <h1 className='zero'>關於我們</h1>
+          <Bread>
+            <Breadcrumb data={[{title:"公司簡介" , link:"/about"}]}/>
+          </Bread>
           <BigTitle>
             <OtherTitle src='/static/img/about_us.png' />
           </BigTitle>
+          {/* seo h1 */}
+          <h1 className='zero'>關於我們</h1>
           <AboutUs>
             信義全球資產(Sinyi Global)，為臺灣上市公司信義房屋(TWSE：9940)集團之內，專營商用不動產的全資子公司，創立20多年來，
             業務範疇從商業仲介、租賃招商、公開標售，擴及工業地產、資產管理、顧問服務等。

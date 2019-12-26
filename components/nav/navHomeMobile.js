@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState} from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import styled from 'styled-components'
 import '../../style/index.css'
@@ -28,7 +28,7 @@ const ItemList = styled.div`
   margin-top: 10px;
 `
 const ListLi = styled.div`
-  margin-bottom: 0px ;
+  margin-bottom: 0;
   height: 20px;
   color: #B4B4B4;
   z-index: 5;
@@ -54,11 +54,12 @@ const ItemBod = styled.img`
   margin-top: -20px;
 `
 
-const NavHomeMobile = (props) => {
+const NavHomeMobile = () => {
   const [active ,setActive] = useState(false)
   const [bid, setBid] = useState(false)
   const [news, setNews] = useState(false)
   const [team, setTeam] = useState(false)
+  const [about, setAbout] = useState(false)
 
   const toggle = () => {
     setActive(!active)
@@ -72,17 +73,9 @@ const NavHomeMobile = (props) => {
   const displayTeams = () => {
     setTeam(!team)
   }
-  useEffect(() => {
-    // 取得目前的web 路徑
-    let xPage = window.location.href;
-    // 檢查目前路徑字串,indexOf看看有沒有 'team'
-    let pageIdx = xPage.indexOf('/team');
-    // 如果Team Menu 被展開，但是目前路徑不在 '/team'
-    if(team && pageIdx == -1){
-      window.location.href = '/team'
-    }
-  },[team])
-
+  const displayAbout = () => {
+    setAbout(!about)
+  }
   return(
     <>
       <NavMB className='navBlock' collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -136,7 +129,7 @@ const NavHomeMobile = (props) => {
                     {
                       bid ? (
                       <ItemList>
-                        <Link href='/about#bid'>
+                        <Link href='/about'>
                           <a className='navLink'>
                             <ListLi>服務與實績</ListLi>
                           </a>
@@ -175,12 +168,12 @@ const NavHomeMobile = (props) => {
                               <ListLi>焦點新聞</ListLi>
                             </a>
                           </Link>
-                          <Link href='/newsReportMonth'>
+                          <Link href='/reportMonth'>
                             <a className='navLink'>
                               <ListLi>月報</ListLi>
                             </a>
                           </Link>
-                          <Link href='/newsReport'>
+                          <Link href='/report'>
                             <a className='navLink'>
                               <ListLi bottom>季報</ListLi>
                             </a>
@@ -201,59 +194,43 @@ const NavHomeMobile = (props) => {
                     {
                       team ? (
                         <ItemList>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(1)
-                            }}>
+                          <Link href='/team_manager'>
+                            <a className='navLink'>
                               <ListLi>總經理</ListLi>
                             </a>
                           </Link>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(2)
-                            }}>
+                          <Link href='/team_BusinessOne'>
+                            <a className='navLink'>
                               <ListLi>商仲一部</ListLi>
                             </a>
                           </Link>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(3)
-                            }}>
+                          <Link href='/team_BusinessTwo'>
+                            <a className='navLink'>
                               <ListLi bottom>商仲二部</ListLi>
                             </a>
                           </Link>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(4)
-                            }}>
+                          <Link href='/team_investmentOne'>
+                            <a className='navLink'>
                               <ListLi bottom>投資一部</ListLi>
                             </a>
                           </Link>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(5)
-                            }}>
+                          <Link href='/team_investmentTwo'>
+                            <a className='navLink'>
                               <ListLi bottom>投資二部</ListLi>
                             </a>
                           </Link>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(6)
-                            }}>
+                          <Link href='/team_industry'>
+                            <a className='navLink'>
                               <ListLi bottom>工業產地部</ListLi>
                             </a>
                           </Link>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(7)
-                            }}>
+                          <Link href='/team_Consultant'>
+                            <a className='navLink'>
                               <ListLi bottom>顧問服務團隊</ListLi>
                             </a>
                           </Link>
-                          <Link href='/team'>
-                            <a className='navLink' onClick={() => {
-                              props.changeTeam(8)
-                            }}>
+                          <Link href='/team_valuation'>
+                            <a className='navLink'>
                               <ListLi bottom>估價師團隊</ListLi>
                             </a>
                           </Link>
@@ -267,9 +244,26 @@ const NavHomeMobile = (props) => {
                 </li>
                 <li>
                   <NavLink>
-                    <Link href="/about">
-                      <Item>關於全球</Item>
-                    </Link>
+                    <Item onClick={displayAbout}>關於全球</Item>
+                    {
+                      about ? (
+                        <ItemList>
+                          <Link href='/about'>
+                            <a className='navLink'>
+                              <ListLi>公司簡介</ListLi>
+                            </a>
+                          </Link>
+                          <a className='navLink' href='https://www.104.com.tw/company/1a2x6bivq0' target="_blank"><ListLi>加入我們</ListLi></a>
+                          <Link href='/service'>
+                            <a className='navLink'>
+                              <ListLi bottom>服務據點</ListLi>
+                            </a>
+                          </Link>
+                        </ItemList>
+                      ) : (
+                        ''
+                      )
+                    }
                   </NavLink>
                   <ItemBod src='/static/img/navborder.png' />
                 </li>

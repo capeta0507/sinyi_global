@@ -61,7 +61,9 @@ const SearchButton = styled.div`
 `
 const Container = styled.div`
 	width: 100%;
-	background: #F1F1F1;
+  background-color: #F3F3F3;
+  background-image: url(/static/img/icon/grey.png);
+  background-repeat:  repeat-x;
   padding: 0 0 100px 0;
   @media (max-width: 992px){
     padding: 10px 0 100px 0;
@@ -175,7 +177,7 @@ const ItemList = () => {
 			</SearchDiv>
 			<Container>
         <Bread>
-          <Breadcrumb second='月報' />
+          <Breadcrumb data={[{title:"月報" , link:"/newsList"}]}/>
         </Bread>
         <HeadTag>
           <Link href='/report'>
