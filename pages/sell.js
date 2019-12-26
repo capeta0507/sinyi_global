@@ -11,7 +11,7 @@ import FastButton from '../components/fastButton2'
 import ProvicyModal from '../components/Modal/privacyModal'
 import ServiceModal from '../components/Modal/serviceModal'
 import SuccessModal from '../components/Modal/successModal'
-// import MobileFooter from '../components/footer/mobileFooterSell'
+import MobileFooter from '../components/footer/mobileFooterSell'
 import '../style/index.css'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import '../style/main.css'
@@ -1105,7 +1105,7 @@ const Item = () => {
       <SuccessModal 
         show={displaySend}
         close={closeMessenger} />
-        {/* <MobileFooter /> */}
+        <MobileFooter />
 		</Layout>
 	)
 }
