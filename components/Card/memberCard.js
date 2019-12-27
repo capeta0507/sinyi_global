@@ -42,7 +42,7 @@ const SendButton = styled.div`
   box-shadow: 5px 5px #C7D1D6;
   @media (max-width: 992px){
     position: absolute;
-    right: 40px;
+    right: 5%;
     margin: 0;
     width: 70px;
     font-size: 12px;
@@ -68,7 +68,7 @@ const MemberCard = (props) => {
         <Context>
           <div className='memberCard'>
             <div className="memberImg">
-              <img className="newsPhoto" src='/static/img/bench-accounting-8D2k7a3wMKQ-unsplash.jpg' />
+              <img className="newsPhoto" src='/static/img/people.png' />
             </div>
           </div>
           <div className="recruitTitle titleBlock">

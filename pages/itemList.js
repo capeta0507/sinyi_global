@@ -294,14 +294,10 @@ const Show = styled.div`
   }
 `
 const PresetOption = [
-  { value: '降價幅度高到低', label: '降價幅度高到低'},
-  { value: '上架時間新到舊', label: '上架時間新到舊'},
-  { value: '總價從低到高', label: '總價從低到高'},
-  { value: '總價從高到低', label: '總價從高到低'},
+  { value: '租金從高到低', label: '租金從高到低'},
+  { value: '租金從低到高', label: '租金從低到高'},
   { value: '坪數從小到大', label: '坪數從小到大'},
-  { value: '坪數從小到大', label: '坪數從小到大'},
-  { value: '屋齡從低到高', label: '屋齡從低到高'},
-  { value: '屋齡從高到低', label: '屋齡從高到低'}
+  { value: '坪數從大到小', label: '坪數從大到小'}
 ]
 
 class ItemList extends Component {
@@ -501,22 +497,16 @@ class ItemList extends Component {
                         <li>苗栗縣</li>
                         <li>台中市</li>
                         <li>彰化縣</li>
-                        <li>彰化市</li>
                         <li>雲林縣</li>
-                        <li>雲林市</li>
+                        <li>南投縣</li>
                         <li>嘉義縣</li>
-                        <li>嘉義市</li>
-                        <li>台南縣</li>
                         <li>台南市</li>
-                        <li>高雄縣</li>
                         <li>高雄市</li>
                         <li>屏東縣</li>
                         <li>宜蘭縣</li>
-                        <li>宜蘭市</li>
                         <li>花蓮縣</li>
-                        <li>花蓮市</li>
                         <li>台東縣</li>
-                        <li>台東市</li>
+                        <li>澎湖縣</li>
                       </DrowMenuCity>
                     </DrowOption>
                   ) : (
@@ -597,14 +587,27 @@ class ItemList extends Component {
                         萬
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPrice}`}>0</li>
-                      <li className={`${colPrice}`}>10</li>
-                      <li className={`${colPrice}`}>30</li>
-                      <li className={`${colPrice}`}>60</li>
-                      <li className={`${colPrice}`}>100</li>
-                      <li className={`${colPrice}`}>150</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePrice ? (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                          <li className={`${colPrice}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>0</li>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                        </DrowMenu>
+                      )
+                    }
                   </DrowOption>
                 ) : (
                   null
@@ -630,16 +633,31 @@ class ItemList extends Component {
                       坪
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPlace}`}>0</li>
-                      <li className={`${colPlace}`}>100</li>
-                      <li className={`${colPlace}`}>200</li>
-                      <li className={`${colPlace}`}>300</li>
-                      <li className={`${colPlace}`}>400</li>
-                      <li className={`${colPlace}`}>500</li>
-                      <li className={`${colPlace}`}>600</li>
-                      <li className={`${colPlace}`}>1,000</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePlace ? (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                          <li className={`${colPlace}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>0</li>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                        </DrowMenu>
+                      )
+                    }
                   </PlaceOption>
                 ) : (
                   null
@@ -683,22 +701,16 @@ class ItemList extends Component {
                         <li>苗栗縣</li>
                         <li>台中市</li>
                         <li>彰化縣</li>
-                        <li>彰化市</li>
                         <li>雲林縣</li>
-                        <li>雲林市</li>
+                        <li>南投縣</li>
                         <li>嘉義縣</li>
-                        <li>嘉義市</li>
-                        <li>台南縣</li>
                         <li>台南市</li>
-                        <li>高雄縣</li>
                         <li>高雄市</li>
                         <li>屏東縣</li>
                         <li>宜蘭縣</li>
-                        <li>宜蘭市</li>
                         <li>花蓮縣</li>
-                        <li>花蓮市</li>
                         <li>台東縣</li>
-                        <li>台東市</li>
+                        <li>澎湖縣</li>
                       </DrowMenuCity>
                     </DrowOption>
                   ) : (
@@ -778,14 +790,27 @@ class ItemList extends Component {
                         萬
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPrice}`}>0</li>
-                      <li className={`${colPrice}`}>10</li>
-                      <li className={`${colPrice}`}>30</li>
-                      <li className={`${colPrice}`}>60</li>
-                      <li className={`${colPrice}`}>100</li>
-                      <li className={`${colPrice}`}>150</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePrice ? (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                          <li className={`${colPrice}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>0</li>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                        </DrowMenu>
+                      )
+                    }
                   </DrowOption>
                 ) : (
                   null
@@ -811,16 +836,31 @@ class ItemList extends Component {
                       坪
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPlace}`}>0</li>
-                      <li className={`${colPlace}`}>100</li>
-                      <li className={`${colPlace}`}>200</li>
-                      <li className={`${colPlace}`}>300</li>
-                      <li className={`${colPlace}`}>400</li>
-                      <li className={`${colPlace}`}>500</li>
-                      <li className={`${colPlace}`}>600</li>
-                      <li className={`${colPlace}`}>1,000</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePlace ? (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                          <li className={`${colPlace}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>0</li>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                        </DrowMenu>
+                      )
+                    }
                   </PlaceOption>
                 ) : (
                   null

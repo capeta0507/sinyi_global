@@ -37,7 +37,35 @@ const ConnectPhone = styled.div`
   color: #000;
   font-size: 12px;
   text-align: center;
+  & > a {
+    color: #000;
+  }
 `
+const KindOption = [
+  { value: '買屋', label: '買屋'},
+  { value: '賣屋', label: '賣屋'}
+]
+const CityOption = [
+  { value: '1', label: '台北市'},
+  { value: '2', label: '新北市'},
+  { value: '3', label: '基隆市'},
+  { value: '4', label: '桃園市'},
+  { value: '5', label: '新竹市'},
+  { value: '6', label: '新竹縣'},
+  { value: '7', label: '苗栗縣'},
+  { value: '8', label: '台中市'},
+  { value: '9', label: '彰化縣'},
+  { value: '10', label: '雲林縣'},
+  { value: '11', label: '南投縣'},
+  { value: '12', label: '嘉義縣'},
+  { value: '13', label: '台南市'},
+  { value: '14', label: '高雄市'},
+  { value: '15', label: '屏東線'},
+  { value: '16', label: '宜蘭縣'},
+  { value: '17', label: '花蓮縣'},
+  { value: '18', label: '台東縣'},
+  { value: '19', label: '澎湖縣'}
+]
 
 class FastButton extends Component {
   constructor(props){
@@ -141,6 +169,9 @@ class FastButton extends Component {
                 <Select 
                   placeholder="買屋"
                   label='Single select'
+                  inputProps={{readOnly:true}}
+                  isSearchable={ false }
+                  options={KindOption}
                   theme={theme => ({
                     ...theme,
                     borderRadius: 5,
@@ -160,6 +191,9 @@ class FastButton extends Component {
                 <Select 
                   placeholder="縣市/行政區"
                   label='Single select'
+                  inputProps={{readOnly:true}}
+                  isSearchable={ false }
+                  options={CityOption}
                   theme={theme => ({
                     ...theme,
                     borderRadius: 5,
@@ -173,7 +207,7 @@ class FastButton extends Component {
               <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={this.showProvicy}>隱私權政策</a>及<a onClick={this.showService}>服務條款</a>
               </BusCheck>
               <SendButton onClick={this.sendMessenger}>送出</SendButton>
-              <ConnectPhone>聯絡電話：02-8979-6060</ConnectPhone>
+              <ConnectPhone><a href='tel: 02 8979 6060'>聯絡電話：02-8979-6060</a></ConnectPhone>
             </div>
           ) : (
             null

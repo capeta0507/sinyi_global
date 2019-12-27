@@ -268,7 +268,7 @@ const Back = styled.div`
   cursor: pointer;
 `
 const SalSelect = styled.div`
-  width: 40%;
+  width: 37%;
 `
 const SalSpan = styled.div`
   width: 5%;
@@ -298,7 +298,7 @@ const PresetOption = [
   { value: '總價從低到高', label: '總價從低到高'},
   { value: '總價從高到低', label: '總價從高到低'},
   { value: '坪數從小到大', label: '坪數從小到大'},
-  { value: '坪數從小到大', label: '坪數從小到大'},
+  { value: '坪數從大到小', label: '坪數從大到小'},
   { value: '屋齡從低到高', label: '屋齡從低到高'},
   { value: '屋齡從高到低', label: '屋齡從高到低'}
 ]
@@ -432,6 +432,21 @@ class ItemList extends Component {
   stopPropagation(e) {
     e.nativeEvent.stopImmediatePropagation();
   }
+  check01 = () => {
+    this.setState({
+      makePlace: false
+    })
+  }
+  check02 = () => {
+    this.setState({
+      makePlace: false
+    })
+  }
+  check03 = () => {
+    this.setState({
+      makePlace: false
+    })
+  }
   render(){
     const colPrice = this.state.makePrice ? 'secondFocus' : ''
     const colPlace = this.state.makePlace ? 'secondFocus' : ''
@@ -501,22 +516,16 @@ class ItemList extends Component {
                       <li>苗栗縣</li>
                       <li>台中市</li>
                       <li>彰化縣</li>
-                      <li>彰化市</li>
                       <li>雲林縣</li>
-                      <li>雲林市</li>
+                      <li>南投縣</li>
                       <li>嘉義縣</li>
-                      <li>嘉義市</li>
-                      <li>台南縣</li>
                       <li>台南市</li>
-                      <li>高雄縣</li>
                       <li>高雄市</li>
                       <li>屏東縣</li>
                       <li>宜蘭縣</li>
-                      <li>宜蘭市</li>
                       <li>花蓮縣</li>
-                      <li>花蓮市</li>
                       <li>台東縣</li>
-                      <li>台東市</li>
+                      <li>澎湖縣</li>
                     </DrowMenuCity>
                   </DrowOption>
                 ) : (
@@ -597,14 +606,27 @@ class ItemList extends Component {
                         萬
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPrice}`}>0</li>
-                      <li className={`${colPrice}`}>3,000</li>
-                      <li className={`${colPrice}`}>6,000</li>
-                      <li className={`${colPrice}`}>8,000</li>
-                      <li className={`${colPrice}`}>10,000</li>
-                      <li className={`${colPrice}`}>30,000</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePrice ? (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                          <li className={`${colPrice}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>0</li>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                        </DrowMenu>
+                      )
+                    }
                   </DrowOption>
                 ) : (
                   null
@@ -618,17 +640,17 @@ class ItemList extends Component {
                   <PlaceOption onClick={this.stopPropagation}>
                     <ForSel>
                       <label className="form-check-label gendermg3 relative" htmlFor="build">
-                        <input className="form-check-input mgtop yesno" type="radio" id="build" name="gender" value="建築面積" />
+                        <input className="form-check-input mgtop yesno" onClick={this.check01} type="radio" id="build" name="gender" value="建築面積" />
                         <label className="form-check-label myCheckLabel" htmlFor="build">建築面積</label>
                         <span class="checkmark"></span>
                       </label>
                       <label className="form-check-label gendermg3 relative" htmlFor="sun">
-                        <input className="form-check-input mgtop yesno" type="radio" id="sun" name="gender" value="主+陽" />
+                        <input className="form-check-input mgtop yesno" onClick={this.check02} type="radio" id="sun" name="gender" value="主+陽" />
                         <label className="form-check-label myCheckLabel" htmlFor="sun">主+陽</label>
                         <span class="checkmark"></span>
                       </label>
                       <label className="form-check-label gendermg3 relative" htmlFor="land">
-                        <input className="form-check-input mgtop yesno" type="radio" id="land" name="gender" value="土地面積" />
+                        <input className="form-check-input mgtop yesno" onClick={this.check03} type="radio" id="land" name="gender" value="土地面積" />
                         <label className="form-check-label myCheckLabel" htmlFor="land">土地面積</label>
                         <span class="checkmark"></span>
                       </label>
@@ -649,16 +671,35 @@ class ItemList extends Component {
                       坪
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPlace}`}>0</li>
-                      <li className={`${colPlace}`}>60</li>
-                      <li className={`${colPlace}`}>80</li>
-                      <li className={`${colPlace}`}>100</li>
-                      <li className={`${colPlace}`}>200</li>
-                      <li className={`${colPlace}`}>300</li>
-                      <li className={`${colPlace}`}>400</li>
-                      <li className={`${colPlace}`}>500</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePlace ? (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                          <li className={`${colPlace}`}>600</li>
+                          <li className={`${colPlace}`}>1000</li>
+                          <li className={`${colPlace}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>0</li>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                          <li className={`${colPlace}`}>600</li>
+                          <li className={`${colPlace}`}>1000</li>
+                        </DrowMenu>
+                      )
+                    }
                   </PlaceOption>
                 ) : (
                   null
@@ -703,22 +744,16 @@ class ItemList extends Component {
                       <li>苗栗縣</li>
                       <li>台中市</li>
                       <li>彰化縣</li>
-                      <li>彰化市</li>
                       <li>雲林縣</li>
-                      <li>雲林市</li>
+                      <li>南投縣</li>
                       <li>嘉義縣</li>
-                      <li>嘉義市</li>
-                      <li>台南縣</li>
                       <li>台南市</li>
-                      <li>高雄縣</li>
                       <li>高雄市</li>
                       <li>屏東縣</li>
                       <li>宜蘭縣</li>
-                      <li>宜蘭市</li>
                       <li>花蓮縣</li>
-                      <li>花蓮市</li>
                       <li>台東縣</li>
-                      <li>台東市</li>
+                      <li>澎湖縣</li>
                     </DrowMenuCity>
                   </DrowOption>
                 ) : (
@@ -797,14 +832,27 @@ class ItemList extends Component {
                         萬
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPrice}`}>0</li>
-                      <li className={`${colPrice}`}>3,000</li>
-                      <li className={`${colPrice}`}>6,000</li>
-                      <li className={`${colPrice}`}>8,000</li>
-                      <li className={`${colPrice}`}>10,000</li>
-                      <li className={`${colPrice}`}>30,000</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePrice ? (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                          <li className={`${colPrice}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPrice}`}>0</li>
+                          <li className={`${colPrice}`}>3,000</li>
+                          <li className={`${colPrice}`}>6,000</li>
+                          <li className={`${colPrice}`}>8,000</li>
+                          <li className={`${colPrice}`}>10,000</li>
+                          <li className={`${colPrice}`}>30,000</li>
+                        </DrowMenu>
+                      )
+                    }
                   </DrowOption>
                 ) : (
                   null
@@ -818,17 +866,17 @@ class ItemList extends Component {
                   <PlaceOption onClick={this.stopPropagation}>
                     <ForSel>
                       <label className="form-check-label gendermg3 relative" htmlFor="build2">
-                        <input className="form-check-input mgtop yesno" type="radio" id="build2" name="gender" value="建築面積" />
+                        <input className="form-check-input mgtop yesno" onClick={this.check01} type="radio" id="build2" name="gender" value="建築面積" />
                         <label className="form-check-label myCheckLabel" htmlFor="build2">建築面積</label>
                         <span class="checkmark"></span>
                       </label>
                       <label className="form-check-label gendermg3 relative" htmlFor="sun2">
-                        <input className="form-check-input mgtop yesno" type="radio" id="sun2" name="gender" value="主+陽" />
+                        <input className="form-check-input mgtop yesno" onChange={this.check02} type="radio" id="sun2" name="gender" value="主+陽" />
                         <label className="form-check-label myCheckLabel" htmlFor="sun2">主+陽</label>
                         <span class="checkmark"></span>
                       </label>
                       <label className="form-check-label gendermg3 relative" htmlFor="land2">
-                        <input className="form-check-input mgtop yesno" type="radio" id="land2" name="gender" value="土地面積" />
+                        <input className="form-check-input mgtop yesno" onChange={this.check03} type="radio" id="land2" name="gender" value="土地面積" />
                         <label className="form-check-label myCheckLabel" htmlFor="land2">土地面積</label>
                         <span class="checkmark"></span>
                       </label>
@@ -847,16 +895,35 @@ class ItemList extends Component {
                       坪
                       </SalSpan>
                     </ForSel>
-                    <DrowMenu>
-                      <li className={`${colPlace}`}>0</li>
-                      <li className={`${colPlace}`}>60</li>
-                      <li className={`${colPlace}`}>80</li>
-                      <li className={`${colPlace}`}>100</li>
-                      <li className={`${colPlace}`}>200</li>
-                      <li className={`${colPlace}`}>300</li>
-                      <li className={`${colPlace}`}>400</li>
-                      <li className={`${colPlace}`}>500</li>
-                    </DrowMenu>
+                    {
+                      this.state.makePlace ? (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                          <li className={`${colPlace}`}>600</li>
+                          <li className={`${colPlace}`}>1000</li>
+                          <li className={`${colPlace}`}>不限</li>
+                        </DrowMenu>
+                      ) : (
+                        <DrowMenu>
+                          <li className={`${colPlace}`}>0</li>
+                          <li className={`${colPlace}`}>60</li>
+                          <li className={`${colPlace}`}>80</li>
+                          <li className={`${colPlace}`}>100</li>
+                          <li className={`${colPlace}`}>200</li>
+                          <li className={`${colPlace}`}>300</li>
+                          <li className={`${colPlace}`}>400</li>
+                          <li className={`${colPlace}`}>500</li>
+                          <li className={`${colPlace}`}>600</li>
+                          <li className={`${colPlace}`}>1000</li>
+                        </DrowMenu>
+                      )
+                    }
                   </PlaceOption>
                 ) : (
                   null

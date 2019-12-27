@@ -58,7 +58,7 @@ const DownPrice = styled.div`
   position: absolute;
   width: 60px;
   background: #EE0000;
-  left: 40%;
+  left: 60%;
   top: 3px;
   padding: 2px;
   border-radius: 5px;
@@ -106,7 +106,7 @@ const ItemCard = () => {
           台北市信義區信義路五段
           </Content>
           <Monthly>
-            50萬元/月
+            7,500萬元
             <DownPrice>↓16.81%</DownPrice>
           </Monthly>
           <JustContent>

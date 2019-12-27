@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const Nav = styled.div`
   position: absolute;
-  z-index: 2;
+  z-index: 20;
   width: 100%;
   height: 80px;
   line-height:60px;
@@ -26,7 +26,7 @@ const NavContainer = styled.div`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 10px;
+  padding-top: 20px;
   flex-wrap: wrap;
 `
 const ItemList = styled.ul`
@@ -51,7 +51,7 @@ const ListLi = styled.div`
 `
 const Logo = styled.div`
   display:inline-block;
-  width: 180px;
+  width: 167px;
   @media (max-width: 992px){
     width: 100px;
   }
@@ -79,7 +79,7 @@ const ItemBorder = styled.div`
   width: 66px;
   height: 7px;
   display: none;
-  margin-top: -28px;
+  margin-top: -38px;
   margin-left: ${props => props.short ? '-16px' : '0'};
   & > img {
     width: 100%;
@@ -91,11 +91,31 @@ const ItemLi = styled.li`
   cursor: pointer;
   font-weight:500;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   width: ${props => props.two ? '50px' : '100px'};
   @media (max-width: 1366px){
     margin: 0 22px;
     width: ${props => props.two ? '50px' : '80px'};
+    font-size: 16px;
+  }
+  &:hover ${ItemList}{
+    display: block;
+  }
+  &:hover ${ItemBorder}{
+    display: block;
+  }
+`
+const ItemLi2 = styled.li`
+  font-weight: 500;
+  margin: ${props => props.right ? '0 20px 0 20px' : '0 20px 0 20px'};
+  cursor: pointer;
+  font-weight:500;
+  color: #fff;
+  font-size: 16px;
+  width: 80px;
+  @media (max-width: 1366px){
+    margin: ${props => props.right ? '0 20px 0 20px' : '0 20px 0 35px'};
+    width: 80px;
     font-size: 16px;
   }
   &:hover ${ItemList}{
@@ -111,7 +131,7 @@ const Item = styled.span`
   color: #fff;
 `
 const Icon = styled.img`
-  width:40px;
+  width:30px;
 `
 
 const NavBar = () => {
@@ -190,42 +210,42 @@ const NavBar = () => {
                       <ListLi>焦點新聞</ListLi>
                     </a>
                   </Link>
-                  <Link href='/newsReportMonth'>
+                  <Link href='/report'>
                     <a className='navLink'>
-                      <ListLi>月報</ListLi>
+                      <ListLi>季報</ListLi>
                     </a>
                   </Link>
-                  <Link href='/newsReport'>
+                  <Link href='/reportMonth'>
                     <a className='navLink'>
-                      <ListLi bottom>季報</ListLi>
+                      <ListLi bottom>月報</ListLi>
                     </a>
                   </Link>
                   {/* <ListLi bottom>電子報</ListLi> */}
                 </ItemList>
               </ItemLi>
-              <ItemLi>
-                <a className='mylink' href='/team'>
+              <ItemLi2>
+                <a className='mylink' href='/team_manager'>
                   團隊介紹
                   <ItemBorder>
                     <img src='/static/img/hover.png' />
                   </ItemBorder>
                 </a>
-              </ItemLi>
-              <ItemLi>
-                <a className='mylink' href='/about'>
+              </ItemLi2>
+              <ItemLi2>
                   關於全球
                   <ItemBorder>
                     <img src='/static/img/hover.png' />
                   </ItemBorder>
-                </a>
                 <ItemList>
-                  <ListLi>公司簡介</ListLi>
-                  <ListLi>加入我們</ListLi>
+                  <Link href='/about'>
+                    <a className='navLink'><ListLi>公司簡介</ListLi></a>
+                  </Link>
+                  <a className='navLink' href='https://www.104.com.tw/company/1a2x6bivq0' target="_blank"><ListLi>加入我們</ListLi></a>
                   <Link href='/service'>
                     <a className='navLink'><ListLi bottom>服務據點</ListLi></a>
                   </Link>
                 </ItemList>
-              </ItemLi>
+              </ItemLi2>
               <ItemLi><a href='https://www.facebook.com/sinyiglobal' target="_blank"><Icon src="static/img/icon_fb_w.png" alt="" /></a></ItemLi>
             </List>
           </NavList>

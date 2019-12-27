@@ -8,10 +8,8 @@ const NewsContainer = styled.div`
   width: 80%;
   margin: 0 auto;
   background: #FAFAFA;
-  margin-bottom: 80px;
   @media (max-width: 992px){
     width: 100%;
-    margin-bottom: 10px;
   }
 `
 const Content = styled.div`
@@ -27,7 +25,7 @@ const Content = styled.div`
 
 const NewsContent = styled.div`
   display: flex;
-  margin: 30px 0;
+  margin: 30px 0 0 0;
   justify-content: space-between;
   flex-wrap: wrap;
   @media (max-width: 992px){
@@ -36,8 +34,7 @@ const NewsContent = styled.div`
 `
 const BigTitle = styled.div`
   text-align: center;
-  // padding: 60px 0;
-  padding: 60px 0 40px 0;
+  padding: 0px;
   @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
@@ -48,6 +45,7 @@ const MainNews = styled.div`
   display: flex;
   margin: 30px auto;
   justify-content: space-between;
+  cursor: pointer;
   flex-wrap: wrap;
   @media (max-width: 992px){
     display: none;
@@ -110,7 +108,7 @@ const Other = styled.div`
 const BtnContent = styled.div`
   width:100%;
   text-align: center;
-  padding: 20px 0 60px 0;
+  padding: 20px 0 40px 0;
 `
 const Show = styled.div`
   width: 82px;
@@ -128,7 +126,7 @@ const Show = styled.div`
 const Hr = styled.hr`
   width: 100%;
   margin: 0 auto;
-  border: 1px solid #FAFAFA;
+  border: 1px solid #F0F0F0;
 `
 
 
@@ -139,20 +137,22 @@ const NewsList = (props) => {
           <TitleImg src='/static/img/t2_job.png' />
         </BigTitle>
         <Content>
-          <MainNews>
-            <Img>
-              <img src='/static/img/fetch.jpg' />
-            </Img>
-            <Introduction>
-              <Date>2019/03/02</Date>
-              <Title>
-                「我的我們次方」算出最大價值的幸福方程式 信義房屋攜手熱忱的你共創最大價值
-              </Title>
-              <NewsSub>
-                新世代職場趨勢中，雇主品牌的探究與要求往往是決定求職、就業與留任的關鍵參數。長期與年輕世代溝通雇主品牌價值，信義房屋
-              </NewsSub>
-            </Introduction>
-          </MainNews>
+          <Link href='/news'>
+            <MainNews>
+              <Img>
+                <img src='/static/img/fetch.jpg' />
+              </Img>
+              <Introduction>
+                <Date>2019/03/02</Date>
+                <Title>
+                  「我的我們次方」算出最大價值的幸福方程式 信義房屋攜手熱忱的你共創最大價值
+                </Title>
+                <NewsSub>
+                  新世代職場趨勢中，雇主品牌的探究與要求往往是決定求職、就業與留任的關鍵參數。長期與年輕世代溝通雇主品牌價值，信義房屋
+                </NewsSub>
+              </Introduction>
+            </MainNews>
+          </Link>
           <Hr />
           <NewsContent>
             <Other>
@@ -172,9 +172,11 @@ const NewsList = (props) => {
             </Other>
           </NewsContent>
           <BtnContent>
-            <Show>
-              <img src='/static/img/show_all.png' />
-            </Show>
+            <Link href='/newsList'>
+              <Show>
+                <img src='/static/img/show_all.png' />
+              </Show>
+            </Link>
           </BtnContent>
         </Content>
       </NewsContainer>

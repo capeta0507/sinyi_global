@@ -18,13 +18,12 @@ const StudyContainer = styled.div`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
   flex-wrap: wrap;
 `
 
 const StudyContent = styled.div`
   display: flex;
-  margin: 30px 0;
+  margin: 30px 0 0 0;
   justify-content: space-between;
   flex-wrap: wrap;
   @media (max-width: 992px){
@@ -33,8 +32,7 @@ const StudyContent = styled.div`
 `
 const BigTitle = styled.div`
   text-align: center;
-  // padding: 60px 0;
-  padding: 60px 0 40px 0;
+  padding: 40px 0 0px 0;
   @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
@@ -56,7 +54,6 @@ const Item = styled.div`
 const BtnContent = styled.div`
   width:100%;
   text-align: center;
-  padding: 20px 0 60px 0;
   @media (max-width: 992px){
     padding: 20px 0 20px 0;
   }
