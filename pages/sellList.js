@@ -15,7 +15,8 @@ const SearchDiv = styled.div`
 	background: #566A77;
   width: 100%;
   height: 400px;
-	padding: 130px 0 50px 0;
+  padding: 130px 0 50px 0;
+  box-shadow: 0 5px 5px rgba(0,0,0,.5);
 	@media (max-width: 992px){
 		padding: 80px 0 10px 0;
   }
@@ -112,7 +113,11 @@ const Container = styled.div`
   background-color: #F3F3F3;
   background-image: url(/static/img/icon/grey.png);
   background-repeat:  repeat-x;
+  background-position-y: 17%;
 	padding: 0 0 60px 0;
+`
+const MainContent = styled.div`
+  width: 100%;
 `
 const Content = styled.div`
 	width: 80%;
@@ -459,6 +464,7 @@ class ItemList extends Component {
         />
         <Navbar />
         <NavHomeMobile />
+        <Container>
         <SearchDiv>
           <HeadTag>
             <a className='itemBuy itemBuyActive' href='/sellList'>
@@ -933,7 +939,7 @@ class ItemList extends Component {
           </HeadList>
           <h1 className='zero'>買賣</h1>
         </SearchDiv>
-        <Container>
+        <MainContent>
           <Content>
             <MakeHead>
               <Breadcrumb data={[{title:"買賣" , link:"/sellList"}]}/>
@@ -1022,6 +1028,7 @@ class ItemList extends Component {
               <img src='/static/img/show_all.png' />
             </Show>
           </BtnContent>
+        </MainContent>
         </Container>
         <FastButton />
       </Layout>

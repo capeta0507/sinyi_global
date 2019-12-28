@@ -223,12 +223,12 @@ const NavBar = () => {
                       <ListLi>焦點新聞</ListLi>
                     </a>
                   </Link>                  
-                  <Link href='/report'>
+                  <Link href='/newsReport'>
                     <a className='navLink'>
                       <ListLi>季報</ListLi>
                     </a>
                   </Link>
-                  <Link href='/reportMonth'>
+                  <Link href='/newsReporttMonth'>
                     <a className='navLink'>
                       <ListLi bottom>月報</ListLi>
                     </a>

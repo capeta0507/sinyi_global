@@ -15,7 +15,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const SearchDiv = styled.div`
 	background: #566A77;
 	width: 100%;
-	padding: 130px 0 50px 0;
+  padding: 130px 0 1px 0;
+  box-shadow: 0 5px 5px rgba(0,0,0,.5);
 	@media (max-width: 992px){
 		padding: 80px 0 10px 0;
   }
@@ -60,8 +61,11 @@ const SearchButton = styled.div`
 `
 const Container = styled.div`
 	width: 100%;
-	background: #F1F1F1;
+  background-color: #F3F3F3;
+  background-image: url(/static/img/icon/grey.png);
+  background-repeat:  repeat-x;
   padding: 0 0 100px 0;
+  background-position-y: 8%;
   @media (max-width: 992px){
     padding: 10px 0 100px 0;
   }
@@ -73,6 +77,9 @@ const Content = styled.div`
 		width: 90%;
 	}
 `
+const MainContent = styled.div`
+  width: 100%;
+`
 const NewsBlock = styled.div`
   width: 32%;
   margin: 0 5px;
@@ -82,7 +89,7 @@ const NewsBlock = styled.div`
 `
 const BigTitle = styled.div`
   text-align: center;
-  padding: 60px 0 40px 0;
+  padding: 10px 0 40px 0;
   @media (max-width: 992px){
     padding: 20px 0 40px 0;
     padding-bottom: 20px;
@@ -131,35 +138,63 @@ const PageImg = styled.img`
 const Bread = styled.div`
   width: 80%;
   margin: 0 auto;
-  padding-top: 30px;
+  padding-top: 0px;
 `
 
 const ItemList = () => {
 	return (
 		<Layout>
 			<Head
-				title="信義全球資產"
-				description="信義房屋集團人才招募培訓中，提供各種集團熱門職缺、徵才消息、薪資福利。完整新人培訓課程不用怕沒人可以問，歡迎熱忱的你加入我們，與我們一起共創最大價值。"
+				title="商用不動產、頂級商辦焦點新聞 - 信義全球資產"
+        description="即時提供商用不動產、土地買賣、商辦、廠辦大樓市場焦點新聞，讓您快速掌握投資、買賣商用不動產的絕佳時機。"
+        url=""
 			/>
 			<Navbar />
 			<NavHomeMobile />
-			<SearchDiv>
+			<Container>
+      <SearchDiv>
 				<HeadList search>
 					<IptName className=''>
-						<input className='form-control' type='text' placeholder='關鍵字...' />
+						<input className='form-control searchBar' type='text' placeholder='關鍵字...' />
 					</IptName>
 					<SearchButton>搜尋</SearchButton>
 				</HeadList>
+        {/* seo h1 */}
+        <h1 className='zero'>商用不動產焦點新聞</h1>
 			</SearchDiv>
-			<Container>
+      <MainContent>
         <Bread>
-          <Breadcrumb second='新聞' />
+          <Breadcrumb data={[{title:"新聞" , link:"/newsList"}]} />
         </Bread>
         <BigTitle>
           <TitleImg src='/static/img/t2_job.png' />
         </BigTitle>
 				<Content>
 					<div className='row'>
+            <NewsBlock>
+              <NewsCard />
+              <MbNewsCard />
+            </NewsBlock>
+            <NewsBlock>
+              <NewsCard />
+              <MbNewsCard />
+            </NewsBlock>
+            <NewsBlock>
+              <NewsCard />
+              <MbNewsCard />
+            </NewsBlock>
+            <NewsBlock>
+              <NewsCard />
+              <MbNewsCard />
+            </NewsBlock>
+            <NewsBlock>
+              <NewsCard />
+              <MbNewsCard />
+            </NewsBlock>
+            <NewsBlock>
+              <NewsCard />
+              <MbNewsCard />
+            </NewsBlock>
             <NewsBlock>
               <NewsCard />
               <MbNewsCard />
@@ -221,6 +256,7 @@ const ItemList = () => {
           </li>
           </ul>
         </PageInfo>
+        </MainContent>
 			</Container>
 		</Layout>
 	)

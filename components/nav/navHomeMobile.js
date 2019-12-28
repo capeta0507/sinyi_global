@@ -168,12 +168,12 @@ const NavHomeMobile = () => {
                               <ListLi>焦點新聞</ListLi>
                             </a>
                           </Link>
-                          <Link href='/reportMonth'>
+                          <Link href='/newsReportMonth'>
                             <a className='navLink'>
                               <ListLi>月報</ListLi>
                             </a>
                           </Link>
-                          <Link href='/report'>
+                          <Link href='/newsReport'>
                             <a className='navLink'>
                               <ListLi bottom>季報</ListLi>
                             </a>

@@ -14,7 +14,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const SearchDiv = styled.div`
 	background: #566A77;
 	width: 100%;
-	padding: 130px 0 1px 0;
+  padding: 130px 0 1px 0;
+  box-shadow: 0 5px 5px rgba(0,0,0,.5);
 	@media (max-width: 992px){
 		padding: 80px 0 10px 0;
   }
@@ -65,9 +66,13 @@ const Container = styled.div`
   background-image: url(/static/img/icon/grey.png);
   background-repeat:  repeat-x;
   padding: 0 0 100px 0;
+  background-position-y: 8%;
   @media (max-width: 992px){
     padding: 10px 0 100px 0;
   }
+`
+const MainContent = styled.div`
+  width: 100%;
 `
 const Content = styled.div`
 	width: 80%;
@@ -165,17 +170,18 @@ const ItemList = () => {
 			/>
 			<Navbar />
 			<NavHomeMobile />
-			<SearchDiv>
+			<Container>
+      <SearchDiv>
 				<HeadList search>
 					<IptName className=''>
-						<input className='form-control' type='text' placeholder='關鍵字...' />
+						<input className='form-control searchBar' type='text' placeholder='關鍵字...' />
 					</IptName>
 					<SearchButton>搜尋</SearchButton>
 				</HeadList>
         {/* seo h1 */}
         <h1 className='zero'>商用不動產季報</h1>
 			</SearchDiv>
-			<Container>
+      <MainContent>
         <Bread>
           <Breadcrumb data={[{title:"季報" , link:"/newsList"}]}/>       
         </Bread>
@@ -195,6 +201,30 @@ const ItemList = () => {
 				</HeadTag>
 				<Content>
 					<div className='row'>
+            <NewsBlock>
+              <StudyCard />
+              <MbStudyCard />
+            </NewsBlock>
+            <NewsBlock>
+              <StudyCard />
+              <MbStudyCard />
+            </NewsBlock>
+            <NewsBlock>
+              <StudyCard />
+              <MbStudyCard />
+            </NewsBlock>
+            <NewsBlock>
+              <StudyCard />
+              <MbStudyCard />
+            </NewsBlock>
+            <NewsBlock>
+              <StudyCard />
+              <MbStudyCard />
+            </NewsBlock>
+            <NewsBlock>
+              <StudyCard />
+              <MbStudyCard />
+            </NewsBlock>
             <NewsBlock>
               <StudyCard />
               <MbStudyCard />
@@ -261,6 +291,7 @@ const ItemList = () => {
             <img src='/static/img/show_all.png' />
           </Show>
         </BtnContent>
+        </MainContent>
 			</Container>
 		</Layout>
 	)
