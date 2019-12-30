@@ -212,7 +212,7 @@ const DrowOption = styled.div`
   width: 100%;
   box-shadow: 0 5px 5px rgba(0,0,0,0.2);
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   @media (max-width: 992px){
     width: 90%;
     position: absolute;
@@ -231,7 +231,7 @@ const ForSel = styled.div`
 const DrowMenu = styled.ul`
   width: 100%;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   & > li {
     width: 100%;
@@ -247,7 +247,7 @@ const DrowMenu = styled.ul`
 const DrowMenuCity = styled.ul`
   width: 100%;
   margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
   overflow-y: scroll;
   height: 250px;
