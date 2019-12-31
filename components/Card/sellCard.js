@@ -25,6 +25,11 @@ const Card = styled.div`
 const Img = styled.div`
   position: relative;
   width: 100%;
+  & > img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
 `
 const JustContent = styled.div`
   font-size: 12px;
