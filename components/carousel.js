@@ -38,7 +38,7 @@ const MyCarousel = () => {
   };
   return(
     <Cas>
-      <Carousel nextIcon={nextIcon} prevIcon={prevIcon} interval={10000} activeIndex={index} direction={direction} onSelect={handleSelect} touch={true} indicators={false}>
+      <Carousel nextIcon={nextIcon} prevIcon={prevIcon} interval={10000} activeIndex={index} direction={direction} onSelect={handleSelect} touch={true} indicators={true}>
         <Photo>
           <img
             className="d-block cauHeight"
