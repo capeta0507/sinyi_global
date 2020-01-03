@@ -669,8 +669,14 @@ ul,li{
     right: -100px !important;
 }
 .carouselArrow{
-    width:25%;
-    /* box-shadow:0 5px 5px rgba(0, 0, 0, 0.2); */
+    width:48%;
+    margin-top: 40px;
+}
+.carousel-control-next, .carousel-control-prev{
+    opacity: 1 !important;
+}
+.carousel-control-next:focus, .carousel-control-next:hover, .carousel-control-prev:focus, .carousel-control-prev:hover {
+    opacity: 1 !important;
 }
 @media screen and (max-width: 1366px){
     .slick-prev{
