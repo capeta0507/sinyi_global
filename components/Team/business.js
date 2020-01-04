@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import styled from 'styled-components'
 import ItemCard from '../Card/itemCard'
+import MoreCard from '../Card/moreCard'
 
 const TeamBlock = styled.div`
   width: 80%;
@@ -177,13 +178,23 @@ const TitleImg = styled.img`
     width:112px;
   }
 `
+const ShowBlock = styled.div`
+   width: 100%;
+   z-index: 2;
+   position: relative;
+   height: 260px;
+   margin-top: -290px;
+   overflow: hidden;
+   background: -webkit-linear-gradient( bottom,rgb(255,255,255) 50%,rgba(255,255,255,0) 100% );
+   background: -o-linear-gradient( bottom, rgb(255,255,255) 50%, rgba(255,255,255,0) 100% );
+   background: linear-gradient( bottom, rgb(255,255,255) 50%, rgba(255,255,255,0) 100% );
+`
 const Show = styled.div`
   width: 82px;
   text-align: center;
-  margin-bottom: 80px;
   margin: 0 auto;
   cursor: pointer;
-  margin-bottom: 50px;
+  margin-top: 180px;
   & > img{
     width: 100%;
   }
@@ -442,10 +453,17 @@ const Businesser = () => {
           <ItemCard />
           <ItemCard />
           <ItemCard />
+          {/* showmore */}
+          <MoreCard />
+          <MoreCard />
+          <MoreCard />
+          <MoreCard />
         </SecondContent>
-        <Show>
-          <img src='/static/img/show_all.png' />
-        </Show>
+        <ShowBlock>
+          <Show>
+            <img src='/static/img/show_all.png' />
+          </Show>
+        </ShowBlock>
       </SecondBlock>
     </>
   )

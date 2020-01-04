@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
@@ -347,6 +347,10 @@ const Item = () => {
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/F.JPG'},
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/G.JPG'},
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/H.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/A.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG'},
   ])
   const [imgData2] = useState([
     {
@@ -367,6 +371,9 @@ const Item = () => {
   const [displayArrow, setDisplayArrow] = useState(true)
   const [displayLeftArrow, setDisplayLeftArrow] = useState(false)
   const [displayRightArrow, setDisplayRightArrow] = useState(true)
+  const [carouselIdx, setCarouselIdx] = useState(1)
+  const [allCarousel, setAllCarousel] = useState(1)
+
   
   var items
 //   console.log(items.length);
@@ -413,9 +420,13 @@ const Item = () => {
     if(g_index > 0 ){
       setDisplayLeftArrow(true)
     }
+    setCarouselIdx(g_index + 1)
     // 後5項時跳到後面
     if(g_index >=5 ){
       document.getElementById('thumbnail-img-position').style.left = "-255px"
+    } 
+    if (g_index >=8 ){
+      document.getElementById('thumbnail-img-position').style.left = "-510px"
     }
     thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
     thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
@@ -438,9 +449,13 @@ const Item = () => {
     if(g_index < imgData.length - 1){
       setDisplayRightArrow(true)
     }
+    setCarouselIdx(g_index + 1)
     // 前4項時跳到前面
     if(g_index <=3 ){
       document.getElementById('thumbnail-img-position').style.left = "0px"
+    }
+    if(g_index <=5 && g_index > 3){
+      document.getElementById('thumbnail-img-position').style.left = "-255px"
     }
     thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
     thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
@@ -476,6 +491,9 @@ const Item = () => {
   const closeMessenger = () => {
     setDisplaySend(false)
   }
+  useEffect(() => {
+    setAllCarousel(imgData.length)
+  },[imgData])
   const displayModal = showModal ? 'show' : ''
 	return (
 		<Layout>
@@ -580,7 +598,7 @@ const Item = () => {
                                     }}
                                   ></div>
                                   <div className="carousel-dialog-paging-num">
-                                    1{/* */}/{/* */}8
+                                  {carouselIdx}{/* */}/{/* */}{allCarousel}
                                   </div>
                                 </div>
                                 {
@@ -662,7 +680,7 @@ const Item = () => {
                                   }
                                   
                                   <div className="carousel-thumbnail-img-frame">
-                                    <div style={{ width: 675 }}>
+                                    <div style={{ width: 1000 }}>
                                       {
                                         imgData.map((img,idx) => {
                                           return(
@@ -735,7 +753,7 @@ const Item = () => {
                                   </div>
                                 </div>
                                 <div className="carousel-paging-num">
-                                  1{/* */}/{/* */}8
+                                {carouselIdx}{/* */}/{/* */}{allCarousel}
                                 </div>
                               </div>
                               {
@@ -815,7 +833,7 @@ const Item = () => {
                                 )
                               }
                               <div className="carousel-thumbnail-img-frame">
-                                <div id="thumbnail-img-position" style={{ width: 675 , position: 'relative' , left:'0px' }}>
+                                <div id="thumbnail-img-position" style={{ width: 1000 , position: 'relative' , left:'0px' }}>
                                   {
                                     imgData.map((img,idx) => {
                                       return(
