@@ -383,6 +383,7 @@ const Item = () => {
 
   const imgClick = (e,idx) => {
     g_index = idx;
+    setCarouselIdx(g_index + 1)
     thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
     thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
     for(let i = 0; i < thumbnail.length; i++){

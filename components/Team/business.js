@@ -179,15 +179,18 @@ const TitleImg = styled.img`
   }
 `
 const ShowBlock = styled.div`
-   width: 100%;
-   z-index: 2;
-   position: relative;
-   height: 260px;
-   margin-top: -290px;
-   overflow: hidden;
-   background: -webkit-linear-gradient( bottom,rgb(255,255,255) 50%,rgba(255,255,255,0) 100% );
-   background: -o-linear-gradient( bottom, rgb(255,255,255) 50%, rgba(255,255,255,0) 100% );
-   background: linear-gradient( bottom, rgb(255,255,255) 50%, rgba(255,255,255,0) 100% );
+  width: 100%;
+  z-index: 2;
+  position: relative;
+  height: 260px;
+  margin-top: -290px;
+  overflow: hidden;
+  background: -webkit-linear-gradient( bottom,rgb(255,255,255) 50%,rgba(255,255,255,0) 100% );
+  background: -o-linear-gradient( bottom, rgb(255,255,255) 50%, rgba(255,255,255,0) 100% );
+  background: linear-gradient( bottom, rgb(255,255,255) 50%, rgba(255,255,255,0) 100% );
+  @media (max-width: 992px){
+    display: none;
+  }
 `
 const Show = styled.div`
   width: 82px;
@@ -197,9 +200,6 @@ const Show = styled.div`
   margin-top: 180px;
   & > img{
     width: 100%;
-  }
-  @media (max-width: 992px){
-    display: none;
   }
 `
 

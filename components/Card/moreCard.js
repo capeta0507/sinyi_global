@@ -18,8 +18,7 @@ const Card = styled.div`
     box-shadow: 2px 10px 11px rgba(0,0,0,0.2);
   }
   @media (max-width: 992px){
-    width: 97%;
-    margin: 10px 6px;
+    display: none;
   }
 `
 const Img = styled.div`
