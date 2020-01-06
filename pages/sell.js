@@ -380,8 +380,9 @@ const Item = () => {
   var thumbnail
   var thumbModal
   // console.log('thumb', thumbnail.length);
+  // 計算小圖width長度
   var img_length = (imgData.length*85 - 5) + 'px'
-  console.log(img_length,"length")
+  // console.log(img_length,"length")
 
   const imgClick = (e,idx) => {
     g_index = idx;
@@ -425,11 +426,13 @@ const Item = () => {
     }
     setCarouselIdx(g_index + 1)
     // 後5項時跳到後面
+    // 一般carousel
     if(g_index >=5 ){
       let img_position = '-' + ((g_index - 4)*85) + 'px'
       // document.getElementById('thumbnail-img-position').style.left = "-255px"
       document.getElementById('thumbnail-img-position').style.left = img_position;
     } 
+    // 彈窗carousel
     if(g_index >=9 ){
       let img_position_diolog = '-' + ((g_index - 8)*85) + 'px'
       // document.getElementById('thumbnail-img-position').style.left = "-255px"
@@ -458,6 +461,7 @@ const Item = () => {
     }
     setCarouselIdx(g_index + 1)
     // 前4項時跳到前面
+    // 一般carousel
     if(g_index <=4 ){
       document.getElementById('thumbnail-img-position').style.left = "0px"
     }
@@ -466,6 +470,7 @@ const Item = () => {
       // document.getElementById('thumbnail-img-position').style.left = "-255px"
       document.getElementById('thumbnail-img-position').style.left = img_position;
     } 
+    // 彈窗carousel
     if(g_index <=8 ){
       document.getElementById('thumbnail-img-position-diolog').style.left = "0px"
     }
