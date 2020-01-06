@@ -380,6 +380,8 @@ const Item = () => {
   var thumbnail
   var thumbModal
   // console.log('thumb', thumbnail.length);
+  var img_length = (imgData.length*85 - 5) + 'px'
+  console.log(img_length,"length")
 
   const imgClick = (e,idx) => {
     g_index = idx;
@@ -424,11 +426,15 @@ const Item = () => {
     setCarouselIdx(g_index + 1)
     // 後5項時跳到後面
     if(g_index >=5 ){
-      document.getElementById('thumbnail-img-position').style.left = "-255px"
+      let img_position = '-' + ((g_index - 4)*85) + 'px'
+      // document.getElementById('thumbnail-img-position').style.left = "-255px"
+      document.getElementById('thumbnail-img-position').style.left = img_position;
     } 
-    if (g_index >=8 ){
-      document.getElementById('thumbnail-img-position').style.left = "-510px"
-    }
+    if(g_index >=9 ){
+      let img_position_diolog = '-' + ((g_index - 8)*85) + 'px'
+      // document.getElementById('thumbnail-img-position').style.left = "-255px"
+      document.getElementById('thumbnail-img-position-diolog').style.left = img_position_diolog;
+    } 
     thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
     thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
     for(let i = 0; i < thumbnail.length; i++){
@@ -452,12 +458,22 @@ const Item = () => {
     }
     setCarouselIdx(g_index + 1)
     // 前4項時跳到前面
-    if(g_index <=3 ){
+    if(g_index <=4 ){
       document.getElementById('thumbnail-img-position').style.left = "0px"
     }
-    if(g_index <=5 && g_index > 3){
-      document.getElementById('thumbnail-img-position').style.left = "-255px"
+    if(g_index >=5 ){
+      let img_position = '-' + ((g_index - 4)*85) + 'px'
+      // document.getElementById('thumbnail-img-position').style.left = "-255px"
+      document.getElementById('thumbnail-img-position').style.left = img_position;
+    } 
+    if(g_index <=8 ){
+      document.getElementById('thumbnail-img-position-diolog').style.left = "0px"
     }
+    if(g_index >=9 ){
+      let img_position_diolog = '-' + ((g_index - 8)*85) + 'px'
+      // document.getElementById('thumbnail-img-position').style.left = "-255px"
+      document.getElementById('thumbnail-img-position-diolog').style.left = img_position_diolog;
+    } 
     thumbnail = document.getElementsByClassName('carousel-thumbnail-img')
     thumbModal = document.getElementsByClassName('carousel-thumbnail-img-Modal')
     for(let i = 0; i < thumbnail.length; i++){
@@ -681,7 +697,7 @@ const Item = () => {
                                   }
                                   
                                   <div className="carousel-thumbnail-img-frame">
-                                    <div style={{ width: 1000 }}>
+                                    <div id="thumbnail-img-position-diolog" style={{ width: `${img_length}` , position: 'relative' , left:'0px' }}>
                                       {
                                         imgData.map((img,idx) => {
                                           return(
@@ -834,7 +850,7 @@ const Item = () => {
                                 )
                               }
                               <div className="carousel-thumbnail-img-frame">
-                                <div id="thumbnail-img-position" style={{ width: 1000 , position: 'relative' , left:'0px' }}>
+                                <div id="thumbnail-img-position" style={{ width: `${img_length}` , position: 'relative' , left:'0px' }}>
                                   {
                                     imgData.map((img,idx) => {
                                       return(
