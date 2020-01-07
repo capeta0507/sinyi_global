@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component,useContext } from 'react'
+import UserContext from '../UserContext';  //要import react useContext
+
 import styled from 'styled-components'
 import Link from 'next/link'
 import Select from 'react-select'
@@ -95,8 +97,8 @@ const BtnBottomItem = styled.div`
   width: 35%;
   font-size: 18px;
   text-align: center;
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
+  border-left: ${props => props.side ? '' : '2px solid #fff'};
+  border-right: ${props => props.side ? '' : '2px solid #fff'};
   padding: 10px 10px;
   display: flex;
   & > img {
@@ -180,14 +182,32 @@ const ItemList = styled.div`
   }
 `
 class MobileFooter extends Component {
-  constructor(){
-    super()
+  static contextType = UserContext
+
+  constructor(props){
+    super(props)
     this.state = {
       displayMenu1: false,
       displayMenu2: false,
       displayMenu3: false,
-      displayAll: false
+      displayAll: false,
+      bid: false,
+      bidlistElement:null
     }
+
+
+    
+  }
+  componentDidMount() {
+    const context = this.context
+    this.data = context.bidlist
+
+    var bidlistElement = this.data && this.data.items ? this.data.items.map((item , index)=>(
+      <div><a href={`/bid?id=${item.id}`}>{item.title}</a></div>
+    )): null
+    this.setState({bidlistElement : bidlistElement})
+    // console.log(context) // 
+    
   }
 
   showDropdownMenu1 = (event) => {
@@ -262,38 +282,40 @@ class MobileFooter extends Component {
             this.state.displayAll ? (
               <React.Fragment>
                 <FooterList>
-                  {/* <FooterTag className='textCenter'>主題特輯</FooterTag> */}
-                  <FooterTag className='textCenter'>
+                  {/* <FooterTag className='textCenter2'>主題特輯</FooterTag> */}
+                  <FooterTag className='textCenter2'>
                     買賣
                     <ItemList>
-                      <div><a href='/sellList'>辦公</a></div>
-                      <div><a href='/sellList'>店面</a></div>
-                      <div><a href='/sellList'>廠房</a></div>
-                      <div><a href='/sellList'>土地</a></div>
-                      <div><a href='/sellList'>其他</a></div>
+                      <div><a href='/buy'>辦公</a></div>
+                      <div><a href='/buy'>店面</a></div>
+                      <div><a href='/buy'>廠房</a></div>
+                      <div><a href='/buy'>土地</a></div>
+                      <div><a href='/buy'>其他</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     租賃
                     <ItemList>
-                      <div><a href='/itemList'>辦公</a></div>
-                      <div><a href='/itemList'>店面</a></div>
-                      <div><a href='/itemList'>廠房</a></div>
-                      <div><a href='/itemList'>土地</a></div>
+                      <div><a href='/rent'>辦公</a></div>
+                      <div><a href='/rent'>店面</a></div>
+                      <div><a href='/rent'>廠房</a></div>
+                      <div><a href='/rent'>土地</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     標售
                     <ItemList>
                       <div><a href='/about#bid'>服務與實績</a></div>
-                      <div><a href='/bid'>標案1</a></div>
-                      <div><a href='/bid'>標案2</a></div>
-                      <div><a href='/bid'>標案3</a></div>
+                      {
+                        <React.Fragment>
+                        {this.state.bidlistElement}
+                        </React.Fragment>
+                      }
                     </ItemList>
                   </FooterTag>
                 </FooterList>
                 <FooterList>
-                  {/* <FooterTag className='textCenter'>
+                  {/* <FooterTag className='textCenter2'>
                     標售
                     <ItemList>
                       <div><a href='/about#bid'>服務與實績</a></div>
@@ -302,16 +324,16 @@ class MobileFooter extends Component {
                       <div><a href='/bid'>標案3</a></div>
                     </ItemList>
                   </FooterTag> */}
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     新聞與研究
                     <ItemList>
                       <div><a href='/newsList'>焦點新聞</a></div>
-                      <div><a href='/report'>季報</a></div>
-                      <div><a href='/reportMonth'>月報</a></div>
+                      <div><a href='/reports'>季報</a></div>
+                      <div><a href='/reports?type=2'>月報</a></div>
                       {/* <div>電子報</div> */}
                     </ItemList>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     關於全球
                     <ItemList>
                       <div>公司簡介</div>
@@ -322,7 +344,7 @@ class MobileFooter extends Component {
                   <FooterTag>&nbsp;</FooterTag>
                 </FooterList>
                 <FooterList>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     &nbsp;
                     <ItemList>
                       <div><a href='/team_manager'>總經理</a></div>
@@ -330,7 +352,7 @@ class MobileFooter extends Component {
                       <div><a href='/team_BusinessTwo'>商仲二部</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     團隊介紹
                     <ItemList>
                       <div><a href='/team_investmentOne'>投資一部</a></div>
@@ -338,7 +360,7 @@ class MobileFooter extends Component {
                       <div><a href='/team_industry'>工業地產部</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     &nbsp;
                     <ItemList>
                       <div><a href='/team_Consultant'>顧問服務團隊</a></div>
@@ -347,31 +369,31 @@ class MobileFooter extends Component {
                   </FooterTag>
                 </FooterList>
                 <FooterList>
-                  <FooterTag long className='textCenter'>
+                  <FooterTag long className='textCenter2'>
                     &nbsp;
                     <ItemList>
                       <div><a href='https://www.sinyi.com.tw/aboutsinyi/aboutsinyi_aboutsinyi' target="_blank">了解信義</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag long className='textCenter'>
+                  <FooterTag long className='textCenter2'>
                     集團與社會責任
                     <ItemList>
                       <div><a href='https://hr.sinyi.com.tw/' target="_blank">人才招募</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag long className='textCenter'>
+                  <FooterTag long className='textCenter2'>
                     &nbsp;
                   </FooterTag>
                 </FooterList>
                 <FooterList>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     投資人專區
                     <ItemList>
                       <div><a href='https://www.sinyi.com.tw/investors/investors-ch_mainpage' target="_blank">投資人專區</a></div>
                       <div><a href='https://www.sinyi.com.tw/investors/investors-en_mainpage-en' target="_blank">investor relations</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     企業社會責任
                     <ItemList>
                       <div><a href='https://csr.sinyi.com.tw/' target="_blank">企業社會責任</a></div>
@@ -380,10 +402,10 @@ class MobileFooter extends Component {
                       <div><a href='https://www.taiwan4718.tw/' target="_blank">社區一家</a></div>
                     </ItemList>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     集團企業
                     <ItemList>
-                      <div><a href='https://csr.sinyi.com.tw/' target="_blank">信義房屋</a></div>
+                      <div><a href='https://www.sinyi.com.tw/' target="_blank">信義房屋</a></div>
                       <div><a href='https://living.sinyi.com.tw/' target="_blank">信義居家</a></div>
                       <div><a href='https://www.sinyi-rema.com.tw/' target="_blank">信義代銷</a></div>
                       <div><a href='https://www.xinyikf.sinyi.com.tw/' target="_blank">信義開發</a></div>
@@ -400,32 +422,32 @@ class MobileFooter extends Component {
             ) : (
               <React.Fragment>
                 <FooterList>
-                  {/* <FooterTag className='textCenter'>主題特輯</FooterTag> */}
-                  <FooterTag className='textCenter'>
-                    <a className='mylink' href='/sellList'>買賣</a>
+                  {/* <FooterTag className='textCenter2'>主題特輯</FooterTag> */}
+                  <FooterTag className='textCenter2'>
+                    <a className='mylink' href='/sell'>買賣</a>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
-                  <a className='mylink' href='/itemList'> 租賃</a>
+                  <FooterTag className='textCenter2'>
+                  <a className='mylink' href='/item'> 租賃</a>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     <a className='mylink' href='/bid'>標售</a>
                   </FooterTag>
                 </FooterList>
                 <FooterList>
-                  {/* <FooterTag className='textCenter'>
+                  {/* <FooterTag className='textCenter2'>
                     <a className='mylink' href='/bid'>標售</a>
                   </FooterTag> */}
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     <a className='mylink' href='/newsList'>新聞與研究</a>
                   </FooterTag>
-                  <FooterTag className='textCenter'>
+                  <FooterTag className='textCenter2'>
                     <a className='mylink' href='/team_manager'>團隊介紹</a>
                   </FooterTag>
-                  <FooterTag className='textCenter'><a className='mylink' href='/about'>關於全球</a></FooterTag>
+                  <FooterTag className='textCenter2'><a className='mylink' href='/about'>關於全球</a></FooterTag>
                 </FooterList>
                 <FooterList>
-                  {/* <FooterTag className='textCenter'><a className='mylink' href='/about'>關於全球</a></FooterTag> */}
-                  <FooterTag long className='textCenter'>
+                  {/* <FooterTag className='textCenter2'><a className='mylink' href='/about'>關於全球</a></FooterTag> */}
+                  <FooterTag long className='textCenter2'>
                     集團與社會責任
                   </FooterTag>
                   <FooterTag>&nbsp;</FooterTag>
@@ -439,7 +461,7 @@ class MobileFooter extends Component {
         <BgIcon>
           <Footer>
             <h6>信義全球資產管理股份有限公司</h6>
-            <h6>&copy;2019 信義房屋股份有限公司 版權所有</h6>
+            <h6>&copy;2020 信義房屋股份有限公司 版權所有</h6>
           </Footer>
         </BgIcon>
         {
@@ -511,7 +533,7 @@ class MobileFooter extends Component {
           )
         }
         <BtnFooter>
-          <BtnBottomItem className={`${coll01}`} onClick={this.showDropdownMenu1}>
+          <BtnBottomItem side className={`${coll01}`} onClick={this.showDropdownMenu1}>
             <img src={`/static/img/${icon01}.png`} />
             查找物件
           </BtnBottomItem>
@@ -519,7 +541,7 @@ class MobileFooter extends Component {
           <img src={`/static/img/${icon02}.png`} />
           撥打電話
           </BtnBottomItem>
-          <BtnBottomItem className={`${coll03}`} onClick={this.showDropdownMenu3}>
+          <BtnBottomItem side className={`${coll03}`} onClick={this.showDropdownMenu3}>
           <img src={`/static/img/${icon03}.png`} />
           快速留言
           </BtnBottomItem>
