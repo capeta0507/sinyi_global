@@ -22,9 +22,13 @@ const AboutTitle = styled.div`
 `
 const MakeChinese = styled.div`
   color: #404040;
+  line-height: 30px;
+  font-size: 14px;
 `
 const MakeEnglish = styled.div`
   color: #878787;
+  line-height: 30px;
+  font-size: 14px;
 `
 const OtherTitle = styled.img`
   width:100%;
@@ -34,7 +38,7 @@ const AboutUs = styled.div`
   margin: 0 auto;
   color: #404040;
   @media (max-width: 992px){
-    width: 90%;
+    width: 85%;
   }
 `
 const Service = styled.div`
@@ -43,11 +47,29 @@ const Service = styled.div`
   color: #404040;
   & > h3 {
     color: #000;
-    font-size: 20px;
+    font-size: 18px;
+    text-align: center;
+    margin: 18px 0 30px 0;
+    font-weight: bold;
+  }
+  & > h4 {
+    color: #000;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 0 20px 0;
+    font-weight: bold;
+  }
+  & > h5 {
+    color: #000;
+    font-size: 18px;
     text-align: center;
     margin: 0 0 30px 0;
+    font-weight: bold;
   }
   & > p {
+    width: 90%;
+    margin: 0 auto;
+    line-height: 30px;
     color: #404040;
     font-size: 14px;
     margin-bottom: 30px;
@@ -60,12 +82,12 @@ const History = styled.div`
   position: relative;
   margin-top: ${props => props.long ? '50px' : '0px'};
   @media (max-width: 992px){
-    width: 90%;
+    width: 85%;
   }
 `
 const AboutContent = styled.div`
   width: 100%;
-  background: #F3F3F3;
+  background: #fff;
   padding: 40px 0;
 `
 const Bdtag = styled.img`
@@ -116,10 +138,14 @@ const SixSub = styled.p`
   color: #444444;
   font-size: 18px;
   margin-top: 16px;
+  font-weight: 400;
 `
 const SixDes = styled.p`
   color: #878787;
   font-size: 16px;
+  font-weight: 400;
+  margin-top: 30px;
+  line-height: 30px;
 `
 
 
@@ -164,7 +190,7 @@ class About extends Component {
       <div className='navBlock'>
         <MainTitle onClick={this.showAbout1}>
           <AboutTitle>
-            <OtherTitle src='/static/img/aboutT2_mb.png' />
+            <OtherTitle src='/static/img/aboutT5_mb.png' />
             <img className={`aboutdown ${coll01}`} src='static/img/about_down.png' />
           </AboutTitle>
         </MainTitle>
@@ -193,7 +219,7 @@ class About extends Component {
         }
         <MainTitle onClick={this.showAbout2}>
           <AboutTitle>
-            <OtherTitle src='/static/img/aboutT3_mb.png' />
+            <OtherTitle src='/static/img/aboutT2_mb.png' />
             <img className={`aboutdown ${coll02}`} src='static/img/about_down.png' />
           </AboutTitle>
         </MainTitle>
@@ -221,7 +247,7 @@ class About extends Component {
         }
         <MainTitle onClick={this.showAbout3}>
           <AboutTitle>
-            <OtherTitle src='/static/img/aboutT4_mb.png' />
+            <OtherTitle src='/static/img/aboutT3_mb.png' />
             <img className={`aboutdown ${coll03}`} src='static/img/about_down.png' />
           </AboutTitle>
         </MainTitle>
@@ -349,7 +375,7 @@ class About extends Component {
         }
         <MainTitle onClick={this.showAbout4}>
           <AboutTitle>
-            <OtherTitle src='/static/img/aboutT5_mb.png' />
+            <OtherTitle src='/static/img/aboutT4_mb.png' />
             <img className={`aboutdown ${coll04}`} src='static/img/about_down.png' />
           </AboutTitle>
         </MainTitle>
@@ -359,8 +385,8 @@ class About extends Component {
               <h3>正確的事持續做  用心才能看見美好</h3>
               <p>信義全球資產為信義集團專營商用不動產及工業地產團隊，我們依據每位客戶需求，透過專業服務團隊的水平分工，加上信義集團上中下游服務鏈的垂直整合，提供客戶全方位顧問服務。涵蓋商業仲介、價格評估、建築開發、預售交易、信託管理等，從台灣發展到海外房地產，依據每位客戶的需求與特性，擬定策略及長遠的資產計劃，信義全球資產為您走在市場及法令的最前端，扮演客戶信賴的房地產後盾。</p>
               <br /><br />
-              <h3>信義品牌獲獎無數，並為首家獲得全球</h3>
-              <h3>最具道德企業獎之台灣企業</h3>
+              <h4>信義品牌獲獎無數，並為首家獲得全球</h4>
+              <h5>最具道德企業獎之台灣企業</h5>
               <p>台灣服務業唯一 信義房屋獲全球企業永續報告獎
                 信義房屋服務創新 獲服務第壹大獎及金仲獎肯定
                 深耕CSR的台灣之光 信義房屋12度獲「天下企業公民獎」
