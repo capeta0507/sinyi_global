@@ -351,6 +351,8 @@ const Item = () => {
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG'},
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG'},
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG'},
   ])
   const [imgData2] = useState([
     {
