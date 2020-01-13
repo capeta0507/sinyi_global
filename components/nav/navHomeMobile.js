@@ -129,7 +129,7 @@ const NavHomeMobile = () => {
                     {
                       bid ? (
                       <ItemList>
-                        <Link href='/about'>
+                        <Link href='/about#bidMb'>
                           <a className='navLink'>
                             <ListLi>服務與實績</ListLi>
                           </a>

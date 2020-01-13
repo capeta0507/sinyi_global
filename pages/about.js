@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import Head from '../components/head'
 import Layout from '../components/layout'
 import Navbar from '../components/nav/navBar'
@@ -149,6 +149,14 @@ const About = () => {
     event.preventDefault();
     setDisplayHistory(!displayHistory)
   }
+
+  useEffect(() => {
+    if(window.location.hash){
+      setTimeout(() => {
+        // window.location.hash('bid')
+      },2000)
+    }
+  },[1])
   const coll01 = displayHistory ? 'downActive' : '' ;
   return(
     <Layout>

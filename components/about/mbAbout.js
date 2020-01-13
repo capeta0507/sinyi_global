@@ -181,6 +181,18 @@ class About extends Component {
     this.setState({ displayAbout4: !this.state.displayAbout4 });
   }
 
+  componentDidMount(){
+    if(window.location.hash === '#bidMb'){
+      this.setState({
+        displayAbout3: true
+      })
+      setTimeout(() => {
+        let myBid = document.getElementById('mbBid')
+        window.scrollTo(0, myBid.offsetTop + 600*13 - 50)
+      },1000)
+    }
+  }
+
   render(){
     const coll01 = this.state.displayAbout1 ? 'downActive' : '' ;
     const coll02 = this.state.displayAbout2 ? 'downActive' : '' ;
@@ -346,7 +358,23 @@ class About extends Component {
                   <AboutCard content1='台南FOCUS時尚流行館' content2='REITS圓滿一號' content3='面積：百貨商場' img='520.png' />
                 </CardBlock>
                 <CardBlock>
-                  <AboutCard content1='台北開發顧問服務' content2='北市資產活化' content3='面積：1,與再開發顧問服務' img='530.png' />
+                  {/* <AboutCard content1='台北開發顧問服務' content2='北市資產活化' content3='面積：1,與再開發顧問服務' img='530.png' /> */}
+                  <Card>
+                    <Img>
+                      <img src={`/static/img/about_six/530.png`} />
+                    </Img>
+                    <Introduction>
+                      <JustContent id='mbBid'>
+                      台北開發顧問服務
+                      </JustContent>
+                      <JustContent>
+                      北市資產活化
+                      </JustContent>
+                      <JustContent>
+                      面積：1,與再開發顧問服務
+                      </JustContent>
+                    </Introduction>
+                  </Card>
                 </CardBlock>
               </SixCardBlock>
               <SixTitle>
