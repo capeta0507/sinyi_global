@@ -1,5 +1,5 @@
 import React, { Component,useContext } from 'react'
-import UserContext from '../UserContext';  //要import react useContext
+// import UserContext from '../UserContext';  //要import react useContext
 
 import styled from 'styled-components'
 import Link from 'next/link'
@@ -182,7 +182,7 @@ const ItemList = styled.div`
   }
 `
 class MobileFooter extends Component {
-  static contextType = UserContext
+  // static contextType = UserContext
 
   constructor(props){
     super(props)

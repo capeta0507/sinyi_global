@@ -351,6 +351,8 @@ const Item = () => {
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/B.JPG'},
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG'},
       {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/C.JPG'},
+      {'img':'https://res.sinyi.com.tw/buy/45258B/bigimg/D.JPG'},
   ])
   const [imgData2] = useState([
     {
@@ -374,7 +376,8 @@ const Item = () => {
   const [carouselIdx, setCarouselIdx] = useState(1)
   const [allCarousel, setAllCarousel] = useState(1)
 
-  
+  var x_start = 0
+  var x_end = 0
   var items
 //   console.log(items.length);
   var thumbnail
@@ -516,6 +519,69 @@ const Item = () => {
   useEffect(() => {
     setAllCarousel(imgData.length)
   },[imgData])
+  useEffect(() => {
+    x_start = 0
+    x_end = 0
+
+    var myimgDiv = document.getElementById('imgDiv');
+    var myimgDivDig = document.getElementById('imgDivDig');
+    // 一般版
+    myimgDiv.addEventListener("touchstart",(e)=>{
+      // alert('touch_start');
+      // console.log(e)
+      x_start = e.touches[0].clientX;
+      // console.log("start",x_start);
+    })
+    
+    myimgDiv.addEventListener("touchend",(e)=>{
+      // alert('touch_start');
+      // console.log(e)
+      x_end = e.changedTouches[0].clientX;
+      // console.log("end",x_end);
+      if(x_start > x_end){
+        let x_move = x_start - x_end
+        if(x_move > 100){
+          nextImg();
+        }
+
+      } 
+      if(x_start < x_end){
+        let x_move = x_end - x_start
+        if(x_move > 100){
+          prevImg();            
+        }
+
+      }
+    })
+    // 彈窗版
+    myimgDivDig.addEventListener("touchstart",(e)=>{
+      // alert('touch_start');
+      // console.log(e)
+      x_start = e.touches[0].clientX;
+      // console.log("start",x_start);
+    })
+    
+    myimgDivDig.addEventListener("touchend",(e)=>{
+      // alert('touch_start');
+      // console.log(e)
+      x_end = e.changedTouches[0].clientX;
+      // console.log("end",x_end);
+      if(x_start > x_end){
+        let x_move = x_start - x_end
+        if(x_move > 100){
+          nextImg();
+        }
+
+      } 
+      if(x_start < x_end){
+        let x_move = x_end - x_start
+        if(x_move > 100){
+          prevImg();            
+        }
+
+      }
+    })
+  }, [1])
   const displayModal = showModal ? 'show' : ''
 	return (
 		<Layout>
@@ -605,7 +671,7 @@ const Item = () => {
                             <img src="/static/img/ic-baseline_clear_white.png" />
                           </div>
                           <div>
-                            <div className="carousel-diolog-content">
+                            <div id="imgDivDig" className="carousel-diolog-content">
                               <div
                                 data-ride="carousel"
                                 className="carousel slide"
@@ -746,7 +812,7 @@ const Item = () => {
                           </div>
                         </div>
                         <div className="buy-carousel-frame">
-                          <div className="buy-carousel-content-frame">
+                          <div id="imgDiv" className="buy-carousel-content-frame">
                             <div
                               data-ride="carousel"
                               className="carousel slide"
