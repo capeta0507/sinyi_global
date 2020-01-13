@@ -46,6 +46,14 @@ const ConnectPhone = styled.div`
     color: #000;
   }
 `
+const BackBlock = styled.div`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+`
 const KindOption = [
   { value: '1', label: '買屋'},
   { value: '2', label: '賣屋'}
@@ -118,6 +126,9 @@ class FastButton extends Component {
   closeProvicy = () => {
     this.setState({ displayProvicy: false });
   }
+  closeForm = () => {
+    this.setState({ displayConnection: false });
+  }
   showService = () => {
     this.setState({ displayService: true });
   }
@@ -125,7 +136,10 @@ class FastButton extends Component {
     this.setState({ displayService: false });
   }
   sendMessenger = () => {
-    this.setState({ displaySend: true });
+    this.setState({ 
+      displaySend: true,
+      displayConnection: false
+     });
   }
   closeMessenger = () => {
     this.setState({ displaySend: false });
@@ -140,7 +154,8 @@ class FastButton extends Component {
   scrollToTop = () => {
     let intervalId = setInterval(this.scrollStep, 20);
     this.setState({
-      intervalId: intervalId
+      intervalId: intervalId,
+      displayConnection : false
     })
   }
   render(){
@@ -161,6 +176,8 @@ class FastButton extends Component {
         </div>
         {
           this.state.displayConnection ? (
+            <React.Fragment>
+            <BackBlock onClick={this.closeForm} />
             <div className='fastForm'>
               <IptName className=''>
                 <Select 
@@ -206,6 +223,7 @@ class FastButton extends Component {
               <SendButton onClick={this.sendMessenger}>送出</SendButton>
               <ConnectPhone>聯絡電話：<a href='tel: 02 8979 6060'>02-8979-6060</a></ConnectPhone>
             </div>
+            </React.Fragment>
           ) : (
             null
           )
