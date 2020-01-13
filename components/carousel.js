@@ -54,7 +54,7 @@ const MyCarousel = () => {
         <Photo>
           <img
             className="d-block cauHeight"
-            src="/static/img/2019022001.jpg"
+            src="/static/img/1577436383LJ2kB.jpg"
             alt="Second slide"
           />
 
@@ -66,7 +66,79 @@ const MyCarousel = () => {
         <Photo>
           <img
             className="d-block cauHeight"
-            src="/static/img/11-02607-005.jpg"
+            src="/static/img/1577436383LJ2kB.jpg"
+            alt="Third slide"
+          />
+
+          <Carousel.Caption className='carousel_text myShadow'>
+            {/* <h3>從愛里出發 在愛裡回家</h3>
+            <h1>為了家，還可以更好</h1> */}
+          </Carousel.Caption>
+        </Photo>
+        <Photo>
+          <img
+            className="d-block cauHeight"
+            src="/static/img/1577436522viKSn.jpg"
+            alt="Second slide"
+          />
+
+          <Carousel.Caption className='carousel_text myShadow'>
+            {/* <h3>從愛里出發 在愛裡回家</h3>
+            <h1>為了家，還可以更好</h1> */}
+          </Carousel.Caption>
+        </Photo>
+        <Photo>
+          <img
+            className="d-block cauHeight"
+            src="/static/img/1577697581WV7JW.jpg"
+            alt="Third slide"
+          />
+
+          <Carousel.Caption className='carousel_text myShadow'>
+            {/* <h3>從愛里出發 在愛裡回家</h3>
+            <h1>為了家，還可以更好</h1> */}
+          </Carousel.Caption>
+        </Photo>
+        <Photo>
+          <img
+            className="d-block cauHeight"
+            src="/static/img/1578020664vjpUj.jpg"
+            alt="Second slide"
+          />
+
+          <Carousel.Caption className='carousel_text myShadow'>
+            {/* <h3>從愛里出發 在愛裡回家</h3>
+            <h1>為了家，還可以更好</h1> */}
+          </Carousel.Caption>
+        </Photo>
+        <Photo>
+          <img
+            className="d-block cauHeight"
+            src="/static/img/15774363565MQgF.jpg"
+            alt="Third slide"
+          />
+
+          <Carousel.Caption className='carousel_text myShadow'>
+            {/* <h3>從愛里出發 在愛裡回家</h3>
+            <h1>為了家，還可以更好</h1> */}
+          </Carousel.Caption>
+        </Photo>
+        <Photo>
+          <img
+            className="d-block cauHeight"
+            src="/static/img/1577436383LJ2kB.jpg"
+            alt="Second slide"
+          />
+
+          <Carousel.Caption className='carousel_text myShadow'>
+            {/* <h3>從愛里出發 在愛裡回家</h3>
+            <h1>為了家，還可以更好</h1> */}
+          </Carousel.Caption>
+        </Photo>
+        <Photo>
+          <img
+            className="d-block cauHeight"
+            src="/static/img/1577436383LJ2kB.jpg"
             alt="Third slide"
           />
 
