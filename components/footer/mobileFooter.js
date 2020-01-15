@@ -181,6 +181,15 @@ const ItemList = styled.div`
     }
   }
 `
+const BackBlock = styled.div`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.4);
+  z-index: 20;
+  left: 0;
+  top: 0;
+`
 class MobileFooter extends Component {
   // static contextType = UserContext
 
@@ -241,6 +250,14 @@ class MobileFooter extends Component {
       displayMenu2: false,
       displayMenu3: false,
       displayAll: !this.state.displayAll
+     });
+  }
+
+  closeForm = () => {
+    this.setState({ 
+      displayMenu1: false,
+      displayMenu2: false,
+      displayMenu3: false,
      });
   }
 
@@ -466,68 +483,77 @@ class MobileFooter extends Component {
         </BgIcon>
         {
           this.state.displayMenu1 ? (
-            <div className='footerDownList'>
-              <FoundList>辦公</FoundList>
-              <FoundList>店面</FoundList>
-              <FoundList>廠房</FoundList>
-              <FoundList>土地</FoundList>
-              <FoundList>其它</FoundList>
-            </div>
+            <React.Fragment>
+              <BackBlock onClick={this.closeForm} />
+              <div className='footerDownList'>
+                <FoundList>辦公</FoundList>
+                <FoundList>店面</FoundList>
+                <FoundList>廠房</FoundList>
+                <FoundList>土地</FoundList>
+                <FoundList>其它</FoundList>
+              </div>
+            </React.Fragment>
           ) : (
             null
           )
         }
         {
           this.state.displayMenu2 ? (
-            <div className='footerDownList'>
-              <PhoneCall><a href='tel: 02 5468 2596'>02-5468-2596</a></PhoneCall>
-            </div>
+            <React.Fragment>
+              <BackBlock onClick={this.closeForm}/>
+              <div className='footerDownList'>
+                <PhoneCall><a href='tel: 02 5468 2596'>02-5468-2596</a></PhoneCall>
+              </div>
+            </React.Fragment>
           ) : (
             null
           )
         }
         {
           this.state.displayMenu3 ? (
-            <div className='footerDownList'>
-              <FastMessenger>
-                <IptName className=''>
-                  <Select 
-                    placeholder="買屋"
-                    label='Single select'
-                    theme={theme => ({
-                      ...theme,
-                      borderRadius: 5,
-                    })}
-                  />
-                </IptName>
-                <IptName className=''>
-                  <input className='form-control' type='text' placeholder='姓名(必填)' />
-                </IptName>
-                <IptName className=''>
-                  <input className='form-control' type='text' placeholder='聯絡電話(必填)' />
-                </IptName>
-                <IptName className=''>
-                  <input className='form-control' type='text' placeholder='電子郵件(必填)' />
-                </IptName>
-                <IptName className=''>
-                  <Select 
-                    placeholder="縣市/行政區"
-                    label='Single select'
-                    theme={theme => ({
-                      ...theme,
-                      borderRadius: 5,
-                    })}
-                  />
-                </IptName>
-                <IptName className=''>
-                  <input className='form-control' type='text' placeholder='路段(必填)' />
-                </IptName>
-                <BusCheck>
-                  <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={this.showProvicy}>隱私權政策</a>及<a onClick={this.showService}>服務條款</a>
-                </BusCheck>
-                <SendButton>送出</SendButton>
-              </FastMessenger>
-            </div>
+            <React.Fragment>
+              <BackBlock onClick={this.closeForm} />
+              <div className='footerDownList'>
+                <FastMessenger>
+                  <IptName className=''>
+                    <Select 
+                      placeholder="買屋"
+                      label='Single select'
+                      theme={theme => ({
+                        ...theme,
+                        borderRadius: 5,
+                      })}
+                    />
+                  </IptName>
+                  <IptName className=''>
+                    <input className='form-control' type='text' placeholder='姓名(必填)' />
+                  </IptName>
+                  <IptName className=''>
+                    <input className='form-control' type='text' placeholder='聯絡電話(必填)' />
+                  </IptName>
+                  <IptName className=''>
+                    <input className='form-control' type='text' placeholder='電子郵件(必填)' />
+                  </IptName>
+                  <IptName className=''>
+                    <Select 
+                      placeholder="縣市/行政區"
+                      label='Single select'
+                      theme={theme => ({
+                        ...theme,
+                        borderRadius: 5,
+                      })}
+                    />
+                  </IptName>
+                  <IptName className=''>
+                    <input className='form-control' type='text' placeholder='路段(必填)' />
+                  </IptName>
+                  <BusCheck>
+                    <input type="checkbox" /> 送出資料前，請點選同意本站<a onClick={this.showProvicy}>隱私權政策</a>及<a onClick={this.showService}>服務條款</a>
+                  </BusCheck>
+                  <SendButton>送出</SendButton>
+                </FastMessenger>
+              </div>
+            </React.Fragment>
           ) : (
             null
           )

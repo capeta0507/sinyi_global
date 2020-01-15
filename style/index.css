@@ -1478,6 +1478,8 @@ img {
     text-align: center;
     background: #fff;
     bottom: 47px;
+    z-index: 25;
+
 }
 .fastButton {
     position: fixed;
