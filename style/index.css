@@ -557,14 +557,15 @@ input[type=radio]:checked + label{
     top:22px;            
     width:100%;
     opacity: 0;
-    max-height: 0;
+    /* max-height: 0; */
     overflow: hidden;
+    overflow-y: scroll;
 }
 .menu.active ul{
     opacity: 1;
     background-color: #263843; 
-    max-height: 1280%;
-    height: 1280%;
+    /* max-height: 1280%; */
+    height: 1100%;
     z-index: 9999999999999;
 }
 .menu ul li a{
@@ -623,6 +624,33 @@ ul,li{
 .myShadow > h3{
     font-size: 28px;
     text-shadow: 5px 5px 5px rgb(37, 37, 37);
+}
+@media screen and (max-height: 830px){
+    .menu.active ul{
+        opacity: 1;
+        background-color: #263843; 
+        /* max-height: 1280%; */
+        height: 1350%;
+        z-index: 9999999999999;
+    }
+}
+@media screen and (max-height: 736px){
+    .menu.active ul{
+        opacity: 1;
+        background-color: #263843; 
+        /* max-height: 1280%; */
+        height: 1220%;
+        z-index: 9999999999999;
+    }
+}
+@media screen and (max-height: 667px){
+    .menu.active ul{
+        opacity: 1;
+        background-color: #263843; 
+        /* max-height: 1280%; */
+        height: 1100%;
+        z-index: 9999999999999;
+    }
 }
 @media screen and (max-width: 992px) {
     .mg-1{

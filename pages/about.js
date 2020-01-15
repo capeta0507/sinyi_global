@@ -151,10 +151,10 @@ const About = () => {
   }
 
   useEffect(() => {
-    if(window.location.hash){
+    if(window.location.pathname === '/about'){
       setTimeout(() => {
-        // window.location.hash('bid')
-      },2000)
+        setDisplayHistory(true)
+      },1000)
     }
   },[1])
   const coll01 = displayHistory ? 'downActive' : '' ;
