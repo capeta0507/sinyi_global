@@ -140,6 +140,12 @@ const Bread = styled.div`
   padding-top: 0px;
 `
 
+const send = (e) => {
+  if(e.keyCode === 13) {
+    console.log('keypress')
+  }
+}
+
 const ItemList = () => {
 	return (
 		<Layout>
@@ -154,7 +160,7 @@ const ItemList = () => {
       <SearchDiv>
 				<HeadList search>
 					<IptName className=''>
-						<input className='form-control searchBar' type='text' placeholder='關鍵字...' />
+						<input className='form-control searchBar' type='text' placeholder='關鍵字...' onKeyUp={send} />
 					</IptName>
 					<SearchButton>搜尋</SearchButton>
 				</HeadList>
