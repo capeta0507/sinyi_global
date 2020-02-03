@@ -17,9 +17,44 @@ const MakeTop = styled.div`
   }
 `
 
+const BgTag = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 19%;
+  @media (max-width: 1920px){
+    top: 24%;
+  }
+  @media (max-width: 1680px){
+    top: 26%;
+  }
+  @media (max-width: 1560px){
+    top: 35%;
+  }
+  @media (max-width: 1440px){
+    top: 30%;
+  }
+  @media (max-width: 1366px){
+    top: 31%;
+  }
+  @media (max-width: 992px){
+    top: 17%;
+  }
+`
 const BgHead = styled.div`
   width: 100%;
-  height: 415px;
+  height: 580px;
+  @media (max-width: 1920px){
+    height: 580px;
+  }
+  @media (max-width: 1680px){
+    height: 505px;
+  }
+  @media (max-width: 1560px){
+    height: 475px;
+  }
+  @media (max-width: 1366px){
+    height: 415px;
+  }
   & > img{
     width: 100%;
     height: 100%;
@@ -150,6 +185,16 @@ const Bread = styled.div`
   width: 80%;
   margin: 0 auto;
 `
+const TagText = styled.div`
+  text-align: center;
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 5px 5px 8px rgb(37, 37, 37);
+  @media (max-width: 992px){
+    font-size: 26px;
+  }
+`
 
 const About = () => {
   return(
@@ -163,10 +208,20 @@ const About = () => {
       <NavHomeMobile />
       <MakeTop />
       <BgHead>
-        <img src='/static/img/aboutbanner/banner-2.png' />
+        <BgTag>
+          <div className='container'>
+            <TagText>信義全球資產<br />信義集團專營商用地產團隊</TagText>
+          </div>
+        </BgTag>
+        <img src='/static/img/aboutbanner/service.jpg' />
       </BgHead>
       <BgHeadMb>
-        <img src='/static/img/aboutbanner/M_banner-2.png' />
+        <BgTag>
+          <div className='container'>
+            <TagText>信義全球資產<br />信義集團專營商用地產團隊</TagText>
+          </div>
+        </BgTag>
+        <img src='/static/img/aboutbanner/service.jpg' />
       </BgHeadMb>
       <Container>
         <Bread>

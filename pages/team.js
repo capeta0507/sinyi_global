@@ -24,7 +24,19 @@ const MakeTop = styled.div`
 
 const BgHead = styled.div`
   width: 100%;
-  height: 500px;
+  height: 580px;
+  @media (max-width: 1920px){
+    height: 580px;
+  }
+  @media (max-width: 1680px){
+    height: 505px;
+  }
+  @media (max-width: 1560px){
+    height: 475px;
+  }
+  @media (max-width: 1366px){
+    height: 415px;
+  }
   & > img{
     width: 100%;
     height: 100%;
@@ -32,6 +44,45 @@ const BgHead = styled.div`
   }
   @media (max-width: 992px){
     display: none;
+  }
+`
+const BgHeadMb = styled.div`
+  width: 100%;
+  height: 213px;
+  display: none;
+  & > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (max-width: 992px){
+    display: block;
+  }
+  @media (max-width: 375px){
+    height: 194px;
+  }
+`
+const BgTag = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 19%;
+  @media (max-width: 1920px){
+    top: 24%;
+  }
+  @media (max-width: 1680px){
+    top: 26%;
+  }
+  @media (max-width: 1560px){
+    top: 35%;
+  }
+  @media (max-width: 1440px){
+    top: 30%;
+  }
+  @media (max-width: 1366px){
+    top: 31%;
+  }
+  @media (max-width: 992px){
+    top: 17%;
   }
 `
 const HeadDes = styled.h1`
@@ -96,6 +147,15 @@ const Bread = styled.div`
   width: 80%;
   margin: 0 auto;
 `
+const TagText = styled.div`
+  text-align: left;
+  font-size: 60px;
+  font-weight: bold;
+  color: #000;
+  @media (max-width: 992px){
+    font-size: 26px;
+  }
+`
 
 
 const Team = () => {
@@ -123,11 +183,21 @@ const Team = () => {
       <NavHomeMobile changeTeam={changeTeam} />
       <MakeTop />
       <BgHead>
-        <img src='/static/img/about/teamAbout.png' />
-        <Mask className='absolute' />
-        <HeadDes>您就是我們的家人！</HeadDes>
-        <HeadDes second>讓我們在信義一同完成家業夢想！</HeadDes>
+        <BgTag>
+          <div className='container'>
+            <TagText>信義全球資產<br />信義集團專營商用地產團隊</TagText>
+          </div>
+        </BgTag>
+        <img src='/static/img/aboutbanner/teams.jpg' />
       </BgHead>
+      <BgHeadMb>
+        <BgTag>
+          <div className='container'>
+            <TagText>信義全球資產<br />信義集團專營商用地產團隊</TagText>
+          </div>
+        </BgTag>
+        <img src='/static/img/aboutbanner/teams.jpg' />
+      </BgHeadMb>
       <NavTeam>
         <NavList>
           <NavItem>
