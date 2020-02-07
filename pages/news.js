@@ -202,7 +202,7 @@ const News = () => {
             <TitleImg src='/static/img/pic10.png' />
             <NewsDate className='navblock'>2019/09/24</NewsDate>
           </Title>
-          <Content>
+          <Content id='newsContent' className='newsContent'>
             <ConText>
               今年土地交易受惠於標售熱潮，各地重劃區土地單價創下歷年新高，信義全球資產統計上市櫃土地交易截至今年8月止，交易金額已遠遠超過2018年全年度，來到937億。而今年以來台北土地交易重獲市場矚目，北市最後一塊科技園區-北投士林科技園區更受到建設公司喜愛，躍為市場新寵兒，今年就出現5筆交易，包含知名建商華固、國泰、長虹等前來搶地，累計購入91億元。<br />
               信義全球資產經理王維宏分析，內湖科技園區及南港軟體園區發展完善，帶動台北科技走廊交易發燒，成為大型企業獵樓熱區，不僅吸引跨國企業進駐，近年來上市櫃對於內湖、南港情有獨鍾，內湖整棟交易比例提高，南港辦公室更是出現每坪百萬交易。由於內科及南軟可開發土地已寥寥無幾，使得台北科技走廊最後一塊版圖-北投士林科技園區交易相當熱絡。今年已有4家建商插旗，包含華固、國泰、長虹、天賀建設等公司前來搶地，而從上市櫃交易可以觀察到，2017年起就有建商來北士科插旗，興利開發以19.84億元買下科專區土地，換算土地每坪單價126萬元，預計興建總部大樓。<br /><br />
@@ -220,6 +220,9 @@ const News = () => {
             </StatisticsImg>
             <DataFrom>資料來源:信義全球資產</DataFrom>
           </Content>
+          {/* <script dangerouslySetInnerHTML={{__html: `
+            $('#newsContent').find('img').eq(0).addClass('newsContentImg')
+          `}} /> */}
           <DownContent>
             <span className='mbBlock'>台北科技走廊最後一塊版圖</span>
             <DownloadBtn><img src='/static/img/download.png'></img><span>檔案下載</span></DownloadBtn>
