@@ -962,7 +962,8 @@ ul,li{
 }
 .place{
     background: url('/static/img/home_icon/01.png') no-repeat; 
-    /* background-size: 120px; */
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .shop{
     background: url('/static/img/home_icon/02.png') no-repeat; 
