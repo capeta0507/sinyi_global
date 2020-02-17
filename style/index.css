@@ -262,6 +262,19 @@ input:focus::-webkit-input-placeholder {color: transparent;}
 .basicTop{
     margin-top: 20px;
 }
+.bus_people li {
+    display: flex;
+    margin-left: -20px;
+    /* list-style-type: disc;
+    list-style-position: inside; */
+}
+.bus_people li::before {
+    content: "•";
+    color: #00B1FF;
+    font-size: 50px;
+    margin-top: -26px;
+    margin-right: -10px;
+}
 @media screen and (max-width: 992px){
     .form-control{
         height: 40px;

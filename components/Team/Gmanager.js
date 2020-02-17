@@ -134,21 +134,27 @@ const Manager = () => {
         <LeftCon>
           <PeopleContwnt>
             <PeopleTitle>個人資歷</PeopleTitle>
-            <p><div className='peoList'></div>上海信義房屋總經理</p>
-            <p><div className='peoList'></div>信義房屋中南桃竹事業處主管</p>
-            <p><div className='peoList'></div>住商不動產董事</p>
-            <p><div className='peoList'></div>成大測量及空間資訊學系畢業</p>
+            <ul className='bus_people'>
+              <li><p>上海信義房屋總經理</p></li>
+              <li><p>信義房屋中南桃竹事業處主管</p></li>
+              <li><p>住商不動產董事</p></li>
+              <li><p>成大測量及空間資訊學系畢業</p></li>
+            </ul>
           </PeopleContwnt>
         </LeftCon>
         <RightCon>
           <PeopleContwnt>
             <PeopleTitle>參與社團</PeopleTitle>
-            <p><div className='peoList'></div>東吳大學EMBA聯誼會</p>
-            <p><div className='peoList'></div>台灣連鎖暨加盟協會</p>
+            <ul className='bus_people'>
+              <li><p>東吳大學EMBA聯誼會</p></li>
+              <li><p>台灣連鎖暨加盟協會</p></li>
+            </ul>
           </PeopleContwnt>
           <PeopleContwnt>
             <PeopleTitle>專業證照&專長</PeopleTitle>
-            <p><div className='peoList'></div>不動產經紀人證照</p>
+            <ul className='bus_people'>
+              <li><p>不動產經紀人證照</p></li>
+            </ul>
           </PeopleContwnt>
         </RightCon>
       </SecondContent>
