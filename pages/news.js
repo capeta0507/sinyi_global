@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 import Head from '../components/head'
 import Layout from '../components/layout'
@@ -184,6 +184,16 @@ const DownloadBtn = styled.div`
 `
 
 const News = () => {
+  // useEffect(() => {
+  //   // 此方法只針對第一張圖...
+  //   var someimage = document.getElementsByClassName('newsContent')[0]
+  //   var myimg = someimage.getElementsByTagName('img')[0]
+  //   var getImg = someimage.getElementsByTagName('img')[0].naturalWidth
+  //   // console.log('newsImg', getImg)
+  //   if(getImg > 900){
+  //     myimg.setAttribute('class','newsContentImg' )
+  //   }
+  // })
   return(
     <Layout>
       <Head
