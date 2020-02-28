@@ -9,7 +9,7 @@ const Index = () => (
     <Link href={`/sellquery?rent=7500&agent=johnny`}>
       <a>A方案租金</a>
     </Link>
-    <Link href={`/sellquery?rent=8000&agent=david`}>
+		<Link href={`/sellquery?rent=8000&agent=david`}>
       <a>B方案租金</a>
     </Link>
     <p>建議採用 about_2.js useRouter 方法</p>
