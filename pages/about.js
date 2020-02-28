@@ -21,7 +21,19 @@ const MakeTop = styled.div`
 
 const BgHead = styled.div`
   width: 100%;
-  height: 415px;
+  height: 580px;
+  @media (max-width: 1920px){
+    height: 580px;
+  }
+  @media (max-width: 1680px){
+    height: 505px;
+  }
+  @media (max-width: 1560px){
+    height: 475px;
+  }
+  @media (max-width: 1366px){
+    height: 415px;
+  }
   & > img{
     width: 100%;
     height: 100%;
@@ -29,6 +41,29 @@ const BgHead = styled.div`
   }
   @media (max-width: 992px){
     display: none;
+  }
+`
+const BgTag = styled.div`
+  width: 100%;
+  position: absolute;
+  top: 31%;
+  @media (max-width: 1920px){
+    top: 24%;
+  }
+  @media (max-width: 1680px){
+    top: 26%;
+  }
+  @media (max-width: 1560px){
+    top: 35%;
+  }
+  @media (max-width: 1440px){
+    top: 30%;
+  }
+  @media (max-width: 1366px){
+    top: 31%;
+  }
+  @media (max-width: 992px){
+    top: 18%;
   }
 `
 const BgHeadMb = styled.div`
@@ -141,6 +176,15 @@ const Bread = styled.div`
   width: 80%;
   margin: 0 auto;
 `
+const TagText = styled.div`
+  text-align: right;
+  font-size: 60px;
+  font-weight: bold;
+  color: #000;
+  @media (max-width: 992px){
+    font-size: 30px;
+  }
+`
 
 const About = () => {
   const [displayHistory, setDisplayHistory] = useState(false)
@@ -169,11 +213,21 @@ const About = () => {
       <NavHomeMobile />
       <MakeTop />
       <BgHead>
-        <img src='/static/img/aboutbanner/banner-2.png' />
-        </BgHead>
-        <BgHeadMb>
-          <img src='/static/img/aboutbanner/M_banner-2.png' />
-        </BgHeadMb>
+        <BgTag>
+          <div className='container'>
+            <TagText>我們珍惜所託<br />看見資產雋永價值</TagText>
+          </div>
+        </BgTag>
+        <img src='/static/img/aboutbanner/company_intor.jpg' />
+      </BgHead>
+      <BgHeadMb>
+        <BgTag>
+          <div className='container'>
+            <TagText>我們珍惜所託<br />看見資產雋永價值</TagText>
+          </div>
+        </BgTag>
+        <img src='/static/img/aboutbanner/company_intor.jpg' />
+      </BgHeadMb>
       <Desk>
         <Container>
           <Bread>

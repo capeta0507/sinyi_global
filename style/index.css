@@ -262,6 +262,19 @@ input:focus::-webkit-input-placeholder {color: transparent;}
 .basicTop{
     margin-top: 20px;
 }
+.bus_people li {
+    display: flex;
+    margin-left: -20px;
+    /* list-style-type: disc;
+    list-style-position: inside; */
+}
+.bus_people li::before {
+    content: "•";
+    color: #00B1FF;
+    font-size: 50px;
+    margin-top: -26px;
+    margin-right: -10px;
+}
 @media screen and (max-width: 992px){
     .form-control{
         height: 40px;
@@ -962,34 +975,53 @@ ul,li{
 }
 .place{
     background: url('/static/img/home_icon/01.png') no-repeat; 
-    /* background-size: 120px; */
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .shop{
     background: url('/static/img/home_icon/02.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .factory{
     background: url('/static/img/home_icon/03.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .land{
     background: url('/static/img/home_icon/04.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .other{
     background: url('/static/img/home_icon/05.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .place:hover{
     background: url('/static/img/home_icon/01_hover.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .shop:hover{
     background: url('/static/img/home_icon/02_hover.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .factory:hover{
     background: url('/static/img/home_icon/03_hover.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .land:hover{
     background: url('/static/img/home_icon/04_hover.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .other:hover{
     background: url('/static/img/home_icon/05_hover.png') no-repeat; 
+    background-position-x: 12px;
+    background-size: 165px;
 }
 .placeMb2{
     width: 100% !important;

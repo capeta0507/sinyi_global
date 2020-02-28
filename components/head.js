@@ -14,6 +14,7 @@ const Head = props => (
       name="description"
       content={props.description || defaultDescription}
     />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"></meta>
     <link rel="canonical" href={props.url} />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />

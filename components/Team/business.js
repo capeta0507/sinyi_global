@@ -297,13 +297,13 @@ const Businesser = () => {
                   <PeopleTitle onClick={displaySeniority}>個人資歷<img className={`downicon ${display02}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
                   {
                     seniority ? (
-                      <>
-                        <p><div className='peoList'></div>信義全球資產商仲一部主管</p>
-                        <p><div className='peoList'></div>信義房屋商仲一組主管</p>
-                        <p><div className='peoList'></div>信義房屋大直內湖店主管</p>
-                        <p><div className='peoList'></div>信義房屋內湖文德店、西湖店</p>
-                        <p><div className='peoList'></div>經紀人</p>
-                      </>
+                      <ul className='bus_people'>
+                        <li><p>信義全球資產商仲一部主管</p></li>
+                        <li><p>信義房屋商仲一組主管</p></li>
+                        <li><p>信義房屋大直內湖店主管</p></li>
+                        <li><p>信義房屋內湖文德店、西湖店</p></li>
+                        <li><p>經紀人</p></li>
+                      </ul>
                     ) : (
                       ''
                     )
@@ -316,10 +316,10 @@ const Businesser = () => {
                   <PeopleTitle onClick={displayClub}>參與社團<img className={`downicon ${display03}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
                   {
                     club ? (
-                      <>
-                        <p><div className='peoList'></div>中華民國中小企業總會</p>
-                        <p><div className='peoList'></div>台北市中小企業協會</p>
-                      </>
+                      <ul className='bus_people'>
+                        <li><p>中華民國中小企業總會</p></li>
+                        <li><p>台北市中小企業協會</p></li>
+                      </ul>
                     ) : (
                       ''
                     )
@@ -331,12 +331,12 @@ const Businesser = () => {
                   <PeopleTitle onClick={displayExpertise}>專業證照&專長<img className={`downicon ${display04}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
                   {
                     expertise ? (
-                      <>
-                        <p><div className='peoList'></div>高級證券業務員</p>
-                        <p><div className='peoList'></div>期貨業務人員</p>
-                        <p><div className='peoList'></div>理財人員</p>
-                        <p><div className='peoList'></div>信託人員</p>
-                      </>
+                      <ul className='bus_people'>
+                        <li><p>高級證券業務員</p></li>
+                        <li><p>期貨業務人員</p></li>
+                        <li><p>理財人員</p></li>
+                        <li><p>信託人員</p></li>
+                      </ul>
                     ) : (
                       ''
                     )
@@ -349,12 +349,12 @@ const Businesser = () => {
                   <PeopleTitle onClick={displayService}>服務實績<img className={`downicon ${display05}`} src='/static/img/about/getdrow.png' /></PeopleTitle>
                   {
                     service ? (
-                      <>
-                        <p><div className='peoList'></div>桃園科技園區科技廠房</p>
-                        <p><div className='peoList'></div>愛丁堡科技大樓</p>
-                        <p><div className='peoList'></div>大帝國科技大樓</p>
-                        <p><div className='peoList'></div>世紀經貿科技大樓</p>
-                      </>
+                      <ul className='bus_people'>
+                        <li><p>桃園科技園區科技廠房</p></li>
+                        <li><p>愛丁堡科技大樓</p></li>
+                        <li><p>大帝國科技大樓</p></li>
+                        <li><p>世紀經貿科技大樓</p></li>
+                      </ul>
                     ) : (
                       ''
                     )
