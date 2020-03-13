@@ -400,6 +400,9 @@ class MobileFooter extends Component {
                   </FooterTag>
                   <FooterTag long className='textCenter2'>
                     &nbsp;
+                    <ItemList>
+                      <div><a href='#sinyi_footer_self'>資源網站</a></div>
+                    </ItemList>
                   </FooterTag>
                 </FooterList>
                 <FooterList>

@@ -210,6 +210,7 @@ class MyFooter extends Component {
                 }
                 
               </h6>
+              <h6><a href='#sinyi_footer_self'>資源網站</a></h6>
             </FooterList>
           </FooterContainer>
         </BgIcon>

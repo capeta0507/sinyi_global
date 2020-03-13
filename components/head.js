@@ -20,12 +20,9 @@ const Head = props => (
     <link rel="icon" sizes="192x192" href="/static/touch-icon.png" />
     <link rel="apple-touch-icon" href="/static/touch-icon.png" />
     <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
-    <link rel="icon" href="/static/sinylogo.png" />
     <meta property="og:url" content={props.url || defaultOGURL} />
-    <meta property="og:title" content={props.title || ''} />
     <meta property="og:title" content={props.og_title || props.title} />
     <meta property="og:description" content={props.og_description || props.description|| defaultDescription} />
-    <meta property="og:image" content={props.og_image || ''} />
     <meta property="og:site_name" content="信義全球資產" />
     <meta httpEquiv="X-UA-Compatible" content="IE=11" />
     <meta name="twitter:site" content={props.url || defaultOGURL} />
