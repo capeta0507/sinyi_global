@@ -49,9 +49,17 @@ const IconLink = styled(Nav.Link)`
   text-align: center;
   padding: 50px;
 `
-const ItemBod = styled.img`
+// const ItemBod = styled.img`
+//   width: 120px;
+//   margin-top: -20px;
+// `
+const ItemBod = styled.div`
   width: 120px;
-  margin-top: -20px;
+  margin: 0 auto;
+  margin-top: -10px;
+  & > img{
+    width:100%
+  }
 `
 
 const NavHomeMobile = () => {
@@ -90,194 +98,214 @@ const NavHomeMobile = () => {
             <div className="bar bar1 transition" onClick={toggle}></div>
             <div className="bar bar2 transition" onClick={toggle}></div>
             <div className="bar bar3 transition" onClick={toggle}></div>
-            <ul className="transition">
-                <li>
-                  <NavLink>
-                    <Link href="/">
-                      <Item>首頁</Item>
-                    </Link>
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li>
-                {/* <li>
-                  <NavLink>
-                    <Link href="">
-                      <Item>主題特輯</Item>
-                    </Link>
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li> */}
-                <li>
-                  <NavLink>
-                    <Link href="/sellList">
-                      <Item>買賣</Item>
-                    </Link>
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li> 
-                <li>
-                  <NavLink>
-                    <Link href="/itemList">
-                      <Item>租賃</Item>
-                    </Link>
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li>
-                <li>
-                  <NavLink>
-                    <Item onClick={displayBid}>標售</Item>
-                    {
-                      bid ? (
-                      <ItemList>
-                        <Link href='/about#bidMb'>
-                          <a className='navLink'>
-                            <ListLi>服務與實績</ListLi>
-                          </a>
-                        </Link>
-                        <Link href='/bid'>
-                          <a className='navLink'>
-                            <ListLi>標案 1</ListLi>
-                          </a>
-                        </Link>
-                        <Link href='/bid'>
-                          <a className='navLink'>
-                            <ListLi>標案 2</ListLi>
-                          </a>
-                        </Link>
-                        <Link href='/bid'>
-                          <a className='navLink'>
-                            <ListLi bottom>標案 3</ListLi>
-                          </a>
-                        </Link>
-                      </ItemList>
-                      ) : (
-                        ''
-                      )
-                    }
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li>
-                <li>
-                  <NavLink>
-                    <Item onClick={displayNews}>新聞與研究</Item>
-                    {
-                      news ? (
-                        <ItemList>
-                          <Link href='/newsList'>
-                            <a className='navLink'>
-                              <ListLi>焦點新聞</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/newsReportMonth'>
-                            <a className='navLink'>
-                              <ListLi>月報</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/newsReport'>
-                            <a className='navLink'>
-                              <ListLi bottom>季報</ListLi>
-                            </a>
-                          </Link>
-                          {/* <ListLi bottom>電子報</ListLi> */}
-                        </ItemList>
-                      ) : (
-                        ''
-                      )
-                    }
-                    
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li>
-                <li>
-                  <NavLink>
-                    <Item onClick={displayTeams}>團隊介紹</Item>
-                    {
-                      team ? (
-                        <ItemList>
-                          <Link href='/team_manager'>
-                            <a className='navLink'>
-                              <ListLi>總經理</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/team_BusinessOne'>
-                            <a className='navLink'>
-                              <ListLi>商仲一部</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/team_BusinessTwo'>
-                            <a className='navLink'>
-                              <ListLi bottom>商仲二部</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/team_investmentOne'>
-                            <a className='navLink'>
-                              <ListLi bottom>投資一部</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/team_investmentTwo'>
-                            <a className='navLink'>
-                              <ListLi bottom>投資二部</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/team_industry'>
-                            <a className='navLink'>
-                              <ListLi bottom>工業產地部</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/team_Consultant'>
-                            <a className='navLink'>
-                              <ListLi bottom>顧問服務團隊</ListLi>
-                            </a>
-                          </Link>
-                          <Link href='/team_valuation'>
-                            <a className='navLink'>
-                              <ListLi bottom>估價師團隊</ListLi>
-                            </a>
-                          </Link>
-                        </ItemList>
-                      ) : (
-                        ''
-                      )
-                    }
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li>
-                <li>
-                  <NavLink>
-                    <Item onClick={displayAbout}>關於全球</Item>
-                    {
-                      about ? (
-                        <ItemList>
-                          <Link href='/about'>
-                            <a className='navLink'>
-                              <ListLi>公司簡介</ListLi>
-                            </a>
-                          </Link>
-                          <a className='navLink' href='https://www.104.com.tw/company/1a2x6bivq0' target="_blank"><ListLi>加入我們</ListLi></a>
-                          <Link href='/service'>
-                            <a className='navLink'>
-                              <ListLi bottom>服務據點</ListLi>
-                            </a>
-                          </Link>
-                        </ItemList>
-                      ) : (
-                        ''
-                      )
-                    }
-                  </NavLink>
-                  <ItemBod src='/static/img/navborder.png' />
-                </li>
-                <li>
-                <IconLink>
-                  <Link href="https://www.facebook.com/sinyiglobal">
-                    <Item><Icon src="static/img/icon_fb_w.png" alt="" /></Item>
-                  </Link>
-                </IconLink>
-                </li>          
-            </ul>
           </div>
         </Container>
       </NavMB>
+      <div class={`menu-block-mb transition ${active === true ? 'active' : ''}`}>
+        <ul className="transition">
+          <li>
+            <NavLink>
+              <Link href="/">
+                <Item>首頁</Item>
+              </Link>
+            </NavLink>
+            {/* <ItemBod src='/static/img/navborder.png' /> */}
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li>
+          <li>
+            <NavLink>
+              <Link href="">
+                <Item>主題特輯</Item>
+              </Link>
+            </NavLink>
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li>
+          <li>
+            <NavLink>
+              <Link href="/sellList">
+                <Item>買賣</Item>
+              </Link>
+            </NavLink>
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li> 
+          <li>
+            <NavLink>
+              <Link href="/itemList">
+                <Item>租賃</Item>
+              </Link>
+            </NavLink>
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li>
+          <li>
+            <NavLink>
+              <Item onClick={displayBid}>標售</Item>
+              {
+                bid ? (
+                <ItemList>
+                  <Link href='/about#bidMb'>
+                    <a className='navLink'>
+                      <ListLi>服務與實績</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi>標案 1</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi>標案 2</ListLi>
+                    </a>
+                  </Link>
+                  <Link href='/bid'>
+                    <a className='navLink'>
+                      <ListLi bottom>標案 3</ListLi>
+                    </a>
+                  </Link>
+                </ItemList>
+                ) : (
+                  ''
+                )
+              }
+            </NavLink>
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li>
+          <li>
+            <NavLink>
+              <Item onClick={displayNews}>新聞與研究</Item>
+              {
+                news ? (
+                  <ItemList>
+                    <Link href='/newsList'>
+                      <a className='navLink'>
+                        <ListLi>焦點新聞</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/newsReportMonth'>
+                      <a className='navLink'>
+                        <ListLi>月報</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/newsReport'>
+                      <a className='navLink'>
+                        <ListLi bottom>季報</ListLi>
+                      </a>
+                    </Link>
+                    {/* <ListLi bottom>電子報</ListLi> */}
+                  </ItemList>
+                ) : (
+                  ''
+                )
+              }
+              
+            </NavLink>
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li>
+          <li>
+            <NavLink>
+              <Item onClick={displayTeams}>團隊介紹</Item>
+              {
+                team ? (
+                  <ItemList>
+                    <Link href='/team_manager'>
+                      <a className='navLink'>
+                        <ListLi>總經理</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/team_BusinessOne'>
+                      <a className='navLink'>
+                        <ListLi>商仲一部</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/team_BusinessTwo'>
+                      <a className='navLink'>
+                        <ListLi bottom>商仲二部</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/team_investmentOne'>
+                      <a className='navLink'>
+                        <ListLi bottom>投資一部</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/team_investmentTwo'>
+                      <a className='navLink'>
+                        <ListLi bottom>投資二部</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/team_industry'>
+                      <a className='navLink'>
+                        <ListLi bottom>工業產地部</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/team_Consultant'>
+                      <a className='navLink'>
+                        <ListLi bottom>顧問服務團隊</ListLi>
+                      </a>
+                    </Link>
+                    <Link href='/team_valuation'>
+                      <a className='navLink'>
+                        <ListLi bottom>估價師團隊</ListLi>
+                      </a>
+                    </Link>
+                  </ItemList>
+                ) : (
+                  ''
+                )
+              }
+            </NavLink>
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li>
+          <li>
+            <NavLink>
+              <Item onClick={displayAbout}>關於全球</Item>
+              {
+                about ? (
+                  <ItemList>
+                    <Link href='/about'>
+                      <a className='navLink'>
+                        <ListLi>公司簡介</ListLi>
+                      </a>
+                    </Link>
+                    <a className='navLink' href='https://www.104.com.tw/company/1a2x6bivq0' target="_blank"><ListLi>加入我們</ListLi></a>
+                    <Link href='/service'>
+                      <a className='navLink'>
+                        <ListLi bottom>服務據點</ListLi>
+                      </a>
+                    </Link>
+                  </ItemList>
+                ) : (
+                  ''
+                )
+              }
+            </NavLink>
+            <ItemBod>
+              <img src='/static/img/navborder.png' />
+            </ItemBod>
+          </li>
+          <li>
+          <IconLink>
+            <Link href="https://www.facebook.com/sinyiglobal">
+              <Item><Icon src="static/img/icon_fb_w.png" alt="" /></Item>
+            </Link>
+          </IconLink>
+          </li>          
+        </ul>
+      </div>
+      
     </>
   )
 }
